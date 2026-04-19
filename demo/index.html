@@ -118,6 +118,46 @@
     .backnav-wa{display:inline-flex;align-items:center;gap:6px;color:#fff;text-decoration:none;font-size:13px;font-weight:600;padding:7px 14px;border-radius:8px;background:#25d366;white-space:nowrap;transition:background 0.2s,transform 0.15s;}
     .backnav-wa:hover{background:#1ebe5c;transform:translateY(-1px);}
     @media(max-width:600px){.backnav-label{display:none;}.backnav-wa .wa-text{display:none;}}
+  
+    /* ── BANNER PRINCIPAL ── */
+    #banner-principal{position:relative;background:linear-gradient(135deg,#08101e 0%,#0f172a 45%,#16213e 100%);overflow:hidden;padding:0;}
+    #banner-principal::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,0.025) 1px,transparent 1px);background-size:28px 28px;pointer-events:none;z-index:0;}
+    #banner-principal::after{content:'';position:absolute;top:-120px;right:-80px;width:520px;height:520px;background:radial-gradient(circle,rgba(230,57,70,0.08) 0%,transparent 70%);pointer-events:none;z-index:0;}
+    .banner-inner{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px;padding:64px 24px 56px;position:relative;z-index:1;}
+    @media(max-width:820px){.banner-inner{grid-template-columns:1fr;gap:24px;padding:44px 20px 36px;text-align:center;}}
+    .banner-season-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(34,211,238,0.08);border:1px solid rgba(34,211,238,0.22);color:#22d3ee;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:6px 14px;border-radius:100px;margin-bottom:20px;}
+    .banner-tag-dot{width:7px;height:7px;border-radius:50%;background:#22d3ee;flex-shrink:0;box-shadow:0 0 8px rgba(34,211,238,0.8);animation:btag-blink 1.5s ease-in-out infinite;}
+    @keyframes btag-blink{0%,100%{opacity:1}50%{opacity:0.25}}
+    .banner-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.8rem,5.5vw,5rem);line-height:1;letter-spacing:2px;color:#f8fafc;margin-bottom:18px;}
+    .banner-title-hl{color:#f4d35e;}
+    .banner-subtitle{font-size:15px;color:rgba(248,250,252,0.6);margin-bottom:30px;letter-spacing:0.02em;}
+    .banner-actions{display:flex;align-items:center;gap:18px;margin-bottom:26px;flex-wrap:wrap;}
+    @media(max-width:820px){.banner-actions{justify-content:center;}}
+    .btn-banner-cta{display:inline-flex;align-items:center;gap:10px;background:#e63946;color:#fff;font-family:'Bebas Neue',sans-serif;font-size:1.25rem;letter-spacing:2px;padding:13px 32px;border-radius:8px;text-decoration:none;transition:background .2s,transform .15s,box-shadow .2s;box-shadow:0 4px 20px rgba(230,57,70,0.4);}
+    .btn-banner-cta:hover{background:#c1121f;transform:translateY(-2px);box-shadow:0 8px 28px rgba(230,57,70,0.5);}
+    .banner-parcela{font-size:13px;color:rgba(248,250,252,0.45);}
+    .banner-trust-row{display:flex;gap:18px;flex-wrap:wrap;}
+    @media(max-width:820px){.banner-trust-row{justify-content:center;}}
+    .banner-trust-item{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:rgba(248,250,252,0.55);}
+    .btick{color:#4ade80;font-weight:900;font-size:13px;}
+    /* jerseys stage */
+    .banner-jerseys-col{display:flex;justify-content:center;align-items:center;}
+    .banner-jerseys-stage{position:relative;width:300px;height:300px;flex-shrink:0;}
+    .bj-left{position:absolute;left:-15px;top:60px;transform:rotate(-14deg);z-index:1;filter:drop-shadow(0 16px 32px rgba(0,0,0,0.7));}
+    .bj-center{position:absolute;left:50%;top:10px;transform:translateX(-50%);z-index:3;filter:drop-shadow(0 20px 40px rgba(0,0,0,0.8));}
+    .bj-right{position:absolute;right:-15px;top:70px;transform:rotate(12deg);z-index:2;filter:drop-shadow(0 16px 32px rgba(0,0,0,0.7));}
+    .bj-center:hover,.bj-left:hover,.bj-right:hover{filter:drop-shadow(0 24px 48px rgba(230,57,70,0.4));}
+    @media(max-width:820px){.banner-jerseys-stage{width:240px;height:230px;}}
+    /* countdown strip */
+    .banner-countdown-strip{background:rgba(0,0,0,0.4);border-top:1px solid rgba(255,255,255,0.06);padding:13px 0;position:relative;z-index:1;}
+    .banner-countdown-strip .container{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;}
+    .bcs-label{font-size:13px;font-weight:600;color:rgba(248,250,252,0.65);}
+    .bcs-timer{display:flex;align-items:center;gap:6px;}
+    .bcs-unit{display:inline-flex;align-items:baseline;gap:2px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:4px 10px;}
+    .bcs-unit span{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:#f4d35e;line-height:1;}
+    .bcs-unit small{font-size:0.65rem;color:rgba(248,250,252,0.45);text-transform:uppercase;letter-spacing:1px;}
+    .bcs-sep{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:#f4d35e;opacity:0.4;}
+
   </style>
 </head>
 <body>
@@ -145,30 +185,80 @@
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="container">
-    <div class="hero-badge">OFERTA ESPECIAL 2024/25</div>
-    <h1>Camisetas Oficiais<br><span>2024/25</span><br>Entrega em 3–7 dias</h1>
-    <p class="hero-sub">As camisetas oficiais dos maiores clubes do Brasil e do mundo. Qualidade premium, preço justo e entrega garantida em todo o território nacional.</p>
-    <a href="#products" class="btn-hero">VER TODOS OS PRODUTOS</a>
-    <div class="countdown-box">
-      <div class="countdown-unit">
-        <div class="countdown-num" id="cd-hours">47</div>
-        <div class="countdown-label">Horas</div>
+<!-- BANNER PRINCIPAL -->
+<section id="banner-principal">
+  <div class="container banner-inner">
+
+    <!-- TEXT -->
+    <div class="banner-text-col">
+      <div class="banner-season-tag">
+        <span class="banner-tag-dot"></span>
+        Temporada 2024/25 &nbsp;&middot;&nbsp; Cole&ccedil;&atilde;o Oficial
       </div>
-      <div class="countdown-unit" style="display:flex;align-items:center;font-size:2rem;color:var(--yellow);">:</div>
-      <div class="countdown-unit">
-        <div class="countdown-num" id="cd-minutes">59</div>
-        <div class="countdown-label">Minutos</div>
+      <h1 class="banner-title">
+        Camisetas dos<br>
+        <span class="banner-title-hl">Maiores Times</span><br>
+        do Brasil
+      </h1>
+      <p class="banner-subtitle">Qualidade premium &nbsp;&bull;&nbsp; Entrega r&aacute;pida &nbsp;&bull;&nbsp; Compra segura</p>
+      <div class="banner-actions">
+        <a href="#products" class="btn-banner-cta">
+          Ver Ofertas
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8H13M9 4l4 4-4 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <span class="banner-parcela">ou 6x sem juros</span>
       </div>
-      <div class="countdown-unit" style="display:flex;align-items:center;font-size:2rem;color:var(--yellow);">:</div>
-      <div class="countdown-unit">
-        <div class="countdown-num" id="cd-seconds">59</div>
-        <div class="countdown-label">Segundos</div>
+      <div class="banner-trust-row">
+        <span class="banner-trust-item"><span class="btick">&#10003;</span> 1.200+ avalia&ccedil;&otilde;es</span>
+        <span class="banner-trust-item"><span class="btick">&#10003;</span> Entrega em 3&ndash;7 dias</span>
+        <span class="banner-trust-item"><span class="btick">&#10003;</span> Troca gr&aacute;tis</span>
       </div>
     </div>
-    <p style="margin-top:0.75rem; font-size:0.8rem; opacity:0.6;">Oferta termina em breve!</p>
+
+    <!-- JERSEYS -->
+    <div class="banner-jerseys-col">
+      <div class="banner-jerseys-stage">
+        <div class="bj-left"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120" width="130" height="156">
+  <defs><clipPath id="bj2"><path d="M28 16 Q38 9 42 7 Q46 12 50 12 Q54 12 58 7 Q62 9 72 16 L93 28 L81 44 L73 38 L73 108 L27 108 L27 38 L19 44 L7 28 Z"/></clipPath></defs>
+  <rect width="100" height="120" fill="#166534" clip-path="url(#bj2)"/>
+  <rect x="40" y="0" width="20" height="120" fill="rgba(255,255,255,0.12)" clip-path="url(#bj2)"/>
+  <path d="M42 7 Q46 12 50 12 Q54 12 58 7" fill="none" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M28 16 Q38 9 42 7 Q46 12 50 12 Q54 12 58 7 Q62 9 72 16 L93 28 L81 44 L73 38 L73 108 L27 108 L27 38 L19 44 L7 28 Z" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+  <text x="50" y="82" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="20" fill="white" opacity="0.65">9</text>
+</svg></div>
+        <div class="bj-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120" width="150" height="180">
+  <defs><clipPath id="bj1"><path d="M28 16 Q38 9 42 7 Q46 12 50 12 Q54 12 58 7 Q62 9 72 16 L93 28 L81 44 L73 38 L73 108 L27 108 L27 38 L19 44 L7 28 Z"/></clipPath></defs>
+  <rect width="100" height="120" fill="#dc2626" clip-path="url(#bj1)"/>
+  <rect y="30" width="100" height="12" fill="#1a1a1a" clip-path="url(#bj1)"/>
+  <rect y="56" width="100" height="12" fill="#1a1a1a" clip-path="url(#bj1)"/>
+  <rect y="82" width="100" height="12" fill="#1a1a1a" clip-path="url(#bj1)"/>
+  <path d="M42 7 Q46 12 50 12 Q54 12 58 7" fill="none" stroke="#1a1a1a" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M28 16 Q38 9 42 7 Q46 12 50 12 Q54 12 58 7 Q62 9 72 16 L93 28 L81 44 L73 38 L73 108 L27 108 L27 38 L19 44 L7 28 Z" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+  <text x="50" y="82" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="20" fill="white" opacity="0.65">10</text>
+</svg></div>
+        <div class="bj-right"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120" width="130" height="156">
+  <defs><clipPath id="bj3"><path d="M28 16 Q38 9 42 7 Q46 12 50 12 Q54 12 58 7 Q62 9 72 16 L93 28 L81 44 L73 38 L73 108 L27 108 L27 38 L19 44 L7 28 Z"/></clipPath></defs>
+  <rect width="100" height="120" fill="#ca8a04" clip-path="url(#bj3)"/>
+  <rect x="0" y="0" width="100" height="20" fill="#15803d" clip-path="url(#bj3)"/>
+  <path d="M42 7 Q46 12 50 12 Q54 12 58 7" fill="none" stroke="#1d4ed8" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M28 16 Q38 9 42 7 Q46 12 50 12 Q54 12 58 7 Q62 9 72 16 L93 28 L81 44 L73 38 L73 108 L27 108 L27 38 L19 44 L7 28 Z" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+  <text x="50" y="82" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="20" fill="#15803d" opacity="0.65">7</text>
+</svg></div>
+      </div>
+    </div>
+
+  </div>
+  <div class="banner-countdown-strip">
+    <div class="container">
+      <span class="bcs-label">&#128293; Oferta especial termina em:</span>
+      <div class="bcs-timer">
+        <div class="bcs-unit"><span id="cd-hours">47</span><small>h</small></div>
+        <span class="bcs-sep">:</span>
+        <div class="bcs-unit"><span id="cd-minutes">59</span><small>m</small></div>
+        <span class="bcs-sep">:</span>
+        <div class="bcs-unit"><span id="cd-seconds">59</span><small>s</small></div>
+      </div>
+    </div>
   </div>
 </section>
 
