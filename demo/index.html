@@ -23,11 +23,11 @@
       --success: #2a9d8f;
     }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; background: var(--light); color: var(--text); line-height: 1.6; }
+    body { font-family: 'Inter', sans-serif; background: var(--light); color: var(--text); line-height: 1.6;  padding-top: 56px;}
     .container { max-width: 1100px; margin: 0 auto; padding: 0 1rem; }
 
     /* NAVBAR */
-    .navbar { background: var(--dark); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+    .navbar { background: var(--dark); position: sticky; top: 56px; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
     .navbar .container { display: flex; align-items: center; justify-content: space-between; padding: 1rem; }
     .navbar-brand { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--yellow); text-decoration: none; letter-spacing: 3px; }
     .navbar-links { display: flex; gap: 1.5rem; }
@@ -108,9 +108,29 @@
     .footer-col a { display: block; color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; margin-bottom: 0.4rem; transition: color 0.2s; }
     .footer-col a:hover { color: var(--yellow); }
     .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.8rem; }
+  
+    /* ── DEMO BACK NAV ── */
+    #demo-backnav{position:fixed;top:0;left:0;right:0;z-index:300;height:56px;background:#0f172a;border-bottom:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);}
+    .backnav-inner{max-width:1100px;margin:0 auto;padding:0 20px;width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+    .backnav-label{font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(248,250,252,0.35);white-space:nowrap;}
+    .backnav-back{display:inline-flex;align-items:center;gap:6px;color:#f8fafc;text-decoration:none;font-size:13px;font-weight:600;padding:7px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.12);white-space:nowrap;transition:background 0.2s,border-color 0.2s,color 0.2s;}
+    .backnav-back:hover{background:rgba(34,211,238,0.1);border-color:rgba(34,211,238,0.45);color:#22d3ee;}
+    .backnav-wa{display:inline-flex;align-items:center;gap:6px;color:#fff;text-decoration:none;font-size:13px;font-weight:600;padding:7px 14px;border-radius:8px;background:#25d366;white-space:nowrap;transition:background 0.2s,transform 0.15s;}
+    .backnav-wa:hover{background:#1ebe5c;transform:translateY(-1px);}
+    @media(max-width:600px){.backnav-label{display:none;}.backnav-wa .wa-text{display:none;}}
   </style>
 </head>
 <body>
+
+<!-- DEMO BACK NAV -->
+<div id="demo-backnav">
+  <div class="backnav-inner">
+    <a href="/" class="backnav-back">&#8592; Voltar para Loja Pronta 24h</a>
+    <span class="backnav-label">Exemplo de loja criada em 24h</span>
+    <a href="https://wa.me/5541998355581" target="_blank" rel="noopener" class="backnav-wa">&#128172; <span class="wa-text">Falar no WhatsApp</span></a>
+  </div>
+</div>
+
 
 <!-- NAVBAR -->
 <nav class="navbar">
