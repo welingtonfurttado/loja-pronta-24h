@@ -101,13 +101,13 @@ Busque por `Welington Furtado` e substitua onde necessário.
 
 ## 4. Como alterar o número do WhatsApp
 
-O número atual é **(41) 99835-3581**. Para trocar:
+O número atual é **(41) 99835-5581**. Para trocar:
 
 ### Passo 1 — Abra o `index.html` em um editor de texto
 
 ### Passo 2 — Busque pela string:
 ```
-wa.me/5541998353581
+wa.me/5541998355581
 ```
 
 ### Passo 3 — Substitua pelo novo número no formato internacional:
