@@ -1,0 +1,368 @@
+{
+  "store": "Demo Store",
+  "version": "1.0.0",
+  "generated_at": "2026-04-18T23:24:01.602396",
+  "steps": [
+    {
+      "id": "cart",
+      "label": "Carrinho",
+      "order": 1,
+      "fields": [
+        {
+          "name": "product_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "product_name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "size",
+          "type": "enum",
+          "options": [
+            "P",
+            "M",
+            "G",
+            "GG",
+            "XGG"
+          ],
+          "required": true
+        },
+        {
+          "name": "quantity",
+          "type": "integer",
+          "min": 1,
+          "max": 10,
+          "required": true
+        },
+        {
+          "name": "unit_price",
+          "type": "decimal",
+          "required": true
+        },
+        {
+          "name": "coupon_code",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "validations": [
+        "size must be selected",
+        "quantity >= 1",
+        "product must be in stock"
+      ],
+      "ui": {
+        "show_order_bump": true,
+        "order_bump_position": "below_cart",
+        "show_trust_badges": true
+      }
+    },
+    {
+      "id": "customer_data",
+      "label": "Seus Dados",
+      "order": 2,
+      "fields": [
+        {
+          "name": "full_name",
+          "type": "string",
+          "label": "Nome completo",
+          "required": true,
+          "min_length": 3
+        },
+        {
+          "name": "email",
+          "type": "email",
+          "label": "E-mail",
+          "required": true
+        },
+        {
+          "name": "phone",
+          "type": "phone",
+          "label": "WhatsApp",
+          "required": true,
+          "mask": "(99) 99999-9999"
+        },
+        {
+          "name": "cpf",
+          "type": "cpf",
+          "label": "CPF",
+          "required": true,
+          "mask": "999.999.999-99"
+        },
+        {
+          "name": "zip_code",
+          "type": "cep",
+          "label": "CEP",
+          "required": true,
+          "mask": "99999-999"
+        },
+        {
+          "name": "street",
+          "type": "string",
+          "label": "Rua",
+          "required": true
+        },
+        {
+          "name": "number",
+          "type": "string",
+          "label": "Número",
+          "required": true
+        },
+        {
+          "name": "complement",
+          "type": "string",
+          "label": "Complemento",
+          "required": false
+        },
+        {
+          "name": "neighborhood",
+          "type": "string",
+          "label": "Bairro",
+          "required": true
+        },
+        {
+          "name": "city",
+          "type": "string",
+          "label": "Cidade",
+          "required": true
+        },
+        {
+          "name": "state",
+          "type": "enum",
+          "label": "Estado",
+          "required": true,
+          "options": [
+            "AC",
+            "AL",
+            "AP",
+            "AM",
+            "BA",
+            "CE",
+            "DF",
+            "ES",
+            "GO",
+            "MA",
+            "MT",
+            "MS",
+            "MG",
+            "PA",
+            "PB",
+            "PR",
+            "PE",
+            "PI",
+            "RJ",
+            "RN",
+            "RS",
+            "RO",
+            "RR",
+            "SC",
+            "SP",
+            "SE",
+            "TO"
+          ]
+        }
+      ],
+      "validations": [
+        "email format validation",
+        "CPF format and digit validation",
+        "CEP lookup via ViaCEP API",
+        "phone minimum 10 digits"
+      ]
+    },
+    {
+      "id": "payment",
+      "label": "Pagamento",
+      "order": 3,
+      "fields": [
+        {
+          "name": "payment_method",
+          "type": "enum",
+          "options": [
+            "pix",
+            "credit_card",
+            "boleto"
+          ],
+          "required": true
+        },
+        {
+          "name": "card_number",
+          "type": "string",
+          "label": "Número do Cartão",
+          "required_if": "payment_method=credit_card",
+          "mask": "9999 9999 9999 9999"
+        },
+        {
+          "name": "card_holder",
+          "type": "string",
+          "label": "Nome no Cartão",
+          "required_if": "payment_method=credit_card"
+        },
+        {
+          "name": "card_expiry",
+          "type": "string",
+          "label": "Validade",
+          "required_if": "payment_method=credit_card",
+          "mask": "99/99"
+        },
+        {
+          "name": "card_cvv",
+          "type": "string",
+          "label": "CVV",
+          "required_if": "payment_method=credit_card",
+          "mask": "999"
+        },
+        {
+          "name": "installments",
+          "type": "integer",
+          "min": 1,
+          "max": 6,
+          "required_if": "payment_method=credit_card",
+          "default": 1
+        }
+      ],
+      "validations": [
+        "card number Luhn algorithm validation",
+        "card expiry must be future date",
+        "CVV 3-4 digits"
+      ]
+    },
+    {
+      "id": "confirmation",
+      "label": "Confirmação",
+      "order": 4,
+      "fields": [],
+      "actions": [
+        "send_confirmation_email",
+        "send_whatsapp_message",
+        "create_order_in_system",
+        "trigger_upsell_flow"
+      ],
+      "ui": {
+        "show_order_summary": true,
+        "show_estimated_delivery": true,
+        "show_upsell": true,
+        "upsell_position": "above_fold"
+      }
+    }
+  ],
+  "payment_methods": [
+    {
+      "id": "pix",
+      "label": "PIX",
+      "icon": "pix-icon",
+      "discount_pct": 5,
+      "discount_label": "5% de desconto no PIX!",
+      "processing_time": "Aprovação instantânea",
+      "instructions": "Após confirmar, você receberá o QR Code e chave PIX. Pagamento expira em 30 minutos.",
+      "recommended": true
+    },
+    {
+      "id": "credit_card",
+      "label": "Cartão de Crédito",
+      "icon": "card-icon",
+      "installments": [
+        {
+          "times": 1,
+          "label": "1x sem juros",
+          "interest_rate": 0
+        },
+        {
+          "times": 2,
+          "label": "2x sem juros",
+          "interest_rate": 0
+        },
+        {
+          "times": 3,
+          "label": "3x sem juros",
+          "interest_rate": 0
+        },
+        {
+          "times": 4,
+          "label": "4x sem juros",
+          "interest_rate": 0
+        },
+        {
+          "times": 5,
+          "label": "5x sem juros",
+          "interest_rate": 0
+        },
+        {
+          "times": 6,
+          "label": "6x sem juros",
+          "interest_rate": 0
+        }
+      ],
+      "accepted_brands": [
+        "Visa",
+        "Mastercard",
+        "Elo",
+        "Amex",
+        "Hipercard"
+      ],
+      "processing_time": "Aprovação em segundos",
+      "recommended": false
+    },
+    {
+      "id": "boleto",
+      "label": "Boleto Bancário",
+      "icon": "boleto-icon",
+      "discount_pct": 0,
+      "expiry_days": 3,
+      "processing_time": "Aprovação em até 3 dias úteis",
+      "instructions": "O boleto será gerado após a confirmação do pedido. Vence em 3 dias úteis.",
+      "recommended": false
+    }
+  ],
+  "order_bumps": [
+    {
+      "id": "meias-kit",
+      "name": "Kit 3 Meias Esportivas",
+      "description": "Meias dry-fit premium que combinam com sua camisa. Kit com 3 pares.",
+      "price": 29.9,
+      "original_price": 59.9,
+      "discount_pct": 50,
+      "image": "meias_kit.jpg",
+      "position": "checkout_cart",
+      "cta": "SIM! Adicionar meias por apenas R$ 29,90",
+      "acceptance_rate_target": 0.25
+    }
+  ],
+  "abandoned_cart": {
+    "enabled": true,
+    "triggers": [
+      {
+        "id": "email-1h",
+        "channel": "email",
+        "delay_minutes": 60,
+        "subject": "Sua camisa está esperando por você! 👕",
+        "template": "abandoned_cart_email_1h",
+        "discount_offer": null
+      },
+      {
+        "id": "whatsapp-24h",
+        "channel": "whatsapp",
+        "delay_minutes": 1440,
+        "message_template": "Oi {name}! Vi que você deixou a {product} no carrinho. Ainda está disponível! Use KITFURIA10 para 10% de desconto. 👕⚽",
+        "discount_code": "KITFURIA10",
+        "discount_pct": 10
+      }
+    ]
+  },
+  "upsell": {
+    "enabled": true,
+    "trigger": "post_purchase_confirmation",
+    "product": {
+      "id": "kit-completo",
+      "name": "Kit Completo do Torcedor",
+      "description": "Leve o kit completo: camisa + short + meias + boné. Tudo combinando com seu time!",
+      "price": 329.9,
+      "original_price": 489.9,
+      "discount_pct": 33,
+      "cta": "SIM! Quero o Kit Completo com 33% OFF!"
+    },
+    "one_click_upsell": true,
+    "display_seconds": 30
+  }
+}

@@ -1,0 +1,438 @@
+{
+  "store": "Demo Store — Camisetas de Futebol",
+  "generated_at": "2026-04-18T23:24:01.599259",
+  "total_products": 10,
+  "categories": {
+    "nacional": 8,
+    "internacional": 2
+  },
+  "products": [
+    {
+      "id": "DS-001",
+      "name": "Flamengo 2024/25 Home",
+      "category": "nacional",
+      "price": 189.9,
+      "original_price": 229.9,
+      "discount_pct": 17,
+      "sizes": [
+        "P",
+        "M",
+        "G",
+        "GG",
+        "XGG"
+      ],
+      "stock": {
+        "P": 12,
+        "M": 28,
+        "G": 22,
+        "GG": 15,
+        "XGG": 8
+      },
+      "fabric": "Dry-fit 100% poliéster 140g/m²",
+      "sku": "DS-FLA-HOME-24",
+      "images": [
+        "flamengo_home_front.jpg",
+        "flamengo_home_back.jpg"
+      ],
+      "tags": [
+        "flamengo",
+        "nacional",
+        "home",
+        "2024"
+      ],
+      "rating": 4.8,
+      "reviews": 142,
+      "description": "A camisa oficial do Mengão para a temporada 2024/25. Tecido dry-fit de alta performance com tecnologia de ventilação avançada. Escudo bordado e detalhes em preto e vermelho que representam a maior torcida do Brasil.",
+      "colors": [
+        "Vermelho e Preto"
+      ],
+      "team_emoji": "🔴⚫",
+      "slug": "ds_001_flamengo"
+    },
+    {
+      "id": "DS-002",
+      "name": "Grêmio 2024/25 Home",
+      "category": "nacional",
+      "price": 179.9,
+      "original_price": 219.9,
+      "discount_pct": 18,
+      "sizes": [
+        "P",
+        "M",
+        "G",
+        "GG",
+        "XGG"
+      ],
+      "stock": {
+        "P": 8,
+        "M": 19,
+        "G": 25,
+        "GG": 11,
+        "XGG": 5
+      },
+      "fabric": "Dry-fit 100% poliéster 140g/m²",
+      "sku": "DS-GRE-HOME-24",
+      "images": [
+        "gremio_home_front.jpg",
+        "gremio_home_back.jpg"
+      ],
+      "tags": [
+        "gremio",
+        "nacional",
+        "home",
+        "2024"
+      ],
+      "rating": 4.7,
+      "reviews": 89,
+      "description": "O tricolor imortal em sua melhor forma. Camisa oficial do Grêmio 2024/25 com as listras tradicionais azul, preto e branco. Material premium com acabamento profissional.",
+      "colors": [
+        "Azul, Preto e Branco"
+      ],
+      "team_emoji": "🔵⚫⚪",
+      "slug": "ds_002_gremio"
+    },
+    {
+      "id": "DS-003",
+      "name": "Corinthians 2024/25 Home",
+      "category": "nacional",
+      "price": 189.9,
+      "original_price": 229.9,
+      "discount_pct": 17,
+      "sizes": [
+        "P",
+        "M",
+        "G",
+        "GG",
+        "XGG"
+      ],
+      "stock": {
+        "P": 20,
+        "M": 35,
+        "G": 30,
+        "GG": 18,
+        "XGG": 10
+      },
+      "fabric": "Dry-fit 100% poliéster 140g/m²",
+      "sku": "DS-COR-HOME-24",
+      "images": [
+        "corinthians_home_front.jpg",
+        "corinthians_home_back.jpg"
+      ],
+      "tags": [
+        "corinthians",
+        "nacional",
+        "home",
+        "2024"
+      ],
+      "rating": 4.9,
+      "reviews": 198,
+      "description": "Fiel é diferente! A camisa do Timão 2024/25 em branco imaculado com detalhes em preto. Para o maior clube do Brasil com a maior torcida do mundo.",
+      "colors": [
+        "Branco e Preto"
+      ],
+      "team_emoji": "⚪⚫",
+      "slug": "ds_003_corinthians"
+    },
+    {
+      "id": "DS-004",
+      "name": "Palmeiras 2024/25 Home",
+      "category": "nacional",
+      "price": 189.9,
+      "original_price": 229.9,
+      "discount_pct": 17,
+      "sizes": [
+        "P",
+        "M",
+        "G",
+        "GG",
+        "XGG"
+      ],
+      "stock": {
+        "P": 15,
+        "M": 22,
+        "G": 28,
+        "GG": 14,
+        "XGG": 7
+      },
+      "fabric": "Dry-fit 100% poliéster 140g/m²",
+      "sku": "DS-PAL-HOME-24",
+      "images": [
+        "palmeiras_home_front.jpg",
+        "palmeiras_home_back.jpg"
+      ],
+      "tags": [
+        "palmeiras",
+        "nacional",
+        "home",
+        "2024"
+      ],
+      "rating": 4.8,
+      "reviews": 175,
+      "description": "Verdão, campeão! A camisa do Palmeiras 2024/25 em verde característico do maior campeão brasileiro da era dos pontos corridos. Tecido de altíssima qualidade.",
+      "colors": [
+        "Verde e Branco"
+      ],
+      "team_emoji": "🟢⚪",
+      "slug": "ds_004_palmeiras"
+    },
+    {
+      "id": "DS-005",
+      "name": "São Paulo 2024/25 Home",
+      "category": "nacional",
+      "price": 179.9,
+      "original_price": 219.9,
+      "discount_pct": 18,
+      "sizes": [
+        "P",
+        "M",
+        "G",
+        "GG",
+        "XGG"
+      ],
+      "stock": {
+        "P": 10,
+        "M": 18,
+        "G": 20,
+        "GG": 12,
+        "XGG": 6
+      },
+      "fabric": "Dry-fit 100% poliéster 140g/m²",
+      "sku": "DS-SAO-HOME-24",
+      "images": [
+        "saopaulo_home_front.jpg",
+        "saopaulo_home_back.jpg"
+      ],
+      "tags": [
+        "sao paulo",
+        "spfc",
+        "nacional",
+        "home",
+        "2024"
+      ],
+      "rating": 4.7,
+      "reviews": 112,
+      "description": "Tricolor do Morumbi em grande estilo. A camisa do São Paulo FC 2024/25 com as tradicionais listras vermelha, preta e branca que marcam a história do clube.",
+      "colors": [
+        "Branco, Vermelho e Preto"
+      ],
+      "team_emoji": "⚪🔴⚫",
+      "slug": "ds_005_saopaulo"
+    },
+    {
+      "id": "DS-006",
+      "name": "Santos 2024/25 Home",
+      "category": "nacional",
+      "price": 169.9,
+      "original_price": 209.9,
+      "discount_pct": 19,
+      "sizes": [
+        "P",
+        "M",
+        "G",
+        "GG",
+        "XGG"
+      ],
+      "stock": {
+        "P": 7,
+        "M": 14,
+        "G": 16,
+        "GG": 9,
+        "XGG": 4
+      },
+      "fabric": "Dry-fit 100% poliéster 140g/m²",
+      "sku": "DS-SAN-HOME-24",
+      "images": [
+        "santos_home_front.jpg",
+        "santos_home_back.jpg"
+      ],
+      "tags": [
+        "santos",
+        "peixe",
+        "nacional",
+        "home",
+        "2024"
+      ],
+      "rating": 4.6,
+      "reviews": 68,
+      "description": "O Peixe voltou! Camisa branca clássica do Santos FC 2024/25, o clube que revelou Pelé ao mundo. Tradição e história em cada detalhe do tecido.",
+      "colors": [
+        "Branco e Preto"
+      ],
+      "team_emoji": "⚪🐟",
+      "slug": "ds_006_santos"
+    },
+    {
+      "id": "DS-007",
+      "name": "Vasco 2024/25 Home",
+      "category": "nacional",
+      "price": 169.9,
+      "original_price": 209.9,
+      "discount_pct": 19,
+      "sizes": [
+        "P",
+        "M",
+        "G",
+        "GG",
+        "XGG"
+      ],
+      "stock": {
+        "P": 9,
+        "M": 16,
+        "G": 18,
+        "GG": 10,
+        "XGG": 5
+      },
+      "fabric": "Dry-fit 100% poliéster 140g/m²",
+      "sku": "DS-VAS-HOME-24",
+      "images": [
+        "vasco_home_front.jpg",
+        "vasco_home_back.jpg"
+      ],
+      "tags": [
+        "vasco",
+        "nacional",
+        "home",
+        "2024"
+      ],
+      "rating": 4.6,
+      "reviews": 54,
+      "description": "Vasco da Gama, gigante do Rio! Camisa com a faixa diagonal tradicional em branco e preto. Um símbolo do clube fundado por imigrantes portugueses.",
+      "colors": [
+        "Branco e Preto"
+      ],
+      "team_emoji": "⚪⚫⚓",
+      "slug": "ds_007_vasco"
+    },
+    {
+      "id": "DS-008",
+      "name": "Atlético-MG 2024/25 Home",
+      "category": "nacional",
+      "price": 179.9,
+      "original_price": 219.9,
+      "discount_pct": 18,
+      "sizes": [
+        "P",
+        "M",
+        "G",
+        "GG",
+        "XGG"
+      ],
+      "stock": {
+        "P": 11,
+        "M": 20,
+        "G": 23,
+        "GG": 13,
+        "XGG": 6
+      },
+      "fabric": "Dry-fit 100% poliéster 140g/m²",
+      "sku": "DS-ATL-HOME-24",
+      "images": [
+        "atletico_home_front.jpg",
+        "atletico_home_back.jpg"
+      ],
+      "tags": [
+        "atletico",
+        "galo",
+        "nacional",
+        "home",
+        "2024"
+      ],
+      "rating": 4.7,
+      "reviews": 97,
+      "description": "Galo Doido campeão! O Atlético-MG 2024/25 em suas cores tradicionais preto e branco. A camisa do maior clube de Minas Gerais com acabamento premium.",
+      "colors": [
+        "Preto e Branco"
+      ],
+      "team_emoji": "⚫⚪🐓",
+      "slug": "ds_008_atletico"
+    },
+    {
+      "id": "DS-009",
+      "name": "Barcelona 2024/25 Home",
+      "category": "internacional",
+      "price": 219.9,
+      "original_price": 259.9,
+      "discount_pct": 15,
+      "sizes": [
+        "P",
+        "M",
+        "G",
+        "GG",
+        "XGG"
+      ],
+      "stock": {
+        "P": 14,
+        "M": 25,
+        "G": 20,
+        "GG": 11,
+        "XGG": 7
+      },
+      "fabric": "Dry-fit 100% poliéster 150g/m²",
+      "sku": "DS-BAR-HOME-24",
+      "images": [
+        "barcelona_home_front.jpg",
+        "barcelona_home_back.jpg"
+      ],
+      "tags": [
+        "barcelona",
+        "barca",
+        "internacional",
+        "laliga",
+        "home",
+        "2024"
+      ],
+      "rating": 4.9,
+      "reviews": 201,
+      "description": "Mes que un club! A camisa do FC Barcelona 2024/25 com as listras clássicas azul e grená. Qualidade premium de tecido europeu com tecnologia de controle de temperatura.",
+      "colors": [
+        "Azul e Grená"
+      ],
+      "team_emoji": "🔵🔴",
+      "slug": "ds_009_barcelona"
+    },
+    {
+      "id": "DS-010",
+      "name": "Real Madrid 2024/25 Home",
+      "category": "internacional",
+      "price": 219.9,
+      "original_price": 259.9,
+      "discount_pct": 15,
+      "sizes": [
+        "P",
+        "M",
+        "G",
+        "GG",
+        "XGG"
+      ],
+      "stock": {
+        "P": 16,
+        "M": 30,
+        "G": 24,
+        "GG": 14,
+        "XGG": 8
+      },
+      "fabric": "Dry-fit 100% poliéster 150g/m²",
+      "sku": "DS-REA-HOME-24",
+      "images": [
+        "realmadrid_home_front.jpg",
+        "realmadrid_home_back.jpg"
+      ],
+      "tags": [
+        "real madrid",
+        "merengue",
+        "internacional",
+        "laliga",
+        "home",
+        "2024"
+      ],
+      "rating": 4.9,
+      "reviews": 215,
+      "description": "Hala Madrid! A camisa do Real Madrid 2024/25 no branco imaculado dos Merengues, o clube mais vitorioso da história do futebol mundial. Elegância e tradição em cada detalhe.",
+      "colors": [
+        "Branco e Dourado"
+      ],
+      "team_emoji": "⚪👑",
+      "slug": "ds_010_realmadrid"
+    }
+  ]
+}
