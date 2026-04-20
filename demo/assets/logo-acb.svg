@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 64" width="240" height="64">
+  <!-- Shield icon -->
+  <path d="M22 4 L40 11 L40 30 Q40 48 22 54 Q4 48 4 30 L4 11 Z"
+        fill="#1a1a2e" stroke="#e63946" stroke-width="2.5"/>
+  <!-- Jersey silhouette inside shield (yellow) -->
+  <path d="M15 25 L11 20 L17.5 17.5 Q19 15 22 15 Q25 15 26.5 17.5 L33 20 L29 25 L27 23 L27 38 L17 38 L17 23 Z"
+        fill="#f4d35e"/>
+  <!-- 3 stars -->
+  <text x="22" y="15" text-anchor="middle" font-size="5.5" fill="#f4d35e" letter-spacing="1.8">&#9733;&#9733;&#9733;</text>
+  <!-- Vertical divider -->
+  <line x1="52" y1="8" x2="52" y2="56" stroke="rgba(244,211,94,0.25)" stroke-width="1.5"/>
+  <!-- Brand name -->
+  <text x="62" y="32" font-family="'Bebas Neue',Impact,sans-serif" font-size="20"
+        letter-spacing="3" fill="#f8fafc">ARENA CAMISAS</text>
+  <text x="62" y="52" font-family="'Bebas Neue',Impact,sans-serif" font-size="20"
+        letter-spacing="3" fill="#e63946">BRASIL</text>
+</svg>

@@ -8,7 +8,7 @@
   <meta property="og:title" content="Demo Store — Camisetas de Futebol Oficiais 2024/25">
   <meta property="og:description" content="As melhores camisetas de futebol com desconto! Frete grátis + Troca 30 dias + Parcelamento 6x sem juros.">
   <meta property="og:type" content="website">
-  <title>Demo Store — Camisetas de Futebol Oficiais | KitFuria</title>
+  <title>Arena Camisas Brasil | Camisetas Oficiais de Futebol</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700;800&display=swap');
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -160,6 +160,31 @@
     .bcs-unit small{font-size:0.65rem;color:rgba(248,250,252,0.45);text-transform:uppercase;letter-spacing:1px;}
     .bcs-sep{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:#f4d35e;opacity:0.4;}
 
+  
+    /* ── ACB BRAND ── */
+    .navbar-brand-acb{display:inline-flex;align-items:center;gap:11px;text-decoration:none;}
+    .brand-text-acb{display:flex;flex-direction:column;line-height:1.1;}
+    .brand-main-acb{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:#f8fafc;letter-spacing:3px;}
+    .brand-hl-acb{color:#e63946;}
+    .brand-sub-acb{font-size:0.6rem;letter-spacing:3px;color:rgba(255,255,255,0.4);text-transform:uppercase;font-family:Inter,sans-serif;font-weight:600;}
+    /* ── ACB FOOTER ── */
+    .footer-acb{background:#0f172a;color:rgba(255,255,255,0.65);padding:56px 0 0;}
+    .footer-acb-brand{display:flex;align-items:center;gap:16px;margin-bottom:40px;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,0.07);}
+    .footer-acb-brand-text .brand-name-f{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:#f8fafc;letter-spacing:3px;}
+    .footer-acb-brand-text .brand-name-f span{color:#e63946;}
+    .footer-acb-brand-text p{font-size:13px;color:rgba(255,255,255,0.45);max-width:340px;margin-top:6px;line-height:1.6;}
+    .footer-acb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-bottom:40px;}
+    @media(max-width:680px){.footer-acb-grid{grid-template-columns:1fr;gap:28px;}}
+    .footer-acb-col h4{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:2px;color:#f4d35e;margin-bottom:14px;}
+    .footer-acb-col p,.footer-acb-col li{font-size:13px;color:rgba(255,255,255,0.55);line-height:1.8;margin-bottom:4px;}
+    .footer-acb-col ul{list-style:none;padding:0;}
+    .footer-acb-col ul li::before{content:"&#10003;  ";color:#4ade80;font-size:11px;}
+    .footer-acb-col a{color:rgba(255,255,255,0.55);text-decoration:none;font-size:13px;display:block;margin-bottom:6px;transition:color .2s;}
+    .footer-acb-col a:hover{color:#f4d35e;}
+    .footer-acb-col .contact-line{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,0.55);margin-bottom:8px;}
+    .footer-acb-col .contact-icon{font-size:15px;}
+    .footer-acb-bottom{border-top:1px solid rgba(255,255,255,0.07);padding:20px 0;text-align:center;font-size:12px;color:rgba(255,255,255,0.3);letter-spacing:0.5px;}
+
   </style>
 </head>
 <body>
@@ -177,7 +202,7 @@
 <!-- NAVBAR -->
 <nav class="navbar">
   <div class="container">
-    <a href="#" class="navbar-brand">KitFuria</a>
+    <a href="#" class="navbar-brand-acb"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 48" width="38" height="43" style="flex-shrink:0;"><path d="M21 2 L39 9 L39 28 Q39 43 21 47 Q3 43 3 28 L3 9 Z" fill="#1a1a2e" stroke="#e63946" stroke-width="2.5"/><path d="M14 23 L10 18 L16.5 15.5 Q18 13 21 13 Q24 13 25.5 15.5 L32 18 L28 23 L25.5 21 L25.5 36 L16.5 36 L16.5 21 Z" fill="#f4d35e"/><text x="21" y="13" text-anchor="middle" font-size="5.5" fill="#f4d35e" letter-spacing="1.8">&#9733;&#9733;&#9733;</text></svg><span class="brand-text-acb"><span class="brand-main-acb">ARENA CAMISAS <span class="brand-hl-acb">BRASIL</span></span><span class="brand-sub-acb">Camisetas Oficiais de Futebol</span></span></a>
     <div class="navbar-links">
       <a href="#products">Produtos</a>
       <a href="#features">Diferenciais</a>
@@ -471,37 +496,68 @@
 </section>
 
 <!-- FOOTER -->
-<footer id="contato">
+<footer class="footer-acb" id="contato">
   <div class="container">
-    <div class="footer-grid">
-      <div class="footer-col">
-        <h4>Demo Store</h4>
-        <p style="font-size:0.85rem; margin-bottom:0.75rem;">Camisetas Oficiais de Futebol 2024/25. Qualidade premium com preço justo.</p>
-        <p style="font-size:0.85rem;">📧 contato@demostore.com.br</p>
-        <p style="font-size:0.85rem;">📱 (11) 99999-0000</p>
-      </div>
-      <div class="footer-col">
-        <h4>Links Rápidos</h4>
-        <a href="#products">Produtos</a>
-        <a href="#features">Diferenciais</a>
-        <a href="#faq">FAQ</a>
-        <a href="#">Política de Trocas</a>
-        <a href="#">Privacidade</a>
-      </div>
-      <div class="footer-col">
-        <h4>Times Disponíveis</h4>
-        <a href="product_pages/ds_001_flamengo.html">Flamengo</a>
-        <a href="product_pages/ds_002_gremio.html">Grêmio</a>
-        <a href="product_pages/ds_003_corinthians.html">Corinthians</a>
-        <a href="product_pages/ds_004_palmeiras.html">Palmeiras</a>
-        <a href="product_pages/ds_009_barcelona.html">Barcelona</a>
-        <a href="product_pages/ds_010_realmadrid.html">Real Madrid</a>
+
+    <!-- Brand row -->
+    <div class="footer-acb-brand">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 48" width="38" height="43" style="flex-shrink:0;"><path d="M21 2 L39 9 L39 28 Q39 43 21 47 Q3 43 3 28 L3 9 Z" fill="#1a1a2e" stroke="#e63946" stroke-width="2.5"/><path d="M14 23 L10 18 L16.5 15.5 Q18 13 21 13 Q24 13 25.5 15.5 L32 18 L28 23 L25.5 21 L25.5 36 L16.5 36 L16.5 21 Z" fill="#f4d35e"/><text x="21" y="13" text-anchor="middle" font-size="5.5" fill="#f4d35e" letter-spacing="1.8">&#9733;&#9733;&#9733;</text></svg>
+      <div class="footer-acb-brand-text">
+        <div class="brand-name-f">ARENA CAMISAS <span>BRASIL</span></div>
+        <p>Camisetas oficiais dos maiores times do Brasil. Qualidade premium, entrega r&aacute;pida e compra 100% segura.</p>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>KitFuria © 2024 — Demo Store — Camisetas Oficiais de Futebol</p>
-      <p style="margin-top:0.5rem; opacity:0.6;">Loja criada com Demo Store Builder | Orquestrador Central v1.0</p>
+
+    <!-- 3 columns -->
+    <div class="footer-acb-grid">
+
+      <!-- Sobre nós -->
+      <div class="footer-acb-col" id="sobre-nos">
+        <h4>Sobre N&oacute;s</h4>
+        <p>Somos especializados em camisetas oficiais de futebol desde 2018. Trabalhamos com os maiores times do Brasil e do mundo, garantindo autenticidade, qualidade de tecido e acabamento premium.</p>
+        <p style="margin-top:10px;">Cada camiseta &eacute; entregue com etiqueta de autentica&ccedil;&atilde;o e nota fiscal.</p>
+      </div>
+
+      <!-- Política de Troca -->
+      <div class="footer-acb-col" id="politica-troca">
+        <h4>Pol&iacute;tica de Troca</h4>
+        <ul>
+          <li>Troca gratuita em at&eacute; 30 dias</li>
+          <li>Produto deve estar sem uso e com etiqueta</li>
+          <li>Defeito de f&aacute;brica: troca imediata</li>
+          <li>Tamanho errado: basta solicitar</li>
+          <li>Frete de retorno por nossa conta</li>
+        </ul>
+        <a href="#" style="margin-top:10px;color:#f4d35e;font-size:12px;font-weight:600;">Ver pol&iacute;tica completa &rarr;</a>
+      </div>
+
+      <!-- Contato -->
+      <div class="footer-acb-col">
+        <h4>Contato</h4>
+        <div class="contact-line"><span class="contact-icon">&#128172;</span>
+          <a href="https://wa.me/5541998355581" target="_blank" style="color:rgba(255,255,255,0.55);">(41) 99835-5581 &mdash; WhatsApp</a>
+        </div>
+        <div class="contact-line"><span class="contact-icon">&#128140;</span>
+          <span>contato@arenacamisas.com.br</span>
+        </div>
+        <div class="contact-line"><span class="contact-icon">&#128205;</span>
+          <span>Curitiba, PR &mdash; Brasil</span>
+        </div>
+        <div class="contact-line" style="margin-top:12px;"><span class="contact-icon">&#128336;</span>
+          <span>Seg a Sex, 9h&ndash;18h</span>
+        </div>
+        <div style="margin-top:16px;display:flex;gap:10px;">
+          <a href="#" style="background:rgba(255,255,255,0.07);border-radius:6px;padding:8px 12px;font-size:12px;font-weight:600;color:#f4d35e;text-decoration:none;">Instagram</a>
+          <a href="#" style="background:rgba(255,255,255,0.07);border-radius:6px;padding:8px 12px;font-size:12px;font-weight:600;color:#f4d35e;text-decoration:none;">Facebook</a>
+        </div>
+      </div>
+
+    </div><!-- /footer-acb-grid -->
+
+    <div class="footer-acb-bottom">
+      <p>Arena Camisas Brasil &copy; 2024/25 &mdash; Camisetas Oficiais de Futebol &mdash; Curitiba, PR</p>
     </div>
+
   </div>
 </footer>
 
