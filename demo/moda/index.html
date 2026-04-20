@@ -8,176 +8,245 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 
+/* ── RESET ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Playfair Display',Inter,system-ui,sans-serif;background:#f8fafc;color:#1e293b;
+  padding-top:50px;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+img{display:block;max-width:100%;}
+:root{--pri:#e91e8c;--dark:#1a0a10;--light:#fff5f9;}
+
+/* ── BACK NAV ── */
 #bnav{position:fixed;top:0;left:0;right:0;z-index:9999;height:50px;
-  background:#0b1120;border-bottom:1px solid rgba(255,255,255,0.07);
+  background:#080f1e;border-bottom:1px solid rgba(255,255,255,.07);
   display:flex;align-items:center;}
 .bnav-wrap{width:100%;max-width:1280px;margin:0 auto;padding:0 20px;
-  display:flex;align-items:center;justify-content:space-between;}
-.bnav-l{display:flex;align-items:center;gap:12px;}
-.bnav-home{display:inline-flex;align-items:center;gap:7px;color:#94a3b8;
-  font-size:13px;font-weight:600;text-decoration:none;padding:7px 14px;
-  border-radius:7px;border:1px solid rgba(255,255,255,0.10);transition:.2s;}
-.bnav-home:hover{color:#e2e8f0;border-color:rgba(255,255,255,0.25);}
-.bnav-tag{font-size:12px;color:rgba(255,255,255,0.25);display:none;}
-@media(min-width:520px){.bnav-tag{display:block;}}
-.bnav-wa{display:inline-flex;align-items:center;gap:7px;background:#25d366;
-  color:#fff;font-size:13px;font-weight:700;padding:8px 16px;border-radius:7px;
-  text-decoration:none;white-space:nowrap;transition:.2s;}
-.bnav-wa:hover{background:#1db954;}
+  display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.bnav-back{display:inline-flex;align-items:center;gap:7px;color:#94a3b8;font-size:13px;
+  font-weight:600;padding:7px 14px;border-radius:7px;border:1px solid rgba(255,255,255,.1);
+  transition:.2s;flex-shrink:0;}
+.bnav-back:hover{color:#e2e8f0;border-color:rgba(255,255,255,.28);}
+.bnav-lbl{font-size:12px;color:rgba(255,255,255,.25);display:none;}
+@media(min-width:640px){.bnav-lbl{display:block;}}
+.bnav-wa{display:inline-flex;align-items:center;gap:7px;background:#25d366;color:#fff;
+  font-size:13px;font-weight:800;padding:8px 18px;border-radius:7px;transition:.2s;
+  white-space:nowrap;flex-shrink:0;}
+.bnav-wa:hover{background:#1db954;transform:translateY(-1px);}
 
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--pri:#e91e8c;--dark:#1a0a10;--light:#fff5f9;}
-html{scroll-behavior:smooth;}
-body{font-family:'Playfair Display',Inter,sans-serif;background:#fff;color:#1e293b;padding-top:50px;-webkit-font-smoothing:antialiased;}
-a{text-decoration:none;color:inherit;}
-.wrap{max-width:1240px;margin:0 auto;padding:0 24px;}
+/* ── FLOATING WA ── */
+#float-wa{position:fixed;bottom:28px;right:28px;z-index:8888;
+  display:inline-flex;align-items:center;gap:10px;background:#25d366;color:#fff;
+  font-size:14px;font-weight:800;padding:14px 22px;border-radius:100px;
+  box-shadow:0 8px 32px rgba(37,211,102,.45);transition:.25s;}
+#float-wa:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(37,211,102,.55);}
+.float-wa-txt{display:none;}
+@media(min-width:540px){.float-wa-txt{display:inline;}}
 
-/* NAVBAR */
-.nav{position:sticky;top:50px;z-index:300;background:rgba(255,255,255,.96);
-  backdrop-filter:blur(12px);border-bottom:1px solid #e2e8f0;}
-.nav-in{display:flex;align-items:center;justify-content:space-between;height:66px;}
+/* ── NAVBAR ── */
+.nav{position:sticky;top:50px;z-index:300;background:rgba(255,255,255,.97);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid #e2e8f0;}
+.nav-in{max-width:1280px;margin:0 auto;padding:0 24px;
+  display:flex;align-items:center;justify-content:space-between;height:68px;}
+.nav-logo{display:flex;align-items:center;gap:10px;}
 .nav-links{display:flex;gap:28px;list-style:none;}
 .nav-links a{font-size:14px;font-weight:600;color:#64748b;transition:color .2s;}
 .nav-links a:hover{color:var(--pri);}
 .nav-r{display:flex;align-items:center;gap:10px;}
-.nav-wa{display:inline-flex;align-items:center;gap:6px;background:#25d366;color:#fff;
-  font-size:13px;font-weight:700;padding:9px 18px;border-radius:8px;transition:.2s;}
-.nav-wa:hover{background:#1db954;}
 .nav-cart{position:relative;}
-.cart-btn{display:inline-flex;align-items:center;gap:7px;background:var(--pri);color:#fff;
-  border:none;border-radius:8px;padding:9px 18px;font-size:13px;font-weight:700;cursor:pointer;transition:.2s;}
+.cart-btn{display:inline-flex;align-items:center;gap:8px;background:var(--pri);color:#fff;
+  border:none;border-radius:9px;padding:10px 20px;font-size:13px;font-weight:700;
+  cursor:pointer;font-family:inherit;transition:.2s;}
 .cart-btn:hover{opacity:.88;}
-#cbadge{position:absolute;top:-6px;right:-6px;background:#ef4444;color:#fff;font-size:10px;
-  font-weight:800;width:18px;height:18px;border-radius:50%;display:none;align-items:center;
-  justify-content:center;border:2px solid #fff;}
+#cbadge{position:absolute;top:-7px;right:-7px;background:#ef4444;color:#fff;font-size:10px;
+  font-weight:900;min-width:18px;height:18px;border-radius:9px;display:none;
+  align-items:center;justify-content:center;border:2px solid #fff;padding:0 3px;}
 
-/* BANNER */
-.banner{background:linear-gradient(135deg,#880e4f 0%,#c2185b 55%,#e91e8c 100%);padding:76px 24px;}
-.banner-in{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;
-  gap:52px;align-items:center;}
-.btag{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);
-  color:rgba(255,255,255,.9);font-size:11px;font-weight:700;letter-spacing:.12em;
-  text-transform:uppercase;padding:7px 18px;border-radius:100px;margin-bottom:22px;}
-.banner h1{font-size:clamp(28px,4.2vw,52px);font-weight:900;color:#fff;line-height:1.1;
+/* ── BANNER ── */
+.banner{padding:80px 24px;position:relative;overflow:hidden;}
+.banner::before{content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 80% at 75% 50%,rgba(255,255,255,.06) 0%,transparent 70%);
+  pointer-events:none;}
+.banner-in{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;
+  gap:56px;align-items:center;position:relative;z-index:1;}
+.banner-eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:20px;flex-wrap:wrap;}
+.eyebrow-badge{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);
+  color:rgba(255,255,255,.95);font-size:11px;font-weight:800;letter-spacing:.12em;
+  text-transform:uppercase;padding:7px 18px;border-radius:100px;}
+.eyebrow-live{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,.8);
+  font-size:12px;font-weight:700;}
+.live-dot{width:7px;height:7px;border-radius:50%;background:#4ade80;
+  box-shadow:0 0 0 3px rgba(74,222,128,.25);animation:pulse 1.8s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.65;transform:scale(1.35);}}
+.banner h1{font-size:clamp(30px,4.5vw,56px);font-weight:900;color:#fff;line-height:1.08;
   margin-bottom:18px;letter-spacing:-.02em;}
-.banner h1 em{font-style:normal;color:#fce4ec;}
-.banner-sub{font-size:17px;color:rgba(255,255,255,.72);line-height:1.72;margin-bottom:34px;max-width:420px;}
+.banner h1 em{font-style:normal;opacity:.88;}
+.banner-desc{font-size:17px;color:rgba(255,255,255,.72);line-height:1.75;
+  margin-bottom:16px;max-width:430px;}
+.banner-promo{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.22);border-radius:8px;padding:10px 18px;
+  margin-bottom:32px;font-size:13px;color:rgba(255,255,255,.9);font-weight:700;}
+.banner-promo span{color:#fde68a;}
 .bbtns{display:flex;gap:12px;flex-wrap:wrap;}
-.bb-main{background:#fff;color:#1a0a10;font-weight:800;font-size:15px;padding:14px 32px;
-  border-radius:10px;transition:.18s;box-shadow:0 4px 20px rgba(0,0,0,.18);}
-.bb-main:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.24);}
-.bb-sec{background:rgba(255,255,255,.1);color:#fff;font-weight:700;font-size:15px;padding:14px 32px;
-  border-radius:10px;border:2px solid rgba(255,255,255,.28);transition:.2s;}
-.bb-sec:hover{background:rgba(255,255,255,.18);}
-.bvis{display:flex;justify-content:center;align-items:flex-end;gap:14px;}
-.bvis svg{filter:drop-shadow(0 10px 30px rgba(0,0,0,.32));}
+.bb-pri{display:inline-flex;align-items:center;gap:8px;background:#fff;font-weight:800;
+  font-size:15px;padding:15px 34px;border-radius:11px;transition:.2s;
+  box-shadow:0 4px 24px rgba(0,0,0,.2);}
+.bb-pri:hover{transform:translateY(-2px);box-shadow:0 8px 36px rgba(0,0,0,.28);}
+.bb-wa{display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#fff;
+  font-weight:800;font-size:15px;padding:15px 34px;border-radius:11px;transition:.2s;}
+.bb-wa:hover{background:#1db954;transform:translateY(-2px);}
+.bvis{display:flex;justify-content:center;align-items:flex-end;gap:10px;}
 
-/* TRUST */
-.trust{background:var(--light);border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;padding:14px 24px;}
-.trust-in{max-width:1240px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:center;gap:24px;}
-.tpill{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#1a0a10;}
-.tpill span{font-size:15px;}
+/* ── PROMO STRIP ── */
+.strip{background:#1a0a10;color:rgba(255,255,255,.75);padding:12px 24px;
+  overflow:hidden;}
+.strip-in{max-width:1280px;margin:0 auto;display:flex;justify-content:center;
+  flex-wrap:wrap;gap:32px;}
+.strip-item{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:700;}
+.strip-icon{font-size:18px;}
 
-/* PRODUCTS */
-.psec{padding:76px 24px;}
-.psec-in{max-width:1240px;margin:0 auto;}
-.sec-top{text-align:center;margin-bottom:52px;}
-.slabel{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--pri);margin-bottom:10px;}
-.stitle{font-size:clamp(24px,3.8vw,40px);font-weight:900;color:#1a0a10;line-height:1.18;}
-.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:26px;}
-.pcard{background:#fff;border:1px solid #e2e8f0;border-radius:18px;overflow:hidden;
-  position:relative;transition:.28s;}
-.pcard:hover{transform:translateY(-7px);box-shadow:0 20px 56px rgba(0,0,0,.1);border-color:rgba(0,0,0,.08);}
-.pbadge{position:absolute;top:14px;left:14px;z-index:2;background:var(--pri);color:#fff;
-  font-size:10px;font-weight:800;padding:5px 12px;border-radius:100px;letter-spacing:.05em;text-transform:uppercase;}
-.pimg{background:var(--light);display:flex;align-items:center;justify-content:center;
-  height:200px;overflow:hidden;}
-.pimg svg{max-height:185px;width:auto;transition:.35s;}
-.pcard:hover .pimg svg{transform:scale(1.08);}
-.pinfo{padding:20px;}
-.pname{font-size:16px;font-weight:800;color:#1a0a10;margin-bottom:6px;line-height:1.3;}
-.pdesc{font-size:13px;color:#64748b;line-height:1.6;margin-bottom:14px;}
-.prow{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
-.pold{font-size:13px;color:#94a3b8;}
-.pprice{font-size:24px;font-weight:900;}
-.add-btn{width:100%;background:var(--pri);color:#fff;border:none;border-radius:10px;
-  padding:13px;font-size:14px;font-weight:700;cursor:pointer;transition:.2s;letter-spacing:.02em;}
+/* ── PRODUCTS ── */
+.psec{padding:80px 24px;}
+.psec-in{max-width:1280px;margin:0 auto;}
+.sec-hd{text-align:center;margin-bottom:56px;}
+.sec-eyebrow{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--pri);margin-bottom:12px;}
+.sec-title{font-size:clamp(26px,4vw,42px);font-weight:900;color:#1a0a10;line-height:1.18;margin-bottom:12px;}
+.sec-sub{font-size:16px;color:#64748b;max-width:480px;margin:0 auto;}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:28px;}
+
+/* ── PRODUCT CARD ── */
+.pcard{background:#fff;border:1px solid #e8edf2;border-radius:20px;overflow:hidden;
+  position:relative;display:flex;flex-direction:column;
+  transition:transform .28s cubic-bezier(.34,1.56,.64,1),box-shadow .28s ease;}
+.pcard:hover{transform:translateY(-8px);box-shadow:0 24px 64px rgba(0,0,0,.12);border-color:rgba(0,0,0,.06);}
+.pbadge{position:absolute;top:14px;left:14px;z-index:3;background:var(--pri);color:#fff;
+  font-size:10px;font-weight:800;padding:5px 12px;border-radius:100px;letter-spacing:.06em;text-transform:uppercase;}
+.pbadge.sale{background:#ef4444;}
+.pbadge.new{background:#7c3aed;}
+.pimg{position:relative;background:var(--light);display:flex;align-items:center;
+  justify-content:center;height:210px;overflow:hidden;}
+.pimg svg{max-height:195px;width:auto;transition:transform .4s cubic-bezier(.34,1.56,.64,1);}
+.pcard:hover .pimg svg{transform:scale(1.1) translateY(-4px);}
+.pimg-overlay{position:absolute;bottom:0;left:0;right:0;height:50%;
+  background:linear-gradient(to top,rgba(0,0,0,.06),transparent);pointer-events:none;}
+.pwish{position:absolute;top:12px;right:12px;z-index:3;width:32px;height:32px;
+  background:rgba(255,255,255,.9);border-radius:50%;display:flex;align-items:center;
+  justify-content:center;font-size:16px;cursor:pointer;transition:.2s;border:none;
+  box-shadow:0 2px 8px rgba(0,0,0,.12);}
+.pwish:hover{transform:scale(1.15);}
+.pinfo{padding:20px;flex:1;display:flex;flex-direction:column;}
+.pname{font-size:15px;font-weight:800;color:#1a0a10;margin-bottom:5px;line-height:1.3;}
+.pdesc{font-size:12.5px;color:#64748b;line-height:1.6;margin-bottom:10px;flex:1;}
+.stars{display:flex;align-items:center;gap:2px;font-size:14px;color:#f59e0b;margin-bottom:10px;}
+.rc{font-size:12px;color:#94a3b8;margin-left:4px;}
+.prow{display:flex;align-items:center;gap:10px;margin-bottom:6px;}
+.pold{font-size:13px;color:#94a3b8;text-decoration:line-through;}
+.pprice{font-size:26px;font-weight:900;color:var(--pri);letter-spacing:-.02em;}
+.psold{font-size:12px;color:#94a3b8;margin-bottom:14px;}
+.psold strong{color:#64748b;}
+.add-btn{width:100%;background:var(--pri);color:#fff;border:none;border-radius:11px;
+  padding:14px;font-size:14px;font-weight:800;cursor:pointer;transition:.2s;
+  font-family:inherit;letter-spacing:.01em;}
 .add-btn:hover{opacity:.88;transform:translateY(-1px);}
-.add-btn:disabled{opacity:.65;cursor:default;transform:none;}
+.add-btn:disabled{opacity:.6;cursor:not-allowed;transform:none;}
 
-/* FOOTER */
-.footer{background:#1a0a10;color:rgba(255,255,255,.6);padding:60px 24px 0;}
-.footer-in{max-width:1240px;margin:0 auto;}
-.fhd{display:flex;align-items:center;gap:18px;padding-bottom:44px;
-  border-bottom:1px solid rgba(255,255,255,.07);margin-bottom:44px;}
-.fhd p{font-size:13px;color:rgba(255,255,255,.38);max-width:300px;margin-top:8px;line-height:1.65;}
-.fgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-bottom:44px;}
-.fcol h4{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+/* ── SOCIAL PROOF STRIP ── */
+.proof{background:#fff5f9;border-top:1px solid #e8edf2;border-bottom:1px solid #e8edf2;padding:28px 24px;}
+.proof-in{max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;
+  align-items:center;justify-content:center;gap:32px;}
+.proof-stat{text-align:center;}
+.ps-val{font-size:28px;font-weight:900;color:var(--pri);line-height:1;}
+.ps-lbl{font-size:12px;color:#64748b;font-weight:600;margin-top:3px;}
+
+/* ── PILLS ── */
+.pill{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;
+  padding:4px 10px;border-radius:100px;border:1.5px solid;margin-right:4px;margin-bottom:4px;}
+.pills{margin-bottom:10px;}
+
+/* ── FOOTER ── */
+.footer{background:#1a0a10;color:rgba(255,255,255,.55);padding:64px 24px 0;}
+.footer-in{max-width:1280px;margin:0 auto;}
+.fhd{display:flex;align-items:flex-start;gap:20px;padding-bottom:48px;
+  border-bottom:1px solid rgba(255,255,255,.07);margin-bottom:48px;flex-wrap:wrap;}
+.fhd-text h3{font-size:16px;font-weight:800;color:#f8fafc;margin-bottom:6px;}
+.fhd-text p{font-size:13px;color:rgba(255,255,255,.38);max-width:340px;line-height:1.7;}
+.fgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:44px;margin-bottom:48px;}
+.fcol h4{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
   color:rgba(255,255,255,.85);margin-bottom:18px;}
-.fcol a,.fcol p{font-size:13px;color:rgba(255,255,255,.48);line-height:1.9;display:block;
-  margin-bottom:3px;transition:.2s;}
+.fcol a,.fcol p{font-size:13px;color:rgba(255,255,255,.45);line-height:2;display:block;transition:.2s;}
 .fcol a:hover{color:var(--pri);}
 .fcol ul{list-style:none;}
-.fcol li{font-size:13px;color:rgba(255,255,255,.48);line-height:2;padding-left:16px;position:relative;}
-.fcol li::before{content:"&#10003;";position:absolute;left:0;color:#4ade80;font-size:11px;}
-.fbot{border-top:1px solid rgba(255,255,255,.06);padding:22px 0;text-align:center;
-  font-size:12px;color:rgba(255,255,255,.22);}
+.fcol li{font-size:13px;color:rgba(255,255,255,.45);line-height:2;
+  padding-left:18px;position:relative;}
+.fcol li::before{content:"\2713";position:absolute;left:0;color:#4ade80;font-size:11px;top:1px;}
+.fpay{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;}
+.fpay-chip{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.1);border-radius:7px;padding:7px 13px;
+  font-size:12px;font-weight:700;color:rgba(255,255,255,.7);}
+.fbot{border-top:1px solid rgba(255,255,255,.06);padding:24px 0;text-align:center;
+  font-size:12px;color:rgba(255,255,255,.2);}
 
-/* TOAST */
-#ctoast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);
-  background:#15803d;color:#fff;padding:14px 28px;border-radius:12px;font-size:14px;
-  font-weight:700;opacity:0;pointer-events:none;z-index:9999;transition:opacity .3s;
-  box-shadow:0 6px 24px rgba(0,0,0,.28);white-space:nowrap;}
-#ctoast.on{opacity:1;}
+/* ── TOAST ── */
+#ctoast{position:fixed;bottom:32px;left:50%;transform:translateX(-50%);
+  background:#15803d;color:#fff;padding:14px 32px;border-radius:14px;
+  font-size:14px;font-weight:800;opacity:0;pointer-events:none;z-index:9998;
+  transition:opacity .3s,transform .3s;box-shadow:0 8px 32px rgba(0,0,0,.3);
+  white-space:nowrap;transform:translateX(-50%) translateY(16px);}
+#ctoast.on{opacity:1;transform:translateX(-50%) translateY(0);}
 
-/* RESPONSIVE */
+/* ── RESPONSIVE ── */
 @media(max-width:960px){
   .banner-in{grid-template-columns:1fr;}
   .bvis{display:none;}
-  .fgrid{grid-template-columns:1fr 1fr;}
+  .fgrid{grid-template-columns:1fr 1fr;gap:28px;}
 }
-@media(max-width:600px){
+@media(max-width:640px){
   .nav-links{display:none;}
-  .fgrid{grid-template-columns:1fr;gap:28px;}
+  .fgrid{grid-template-columns:1fr;gap:24px;}
   .banner{padding:52px 20px;}
   .psec{padding:52px 20px;}
+  .pgrid{grid-template-columns:1fr 1fr;gap:16px;}
+  .pimg{height:160px;}
+  .pprice{font-size:20px;}
+  #float-wa{bottom:20px;right:20px;padding:12px 18px;}
 }
+@media(max-width:400px){
+  .pgrid{grid-template-columns:1fr;}
+}
+
 </style>
 </head>
 <body>
+
 <div id="bnav">
   <div class="bnav-wrap">
-    <div class="bnav-l">
-      <a href="/" class="bnav-home">&#8592; Voltar para Home</a>
-      <span class="bnav-tag">Exemplo de loja criada em 24h</span>
-    </div>
-    <a href="https://wa.me/5541998355581" target="_blank" class="bnav-wa">
-      &#128172; Quero uma loja assim
-    </a>
+    <a href="/" class="bnav-back">&#8592; Voltar para Home</a>
+    <span class="bnav-lbl">Exemplo criado em 24h &mdash; Loja Pronta 24h</span>
+    <a href="https://wa.me/5541998355581?text=Oi%2C%20vi%20o%20demo%20e%20quero%20uma%20loja%20assim!" target="_blank" class="bnav-wa">&#128172; Quero uma loja assim</a>
   </div>
 </div>
 
 <!-- NAVBAR -->
 <nav class="nav">
-  <div class="wrap nav-in">
-    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 58" width="230" height="58">
-  <!-- Hanger -->
-  <path d="M28 24 Q28 16 35 16 Q42 16 42 24 L58 38 L12 38Z" fill="none" stroke="#e91e8c" stroke-width="2.5" stroke-linejoin="round"/>
-  <line x1="35" y1="16" x2="35" y2="11" stroke="#e91e8c" stroke-width="2.2"/>
-  <circle cx="35" cy="9" r="3" fill="none" stroke="#e91e8c" stroke-width="2"/>
-  <!-- Divider -->
-  <line x1="72" y1="12" x2="72" y2="46" stroke="rgba(233,30,140,0.22)" stroke-width="1.5"/>
-  <text x="82" y="34" font-family="Georgia,'Times New Roman',serif" font-size="20" font-weight="700" fill="#f8fafc" letter-spacing="1.5">BELLA MODA</text>
-  <text x="82" y="50" font-family="Georgia,serif" font-size="11" fill="#e91e8c" letter-spacing="5">STORE</text>
-</svg></a>
+  <div class="nav-in">
+    <div class="nav-logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" width="220" height="55">
+  <path d="M28 26 Q28 17 36 17 Q44 17 44 26 L62 40 L10 40Z" fill="none" stroke="#e91e8c" stroke-width="2.5" stroke-linejoin="round"/>
+  <line x1="36" y1="17" x2="36" y2="11" stroke="#e91e8c" stroke-width="2.2"/>
+  <circle cx="36" cy="9" r="3.2" fill="none" stroke="#e91e8c" stroke-width="2"/>
+  <line x1="76" y1="13" x2="76" y2="47" stroke="rgba(233,30,140,.2)" stroke-width="1.5"/>
+  <text x="86" y="35" font-family="Georgia,'Times New Roman',serif" font-size="19" font-weight="700" fill="#1a0a10" letter-spacing="1.5">BELLA MODA</text>
+  <text x="86" y="51" font-family="Georgia,serif" font-size="11" fill="#e91e8c" letter-spacing="5">STORE</text>
+</svg>
+    </div>
     <ul class="nav-links">
       <li><a href="#produtos">Produtos</a></li>
       <li><a href="#sobre">Sobre</a></li>
       <li><a href="#contato">Contato</a></li>
     </ul>
     <div class="nav-r">
-      <a href="https://wa.me/5541998355581" target="_blank" class="nav-wa">&#128172; WhatsApp</a>
       <div class="nav-cart">
         <button class="cart-btn">&#128722; Carrinho</button>
         <div id="cbadge"></div>
@@ -187,247 +256,339 @@ a{text-decoration:none;color:inherit;}
 </nav>
 
 <!-- BANNER -->
-<section class="banner">
+<section class="banner" style="background:linear-gradient(135deg,#880e4f 0%,#c2185b 55%,#e91e8c 100%);">
   <div class="banner-in">
     <div>
-      <div class="btag">&#127987; Nova Cole&#231;&#227;o Feminina 2026</div>
+      <div class="banner-eyebrow">
+        <span class="eyebrow-badge">&#127987; Nova Cole&#231;&#227;o Feminina 2026</span>
+        <span class="eyebrow-live"><span class="live-dot"></span>Loja ativa</span>
+      </div>
       <h1>Moda que <em>valoriza</em><br>cada mulher</h1>
-      <p class="banner-sub">Pe&#231;as exclusivas com tecidos premium. Frete Gr&#225;tis acima de R$149. Estilo e conforto do jeito que voc&#234; merece.</p>
+      <p class="banner-desc">Pe&#231;as exclusivas com tecidos premium. Estilo, conforto e elegância para voc&#234; arrasar todos os dias.</p>
+      <div class="banner-promo">&#127381; Frete Gr&#225;tis acima de R$149 &nbsp;&bull;&nbsp; <span>Use: MODA10</span> &nbsp;&#8594;&nbsp; 10% OFF</div>
       <div class="bbtns">
-        <a href="#produtos" class="bb-main">Ver Cole&#231;&#227;o &#8594;</a>
-        <a href="https://wa.me/5541998355581" target="_blank" class="bb-sec">&#128172; WhatsApp</a>
+        <a href="#produtos" class="bb-pri" style="color:#1a0a10;">Ver Cole&#231;&#227;o &#8594;</a>
+        <a href="https://wa.me/5541998355581?text=Oi%2C%20vi%20o%20demo%20e%20quero%20uma%20loja%20assim!" target="_blank" class="bb-wa">&#128172; Quero uma loja assim</a>
       </div>
     </div>
-    <div class="bvis">
-  <div style="transform:rotate(-8deg) translateY(14px);filter:drop-shadow(0 16px 32px rgba(0,0,0,.35));"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 230">
+    <div class="bvis"><div style="transform:rotate(-10deg) translateY(16px);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 260">
 <defs>
-  <linearGradient id="dg1" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0%" stop-color="#d81b60"/>
-    <stop offset="100%" stop-color="#f48fb1"/>
+  <linearGradient id="vg" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#f06292"/><stop offset="100%" stop-color="#ad1457"/>
   </linearGradient>
-  <filter id="ds1"><feDropShadow dx="0" dy="5" stdDeviation="7" flood-opacity=".22"/></filter>
+  <linearGradient id="vg2" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#e91e8c" stop-opacity=".5"/><stop offset="100%" stop-color="#880e4f" stop-opacity=".05"/>
+  </linearGradient>
+  <filter id="vsh"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#880e4f" flood-opacity=".3"/></filter>
+</defs>
+<!-- Main body -->
+<path d="M70 56 Q62 48 48 40 L26 55 L38 84 L52 73 L52 218 Q52 228 64 228 L136 228 Q148 228 148 218 L148 73 L162 84 L174 55 L152 40 Q138 48 130 56 Q116 46 100 44 Q84 46 70 56Z"
+  fill="url(#vg)" filter="url(#vsh)"/>
+<!-- Skirt flare gradient overlay -->
+<path d="M52 130 L52 218 Q52 228 64 228 L136 228 Q148 228 148 218 L148 130Z" fill="url(#vg2)"/>
+<!-- Bodice neckline V -->
+<path d="M78 54 Q100 76 122 54" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2"/>
+<!-- Waist seam -->
+<rect x="52" y="118" width="96" height="6" fill="rgba(255,255,255,.2)" rx="3"/>
+<!-- Floral print group -->
+<g opacity=".35" fill="#fff">
+  <circle cx="74" cy="148" r="6"/><circle cx="74" cy="148" r="3" fill="#f06292" opacity="1"/>
+  <circle cx="100" cy="162" r="6"/><circle cx="100" cy="162" r="3" fill="#f06292" opacity="1"/>
+  <circle cx="126" cy="148" r="6"/><circle cx="126" cy="148" r="3" fill="#f06292" opacity="1"/>
+  <circle cx="84" cy="176" r="5"/><circle cx="116" cy="178" r="5"/>
+  <circle cx="100" cy="192" r="5"/>
+</g>
+<!-- Shoulder straps -->
+<rect x="84" y="44" width="10" height="18" rx="5" fill="#c2185b"/>
+<rect x="106" y="44" width="10" height="18" rx="5" fill="#c2185b"/>
+<!-- Shine highlights -->
+<ellipse cx="68" cy="70" rx="14" ry="8" fill="rgba(255,255,255,.18)" transform="rotate(-20,68,70)"/>
+</svg></div><div style="transform:scale(.85);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 210">
+<defs>
+  <linearGradient id="blg" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#1565c0"/><stop offset="100%" stop-color="#0d47a1"/>
+  </linearGradient>
+  <filter id="blsh"><feDropShadow dx="0" dy="6" stdDeviation="9" flood-color="#0d47a1" flood-opacity=".3"/></filter>
 </defs>
 <!-- Body -->
-<path d="M62 52 Q58 46 46 38 L24 52 L36 80 L48 70 L48 212 Q48 222 60 222 L120 222 Q132 222 132 212 L132 70 L144 80 L156 52 L134 38 Q122 46 118 52 Q106 44 90 42 Q74 44 62 52Z"
-  fill="url(#dg1)" filter="url(#ds1)"/>
-<!-- Bodice neckline -->
-<path d="M74 50 Q90 68 106 50" fill="none" stroke="#fff" stroke-width="1.8" opacity=".5"/>
-<!-- Waist ribbon -->
-<rect x="48" y="108" width="84" height="9" fill="#fff" opacity=".22" rx="3"/>
-<!-- Floral print dots -->
-<circle cx="72" cy="140" r="5" fill="#fff" opacity=".3"/>
-<circle cx="90" cy="155" r="5" fill="#fff" opacity=".3"/>
-<circle cx="108" cy="140" r="5" fill="#fff" opacity=".3"/>
-<circle cx="80" cy="168" r="4" fill="#fff" opacity=".2"/>
-<circle cx="100" cy="172" r="4" fill="#fff" opacity=".2"/>
-<circle cx="90" cy="126" r="3.5" fill="#fff" opacity=".25"/>
-</svg></div>
-  <div style="transform:scale(.88) translateY(-8px);filter:drop-shadow(0 12px 24px rgba(0,0,0,.3));"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 200">
-<defs>
-  <linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0%" stop-color="#880e4f"/><stop offset="100%" stop-color="#e91e8c"/>
-  </linearGradient>
-  <filter id="bf1"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity=".2"/></filter>
-</defs>
-<!-- Body -->
-<path d="M62 50 L46 36 L14 54 L32 96 L50 84 L50 172 Q50 182 62 182 L118 182 Q130 182 130 172 L130 84 L148 96 L166 54 L134 36 L118 50 Q106 42 90 40 Q74 42 62 50Z"
-  fill="url(#bg1)" filter="url(#bf1)"/>
-<!-- Puff sleeve L bubble -->
-<ellipse cx="30" cy="72" rx="20" ry="14" fill="#e91e8c" opacity=".45"/>
-<!-- Puff sleeve R bubble -->
-<ellipse cx="150" cy="72" rx="20" ry="14" fill="#e91e8c" opacity=".45"/>
+<path d="M64 52 L46 36 L12 56 L30 98 L50 86 L50 180 Q50 190 62 190 L138 190 Q150 190 150 180 L150 86 L170 98 L188 56 L154 36 L136 52 Q120 44 100 42 Q80 44 64 52Z"
+  fill="url(#blg)" filter="url(#blsh)"/>
+<!-- Puff sleeve bubble left -->
+<ellipse cx="28" cy="74" rx="22" ry="16" fill="#1976d2" opacity=".55"/>
+<path d="M10 70 Q16 86 46 86" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="1.5"/>
+<!-- Puff sleeve bubble right -->
+<ellipse cx="172" cy="74" rx="22" ry="16" fill="#1976d2" opacity=".55"/>
+<path d="M190 70 Q184 86 154 86" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="1.5"/>
 <!-- V-neck -->
-<path d="M78 48 Q90 68 102 48" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="2"/>
-<!-- Texture lines -->
-<line x1="50" y1="100" x2="130" y2="100" stroke="rgba(255,255,255,.1)" stroke-width="1"/>
-<line x1="50" y1="120" x2="130" y2="120" stroke="rgba(255,255,255,.1)" stroke-width="1"/>
-<line x1="50" y1="140" x2="130" y2="140" stroke="rgba(255,255,255,.1)" stroke-width="1"/>
-</svg></div>
-</div>
+<path d="M80 50 Q100 72 120 50" fill="none" stroke="rgba(255,255,255,.38)" stroke-width="2"/>
+<!-- Fabric texture horizontal lines -->
+<line x1="50" y1="106" x2="150" y2="106" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+<line x1="50" y1="126" x2="150" y2="126" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+<line x1="50" y1="146" x2="150" y2="146" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+<line x1="50" y1="166" x2="150" y2="166" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+<!-- Shine -->
+<ellipse cx="66" cy="66" rx="16" ry="9" fill="rgba(255,255,255,.2)" transform="rotate(-22,66,66)"/>
+</svg></div></div>
   </div>
 </section>
 
-<!-- TRUST STRIP -->
-<div class="trust">
-  <div class="trust-in"><div class="tpill"><span>&#9989;</span>Frete gr&#225;tis acima de R$149</div><div class="tpill"><span>&#128260;</span>Troca gr&#225;tis em 30 dias</div><div class="tpill"><span>&#128274;</span>Compra 100% segura</div><div class="tpill"><span>&#9889;</span>Entrega em 2&#8211;5 dias</div></div>
+<!-- PROMO STRIP -->
+<div class="strip">
+  <div class="strip-in">
+    <div class="strip-item"><span class="strip-icon">&#9989;</span>Frete gr&#225;tis acima de R$149</div><div class="strip-item"><span class="strip-icon">&#128260;</span>Troca gratuita em 30 dias</div><div class="strip-item"><span class="strip-icon">&#128274;</span>Compra 100% segura</div><div class="strip-item"><span class="strip-icon">&#9889;</span>Entrega 2&#8211;5 dias</div>
+  </div>
 </div>
 
 <!-- PRODUCTS -->
 <section class="psec" id="produtos">
   <div class="psec-in">
-    <div class="sec-top">
-      <p class="slabel">Cole&#231;&#227;o</p>
-      <h2 class="stitle">Pe&#231;as em Destaque</h2>
+    <div class="sec-hd">
+      <p class="sec-eyebrow">Cole&#231;&#227;o 2026</p>
+      <h2 class="sec-title">Pe&#231;as em Destaque</h2>
+      <p class="sec-sub">Curadoria especial de moda feminina premium para todas as ocasi&#245;es.</p>
     </div>
-    <div class="pgrid"><div class="pcard">
-  <div class="pbadge">OFERTA</div>
-  <div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 230">
+    <div class="pgrid">
+      <div class="pcard">
+<div class="pbadge sale">OFERTA</div>
+<button class="pwish" title="Favoritar">&#9825;</button>
+<div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 260">
 <defs>
-  <linearGradient id="dg1" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0%" stop-color="#d81b60"/>
-    <stop offset="100%" stop-color="#f48fb1"/>
+  <linearGradient id="vg" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#f06292"/><stop offset="100%" stop-color="#ad1457"/>
   </linearGradient>
-  <filter id="ds1"><feDropShadow dx="0" dy="5" stdDeviation="7" flood-opacity=".22"/></filter>
+  <linearGradient id="vg2" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#e91e8c" stop-opacity=".5"/><stop offset="100%" stop-color="#880e4f" stop-opacity=".05"/>
+  </linearGradient>
+  <filter id="vsh"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#880e4f" flood-opacity=".3"/></filter>
 </defs>
-<!-- Body -->
-<path d="M62 52 Q58 46 46 38 L24 52 L36 80 L48 70 L48 212 Q48 222 60 222 L120 222 Q132 222 132 212 L132 70 L144 80 L156 52 L134 38 Q122 46 118 52 Q106 44 90 42 Q74 44 62 52Z"
-  fill="url(#dg1)" filter="url(#ds1)"/>
-<!-- Bodice neckline -->
-<path d="M74 50 Q90 68 106 50" fill="none" stroke="#fff" stroke-width="1.8" opacity=".5"/>
-<!-- Waist ribbon -->
-<rect x="48" y="108" width="84" height="9" fill="#fff" opacity=".22" rx="3"/>
-<!-- Floral print dots -->
-<circle cx="72" cy="140" r="5" fill="#fff" opacity=".3"/>
-<circle cx="90" cy="155" r="5" fill="#fff" opacity=".3"/>
-<circle cx="108" cy="140" r="5" fill="#fff" opacity=".3"/>
-<circle cx="80" cy="168" r="4" fill="#fff" opacity=".2"/>
-<circle cx="100" cy="172" r="4" fill="#fff" opacity=".2"/>
-<circle cx="90" cy="126" r="3.5" fill="#fff" opacity=".25"/>
-</svg></div>
-  <div class="pinfo">
-    <h3 class="pname">Vestido Floral</h3>
-    <p class="pdesc">Tecido leve com estampa floral exclusiva. Perfeito para o dia a dia.</p>
-    <div class="prow"><s class="pold">R$259,90</s><span class="pprice" style="color:#e91e8c">R$189,90</span></div>
-    <button class="add-btn" style="--pri:#e91e8c">&#128722; Adicionar ao Carrinho</button>
-  </div>
+<!-- Main body -->
+<path d="M70 56 Q62 48 48 40 L26 55 L38 84 L52 73 L52 218 Q52 228 64 228 L136 228 Q148 228 148 218 L148 73 L162 84 L174 55 L152 40 Q138 48 130 56 Q116 46 100 44 Q84 46 70 56Z"
+  fill="url(#vg)" filter="url(#vsh)"/>
+<!-- Skirt flare gradient overlay -->
+<path d="M52 130 L52 218 Q52 228 64 228 L136 228 Q148 228 148 218 L148 130Z" fill="url(#vg2)"/>
+<!-- Bodice neckline V -->
+<path d="M78 54 Q100 76 122 54" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2"/>
+<!-- Waist seam -->
+<rect x="52" y="118" width="96" height="6" fill="rgba(255,255,255,.2)" rx="3"/>
+<!-- Floral print group -->
+<g opacity=".35" fill="#fff">
+  <circle cx="74" cy="148" r="6"/><circle cx="74" cy="148" r="3" fill="#f06292" opacity="1"/>
+  <circle cx="100" cy="162" r="6"/><circle cx="100" cy="162" r="3" fill="#f06292" opacity="1"/>
+  <circle cx="126" cy="148" r="6"/><circle cx="126" cy="148" r="3" fill="#f06292" opacity="1"/>
+  <circle cx="84" cy="176" r="5"/><circle cx="116" cy="178" r="5"/>
+  <circle cx="100" cy="192" r="5"/>
+</g>
+<!-- Shoulder straps -->
+<rect x="84" y="44" width="10" height="18" rx="5" fill="#c2185b"/>
+<rect x="106" y="44" width="10" height="18" rx="5" fill="#c2185b"/>
+<!-- Shine highlights -->
+<ellipse cx="68" cy="70" rx="14" ry="8" fill="rgba(255,255,255,.18)" transform="rotate(-20,68,70)"/>
+</svg><div class="pimg-overlay"></div></div>
+<div class="pinfo">
+  <div class="pname">Vestido Floral Premium</div>
+  <div class="pdesc">Tecido leve e flui&#769;do com estampa floral exclusiva. Ideal para o dia a dia.</div>
+  <div class="stars">&#9733;&#9733;&#9733;&#9733;<span style="opacity:.4">&#9733;</span> <span class="rc">(214)</span></div>
+  <div class="pills"><span class="pill" style="border-color:#16a34a;color:#16a34a;">&#128230; Frete gr&#225;tis</span><span class="pill" style="border-color:#16a34a;color:#16a34a;">&#9989; Em estoque</span></div>
+  <div class="prow"><s class="pold">R$259,90</s><span class="pprice">R$189,90</span></div>
+  <div class="psold"><strong>47 vendidos</strong> esta semana</div>
+  <button class="add-btn">&#128722; Adicionar ao Carrinho</button>
+</div>
 </div><div class="pcard">
-  
-  <div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 230">
+
+<button class="pwish" title="Favoritar">&#9825;</button>
+<div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 260">
 <defs>
-  <linearGradient id="cg1" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#795548"/><stop offset="100%" stop-color="#a1887f"/>
+  <linearGradient id="cjg" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#bcaaa4"/><stop offset="100%" stop-color="#6d4c41"/>
   </linearGradient>
+  <filter id="cjsh"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-opacity=".22"/></filter>
 </defs>
-<!-- Top -->
-<path d="M56 50 L36 62 L46 88 L56 80 L56 128 L124 128 L124 80 L134 88 L144 62 L124 50 Q112 42 90 40 Q68 42 56 50Z" fill="url(#cg1)" opacity=".95"/>
-<!-- Top buttons -->
-<circle cx="90" cy="72" r="3" fill="rgba(255,255,255,.4)"/>
-<circle cx="90" cy="86" r="3" fill="rgba(255,255,255,.4)"/>
-<circle cx="90" cy="100" r="3" fill="rgba(255,255,255,.4)"/>
+<!-- Top blusa -->
+<path d="M64 52 L44 64 L54 90 L64 82 L64 130 L136 130 L136 82 L146 90 L156 64 L136 52 Q120 44 100 42 Q80 44 64 52Z"
+  fill="url(#cjg)" filter="url(#cjsh)"/>
+<!-- V collar -->
+<path d="M82 50 Q100 70 118 50" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="2"/>
+<!-- Buttons -->
+<circle cx="100" cy="74" r="3.5" fill="rgba(255,255,255,.5)"/>
+<circle cx="100" cy="88" r="3.5" fill="rgba(255,255,255,.5)"/>
+<circle cx="100" cy="102" r="3.5" fill="rgba(255,255,255,.5)"/>
+<circle cx="100" cy="116" r="3.5" fill="rgba(255,255,255,.5)"/>
 <!-- Waistband -->
-<rect x="54" y="128" width="72" height="10" fill="#795548" rx="3"/>
+<rect x="62" y="130" width="76" height="12" fill="#5d4037" rx="4"/>
+<rect x="90" y="126" width="20" height="20" rx="5" fill="#795548" stroke="rgba(255,255,255,.3)" stroke-width="1.5"/>
 <!-- Pants left leg -->
-<path d="M54 138 L48 222 Q74 230 90 222 L90 138Z" fill="#a1887f" opacity=".9"/>
+<path d="M62 142 L56 252 Q76 260 100 252 L100 142Z" fill="#8d6e63" opacity=".95"/>
 <!-- Pants right leg -->
-<path d="M126 138 L132 222 Q106 230 90 222 L90 138Z" fill="#795548" opacity=".9"/>
+<path d="M138 142 L144 252 Q124 260 100 252 L100 142Z" fill="#795548" opacity=".95"/>
 <!-- Center seam -->
-<line x1="90" y1="140" x2="90" y2="222" stroke="rgba(255,255,255,.15)" stroke-width="1.5"/>
-</svg></div>
-  <div class="pinfo">
-    <h3 class="pname">Conjunto Feminino</h3>
-    <p class="pdesc">Conjunto cal&#231;a + blusa em linho premium. Elegante e confort&#225;vel.</p>
-    <div class="prow"><s class="pold">R$329,00</s><span class="pprice" style="color:#e91e8c">R$247,00</span></div>
-    <button class="add-btn" style="--pri:#e91e8c">&#128722; Adicionar ao Carrinho</button>
-  </div>
+<line x1="100" y1="144" x2="100" y2="250" stroke="rgba(255,255,255,.14)" stroke-width="1.5"/>
+<!-- Shine on top -->
+<ellipse cx="72" cy="68" rx="12" ry="7" fill="rgba(255,255,255,.18)" transform="rotate(-15,72,68)"/>
+</svg><div class="pimg-overlay"></div></div>
+<div class="pinfo">
+  <div class="pname">Conjunto Linho Feminino</div>
+  <div class="pdesc">Conjunto cal&#231;a e blusa em linho premium. Elegante e confort&#225;vel para qualquer ocasi&#227;o.</div>
+  <div class="stars">&#9733;&#9733;&#9733;&#9733;<span style="opacity:.4">&#9733;</span> <span class="rc">(156)</span></div>
+  <div class="pills"><span class="pill" style="border-color:#16a34a;color:#16a34a;">&#128260; 30 dias de troca</span><span class="pill" style="border-color:#16a34a;color:#16a34a;">&#9889; Entrega 2&#8211;4 dias</span></div>
+  <div class="prow"><s class="pold">R$329,00</s><span class="pprice">R$247,00</span></div>
+  <div class="psold"><strong>28 vendidos</strong> esta semana</div>
+  <button class="add-btn">&#128722; Adicionar ao Carrinho</button>
+</div>
 </div><div class="pcard">
-  <div class="pbadge">NOVO</div>
-  <div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 200">
+<div class="pbadge new">NOVO</div>
+<button class="pwish" title="Favoritar">&#9825;</button>
+<div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 210">
 <defs>
-  <linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0%" stop-color="#1565c0"/><stop offset="100%" stop-color="#64b5f6"/>
+  <linearGradient id="blg" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#1565c0"/><stop offset="100%" stop-color="#0d47a1"/>
   </linearGradient>
-  <filter id="bf1"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity=".2"/></filter>
+  <filter id="blsh"><feDropShadow dx="0" dy="6" stdDeviation="9" flood-color="#0d47a1" flood-opacity=".3"/></filter>
 </defs>
 <!-- Body -->
-<path d="M62 50 L46 36 L14 54 L32 96 L50 84 L50 172 Q50 182 62 182 L118 182 Q130 182 130 172 L130 84 L148 96 L166 54 L134 36 L118 50 Q106 42 90 40 Q74 42 62 50Z"
-  fill="url(#bg1)" filter="url(#bf1)"/>
-<!-- Puff sleeve L bubble -->
-<ellipse cx="30" cy="72" rx="20" ry="14" fill="#64b5f6" opacity=".45"/>
-<!-- Puff sleeve R bubble -->
-<ellipse cx="150" cy="72" rx="20" ry="14" fill="#64b5f6" opacity=".45"/>
+<path d="M64 52 L46 36 L12 56 L30 98 L50 86 L50 180 Q50 190 62 190 L138 190 Q150 190 150 180 L150 86 L170 98 L188 56 L154 36 L136 52 Q120 44 100 42 Q80 44 64 52Z"
+  fill="url(#blg)" filter="url(#blsh)"/>
+<!-- Puff sleeve bubble left -->
+<ellipse cx="28" cy="74" rx="22" ry="16" fill="#1976d2" opacity=".55"/>
+<path d="M10 70 Q16 86 46 86" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="1.5"/>
+<!-- Puff sleeve bubble right -->
+<ellipse cx="172" cy="74" rx="22" ry="16" fill="#1976d2" opacity=".55"/>
+<path d="M190 70 Q184 86 154 86" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="1.5"/>
 <!-- V-neck -->
-<path d="M78 48 Q90 68 102 48" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="2"/>
-<!-- Texture lines -->
-<line x1="50" y1="100" x2="130" y2="100" stroke="rgba(255,255,255,.1)" stroke-width="1"/>
-<line x1="50" y1="120" x2="130" y2="120" stroke="rgba(255,255,255,.1)" stroke-width="1"/>
-<line x1="50" y1="140" x2="130" y2="140" stroke="rgba(255,255,255,.1)" stroke-width="1"/>
-</svg></div>
-  <div class="pinfo">
-    <h3 class="pname">Blusa Feminina</h3>
-    <p class="pdesc">Blusa com mangas puff e tecido de alta qualidade. Looks modernos.</p>
-    <div class="prow"><span class="pprice" style="color:#e91e8c">R$129,90</span></div>
-    <button class="add-btn" style="--pri:#e91e8c">&#128722; Adicionar ao Carrinho</button>
-  </div>
+<path d="M80 50 Q100 72 120 50" fill="none" stroke="rgba(255,255,255,.38)" stroke-width="2"/>
+<!-- Fabric texture horizontal lines -->
+<line x1="50" y1="106" x2="150" y2="106" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+<line x1="50" y1="126" x2="150" y2="126" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+<line x1="50" y1="146" x2="150" y2="146" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+<line x1="50" y1="166" x2="150" y2="166" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+<!-- Shine -->
+<ellipse cx="66" cy="66" rx="16" ry="9" fill="rgba(255,255,255,.2)" transform="rotate(-22,66,66)"/>
+</svg><div class="pimg-overlay"></div></div>
+<div class="pinfo">
+  <div class="pname">Blusa Manga Puff Azul</div>
+  <div class="pdesc">Blusa moderna com mangas puff e tecido de alta qualidade. Looks sofisticados.</div>
+  <div class="stars">&#9733;&#9733;&#9733;&#9733;<span style="opacity:.4">&#9733;</span> <span class="rc">(89)</span></div>
+  <div class="pills"><span class="pill" style="border-color:#16a34a;color:#16a34a;">&#9989; Em estoque</span></div>
+  <div class="prow"><span class="pprice">R$129,90</span></div>
+  <div class="psold"><strong>19 vendidos</strong> esta semana</div>
+  <button class="add-btn">&#128722; Adicionar ao Carrinho</button>
+</div>
 </div><div class="pcard">
-  
-  <div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 240">
+
+<button class="pwish" title="Favoritar">&#9825;</button>
+<div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 250">
 <defs>
-  <linearGradient id="sg1" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#283593"/><stop offset="100%" stop-color="#5c6bc0"/>
+  <linearGradient id="sag" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#303f9f"/><stop offset="100%" stop-color="#1a237e"/>
   </linearGradient>
+  <linearGradient id="sag2" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="rgba(255,255,255,.06)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+  </linearGradient>
+  <filter id="sash"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#1a237e" flood-opacity=".3"/></filter>
 </defs>
 <!-- Waistband -->
-<rect x="52" y="36" width="76" height="18" fill="#283593" rx="5"/>
-<!-- Zipper -->
-<rect x="87" y="38" width="6" height="13" fill="rgba(255,255,255,.25)" rx="2"/>
+<rect x="54" y="36" width="92" height="20" fill="#283593" rx="6"/>
+<!-- Zipper detail -->
+<rect x="97" y="38" width="6" height="16" fill="rgba(255,255,255,.25)" rx="2"/>
+<rect x="94" y="46" width="12" height="5" fill="rgba(255,255,255,.15)" rx="2"/>
 <!-- A-line skirt -->
-<path d="M52 54 Q32 100 20 222 L160 222 Q148 100 128 54Z" fill="url(#sg1)"/>
-<!-- Pleats -->
-<line x1="90" y1="56" x2="90" y2="220" stroke="rgba(255,255,255,.1)" stroke-width="1.5"/>
-<line x1="68" y1="58" x2="52" y2="220" stroke="rgba(255,255,255,.07)" stroke-width="1.5"/>
-<line x1="112" y1="58" x2="128" y2="220" stroke="rgba(255,255,255,.07)" stroke-width="1.5"/>
-<!-- Bottom hem detail -->
-<line x1="20" y1="216" x2="160" y2="216" stroke="rgba(255,255,255,.2)" stroke-width="2"/>
-</svg></div>
-  <div class="pinfo">
-    <h3 class="pname">Saia Midi</h3>
-    <p class="pdesc">Saia midi plissada azul-marinho. Caimento perfeito para qualquer corpo.</p>
-    <div class="prow"><s class="pold">R$199,00</s><span class="pprice" style="color:#e91e8c">R$159,00</span></div>
-    <button class="add-btn" style="--pri:#e91e8c">&#128722; Adicionar ao Carrinho</button>
-  </div>
+<path d="M54 56 Q30 108 16 236 L184 236 Q170 108 146 56Z" fill="url(#sag)" filter="url(#sash)"/>
+<!-- Overlay gradient for depth -->
+<path d="M54 56 Q30 108 16 236 L184 236 Q170 108 146 56Z" fill="url(#sag2)"/>
+<!-- Pleat lines -->
+<line x1="100" y1="58" x2="100" y2="234" stroke="rgba(255,255,255,.09)" stroke-width="1.5"/>
+<line x1="76"  y1="60" x2="58"  y2="234" stroke="rgba(255,255,255,.06)" stroke-width="1.5"/>
+<line x1="124" y1="60" x2="142" y2="234" stroke="rgba(255,255,255,.06)" stroke-width="1.5"/>
+<line x1="60"  y1="62" x2="32"  y2="234" stroke="rgba(255,255,255,.04)" stroke-width="1.5"/>
+<line x1="140" y1="62" x2="168" y2="234" stroke="rgba(255,255,255,.04)" stroke-width="1.5"/>
+<!-- Bottom hem -->
+<line x1="16" y1="230" x2="184" y2="230" stroke="rgba(255,255,255,.22)" stroke-width="2"/>
+<!-- Shine on waistband -->
+<ellipse cx="80" cy="45" rx="18" ry="5" fill="rgba(255,255,255,.2)"/>
+</svg><div class="pimg-overlay"></div></div>
+<div class="pinfo">
+  <div class="pname">Saia Midi Plissada</div>
+  <div class="pdesc">Saia midi azul-marinho com pliss&#233; perfeito. Caimento elegante em qualquer corpo.</div>
+  <div class="stars">&#9733;&#9733;&#9733;&#9733;<span style="opacity:.4">&#9733;</span> <span class="rc">(102)</span></div>
+  <div class="pills"><span class="pill" style="border-color:#16a34a;color:#16a34a;">&#128230; Frete gr&#225;tis</span></div>
+  <div class="prow"><s class="pold">R$199,00</s><span class="pprice">R$159,00</span></div>
+  <div class="psold"><strong>31 vendidos</strong> esta semana</div>
+  <button class="add-btn">&#128722; Adicionar ao Carrinho</button>
+</div>
 </div><div class="pcard">
-  <div class="pbadge">TOP</div>
-  <div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 260">
+<div class="pbadge ">TOP</div>
+<button class="pwish" title="Favoritar">&#9825;</button>
+<div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 272">
 <defs>
-  <linearGradient id="mg1" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0%" stop-color="#4a148c"/><stop offset="100%" stop-color="#9c27b0"/>
+  <linearGradient id="mcg" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#7b1fa2"/><stop offset="100%" stop-color="#4a148c"/>
   </linearGradient>
+  <filter id="mcsh"><feDropShadow dx="0" dy="7" stdDeviation="9" flood-color="#4a148c" flood-opacity=".3"/></filter>
 </defs>
 <!-- Upper body -->
-<path d="M62 50 L46 38 L24 54 L38 84 L50 76 L50 132 L130 132 L130 76 L142 84 L156 54 L134 38 L118 50 Q106 42 90 40 Q74 42 62 50Z" fill="url(#mg1)"/>
+<path d="M64 52 L46 38 L24 56 L38 88 L52 78 L52 136 L148 136 L148 78 L162 88 L176 56 L154 38 L136 52 Q120 44 100 42 Q80 44 64 52Z"
+  fill="url(#mcg)" filter="url(#mcsh)"/>
 <!-- Belt -->
-<rect x="48" y="128" width="84" height="10" fill="#4a148c" rx="4"/>
-<rect x="82" y="124" width="16" height="18" rx="4" fill="#9c27b0" stroke="rgba(255,255,255,.3)" stroke-width="1"/>
+<rect x="50" y="132" width="100" height="13" fill="#6a1b9a" rx="5"/>
+<!-- Belt buckle -->
+<rect x="88" y="128" width="24" height="21" rx="6" fill="#9c27b0" stroke="rgba(255,255,255,.3)" stroke-width="1.5"/>
+<rect x="94" y="133" width="12" height="11" rx="3" fill="rgba(255,255,255,.2)"/>
 <!-- Left leg -->
-<path d="M48 138 L42 248 Q66 256 90 248 L90 138Z" fill="#4a148c" opacity=".9"/>
+<path d="M50 145 L44 260 Q68 268 100 260 L100 145Z" fill="#6a1b9a" opacity=".95"/>
 <!-- Right leg -->
-<path d="M132 138 L138 248 Q114 256 90 248 L90 138Z" fill="#9c27b0" opacity=".9"/>
+<path d="M150 145 L156 260 Q132 268 100 260 L100 145Z" fill="#7b1fa2" opacity=".95"/>
 <!-- V neck -->
-<path d="M76 48 Q90 70 104 48" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="2"/>
-</svg></div>
-  <div class="pinfo">
-    <h3 class="pname">Macac&#227;o Feminino</h3>
-    <p class="pdesc">Macac&#227;o com cinto incluso. Vers&#225;til e estiloso para qualquer ocasi&#227;o.</p>
-    <div class="prow"><s class="pold">R$289,00</s><span class="pprice" style="color:#e91e8c">R$219,00</span></div>
-    <button class="add-btn" style="--pri:#e91e8c">&#128722; Adicionar ao Carrinho</button>
-  </div>
-</div></div>
+<path d="M80 50 Q100 74 120 50" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="2"/>
+<!-- Lapel left -->
+<path d="M80 50 L70 70 L52 78 L64 52Z" fill="rgba(255,255,255,.06)"/>
+<!-- Lapel right -->
+<path d="M120 50 L130 70 L148 78 L136 52Z" fill="rgba(255,255,255,.06)"/>
+<!-- Center seam -->
+<line x1="100" y1="56" x2="100" y2="258" stroke="rgba(255,255,255,.12)" stroke-width="1.5"/>
+<!-- Shin highlight -->
+<ellipse cx="68" cy="68" rx="14" ry="8" fill="rgba(255,255,255,.2)" transform="rotate(-18,68,68)"/>
+</svg><div class="pimg-overlay"></div></div>
+<div class="pinfo">
+  <div class="pname">Macac&#227;o Moderno Roxo</div>
+  <div class="pdesc">Macac&#227;o com cinto incluso. Vers&#225;til para dia e noite com total sofistica&#231;&#227;o.</div>
+  <div class="stars">&#9733;&#9733;&#9733;&#9733;<span style="opacity:.4">&#9733;</span> <span class="rc">(178)</span></div>
+  <div class="pills"><span class="pill" style="border-color:#16a34a;color:#16a34a;">&#128230; Frete gr&#225;tis</span><span class="pill" style="border-color:#7c3aed;color:#7c3aed;">&#9889; Mais vendido</span></div>
+  <div class="prow"><s class="pold">R$289,00</s><span class="pprice">R$219,00</span></div>
+  <div class="psold"><strong>52 vendidos</strong> esta semana</div>
+  <button class="add-btn">&#128722; Adicionar ao Carrinho</button>
+</div>
+</div>
+    </div>
   </div>
 </section>
+
+<!-- SOCIAL PROOF -->
+<div class="proof">
+  <div class="proof-in">
+    <div class="proof-stat"><div class="ps-val">2.400+</div><div class="ps-lbl">Clientes satisfeitas</div></div><div style="width:1px;height:48px;background:rgba(0,0,0,.1);"></div><div class="proof-stat"><div class="ps-val">4.9&#9733;</div><div class="ps-lbl">Avalia&#231;&#227;o m&#233;dia</div></div><div style="width:1px;height:48px;background:rgba(0,0,0,.1);"></div><div class="proof-stat"><div class="ps-val">30 dias</div><div class="ps-lbl">Troca gratuita</div></div><div style="width:1px;height:48px;background:rgba(0,0,0,.1);"></div><div class="proof-stat"><div class="ps-val">24h</div><div class="ps-lbl">Processamento do pedido</div></div>
+  </div>
+</div>
 
 <!-- FOOTER -->
 <footer class="footer" id="contato">
   <div class="footer-in">
-    <div class="fhd">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 58" width="230" height="58">
-  <!-- Hanger -->
-  <path d="M28 24 Q28 16 35 16 Q42 16 42 24 L58 38 L12 38Z" fill="none" stroke="#e91e8c" stroke-width="2.5" stroke-linejoin="round"/>
-  <line x1="35" y1="16" x2="35" y2="11" stroke="#e91e8c" stroke-width="2.2"/>
-  <circle cx="35" cy="9" r="3" fill="none" stroke="#e91e8c" stroke-width="2"/>
-  <!-- Divider -->
-  <line x1="72" y1="12" x2="72" y2="46" stroke="rgba(233,30,140,0.22)" stroke-width="1.5"/>
-  <text x="82" y="34" font-family="Georgia,'Times New Roman',serif" font-size="20" font-weight="700" fill="#f8fafc" letter-spacing="1.5">BELLA MODA</text>
-  <text x="82" y="50" font-family="Georgia,serif" font-size="11" fill="#e91e8c" letter-spacing="5">STORE</text>
+    <div class="fhd" id="sobre">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" width="220" height="55">
+  <path d="M28 26 Q28 17 36 17 Q44 17 44 26 L62 40 L10 40Z" fill="none" stroke="#e91e8c" stroke-width="2.5" stroke-linejoin="round"/>
+  <line x1="36" y1="17" x2="36" y2="11" stroke="#e91e8c" stroke-width="2.2"/>
+  <circle cx="36" cy="9" r="3.2" fill="none" stroke="#e91e8c" stroke-width="2"/>
+  <line x1="76" y1="13" x2="76" y2="47" stroke="rgba(233,30,140,.2)" stroke-width="1.5"/>
+  <text x="86" y="35" font-family="Georgia,'Times New Roman',serif" font-size="19" font-weight="700" fill="#1a0a10" letter-spacing="1.5">BELLA MODA</text>
+  <text x="86" y="51" font-family="Georgia,serif" font-size="11" fill="#e91e8c" letter-spacing="5">STORE</text>
 </svg>
-      <div id="sobre">
-        <div style="font-size:14px;color:rgba(255,255,255,.9);font-weight:700;margin-bottom:5px;">Bella Moda Store</div>
-        <p>Especialistas em moda feminina desde 2020. Pe&#231;as selecionadas com curadoria e tecidos de qualidade.</p>
+      <div class="fhd-text">
+        <h3>Bella Moda Store</h3>
+        <p>Especialistas em moda feminina desde 2020. Pe&#231;as com curadoria, tecidos premium e entrega r&#225;pida para todo o Brasil.</p>
       </div>
     </div>
     <div class="fgrid">
       <div class="fcol">
         <h4>Sobre n&#243;s</h4>
-        <p>Especialistas em moda feminina desde 2020. Pe&#231;as selecionadas com curadoria e tecidos de qualidade.</p>
+        <p>Especialistas em moda feminina desde 2020. Pe&#231;as com curadoria, tecidos premium e entrega r&#225;pida para todo o Brasil.</p>
       </div>
       <div class="fcol">
         <h4>Pol&#237;tica de troca</h4>
@@ -441,26 +602,40 @@ a{text-decoration:none;color:inherit;}
       </div>
       <div class="fcol">
         <h4>Contato</h4>
-        <a href="https://wa.me/5541998355581" target="_blank">&#128172; (41) 99835-5581 &#8212; WhatsApp</a>
+        <a href="https://wa.me/5541998355581" target="_blank">&#128172; (41) 99835-5581 &mdash; WhatsApp</a>
         <p>&#128140; contato@bellamoda.com.br</p>
-        <p>&#128205; Curitiba, PR &#8212; Brasil</p>
-        <p>&#128336; Seg a Sex, 9h&#8211;18h</p>
+        <p>&#128205; Curitiba, PR &mdash; Brasil</p>
+        <p>&#128336; Seg a Sex, 9h&ndash;18h</p>
+        <div class="fpay">
+          <span class="fpay-chip">&#128179; PIX</span>
+          <span class="fpay-chip">&#128178; Cart&#227;o</span>
+          <span class="fpay-chip">&#128196; Boleto</span>
+        </div>
       </div>
     </div>
-    <div class="fbot"><p>Bella Moda Store &copy; 2025/26 &#8212; Curitiba, PR</p></div>
+    <div class="fbot">
+      <p>Bella Moda Store &copy; 2025/26 &mdash; Curitiba, PR &mdash; Todos os direitos reservados</p>
+    </div>
   </div>
 </footer>
 
+<a id="float-wa" href="https://wa.me/5541998355581?text=Oi%2C%20vi%20o%20demo%20e%20quero%20uma%20loja%20assim!" target="_blank">
+  <span style="font-size:22px;">&#128172;</span>
+  <span class="float-wa-txt">Quero uma loja assim</span>
+</a>
 <div id="ctoast">&#10003; Adicionado ao carrinho!</div>
 <script>
 (function(){
   var n=0,badge=document.getElementById('cbadge'),toast=document.getElementById('ctoast');
   document.querySelectorAll('.add-btn').forEach(function(b){
     b.addEventListener('click',function(){
-      n++;badge.textContent=n;badge.style.display='flex';
-      toast.classList.add('on');setTimeout(function(){toast.classList.remove('on');},2200);
-      var t=b.textContent;b.textContent='✓ Adicionado!';b.disabled=true;
-      setTimeout(function(){b.textContent=t;b.disabled=false;},1600);
+      n++;
+      if(badge){badge.textContent=n;badge.style.display='flex';}
+      toast.classList.add('on');
+      setTimeout(function(){toast.classList.remove('on');},2400);
+      var orig=b.innerHTML;
+      b.innerHTML='&#10003; Adicionado!';b.style.background='#16a34a';b.disabled=true;
+      setTimeout(function(){b.innerHTML=orig;b.style.background='';b.disabled=false;},1800);
     });
   });
 })();

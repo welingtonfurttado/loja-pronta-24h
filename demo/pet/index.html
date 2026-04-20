@@ -3,183 +3,252 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>PetLove Shop | Produtos para Pets</title>
+<title>PetLove Shop | Tudo para seu Pet</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 
+/* ── RESET ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',Inter,system-ui,sans-serif;background:#f8fafc;color:#1e293b;
+  padding-top:50px;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+img{display:block;max-width:100%;}
+:root{--pri:#f97316;--dark:#1c1917;--light:#fff7ed;}
+
+/* ── BACK NAV ── */
 #bnav{position:fixed;top:0;left:0;right:0;z-index:9999;height:50px;
-  background:#0b1120;border-bottom:1px solid rgba(255,255,255,0.07);
+  background:#080f1e;border-bottom:1px solid rgba(255,255,255,.07);
   display:flex;align-items:center;}
 .bnav-wrap{width:100%;max-width:1280px;margin:0 auto;padding:0 20px;
-  display:flex;align-items:center;justify-content:space-between;}
-.bnav-l{display:flex;align-items:center;gap:12px;}
-.bnav-home{display:inline-flex;align-items:center;gap:7px;color:#94a3b8;
-  font-size:13px;font-weight:600;text-decoration:none;padding:7px 14px;
-  border-radius:7px;border:1px solid rgba(255,255,255,0.10);transition:.2s;}
-.bnav-home:hover{color:#e2e8f0;border-color:rgba(255,255,255,0.25);}
-.bnav-tag{font-size:12px;color:rgba(255,255,255,0.25);display:none;}
-@media(min-width:520px){.bnav-tag{display:block;}}
-.bnav-wa{display:inline-flex;align-items:center;gap:7px;background:#25d366;
-  color:#fff;font-size:13px;font-weight:700;padding:8px 16px;border-radius:7px;
-  text-decoration:none;white-space:nowrap;transition:.2s;}
-.bnav-wa:hover{background:#1db954;}
+  display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.bnav-back{display:inline-flex;align-items:center;gap:7px;color:#94a3b8;font-size:13px;
+  font-weight:600;padding:7px 14px;border-radius:7px;border:1px solid rgba(255,255,255,.1);
+  transition:.2s;flex-shrink:0;}
+.bnav-back:hover{color:#e2e8f0;border-color:rgba(255,255,255,.28);}
+.bnav-lbl{font-size:12px;color:rgba(255,255,255,.25);display:none;}
+@media(min-width:640px){.bnav-lbl{display:block;}}
+.bnav-wa{display:inline-flex;align-items:center;gap:7px;background:#25d366;color:#fff;
+  font-size:13px;font-weight:800;padding:8px 18px;border-radius:7px;transition:.2s;
+  white-space:nowrap;flex-shrink:0;}
+.bnav-wa:hover{background:#1db954;transform:translateY(-1px);}
 
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--pri:#f97316;--dark:#1c1917;--light:#fff7ed;}
-html{scroll-behavior:smooth;}
-body{font-family:'Inter',Inter,sans-serif;background:#fff;color:#1e293b;padding-top:50px;-webkit-font-smoothing:antialiased;}
-a{text-decoration:none;color:inherit;}
-.wrap{max-width:1240px;margin:0 auto;padding:0 24px;}
+/* ── FLOATING WA ── */
+#float-wa{position:fixed;bottom:28px;right:28px;z-index:8888;
+  display:inline-flex;align-items:center;gap:10px;background:#25d366;color:#fff;
+  font-size:14px;font-weight:800;padding:14px 22px;border-radius:100px;
+  box-shadow:0 8px 32px rgba(37,211,102,.45);transition:.25s;}
+#float-wa:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(37,211,102,.55);}
+.float-wa-txt{display:none;}
+@media(min-width:540px){.float-wa-txt{display:inline;}}
 
-/* NAVBAR */
-.nav{position:sticky;top:50px;z-index:300;background:rgba(255,255,255,.96);
-  backdrop-filter:blur(12px);border-bottom:1px solid #e2e8f0;}
-.nav-in{display:flex;align-items:center;justify-content:space-between;height:66px;}
+/* ── NAVBAR ── */
+.nav{position:sticky;top:50px;z-index:300;background:rgba(255,255,255,.97);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid #e2e8f0;}
+.nav-in{max-width:1280px;margin:0 auto;padding:0 24px;
+  display:flex;align-items:center;justify-content:space-between;height:68px;}
+.nav-logo{display:flex;align-items:center;gap:10px;}
 .nav-links{display:flex;gap:28px;list-style:none;}
 .nav-links a{font-size:14px;font-weight:600;color:#64748b;transition:color .2s;}
 .nav-links a:hover{color:var(--pri);}
 .nav-r{display:flex;align-items:center;gap:10px;}
-.nav-wa{display:inline-flex;align-items:center;gap:6px;background:#25d366;color:#fff;
-  font-size:13px;font-weight:700;padding:9px 18px;border-radius:8px;transition:.2s;}
-.nav-wa:hover{background:#1db954;}
 .nav-cart{position:relative;}
-.cart-btn{display:inline-flex;align-items:center;gap:7px;background:var(--pri);color:#fff;
-  border:none;border-radius:8px;padding:9px 18px;font-size:13px;font-weight:700;cursor:pointer;transition:.2s;}
+.cart-btn{display:inline-flex;align-items:center;gap:8px;background:var(--pri);color:#fff;
+  border:none;border-radius:9px;padding:10px 20px;font-size:13px;font-weight:700;
+  cursor:pointer;font-family:inherit;transition:.2s;}
 .cart-btn:hover{opacity:.88;}
-#cbadge{position:absolute;top:-6px;right:-6px;background:#ef4444;color:#fff;font-size:10px;
-  font-weight:800;width:18px;height:18px;border-radius:50%;display:none;align-items:center;
-  justify-content:center;border:2px solid #fff;}
+#cbadge{position:absolute;top:-7px;right:-7px;background:#ef4444;color:#fff;font-size:10px;
+  font-weight:900;min-width:18px;height:18px;border-radius:9px;display:none;
+  align-items:center;justify-content:center;border:2px solid #fff;padding:0 3px;}
 
-/* BANNER */
-.banner{background:linear-gradient(135deg,#7c2d12 0%,#c2410c 55%,#f97316 100%);padding:76px 24px;}
-.banner-in{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;
-  gap:52px;align-items:center;}
-.btag{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);
-  color:rgba(255,255,255,.9);font-size:11px;font-weight:700;letter-spacing:.12em;
-  text-transform:uppercase;padding:7px 18px;border-radius:100px;margin-bottom:22px;}
-.banner h1{font-size:clamp(28px,4.2vw,52px);font-weight:900;color:#fff;line-height:1.1;
+/* ── BANNER ── */
+.banner{padding:80px 24px;position:relative;overflow:hidden;}
+.banner::before{content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 80% at 75% 50%,rgba(255,255,255,.06) 0%,transparent 70%);
+  pointer-events:none;}
+.banner-in{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;
+  gap:56px;align-items:center;position:relative;z-index:1;}
+.banner-eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:20px;flex-wrap:wrap;}
+.eyebrow-badge{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);
+  color:rgba(255,255,255,.95);font-size:11px;font-weight:800;letter-spacing:.12em;
+  text-transform:uppercase;padding:7px 18px;border-radius:100px;}
+.eyebrow-live{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,.8);
+  font-size:12px;font-weight:700;}
+.live-dot{width:7px;height:7px;border-radius:50%;background:#4ade80;
+  box-shadow:0 0 0 3px rgba(74,222,128,.25);animation:pulse 1.8s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.65;transform:scale(1.35);}}
+.banner h1{font-size:clamp(30px,4.5vw,56px);font-weight:900;color:#fff;line-height:1.08;
   margin-bottom:18px;letter-spacing:-.02em;}
-.banner h1 em{font-style:normal;color:#fde68a;}
-.banner-sub{font-size:17px;color:rgba(255,255,255,.72);line-height:1.72;margin-bottom:34px;max-width:420px;}
+.banner h1 em{font-style:normal;opacity:.88;}
+.banner-desc{font-size:17px;color:rgba(255,255,255,.72);line-height:1.75;
+  margin-bottom:16px;max-width:430px;}
+.banner-promo{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.22);border-radius:8px;padding:10px 18px;
+  margin-bottom:32px;font-size:13px;color:rgba(255,255,255,.9);font-weight:700;}
+.banner-promo span{color:#fde68a;}
 .bbtns{display:flex;gap:12px;flex-wrap:wrap;}
-.bb-main{background:#fff;color:#1c1917;font-weight:800;font-size:15px;padding:14px 32px;
-  border-radius:10px;transition:.18s;box-shadow:0 4px 20px rgba(0,0,0,.18);}
-.bb-main:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.24);}
-.bb-sec{background:rgba(255,255,255,.1);color:#fff;font-weight:700;font-size:15px;padding:14px 32px;
-  border-radius:10px;border:2px solid rgba(255,255,255,.28);transition:.2s;}
-.bb-sec:hover{background:rgba(255,255,255,.18);}
-.bvis{display:flex;justify-content:center;align-items:flex-end;gap:14px;}
-.bvis svg{filter:drop-shadow(0 10px 30px rgba(0,0,0,.32));}
+.bb-pri{display:inline-flex;align-items:center;gap:8px;background:#fff;font-weight:800;
+  font-size:15px;padding:15px 34px;border-radius:11px;transition:.2s;
+  box-shadow:0 4px 24px rgba(0,0,0,.2);}
+.bb-pri:hover{transform:translateY(-2px);box-shadow:0 8px 36px rgba(0,0,0,.28);}
+.bb-wa{display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#fff;
+  font-weight:800;font-size:15px;padding:15px 34px;border-radius:11px;transition:.2s;}
+.bb-wa:hover{background:#1db954;transform:translateY(-2px);}
+.bvis{display:flex;justify-content:center;align-items:flex-end;gap:10px;}
 
-/* TRUST */
-.trust{background:var(--light);border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;padding:14px 24px;}
-.trust-in{max-width:1240px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:center;gap:24px;}
-.tpill{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#1c1917;}
-.tpill span{font-size:15px;}
+/* ── PROMO STRIP ── */
+.strip{background:#1c1917;color:rgba(255,255,255,.75);padding:12px 24px;
+  overflow:hidden;}
+.strip-in{max-width:1280px;margin:0 auto;display:flex;justify-content:center;
+  flex-wrap:wrap;gap:32px;}
+.strip-item{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:700;}
+.strip-icon{font-size:18px;}
 
-/* PRODUCTS */
-.psec{padding:76px 24px;}
-.psec-in{max-width:1240px;margin:0 auto;}
-.sec-top{text-align:center;margin-bottom:52px;}
-.slabel{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--pri);margin-bottom:10px;}
-.stitle{font-size:clamp(24px,3.8vw,40px);font-weight:900;color:#1c1917;line-height:1.18;}
-.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:26px;}
-.pcard{background:#fff;border:1px solid #e2e8f0;border-radius:18px;overflow:hidden;
-  position:relative;transition:.28s;}
-.pcard:hover{transform:translateY(-7px);box-shadow:0 20px 56px rgba(0,0,0,.1);border-color:rgba(0,0,0,.08);}
-.pbadge{position:absolute;top:14px;left:14px;z-index:2;background:var(--pri);color:#fff;
-  font-size:10px;font-weight:800;padding:5px 12px;border-radius:100px;letter-spacing:.05em;text-transform:uppercase;}
-.pimg{background:var(--light);display:flex;align-items:center;justify-content:center;
-  height:200px;overflow:hidden;}
-.pimg svg{max-height:185px;width:auto;transition:.35s;}
-.pcard:hover .pimg svg{transform:scale(1.08);}
-.pinfo{padding:20px;}
-.pname{font-size:16px;font-weight:800;color:#1c1917;margin-bottom:6px;line-height:1.3;}
-.pdesc{font-size:13px;color:#64748b;line-height:1.6;margin-bottom:14px;}
-.prow{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
-.pold{font-size:13px;color:#94a3b8;}
-.pprice{font-size:24px;font-weight:900;}
-.add-btn{width:100%;background:var(--pri);color:#fff;border:none;border-radius:10px;
-  padding:13px;font-size:14px;font-weight:700;cursor:pointer;transition:.2s;letter-spacing:.02em;}
+/* ── PRODUCTS ── */
+.psec{padding:80px 24px;}
+.psec-in{max-width:1280px;margin:0 auto;}
+.sec-hd{text-align:center;margin-bottom:56px;}
+.sec-eyebrow{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--pri);margin-bottom:12px;}
+.sec-title{font-size:clamp(26px,4vw,42px);font-weight:900;color:#1c1917;line-height:1.18;margin-bottom:12px;}
+.sec-sub{font-size:16px;color:#64748b;max-width:480px;margin:0 auto;}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:28px;}
+
+/* ── PRODUCT CARD ── */
+.pcard{background:#fff;border:1px solid #e8edf2;border-radius:20px;overflow:hidden;
+  position:relative;display:flex;flex-direction:column;
+  transition:transform .28s cubic-bezier(.34,1.56,.64,1),box-shadow .28s ease;}
+.pcard:hover{transform:translateY(-8px);box-shadow:0 24px 64px rgba(0,0,0,.12);border-color:rgba(0,0,0,.06);}
+.pbadge{position:absolute;top:14px;left:14px;z-index:3;background:var(--pri);color:#fff;
+  font-size:10px;font-weight:800;padding:5px 12px;border-radius:100px;letter-spacing:.06em;text-transform:uppercase;}
+.pbadge.sale{background:#ef4444;}
+.pbadge.new{background:#7c3aed;}
+.pimg{position:relative;background:var(--light);display:flex;align-items:center;
+  justify-content:center;height:210px;overflow:hidden;}
+.pimg svg{max-height:195px;width:auto;transition:transform .4s cubic-bezier(.34,1.56,.64,1);}
+.pcard:hover .pimg svg{transform:scale(1.1) translateY(-4px);}
+.pimg-overlay{position:absolute;bottom:0;left:0;right:0;height:50%;
+  background:linear-gradient(to top,rgba(0,0,0,.06),transparent);pointer-events:none;}
+.pwish{position:absolute;top:12px;right:12px;z-index:3;width:32px;height:32px;
+  background:rgba(255,255,255,.9);border-radius:50%;display:flex;align-items:center;
+  justify-content:center;font-size:16px;cursor:pointer;transition:.2s;border:none;
+  box-shadow:0 2px 8px rgba(0,0,0,.12);}
+.pwish:hover{transform:scale(1.15);}
+.pinfo{padding:20px;flex:1;display:flex;flex-direction:column;}
+.pname{font-size:15px;font-weight:800;color:#1c1917;margin-bottom:5px;line-height:1.3;}
+.pdesc{font-size:12.5px;color:#64748b;line-height:1.6;margin-bottom:10px;flex:1;}
+.stars{display:flex;align-items:center;gap:2px;font-size:14px;color:#f59e0b;margin-bottom:10px;}
+.rc{font-size:12px;color:#94a3b8;margin-left:4px;}
+.prow{display:flex;align-items:center;gap:10px;margin-bottom:6px;}
+.pold{font-size:13px;color:#94a3b8;text-decoration:line-through;}
+.pprice{font-size:26px;font-weight:900;color:var(--pri);letter-spacing:-.02em;}
+.psold{font-size:12px;color:#94a3b8;margin-bottom:14px;}
+.psold strong{color:#64748b;}
+.add-btn{width:100%;background:var(--pri);color:#fff;border:none;border-radius:11px;
+  padding:14px;font-size:14px;font-weight:800;cursor:pointer;transition:.2s;
+  font-family:inherit;letter-spacing:.01em;}
 .add-btn:hover{opacity:.88;transform:translateY(-1px);}
-.add-btn:disabled{opacity:.65;cursor:default;transform:none;}
+.add-btn:disabled{opacity:.6;cursor:not-allowed;transform:none;}
 
-/* FOOTER */
-.footer{background:#1c1917;color:rgba(255,255,255,.6);padding:60px 24px 0;}
-.footer-in{max-width:1240px;margin:0 auto;}
-.fhd{display:flex;align-items:center;gap:18px;padding-bottom:44px;
-  border-bottom:1px solid rgba(255,255,255,.07);margin-bottom:44px;}
-.fhd p{font-size:13px;color:rgba(255,255,255,.38);max-width:300px;margin-top:8px;line-height:1.65;}
-.fgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-bottom:44px;}
-.fcol h4{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+/* ── SOCIAL PROOF STRIP ── */
+.proof{background:#fff7ed;border-top:1px solid #e8edf2;border-bottom:1px solid #e8edf2;padding:28px 24px;}
+.proof-in{max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;
+  align-items:center;justify-content:center;gap:32px;}
+.proof-stat{text-align:center;}
+.ps-val{font-size:28px;font-weight:900;color:var(--pri);line-height:1;}
+.ps-lbl{font-size:12px;color:#64748b;font-weight:600;margin-top:3px;}
+
+/* ── PILLS ── */
+.pill{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;
+  padding:4px 10px;border-radius:100px;border:1.5px solid;margin-right:4px;margin-bottom:4px;}
+.pills{margin-bottom:10px;}
+
+/* ── FOOTER ── */
+.footer{background:#1c1917;color:rgba(255,255,255,.55);padding:64px 24px 0;}
+.footer-in{max-width:1280px;margin:0 auto;}
+.fhd{display:flex;align-items:flex-start;gap:20px;padding-bottom:48px;
+  border-bottom:1px solid rgba(255,255,255,.07);margin-bottom:48px;flex-wrap:wrap;}
+.fhd-text h3{font-size:16px;font-weight:800;color:#f8fafc;margin-bottom:6px;}
+.fhd-text p{font-size:13px;color:rgba(255,255,255,.38);max-width:340px;line-height:1.7;}
+.fgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:44px;margin-bottom:48px;}
+.fcol h4{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
   color:rgba(255,255,255,.85);margin-bottom:18px;}
-.fcol a,.fcol p{font-size:13px;color:rgba(255,255,255,.48);line-height:1.9;display:block;
-  margin-bottom:3px;transition:.2s;}
+.fcol a,.fcol p{font-size:13px;color:rgba(255,255,255,.45);line-height:2;display:block;transition:.2s;}
 .fcol a:hover{color:var(--pri);}
 .fcol ul{list-style:none;}
-.fcol li{font-size:13px;color:rgba(255,255,255,.48);line-height:2;padding-left:16px;position:relative;}
-.fcol li::before{content:"&#10003;";position:absolute;left:0;color:#4ade80;font-size:11px;}
-.fbot{border-top:1px solid rgba(255,255,255,.06);padding:22px 0;text-align:center;
-  font-size:12px;color:rgba(255,255,255,.22);}
+.fcol li{font-size:13px;color:rgba(255,255,255,.45);line-height:2;
+  padding-left:18px;position:relative;}
+.fcol li::before{content:"\2713";position:absolute;left:0;color:#4ade80;font-size:11px;top:1px;}
+.fpay{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;}
+.fpay-chip{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.1);border-radius:7px;padding:7px 13px;
+  font-size:12px;font-weight:700;color:rgba(255,255,255,.7);}
+.fbot{border-top:1px solid rgba(255,255,255,.06);padding:24px 0;text-align:center;
+  font-size:12px;color:rgba(255,255,255,.2);}
 
-/* TOAST */
-#ctoast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);
-  background:#15803d;color:#fff;padding:14px 28px;border-radius:12px;font-size:14px;
-  font-weight:700;opacity:0;pointer-events:none;z-index:9999;transition:opacity .3s;
-  box-shadow:0 6px 24px rgba(0,0,0,.28);white-space:nowrap;}
-#ctoast.on{opacity:1;}
+/* ── TOAST ── */
+#ctoast{position:fixed;bottom:32px;left:50%;transform:translateX(-50%);
+  background:#15803d;color:#fff;padding:14px 32px;border-radius:14px;
+  font-size:14px;font-weight:800;opacity:0;pointer-events:none;z-index:9998;
+  transition:opacity .3s,transform .3s;box-shadow:0 8px 32px rgba(0,0,0,.3);
+  white-space:nowrap;transform:translateX(-50%) translateY(16px);}
+#ctoast.on{opacity:1;transform:translateX(-50%) translateY(0);}
 
-/* RESPONSIVE */
+/* ── RESPONSIVE ── */
 @media(max-width:960px){
   .banner-in{grid-template-columns:1fr;}
   .bvis{display:none;}
-  .fgrid{grid-template-columns:1fr 1fr;}
+  .fgrid{grid-template-columns:1fr 1fr;gap:28px;}
 }
-@media(max-width:600px){
+@media(max-width:640px){
   .nav-links{display:none;}
-  .fgrid{grid-template-columns:1fr;gap:28px;}
+  .fgrid{grid-template-columns:1fr;gap:24px;}
   .banner{padding:52px 20px;}
   .psec{padding:52px 20px;}
+  .pgrid{grid-template-columns:1fr 1fr;gap:16px;}
+  .pimg{height:160px;}
+  .pprice{font-size:20px;}
+  #float-wa{bottom:20px;right:20px;padding:12px 18px;}
 }
+@media(max-width:400px){
+  .pgrid{grid-template-columns:1fr;}
+}
+
 </style>
 </head>
 <body>
+
 <div id="bnav">
   <div class="bnav-wrap">
-    <div class="bnav-l">
-      <a href="/" class="bnav-home">&#8592; Voltar para Home</a>
-      <span class="bnav-tag">Exemplo de loja criada em 24h</span>
-    </div>
-    <a href="https://wa.me/5541998355581" target="_blank" class="bnav-wa">
-      &#128172; Quero uma loja assim
-    </a>
+    <a href="/" class="bnav-back">&#8592; Voltar para Home</a>
+    <span class="bnav-lbl">Exemplo criado em 24h &mdash; Loja Pronta 24h</span>
+    <a href="https://wa.me/5541998355581?text=Oi%2C%20vi%20o%20demo%20e%20quero%20uma%20loja%20assim!" target="_blank" class="bnav-wa">&#128172; Quero uma loja assim</a>
   </div>
 </div>
 
 <!-- NAVBAR -->
 <nav class="nav">
-  <div class="wrap nav-in">
-    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 58" width="210" height="58">
-  <!-- Paw circle -->
-  <circle cx="29" cy="29" r="23" fill="#f97316" opacity=".92"/>
-  <ellipse cx="29" cy="33" rx="11" ry="9" fill="#fff" opacity=".9"/>
-  <circle cx="18" cy="22" r="5"   fill="#fff" opacity=".9"/>
-  <circle cx="29" cy="18" r="5"   fill="#fff" opacity=".9"/>
-  <circle cx="40" cy="22" r="5"   fill="#fff" opacity=".9"/>
-  <!-- Divider -->
-  <line x1="64" y1="12" x2="64" y2="46" stroke="rgba(249,115,22,0.22)" stroke-width="1.5"/>
-  <text x="74" y="34" font-family="'Arial Rounded MT Bold',Arial,sans-serif" font-size="22" font-weight="900" fill="#f8fafc" letter-spacing="1">PetLove</text>
-  <text x="74" y="50" font-family="Arial,sans-serif" font-size="11" fill="#f97316" letter-spacing="4">SHOP</text>
-</svg></a>
+  <div class="nav-in">
+    <div class="nav-logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 60" width="200" height="55">
+  <circle cx="30" cy="30" r="24" fill="#f97316" opacity=".92"/>
+  <ellipse cx="30" cy="35" rx="12" ry="10" fill="#fff" opacity=".92"/>
+  <circle cx="18" cy="22" r="5.5" fill="#fff" opacity=".92"/>
+  <circle cx="30" cy="18" r="5.5" fill="#fff" opacity=".92"/>
+  <circle cx="42" cy="22" r="5.5" fill="#fff" opacity=".92"/>
+  <line x1="66" y1="13" x2="66" y2="47" stroke="rgba(249,115,22,.22)" stroke-width="1.5"/>
+  <text x="76" y="35" font-family="'Arial Rounded MT Bold',Arial,sans-serif" font-size="22" font-weight="900" fill="#1c1917" letter-spacing="1">PetLove</text>
+  <text x="76" y="51" font-family="Arial,sans-serif" font-size="11" fill="#f97316" letter-spacing="4">SHOP</text>
+</svg>
+    </div>
     <ul class="nav-links">
       <li><a href="#produtos">Produtos</a></li>
       <li><a href="#sobre">Sobre</a></li>
       <li><a href="#contato">Contato</a></li>
     </ul>
     <div class="nav-r">
-      <a href="https://wa.me/5541998355581" target="_blank" class="nav-wa">&#128172; WhatsApp</a>
       <div class="nav-cart">
         <button class="cart-btn">&#128722; Carrinho</button>
         <div id="cbadge"></div>
@@ -189,260 +258,332 @@ a{text-decoration:none;color:inherit;}
 </nav>
 
 <!-- BANNER -->
-<section class="banner">
+<section class="banner" style="background:linear-gradient(135deg,#7c2d12 0%,#c2410c 55%,#f97316 100%);">
   <div class="banner-in">
     <div>
-      <div class="btag">&#128054; Tudo para seu Pet</div>
+      <div class="banner-eyebrow">
+        <span class="eyebrow-badge">&#128054; Tudo para seu Pet</span>
+        <span class="eyebrow-live"><span class="live-dot"></span>Loja ativa</span>
+      </div>
       <h1>Qualidade e <em>amor</em><br>em cada produto</h1>
-      <p class="banner-sub">Ra&#231;&#245;es premium, acess&#243;rios e produtos de higiene. Qualidade e Amor em Cada Produto. Entrega r&#225;pida.</p>
+      <p class="banner-desc">Ra&#231;&#245;es premium, acess&#243;rios e produtos de higiene. Tudo aprovado por veterin&#225;rios. Entrega r&#225;pida para todo o Brasil.</p>
+      <div class="banner-promo">&#128230; Frete Gr&#225;tis acima de R$150 &nbsp;&bull;&nbsp; <span>10% OFF na 1&#170; compra</span> &nbsp;&#8594;&nbsp; PET10</div>
       <div class="bbtns">
-        <a href="#produtos" class="bb-main">Ver Produtos &#8594;</a>
-        <a href="https://wa.me/5541998355581" target="_blank" class="bb-sec">&#128172; WhatsApp</a>
+        <a href="#produtos" class="bb-pri" style="color:#1c1917;">Ver Produtos &#8594;</a>
+        <a href="https://wa.me/5541998355581?text=Oi%2C%20vi%20o%20demo%20e%20quero%20uma%20loja%20assim!" target="_blank" class="bb-wa">&#128172; Quero uma loja assim</a>
       </div>
     </div>
-    <div class="bvis">
-  <div style="transform:rotate(6deg) translateY(-12px);filter:drop-shadow(0 12px 28px rgba(0,0,0,.35));"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 180">
+    <div class="bvis"><div style="transform:rotate(7deg) translateY(-14px);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 196">
 <defs>
-  <linearGradient id="camg1" x1="0" y1="0" x2="0" y2="1">
+  <linearGradient id="cmg" x1="0%" y1="0%" x2="0%" y2="100%">
     <stop offset="0%" stop-color="#fde68a"/><stop offset="100%" stop-color="#d97706"/>
   </linearGradient>
+  <filter id="cmf"><feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#92400e" flood-opacity=".3"/></filter>
 </defs>
-<!-- Base shadow -->
-<ellipse cx="110" cy="140" rx="96" ry="30" fill="#92400e" opacity=".35"/>
-<!-- Bed base -->
-<ellipse cx="110" cy="132" rx="92" ry="28" fill="#b45309"/>
+<!-- Shadow base -->
+<ellipse cx="120" cy="176" rx="100" ry="16" fill="#92400e" opacity=".2"/>
+<!-- Bed rim -->
+<ellipse cx="120" cy="150" rx="98" ry="30" fill="#b45309" filter="url(#cmf)"/>
 <!-- Cushion -->
-<ellipse cx="110" cy="124" rx="88" ry="24" fill="url(#camg1)"/>
-<!-- Back bolster -->
-<ellipse cx="110" cy="96" rx="88" ry="26" fill="#fcd34d"/>
-<ellipse cx="110" cy="92" rx="80" ry="20" fill="#fef3c7"/>
+<ellipse cx="120" cy="142" rx="94" ry="26" fill="url(#cmg)"/>
+<!-- Bolster back -->
+<ellipse cx="120" cy="112" rx="94" ry="30" fill="#fcd34d"/>
+<ellipse cx="120" cy="108" rx="86" ry="24" fill="#fef9c3"/>
+<!-- Button details on bolster -->
+<circle cx="80"  cy="108" r="6" fill="#fbbf24" stroke="#d97706" stroke-width="1.5"/>
+<circle cx="120" cy="108" r="6" fill="#fbbf24" stroke="#d97706" stroke-width="1.5"/>
+<circle cx="160" cy="108" r="6" fill="#fbbf24" stroke="#d97706" stroke-width="1.5"/>
 <!-- Plush inner -->
-<ellipse cx="110" cy="120" rx="66" ry="18" fill="#fffbeb" opacity=".75"/>
-<!-- Paw emboss -->
-<ellipse cx="110" cy="120" rx="11" ry="9"  fill="#fbbf24" opacity=".55"/>
-<circle cx="98"  cy="111" r="4.5" fill="#fbbf24" opacity=".55"/>
-<circle cx="110" cy="107" r="4.5" fill="#fbbf24" opacity=".55"/>
-<circle cx="122" cy="111" r="4.5" fill="#fbbf24" opacity=".55"/>
-</svg></div>
-  <div style="transform:scale(.9);filter:drop-shadow(0 16px 32px rgba(0,0,0,.35));"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-<defs>
-  <radialGradient id="bg2" cx="36%" cy="32%">
-    <stop offset="0%" stop-color="#86efac"/><stop offset="100%" stop-color="#15803d"/>
-  </radialGradient>
-</defs>
-<circle cx="100" cy="108" r="74" fill="url(#bg2)"/>
-<!-- Seams -->
-<path d="M56 54 Q100 88 144 54" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="3"/>
-<path d="M36 108 Q100 132 164 108" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="3"/>
-<path d="M56 162 Q100 128 144 162" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="3"/>
-<!-- Paw on ball -->
-<ellipse cx="92" cy="100" rx="10" ry="8" fill="rgba(255,255,255,.45)"/>
-<circle cx="80"  cy="91"  r="4.5" fill="rgba(255,255,255,.45)"/>
-<circle cx="92"  cy="87"  r="4.5" fill="rgba(255,255,255,.45)"/>
-<circle cx="104" cy="91"  r="4.5" fill="rgba(255,255,255,.45)"/>
+<ellipse cx="120" cy="138" rx="72" ry="19" fill="#fffbeb" opacity=".8"/>
+<!-- Big paw on cushion -->
+<ellipse cx="120" cy="138" rx="13" ry="11" fill="#fbbf24" opacity=".6"/>
+<circle cx="106" cy="127" r="5.5" fill="#fbbf24" opacity=".6"/>
+<circle cx="120" cy="122" r="5.5" fill="#fbbf24" opacity=".6"/>
+<circle cx="134" cy="127" r="5.5" fill="#fbbf24" opacity=".6"/>
 <!-- Shine -->
-<ellipse cx="72" cy="74" rx="16" ry="10" fill="rgba(255,255,255,.22)" transform="rotate(-30 72 74)"/>
-</svg></div>
-</div>
+<ellipse cx="80" cy="116" rx="20" ry="8" fill="rgba(255,255,255,.3)" transform="rotate(-10,80,116)"/>
+</svg></div><div style="transform:scale(.92);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 210">
+<defs>
+  <radialGradient id="bxg" cx="36%" cy="32%">
+    <stop offset="0%" stop-color="#86efac"/><stop offset="40%" stop-color="#22c55e"/><stop offset="100%" stop-color="#15803d"/>
+  </radialGradient>
+  <filter id="bxf"><feDropShadow dx="0" dy="7" stdDeviation="10" flood-color="#15803d" flood-opacity=".3"/></filter>
+</defs>
+<!-- Ball -->
+<circle cx="100" cy="110" r="78" fill="url(#bxg)" filter="url(#bxf)"/>
+<!-- Seam curves -->
+<path d="M54 56 Q100 90 146 56"  fill="none" stroke="rgba(255,255,255,.32)" stroke-width="3.5"/>
+<path d="M34 110 Q100 136 166 110" fill="none" stroke="rgba(255,255,255,.32)" stroke-width="3.5"/>
+<path d="M54 164 Q100 130 146 164" fill="none" stroke="rgba(255,255,255,.32)" stroke-width="3.5"/>
+<!-- Paw print -->
+<ellipse cx="92" cy="104" rx="12" ry="10" fill="rgba(255,255,255,.5)"/>
+<circle cx="78"  cy="93"  r="5.5" fill="rgba(255,255,255,.5)"/>
+<circle cx="92"  cy="89"  r="5.5" fill="rgba(255,255,255,.5)"/>
+<circle cx="106" cy="93"  r="5.5" fill="rgba(255,255,255,.5)"/>
+<!-- Shine -->
+<ellipse cx="68" cy="72" rx="20" ry="12" fill="rgba(255,255,255,.28)" transform="rotate(-30,68,72)"/>
+<ellipse cx="80" cy="80" rx="8"  ry="5"  fill="rgba(255,255,255,.4)"  transform="rotate(-30,80,80)"/>
+</svg></div></div>
   </div>
 </section>
 
-<!-- TRUST STRIP -->
-<div class="trust">
-  <div class="trust-in"><div class="tpill"><span>&#9989;</span>Aprovado por veterin&#225;rios</div><div class="tpill"><span>&#128260;</span>Troca em 30 dias</div><div class="tpill"><span>&#128274;</span>Compra segura</div><div class="tpill"><span>&#9989;</span>Frete gr&#225;tis acima de R$150</div></div>
+<!-- PROMO STRIP -->
+<div class="strip">
+  <div class="strip-in">
+    <div class="strip-item"><span class="strip-icon">&#9989;</span>Aprovado por veterin&#225;rios</div><div class="strip-item"><span class="strip-icon">&#128230;</span>Frete gr&#225;tis acima de R$150</div><div class="strip-item"><span class="strip-icon">&#128274;</span>Compra 100% segura</div><div class="strip-item"><span class="strip-icon">&#128260;</span>Troca em 30 dias</div>
+  </div>
 </div>
 
 <!-- PRODUCTS -->
 <section class="psec" id="produtos">
   <div class="psec-in">
-    <div class="sec-top">
-      <p class="slabel">Produtos</p>
-      <h2 class="stitle">Mais Vendidos</h2>
+    <div class="sec-hd">
+      <p class="sec-eyebrow">Mais Vendidos</p>
+      <h2 class="sec-title">Produtos para seu Pet</h2>
+      <p class="sec-sub">Ra&#231;&#245;es, acess&#243;rios e higiene selecionados com cuidado para a sa&#250;de e felicidade do seu animal.</p>
     </div>
-    <div class="pgrid"><div class="pcard">
-  <div class="pbadge">TOP VENDA</div>
-  <div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240">
+    <div class="pgrid">
+      <div class="pcard">
+<div class="pbadge ">TOP VENDA</div>
+<button class="pwish" title="Favoritar">&#9825;</button>
+<div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 250">
 <defs>
-  <linearGradient id="rg1" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#f97316"/><stop offset="100%" stop-color="#c2410c"/>
+  <linearGradient id="rg1" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#fb923c"/><stop offset="100%" stop-color="#c2410c"/>
   </linearGradient>
+  <filter id="rf1"><feDropShadow dx="0" dy="6" stdDeviation="9" flood-color="#c2410c" flood-opacity=".3"/></filter>
 </defs>
-<rect x="30" y="48" width="140" height="178" rx="14" fill="url(#rg1)"/>
-<ellipse cx="100" cy="50" rx="70" ry="20" fill="#9a3412"/>
-<rect x="82" y="32" width="36" height="16" rx="8" fill="#7c2d12"/>
-<!-- Label -->
-<rect x="44" y="92" width="112" height="100" rx="10" fill="rgba(255,255,255,.14)"/>
-<!-- Paw print -->
-<ellipse cx="100" cy="122" rx="15" ry="13" fill="rgba(255,255,255,.55)"/>
-<circle cx="83"  cy="108" r="6.5" fill="rgba(255,255,255,.55)"/>
-<circle cx="100" cy="103" r="6.5" fill="rgba(255,255,255,.55)"/>
-<circle cx="117" cy="108" r="6.5" fill="rgba(255,255,255,.55)"/>
-<!-- Label text bars -->
-<rect x="58" y="148" width="84" height="7" rx="3" fill="rgba(255,255,255,.4)"/>
-<rect x="66" y="160" width="68" height="5" rx="2" fill="rgba(255,255,255,.25)"/>
+<!-- Bag -->
+<rect x="28" y="50" width="144" height="184" rx="16" fill="url(#rg1)" filter="url(#rf1)"/>
+<!-- Top fold shadow -->
+<ellipse cx="100" cy="52" rx="72" ry="22" fill="#9a3412"/>
+<!-- Clip seal -->
+<rect x="80" y="32" width="40" height="18" rx="9" fill="#7c2d12"/>
+<rect x="94" y="36" width="12" height="10" rx="5" fill="#6b2313" opacity=".7"/>
+<!-- White label -->
+<rect x="42" y="96" width="116" height="108" rx="12" fill="rgba(255,255,255,.16)"/>
+<!-- Big paw print -->
+<ellipse cx="100" cy="126" rx="17" ry="14" fill="rgba(255,255,255,.6)"/>
+<circle cx="82" cy="111" r="7.5" fill="rgba(255,255,255,.6)"/>
+<circle cx="100" cy="106" r="7.5" fill="rgba(255,255,255,.6)"/>
+<circle cx="118" cy="111" r="7.5" fill="rgba(255,255,255,.6)"/>
+<!-- Label lines -->
+<rect x="58" y="152" width="84" height="7" rx="3" fill="rgba(255,255,255,.45)"/>
+<rect x="66" y="164" width="68" height="5" rx="2" fill="rgba(255,255,255,.28)"/>
+<rect x="72" y="174" width="56" height="4" rx="2" fill="rgba(255,255,255,.18)"/>
 <!-- Weight badge -->
-<rect x="44" y="202" width="112" height="22" rx="6" fill="rgba(0,0,0,.2)"/>
-<rect x="52" y="207" width="96" height="5" rx="2" fill="rgba(255,255,255,.3)"/>
-</svg></div>
-  <div class="pinfo">
-    <h3 class="pname">Ra&#231;&#227;o Premium</h3>
-    <p class="pdesc">F&#243;rmula premium para c&#227;es adultos. Alta digestibilidade, sabor irresist&#237;vel.</p>
-    <div class="prow"><s class="pold">R$119,90</s><span class="pprice" style="color:#f97316">R$89,90</span></div>
-    <button class="add-btn" style="--pri:#f97316">&#128722; Adicionar ao Carrinho</button>
-  </div>
+<rect x="42" y="188" width="116" height="26" rx="8" fill="rgba(0,0,0,.2)"/>
+<rect x="50" y="195" width="100" height="5" rx="2" fill="rgba(255,255,255,.3)"/>
+<!-- Shine -->
+<ellipse cx="56" cy="72" rx="22" ry="10" fill="rgba(255,255,255,.22)" transform="rotate(-10,56,72)"/>
+</svg><div class="pimg-overlay"></div></div>
+<div class="pinfo">
+  <div class="pname">Ra&#231;&#227;o Premium Gold</div>
+  <div class="pdesc">F&#243;rmula super premium para c&#227;es adultos de todas as ra&#231;as. Alta digestibilidade.</div>
+  <div class="stars">&#9733;&#9733;&#9733;&#9733;<span style="opacity:.4">&#9733;</span> <span class="rc">(512)</span></div>
+  <div class="pills"><span class="pill" style="border-color:#16a34a;color:#16a34a;">&#9989; Aprovado por vets</span><span class="pill" style="border-color:#16a34a;color:#16a34a;">&#128230; Frete gr&#225;tis</span></div>
+  <div class="prow"><s class="pold">R$119,90</s><span class="pprice">R$89,90</span></div>
+  <div class="psold"><strong>118 vendidos</strong> esta semana</div>
+  <button class="add-btn">&#128722; Adicionar ao Carrinho</button>
+</div>
 </div><div class="pcard">
-  
-  <div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+
+<button class="pwish" title="Favoritar">&#9825;</button>
+<div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 210">
 <defs>
-  <radialGradient id="cg2" cx="40%" cy="35%">
+  <radialGradient id="clg1" cx="40%" cy="35%">
     <stop offset="0%" stop-color="#f87171"/><stop offset="100%" stop-color="#991b1b"/>
   </radialGradient>
+  <filter id="clf1"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-opacity=".25"/></filter>
 </defs>
-<!-- Collar ring -->
-<ellipse cx="100" cy="112" rx="78" ry="52" fill="none" stroke="url(#cg2)" stroke-width="24" stroke-linecap="round"/>
-<!-- Buckle body -->
-<rect x="83" y="54" width="34" height="22" rx="5" fill="#e5e7eb" stroke="#9ca3af" stroke-width="2"/>
-<rect x="97" y="56" width="6" height="18" rx="3" fill="#9ca3af"/>
+<!-- Collar strap oval -->
+<ellipse cx="100" cy="118" rx="78" ry="52" fill="none" stroke="url(#clg1)" stroke-width="26" stroke-linecap="round" filter="url(#clf1)"/>
 <!-- Adjustment holes -->
-<circle cx="66"  cy="112" r="4" fill="#7f1d1d"/>
-<circle cx="100" cy="62"  r="4" fill="#7f1d1d"/>
-<circle cx="134" cy="112" r="4" fill="#7f1d1d"/>
+<circle cx="64"  cy="118" r="5" fill="#7f1d1d"/>
+<circle cx="100" cy="66"  r="5" fill="#7f1d1d"/>
+<circle cx="136" cy="118" r="5" fill="#7f1d1d"/>
+<!-- Buckle -->
+<rect x="83" y="55" width="34" height="22" rx="6" fill="#e5e7eb" stroke="#9ca3af" stroke-width="2"/>
+<rect x="97" y="57" width="6" height="18" rx="3" fill="#9ca3af"/>
+<!-- Holes in buckle -->
+<circle cx="90"  cy="66" r="2.5" fill="#9ca3af" opacity=".6"/>
+<circle cx="110" cy="66" r="2.5" fill="#9ca3af" opacity=".6"/>
 <!-- D-ring -->
-<ellipse cx="100" cy="162" rx="13" ry="9" fill="none" stroke="#d1d5db" stroke-width="3"/>
-<!-- Tag -->
-<circle cx="100" cy="178" r="11" fill="#fbbf24" stroke="#d97706" stroke-width="2"/>
-<text x="100" y="183" text-anchor="middle" font-size="11" fill="#78350f" font-weight="900" font-family="sans-serif">&#9733;</text>
-</svg></div>
-  <div class="pinfo">
-    <h3 class="pname">Coleira Ajust&#225;vel</h3>
-    <p class="pdesc">Coleira em nylon resistente com fivela met&#225;lica. Tamanhos P, M e G.</p>
-    <div class="prow"><span class="pprice" style="color:#f97316">R$39,90</span></div>
-    <button class="add-btn" style="--pri:#f97316">&#128722; Adicionar ao Carrinho</button>
-  </div>
+<ellipse cx="100" cy="168" rx="14" ry="9" fill="none" stroke="#cbd5e1" stroke-width="3.5"/>
+<!-- Heart tag -->
+<path d="M100 190 Q100 178 110 178 Q118 178 118 186 Q118 192 100 202 Q82 192 82 186 Q82 178 90 178 Q100 178 100 190Z" fill="#fbbf24" stroke="#d97706" stroke-width="1.5"/>
+<text x="100" y="196" text-anchor="middle" font-size="9" fill="#78350f" font-weight="900" font-family="sans-serif">&#9829;</text>
+<!-- Shine on strap -->
+<ellipse cx="64" cy="96" rx="10" ry="5" fill="rgba(255,255,255,.3)" transform="rotate(-30,64,96)"/>
+</svg><div class="pimg-overlay"></div></div>
+<div class="pinfo">
+  <div class="pname">Coleira Ajust&#225;vel Premium</div>
+  <div class="pdesc">Coleira em nylon refor&#231;ado com fivela met&#225;lica inox. Tamanhos P, M e G.</div>
+  <div class="stars">&#9733;&#9733;&#9733;&#9733;<span style="opacity:.4">&#9733;</span> <span class="rc">(198)</span></div>
+  <div class="pills"><span class="pill" style="border-color:#16a34a;color:#16a34a;">&#9989; 3 tamanhos</span><span class="pill" style="border-color:#16a34a;color:#16a34a;">&#128260; 30 dias troca</span></div>
+  <div class="prow"><span class="pprice">R$39,90</span></div>
+  <div class="psold"><strong>46 vendidos</strong> esta semana</div>
+  <button class="add-btn">&#128722; Adicionar ao Carrinho</button>
+</div>
 </div><div class="pcard">
-  <div class="pbadge">OFERTA</div>
-  <div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<div class="pbadge sale">OFERTA</div>
+<button class="pwish" title="Favoritar">&#9825;</button>
+<div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 210">
 <defs>
-  <radialGradient id="bg2" cx="36%" cy="32%">
-    <stop offset="0%" stop-color="#86efac"/><stop offset="100%" stop-color="#15803d"/>
+  <radialGradient id="bxg" cx="36%" cy="32%">
+    <stop offset="0%" stop-color="#86efac"/><stop offset="40%" stop-color="#22c55e"/><stop offset="100%" stop-color="#15803d"/>
   </radialGradient>
+  <filter id="bxf"><feDropShadow dx="0" dy="7" stdDeviation="10" flood-color="#15803d" flood-opacity=".3"/></filter>
 </defs>
-<circle cx="100" cy="108" r="74" fill="url(#bg2)"/>
-<!-- Seams -->
-<path d="M56 54 Q100 88 144 54" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="3"/>
-<path d="M36 108 Q100 132 164 108" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="3"/>
-<path d="M56 162 Q100 128 144 162" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="3"/>
-<!-- Paw on ball -->
-<ellipse cx="92" cy="100" rx="10" ry="8" fill="rgba(255,255,255,.45)"/>
-<circle cx="80"  cy="91"  r="4.5" fill="rgba(255,255,255,.45)"/>
-<circle cx="92"  cy="87"  r="4.5" fill="rgba(255,255,255,.45)"/>
-<circle cx="104" cy="91"  r="4.5" fill="rgba(255,255,255,.45)"/>
+<!-- Ball -->
+<circle cx="100" cy="110" r="78" fill="url(#bxg)" filter="url(#bxf)"/>
+<!-- Seam curves -->
+<path d="M54 56 Q100 90 146 56"  fill="none" stroke="rgba(255,255,255,.32)" stroke-width="3.5"/>
+<path d="M34 110 Q100 136 166 110" fill="none" stroke="rgba(255,255,255,.32)" stroke-width="3.5"/>
+<path d="M54 164 Q100 130 146 164" fill="none" stroke="rgba(255,255,255,.32)" stroke-width="3.5"/>
+<!-- Paw print -->
+<ellipse cx="92" cy="104" rx="12" ry="10" fill="rgba(255,255,255,.5)"/>
+<circle cx="78"  cy="93"  r="5.5" fill="rgba(255,255,255,.5)"/>
+<circle cx="92"  cy="89"  r="5.5" fill="rgba(255,255,255,.5)"/>
+<circle cx="106" cy="93"  r="5.5" fill="rgba(255,255,255,.5)"/>
 <!-- Shine -->
-<ellipse cx="72" cy="74" rx="16" ry="10" fill="rgba(255,255,255,.22)" transform="rotate(-30 72 74)"/>
-</svg></div>
-  <div class="pinfo">
-    <h3 class="pname">Brinquedo Pet</h3>
-    <p class="pdesc">Bola indestru&#237;vel para c&#227;es brincalh&#245;es. Material at&#243;xico e resistente.</p>
-    <div class="prow"><s class="pold">R$44,90</s><span class="pprice" style="color:#f97316">R$29,90</span></div>
-    <button class="add-btn" style="--pri:#f97316">&#128722; Adicionar ao Carrinho</button>
-  </div>
+<ellipse cx="68" cy="72" rx="20" ry="12" fill="rgba(255,255,255,.28)" transform="rotate(-30,68,72)"/>
+<ellipse cx="80" cy="80" rx="8"  ry="5"  fill="rgba(255,255,255,.4)"  transform="rotate(-30,80,80)"/>
+</svg><div class="pimg-overlay"></div></div>
+<div class="pinfo">
+  <div class="pname">Bola Pata Pet</div>
+  <div class="pdesc">Bola indestru&#237;vel de borracha natural para c&#227;es brincalh&#245;es. Material 100% at&#243;xico.</div>
+  <div class="stars">&#9733;&#9733;&#9733;&#9733;<span style="opacity:.4">&#9733;</span> <span class="rc">(287)</span></div>
+  <div class="pills"><span class="pill" style="border-color:#16a34a;color:#16a34a;">&#9989; At&#243;xico</span></div>
+  <div class="prow"><s class="pold">R$44,90</s><span class="pprice">R$29,90</span></div>
+  <div class="psold"><strong>64 vendidos</strong> esta semana</div>
+  <button class="add-btn">&#128722; Adicionar ao Carrinho</button>
+</div>
 </div><div class="pcard">
-  
-  <div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 180">
+
+<button class="pwish" title="Favoritar">&#9825;</button>
+<div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 196">
 <defs>
-  <linearGradient id="camg1" x1="0" y1="0" x2="0" y2="1">
+  <linearGradient id="cmg" x1="0%" y1="0%" x2="0%" y2="100%">
     <stop offset="0%" stop-color="#fde68a"/><stop offset="100%" stop-color="#d97706"/>
   </linearGradient>
+  <filter id="cmf"><feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#92400e" flood-opacity=".3"/></filter>
 </defs>
-<!-- Base shadow -->
-<ellipse cx="110" cy="140" rx="96" ry="30" fill="#92400e" opacity=".35"/>
-<!-- Bed base -->
-<ellipse cx="110" cy="132" rx="92" ry="28" fill="#b45309"/>
+<!-- Shadow base -->
+<ellipse cx="120" cy="176" rx="100" ry="16" fill="#92400e" opacity=".2"/>
+<!-- Bed rim -->
+<ellipse cx="120" cy="150" rx="98" ry="30" fill="#b45309" filter="url(#cmf)"/>
 <!-- Cushion -->
-<ellipse cx="110" cy="124" rx="88" ry="24" fill="url(#camg1)"/>
-<!-- Back bolster -->
-<ellipse cx="110" cy="96" rx="88" ry="26" fill="#fcd34d"/>
-<ellipse cx="110" cy="92" rx="80" ry="20" fill="#fef3c7"/>
+<ellipse cx="120" cy="142" rx="94" ry="26" fill="url(#cmg)"/>
+<!-- Bolster back -->
+<ellipse cx="120" cy="112" rx="94" ry="30" fill="#fcd34d"/>
+<ellipse cx="120" cy="108" rx="86" ry="24" fill="#fef9c3"/>
+<!-- Button details on bolster -->
+<circle cx="80"  cy="108" r="6" fill="#fbbf24" stroke="#d97706" stroke-width="1.5"/>
+<circle cx="120" cy="108" r="6" fill="#fbbf24" stroke="#d97706" stroke-width="1.5"/>
+<circle cx="160" cy="108" r="6" fill="#fbbf24" stroke="#d97706" stroke-width="1.5"/>
 <!-- Plush inner -->
-<ellipse cx="110" cy="120" rx="66" ry="18" fill="#fffbeb" opacity=".75"/>
-<!-- Paw emboss -->
-<ellipse cx="110" cy="120" rx="11" ry="9"  fill="#fbbf24" opacity=".55"/>
-<circle cx="98"  cy="111" r="4.5" fill="#fbbf24" opacity=".55"/>
-<circle cx="110" cy="107" r="4.5" fill="#fbbf24" opacity=".55"/>
-<circle cx="122" cy="111" r="4.5" fill="#fbbf24" opacity=".55"/>
-</svg></div>
-  <div class="pinfo">
-    <h3 class="pname">Caminha Pet</h3>
-    <p class="pdesc">Caminha confort&#225;vel e quentinha. Cobertura lav&#225;vel na m&#225;quina.</p>
-    <div class="prow"><s class="pold">R$159,00</s><span class="pprice" style="color:#f97316">R$119,00</span></div>
-    <button class="add-btn" style="--pri:#f97316">&#128722; Adicionar ao Carrinho</button>
-  </div>
+<ellipse cx="120" cy="138" rx="72" ry="19" fill="#fffbeb" opacity=".8"/>
+<!-- Big paw on cushion -->
+<ellipse cx="120" cy="138" rx="13" ry="11" fill="#fbbf24" opacity=".6"/>
+<circle cx="106" cy="127" r="5.5" fill="#fbbf24" opacity=".6"/>
+<circle cx="120" cy="122" r="5.5" fill="#fbbf24" opacity=".6"/>
+<circle cx="134" cy="127" r="5.5" fill="#fbbf24" opacity=".6"/>
+<!-- Shine -->
+<ellipse cx="80" cy="116" rx="20" ry="8" fill="rgba(255,255,255,.3)" transform="rotate(-10,80,116)"/>
+</svg><div class="pimg-overlay"></div></div>
+<div class="pinfo">
+  <div class="pname">Caminha Oval Deluxe</div>
+  <div class="pdesc">Caminha super confort&#225;vel com enchimento antial&#233;rgico. Capa lav&#225;vel na m&#225;quina.</div>
+  <div class="stars">&#9733;&#9733;&#9733;&#9733;<span style="opacity:.4">&#9733;</span> <span class="rc">(156)</span></div>
+  <div class="pills"><span class="pill" style="border-color:#16a34a;color:#16a34a;">&#128230; Frete gr&#225;tis</span><span class="pill" style="border-color:#16a34a;color:#16a34a;">&#9989; Antial&#233;rgico</span></div>
+  <div class="prow"><s class="pold">R$159,00</s><span class="pprice">R$119,00</span></div>
+  <div class="psold"><strong>37 vendidos</strong> esta semana</div>
+  <button class="add-btn">&#128722; Adicionar ao Carrinho</button>
+</div>
 </div><div class="pcard">
-  <div class="pbadge">PROMO</div>
-  <div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-<!-- Base pad -->
-<rect x="18" y="38" width="164" height="132" rx="16" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/>
-<!-- Grid lines -->
-<line x1="60"  y1="38" x2="60"  y2="170" stroke="#e2e8f0" stroke-width="1.2"/>
-<line x1="100" y1="38" x2="100" y2="170" stroke="#e2e8f0" stroke-width="1.2"/>
-<line x1="140" y1="38" x2="140" y2="170" stroke="#e2e8f0" stroke-width="1.2"/>
-<line x1="18"  y1="80" x2="182" y2="80"  stroke="#e2e8f0" stroke-width="1.2"/>
-<line x1="18"  y1="122" x2="182" y2="122" stroke="#e2e8f0" stroke-width="1.2"/>
-<!-- Absorbency dots -->
-<circle cx="39"  cy="59" r="3" fill="#bfdbfe" opacity=".7"/>
-<circle cx="79"  cy="59" r="3" fill="#bfdbfe" opacity=".7"/>
-<circle cx="119" cy="59" r="3" fill="#bfdbfe" opacity=".7"/>
-<circle cx="159" cy="59" r="3" fill="#bfdbfe" opacity=".7"/>
-<circle cx="39"  cy="101" r="3" fill="#bfdbfe" opacity=".7"/>
-<circle cx="79"  cy="101" r="3" fill="#bfdbfe" opacity=".7"/>
-<circle cx="119" cy="101" r="3" fill="#bfdbfe" opacity=".7"/>
-<circle cx="159" cy="101" r="3" fill="#bfdbfe" opacity=".7"/>
-<!-- Blue indicator strip -->
-<rect x="18" y="154" width="164" height="16" rx="0 0 16 16" fill="#3b82f6" opacity=".3"/>
+<div class="pbadge ">PROMO</div>
+<button class="pwish" title="Favoritar">&#9825;</button>
+<div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 210">
+<defs>
+  <filter id="tpf"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity=".18"/></filter>
+</defs>
+<!-- Main pad -->
+<rect x="16" y="36" width="168" height="148" rx="18" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2" filter="url(#tpf)"/>
+<!-- Top colored band -->
+<rect x="16" y="36" width="168" height="20" rx="18 18 0 0" fill="#eff6ff"/>
+<!-- Grid lines vertical -->
+<line x1="58"  y1="36"  x2="58"  y2="184" stroke="#e2e8f0" stroke-width="1.2"/>
+<line x1="100" y1="36"  x2="100" y2="184" stroke="#e2e8f0" stroke-width="1.2"/>
+<line x1="142" y1="36"  x2="142" y2="184" stroke="#e2e8f0" stroke-width="1.2"/>
+<!-- Grid lines horizontal -->
+<line x1="16"  y1="85"  x2="184" y2="85"  stroke="#e2e8f0" stroke-width="1.2"/>
+<line x1="16"  y1="134" x2="184" y2="134" stroke="#e2e8f0" stroke-width="1.2"/>
+<!-- Blue absorb dots grid -->
+<g fill="#bfdbfe" opacity=".8">
+  <circle cx="37" cy="61" r="3.5"/><circle cx="79" cy="61" r="3.5"/>
+  <circle cx="121" cy="61" r="3.5"/><circle cx="163" cy="61" r="3.5"/>
+  <circle cx="37" cy="110" r="3.5"/><circle cx="79" cy="110" r="3.5"/>
+  <circle cx="121" cy="110" r="3.5"/><circle cx="163" cy="110" r="3.5"/>
+  <circle cx="37" cy="159" r="3.5"/><circle cx="79" cy="159" r="3.5"/>
+  <circle cx="121" cy="159" r="3.5"/><circle cx="163" cy="159" r="3.5"/>
+</g>
 <!-- Center badge -->
-<rect x="70" y="84" width="60" height="28" rx="7" fill="rgba(59,130,246,.12)"/>
-<text x="100" y="101" text-anchor="middle" font-size="10" fill="#3b82f6" font-weight="700" font-family="sans-serif">HIGIENE</text>
+<rect x="68" y="90" width="64" height="32" rx="8" fill="rgba(59,130,246,.1)"/>
+<text x="100" y="108" text-anchor="middle" font-size="11" fill="#3b82f6" font-weight="800" font-family="sans-serif">HIGIENE+</text>
+<!-- Blue bottom strip indicator -->
+<rect x="16" y="166" width="168" height="18" rx="0 0 18 18" fill="#bfdbfe" opacity=".6"/>
+<text x="100" y="179" text-anchor="middle" font-size="9" fill="#1e40af" font-weight="700" font-family="sans-serif">ULTRA ABSORVENTE</text>
 <!-- Corner rings -->
-<circle cx="34"  cy="54" r="4" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
-<circle cx="166" cy="54" r="4" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
-<circle cx="34"  cy="154" r="4" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
-<circle cx="166" cy="154" r="4" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
-</svg></div>
-  <div class="pinfo">
-    <h3 class="pname">Tapete Higi&#234;nico 30un</h3>
-    <p class="pdesc">Tapete com tecnologia ultra-absorvente. Ideal para adestramento e higiene di&#225;ria.</p>
-    <div class="prow"><span class="pprice" style="color:#f97316">R$34,90</span></div>
-    <button class="add-btn" style="--pri:#f97316">&#128722; Adicionar ao Carrinho</button>
-  </div>
-</div></div>
+<circle cx="32"  cy="52" r="4.5" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
+<circle cx="168" cy="52" r="4.5" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
+<circle cx="32"  cy="168" r="4.5" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
+<circle cx="168" cy="168" r="4.5" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
+</svg><div class="pimg-overlay"></div></div>
+<div class="pinfo">
+  <div class="pname">Tapete Higi&#234;nico 30un</div>
+  <div class="pdesc">Tapete com tecnologia ultra-absorvente e indicador de umidade. Para adestramento di&#225;rio.</div>
+  <div class="stars">&#9733;&#9733;&#9733;&#9733;<span style="opacity:.4">&#9733;</span> <span class="rc">(341)</span></div>
+  <div class="pills"><span class="pill" style="border-color:#f97316;color:#f97316;">&#9889; 30 unidades</span><span class="pill" style="border-color:#16a34a;color:#16a34a;">&#128260; 30 dias troca</span></div>
+  <div class="prow"><span class="pprice">R$34,90</span></div>
+  <div class="psold"><strong>79 vendidos</strong> esta semana</div>
+  <button class="add-btn">&#128722; Adicionar ao Carrinho</button>
+</div>
+</div>
+    </div>
   </div>
 </section>
+
+<!-- SOCIAL PROOF -->
+<div class="proof">
+  <div class="proof-in">
+    <div class="proof-stat"><div class="ps-val">3.200+</div><div class="ps-lbl">Pets felizes</div></div><div style="width:1px;height:48px;background:rgba(0,0,0,.1);"></div><div class="proof-stat"><div class="ps-val">4.9&#9733;</div><div class="ps-lbl">Avalia&#231;&#227;o m&#233;dia</div></div><div style="width:1px;height:48px;background:rgba(0,0,0,.1);"></div><div class="proof-stat"><div class="ps-val">100%</div><div class="ps-lbl">Aprovado por vets</div></div><div style="width:1px;height:48px;background:rgba(0,0,0,.1);"></div><div class="proof-stat"><div class="ps-val">2&#8211;3 dias</div><div class="ps-lbl">Entrega m&#233;dia</div></div>
+  </div>
+</div>
 
 <!-- FOOTER -->
 <footer class="footer" id="contato">
   <div class="footer-in">
-    <div class="fhd">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 58" width="210" height="58">
-  <!-- Paw circle -->
-  <circle cx="29" cy="29" r="23" fill="#f97316" opacity=".92"/>
-  <ellipse cx="29" cy="33" rx="11" ry="9" fill="#fff" opacity=".9"/>
-  <circle cx="18" cy="22" r="5"   fill="#fff" opacity=".9"/>
-  <circle cx="29" cy="18" r="5"   fill="#fff" opacity=".9"/>
-  <circle cx="40" cy="22" r="5"   fill="#fff" opacity=".9"/>
-  <!-- Divider -->
-  <line x1="64" y1="12" x2="64" y2="46" stroke="rgba(249,115,22,0.22)" stroke-width="1.5"/>
-  <text x="74" y="34" font-family="'Arial Rounded MT Bold',Arial,sans-serif" font-size="22" font-weight="900" fill="#f8fafc" letter-spacing="1">PetLove</text>
-  <text x="74" y="50" font-family="Arial,sans-serif" font-size="11" fill="#f97316" letter-spacing="4">SHOP</text>
+    <div class="fhd" id="sobre">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 60" width="200" height="55">
+  <circle cx="30" cy="30" r="24" fill="#f97316" opacity=".92"/>
+  <ellipse cx="30" cy="35" rx="12" ry="10" fill="#fff" opacity=".92"/>
+  <circle cx="18" cy="22" r="5.5" fill="#fff" opacity=".92"/>
+  <circle cx="30" cy="18" r="5.5" fill="#fff" opacity=".92"/>
+  <circle cx="42" cy="22" r="5.5" fill="#fff" opacity=".92"/>
+  <line x1="66" y1="13" x2="66" y2="47" stroke="rgba(249,115,22,.22)" stroke-width="1.5"/>
+  <text x="76" y="35" font-family="'Arial Rounded MT Bold',Arial,sans-serif" font-size="22" font-weight="900" fill="#1c1917" letter-spacing="1">PetLove</text>
+  <text x="76" y="51" font-family="Arial,sans-serif" font-size="11" fill="#f97316" letter-spacing="4">SHOP</text>
 </svg>
-      <div id="sobre">
-        <div style="font-size:14px;color:rgba(255,255,255,.9);font-weight:700;margin-bottom:5px;">PetLove Shop</div>
-        <p>Loja especializada em produtos para pets desde 2019. Ra&#231;&#245;es, acess&#243;rios e muito amor pelo seu animal.</p>
+      <div class="fhd-text">
+        <h3>PetLove Shop</h3>
+        <p>Loja especializada em produtos para c&#227;es e gatos desde 2019. Ra&#231;&#245;es, acess&#243;rios e muito amor em cada produto.</p>
       </div>
     </div>
     <div class="fgrid">
       <div class="fcol">
         <h4>Sobre n&#243;s</h4>
-        <p>Loja especializada em produtos para pets desde 2019. Ra&#231;&#245;es, acess&#243;rios e muito amor pelo seu animal.</p>
+        <p>Loja especializada em produtos para c&#227;es e gatos desde 2019. Ra&#231;&#245;es, acess&#243;rios e muito amor em cada produto.</p>
       </div>
       <div class="fcol">
         <h4>Pol&#237;tica de troca</h4>
@@ -456,26 +597,40 @@ a{text-decoration:none;color:inherit;}
       </div>
       <div class="fcol">
         <h4>Contato</h4>
-        <a href="https://wa.me/5541998355581" target="_blank">&#128172; (41) 99835-5581 &#8212; WhatsApp</a>
+        <a href="https://wa.me/5541998355581" target="_blank">&#128172; (41) 99835-5581 &mdash; WhatsApp</a>
         <p>&#128140; contato@petloveshop.com.br</p>
-        <p>&#128205; Curitiba, PR &#8212; Brasil</p>
-        <p>&#128336; Seg a Sex, 9h&#8211;18h</p>
+        <p>&#128205; Curitiba, PR &mdash; Brasil</p>
+        <p>&#128336; Seg a Sex, 9h&ndash;18h</p>
+        <div class="fpay">
+          <span class="fpay-chip">&#128179; PIX</span>
+          <span class="fpay-chip">&#128178; Cart&#227;o</span>
+          <span class="fpay-chip">&#128196; Boleto</span>
+        </div>
       </div>
     </div>
-    <div class="fbot"><p>PetLove Shop &copy; 2025/26 &#8212; Curitiba, PR</p></div>
+    <div class="fbot">
+      <p>PetLove Shop &copy; 2025/26 &mdash; Curitiba, PR &mdash; Todos os direitos reservados</p>
+    </div>
   </div>
 </footer>
 
+<a id="float-wa" href="https://wa.me/5541998355581?text=Oi%2C%20vi%20o%20demo%20e%20quero%20uma%20loja%20assim!" target="_blank">
+  <span style="font-size:22px;">&#128172;</span>
+  <span class="float-wa-txt">Quero uma loja assim</span>
+</a>
 <div id="ctoast">&#10003; Adicionado ao carrinho!</div>
 <script>
 (function(){
   var n=0,badge=document.getElementById('cbadge'),toast=document.getElementById('ctoast');
   document.querySelectorAll('.add-btn').forEach(function(b){
     b.addEventListener('click',function(){
-      n++;badge.textContent=n;badge.style.display='flex';
-      toast.classList.add('on');setTimeout(function(){toast.classList.remove('on');},2200);
-      var t=b.textContent;b.textContent='✓ Adicionado!';b.disabled=true;
-      setTimeout(function(){b.textContent=t;b.disabled=false;},1600);
+      n++;
+      if(badge){badge.textContent=n;badge.style.display='flex';}
+      toast.classList.add('on');
+      setTimeout(function(){toast.classList.remove('on');},2400);
+      var orig=b.innerHTML;
+      b.innerHTML='&#10003; Adicionado!';b.style.background='#16a34a';b.disabled=true;
+      setTimeout(function(){b.innerHTML=orig;b.style.background='';b.disabled=false;},1800);
     });
   });
 })();
