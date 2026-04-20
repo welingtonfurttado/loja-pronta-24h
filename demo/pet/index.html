@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PetLove Shop | Tudo para seu Pet</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{
+      --primary:#f97316;
+      --primary-dark:#ea6a0a;
+      --accent:#fbbf24;
+      --dark:#1c1917;
+      --text:#222;
+      --muted:#777;
+      --bg:#fff8f0;
+      --card-bg:#fff;
+      --hero-font:'Nunito','Inter',sans-serif;
+      --body-font:'Inter',sans-serif;
+    }
+    html{scroll-behavior:smooth;}
+    body{font-family:var(--body-font);background:var(--bg);color:var(--text);line-height:1.6;padding-top:52px;}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px;}
+    
+#demo-backnav{position:fixed;top:0;left:0;right:0;z-index:300;height:52px;background:#0f172a;border-bottom:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;}
+.backnav-inner{max-width:1200px;margin:0 auto;padding:0 20px;width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.backnav-back{display:inline-flex;align-items:center;gap:6px;color:#f8fafc;text-decoration:none;font-size:13px;font-weight:600;padding:7px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.12);white-space:nowrap;transition:background .2s,border-color .2s,color .2s;}
+.backnav-back:hover{background:rgba(34,211,238,0.1);border-color:rgba(34,211,238,0.45);color:#22d3ee;}
+.backnav-label{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(248,250,252,0.3);white-space:nowrap;}
+.backnav-wa{display:inline-flex;align-items:center;gap:6px;color:#fff;text-decoration:none;font-size:13px;font-weight:600;padding:7px 14px;border-radius:8px;background:#25d366;white-space:nowrap;transition:background .2s;}
+.backnav-wa:hover{background:#1ebe5c;}
+@media(max-width:580px){.backnav-label{display:none;}.backnav-wa .wa-text{display:none;}}
+
+    /* NAVBAR */
+    .navbar{background:var(--dark);position:sticky;top:52px;z-index:200;box-shadow:0 2px 12px rgba(0,0,0,0.3);}
+    .navbar-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;}
+    .navbar-logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none;}
+    .navbar-links{display:flex;gap:24px;}
+    .navbar-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s;}
+    .navbar-links a:hover{color:var(--primary);}
+    @media(max-width:600px){.navbar-links{display:none;}}
+    /* HERO */
+    .hero{background:linear-gradient(135deg,#1c1917 0%,#3a1f0a 100%);color:white;padding:72px 0 60px;position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,0.025) 1px,transparent 1px);background-size:24px 24px;pointer-events:none;}
+    .hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;position:relative;z-index:1;}
+    @media(max-width:768px){.hero-inner{grid-template-columns:1fr;text-align:center;}}
+    .hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:white;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:6px 14px;border-radius:100px;margin-bottom:18px;}
+    .hero-dot{width:6px;height:6px;border-radius:50%;background:var(--primary);animation:blink 1.5s infinite;flex-shrink:0;}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+    .hero h1{font-family:var(--hero-font);font-size:clamp(2.2rem,4.5vw,3.8rem);line-height:1.05;margin-bottom:16px;}
+    .hero h1 span{color:var(--accent);}
+    .hero-sub{font-size:15px;color:rgba(255,255,255,0.65);margin-bottom:28px;}
+    .hero-sub b{color:rgba(255,255,255,0.9);}
+    .hero-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+    @media(max-width:768px){.hero-actions{justify-content:center;}}
+    .btn-hero{display:inline-flex;align-items:center;gap:8px;background:var(--primary);color:#fff;font-weight:700;font-size:16px;padding:14px 32px;border-radius:10px;text-decoration:none;transition:background .2s,transform .15s,box-shadow .2s;box-shadow:0 4px 20px rgba(0,0,0,0.25);letter-spacing:.02em;}
+    .btn-hero:hover{background:var(--primary-dark);transform:translateY(-2px);}
+    .hero-shipping{font-size:13px;color:rgba(255,255,255,0.55);}
+    .hero-visual{display:flex;justify-content:center;align-items:center;}
+    @media(max-width:768px){.hero-visual{display:none;}}
+    /* TRUST */
+    .trust{background:white;border-bottom:1px solid #f0f0f0;padding:14px 0;}
+    .trust-inner{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;}
+    .trust-item{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#444;}
+    /* PRODUCTS */
+    .products{padding:60px 0;}
+    .section-head{text-align:center;margin-bottom:40px;}
+    .section-label{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--primary);margin-bottom:8px;}
+    .section-title{font-family:var(--hero-font);font-size:clamp(1.8rem,3vw,2.8rem);color:var(--dark);line-height:1.1;}
+    .products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px;}
+    .product-card{background:var(--card-bg);border-radius:16px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,0.06);transition:transform .2s,box-shadow .2s;}
+    .product-card:hover{transform:translateY(-5px);box-shadow:0 10px 28px rgba(0,0,0,0.12);}
+    .card-image{aspect-ratio:1;overflow:hidden;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#fff8f0,#fef3c7);padding:20px;}
+    .card-image img{width:100%;height:100%;object-fit:contain;transition:transform .3s;}
+    .product-card:hover .card-image img{transform:scale(1.07);}
+    .card-body{padding:16px;}
+    .card-badge{display:inline-block;background:var(--primary);color:white;font-size:11px;font-weight:700;padding:3px 8px;border-radius:4px;margin-bottom:8px;}
+    .card-name{font-weight:700;font-size:15px;color:var(--dark);margin-bottom:6px;line-height:1.3;}
+    .card-rating{font-size:12px;color:var(--muted);margin-bottom:8px;}
+    .card-price-from{font-size:12px;color:var(--muted);margin-bottom:2px;}
+    .card-price{font-family:var(--hero-font);font-size:1.6rem;color:var(--primary);line-height:1;margin-bottom:4px;}
+    .card-installment{font-size:12px;color:var(--muted);margin-bottom:12px;}
+    .card-btn{display:block;width:100%;background:var(--dark);color:white;border:none;padding:11px;border-radius:8px;font-weight:700;font-size:13px;cursor:pointer;transition:background .2s,transform .1s;letter-spacing:.02em;}
+    .card-btn:hover{background:var(--primary);transform:scale(1.01);}
+    /* FOOTER */
+    footer{background:var(--dark);color:rgba(255,255,255,0.6);padding:48px 0 0;}
+    .footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-bottom:32px;}
+    @media(max-width:640px){.footer-grid{grid-template-columns:1fr;}}
+    .footer-col h4{font-family:var(--hero-font);font-size:.95rem;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:14px;}
+    .footer-col p{font-size:13px;line-height:1.7;margin-bottom:6px;}
+    .footer-col a{display:block;color:rgba(255,255,255,0.55);text-decoration:none;font-size:13px;margin-bottom:6px;transition:color .2s;}
+    .footer-col a:hover{color:var(--primary);}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding:20px 0;text-align:center;font-size:12px;color:rgba(255,255,255,0.3);}
+  </style>
+</head>
+<body>
+<div id="demo-backnav">
+  <div class="backnav-inner">
+    <a href="/" class="backnav-back">&#8592; Voltar para Home</a>
+    <span class="backnav-label">Exemplo de loja criada em 24h</span>
+    <a href="https://wa.me/5541998355581" target="_blank" rel="noopener" class="backnav-wa">&#128172; <span class="wa-text">Falar no WhatsApp</span></a>
+  </div>
+</div>
+
+<nav class="navbar">
+  <div class="container navbar-inner">
+    <a href="#" class="navbar-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 56" width="220" height="56"><defs></defs><circle cx="28" cy="28" r="22" fill="#f97316" opacity="0.15"/><circle cx="28" cy="28" r="22" fill="none" stroke="#f97316" stroke-width="2.5"/><circle cx="28" cy="33" r="8.0" fill="#f97316"/><circle cx="21" cy="24" r="4" fill="#f97316"/><circle cx="28" cy="22" r="4" fill="#f97316"/><circle cx="35" cy="24" r="4" fill="#f97316"/><circle cx="16" cy="31" r="3" fill="#f97316"/><circle cx="40" cy="31" r="3" fill="#f97316"/><line x1="58" y1="10" x2="58" y2="46" stroke="rgba(249,115,22,0.2)" stroke-width="1.5"/><text x="68" y="26" font-family="'Nunito',Arial,sans-serif" font-size="17" font-weight="800" fill="#1c1917" letter-spacing="1">PetLove</text><text x="68" y="44" font-family="'Nunito',Arial,sans-serif" font-size="12" font-weight="700" fill="#f97316" letter-spacing="2">SHOP</text></svg></a>
+    <div class="navbar-links">
+      <a href="#products">Produtos</a>
+      <a href="#sobre">Sobre N&#243;s</a>
+      <a href="#contato">Contato</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <div class="hero-tag"><span class="hero-dot"></span>Qualidade e Amor</div>
+      <h1>Tudo para<br>seu <span>Pet</span></h1>
+      <p class="hero-sub"><b>Qualidade e Amor</b> em cada produto &nbsp;•&nbsp; Frete Grátis acima de <b>R$149</b></p>
+      <div class="hero-actions">
+        <a href="#products" class="btn-hero">Ver Produtos &#8594;</a>
+        <span class="hero-shipping">&#9989; Entrega em 2–5 dias úteis</span>
+      </div>
+    </div>
+    <div class="hero-visual"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 300" width="280" height="300"><defs></defs><defs><linearGradient id="hvp" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox"><stop offset="0%" stop-color="rgba(249,115,22,0.12)"/><stop offset="100%" stop-color="rgba(249,115,22,0)"/></linearGradient></defs><rect width="280" height="300" fill="url(#hvp)" rx="20"/><text x="140" y="165" text-anchor="middle" font-size="130" opacity="0.12">&#128054;</text><text x="55" y="80" font-size="36" opacity="0.25">&#128062;</text><text x="210" y="250" font-size="28" opacity="0.2">&#10024;</text></svg></div>
+  </div>
+</section>
+
+<section class="trust">
+  <div class="container">
+    <div class="trust-inner">
+      <div class="trust-item">&#128737; Compra 100% Segura</div>
+      <div class="trust-item">&#128666; Frete Gr&#225;tis acima de R$ 149</div>
+      <div class="trust-item">&#128260; Troca em 30 dias</div>
+      <div class="trust-item">&#11088; 4.9/5 (1.200+ avalia&#231;&#245;es)</div>
+    </div>
+  </div>
+</section>
+
+<section class="products" id="products">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-label">Cat&#225;logo</p>
+      <h2 class="section-title">Produtos para seu Pet</h2>
+    </div>
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="card-image">
+          <img src="assets/products/racao.svg" alt="Ração Premium 15kg" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="card-badge">-21%</span>
+          <h3 class="card-name">Ração Premium 15kg</h3>
+          <div class="card-rating">&#11088;&#11088;&#11088;&#11088;&#10025; <span>4.9 (521 aval.)</span></div>
+          <div class="card-price-from">De: <s>R$ 189,90</s></div>
+          <div class="card-price">R$ 149,90</div>
+          <div class="card-installment">6x R$ 24,98 sem juros</div>
+          <button class="card-btn">&#128722; Adicionar ao Carrinho</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="card-image">
+          <img src="assets/products/coleira.svg" alt="Coleira Ajustável" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="card-badge">-25%</span>
+          <h3 class="card-name">Coleira Ajustável</h3>
+          <div class="card-rating">&#11088;&#11088;&#11088;&#11088;&#10025; <span>4.8 (234 aval.)</span></div>
+          <div class="card-price-from">De: <s>R$ 79,90</s></div>
+          <div class="card-price">R$ 59,90</div>
+          <div class="card-installment">2x R$ 29,95 sem juros</div>
+          <button class="card-btn">&#128722; Adicionar ao Carrinho</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="card-image">
+          <img src="assets/products/brinquedo.svg" alt="Brinquedo Interativo" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="card-badge">-20%</span>
+          <h3 class="card-name">Brinquedo Interativo</h3>
+          <div class="card-rating">&#11088;&#11088;&#11088;&#11088;&#10025; <span>4.7 (189 aval.)</span></div>
+          <div class="card-price-from">De: <s>R$ 49,90</s></div>
+          <div class="card-price">R$ 39,90</div>
+          <div class="card-installment">1x R$ 39,90</div>
+          <button class="card-btn">&#128722; Adicionar ao Carrinho</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="card-image">
+          <img src="assets/products/caminha.svg" alt="Caminha Pet Confort" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="card-badge">-20%</span>
+          <h3 class="card-name">Caminha Pet Confort</h3>
+          <div class="card-rating">&#11088;&#11088;&#11088;&#11088;&#10025; <span>4.9 (312 aval.)</span></div>
+          <div class="card-price-from">De: <s>R$ 149,90</s></div>
+          <div class="card-price">R$ 119,90</div>
+          <div class="card-installment">4x R$ 29,97 sem juros</div>
+          <button class="card-btn">&#128722; Adicionar ao Carrinho</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="card-image">
+          <img src="assets/products/tapete.svg" alt="Tapete Higiênico 30un" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="card-badge">-25%</span>
+          <h3 class="card-name">Tapete Higiênico 30un</h3>
+          <div class="card-rating">&#11088;&#11088;&#11088;&#11088;&#10025; <span>4.8 (278 aval.)</span></div>
+          <div class="card-price-from">De: <s>R$ 59,90</s></div>
+          <div class="card-price">R$ 44,90</div>
+          <div class="card-installment">2x R$ 22,45 sem juros</div>
+          <button class="card-btn">&#128722; Adicionar ao Carrinho</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contato">
+  <div class="container">
+    <div class="footer-grid" id="sobre">
+      <div class="footer-col"><h4>PetLove Shop</h4><p>Cuidamos do seu melhor amigo com amor e qualidade.</p><p>Produtos selecionados por veterinários.</p><p>Curitiba, PR — Entregamos para todo o Brasil.</p></div><div class="footer-col"><h4>Política de Troca</h4><a href="#">✓ Devolução em até 30 dias</a><a href="#">✓ Produto lacrado e sem uso</a><a href="#">✓ Defeito: reembolso total</a><a href="#">✓ Embalagem reforçada garantida</a><a href="#">→ Ver política completa</a></div><div class="footer-col"><h4>Contato</h4><p>📱 (41) 99835-5581 (WhatsApp)</p><p>📧 contato@petloveshop.com.br</p><p>📍 Curitiba, PR — Brasil</p><p>🕐 Seg a Sex, 9h–18h</p></div>
+    </div>
+    <div class="footer-bottom">
+      <p>PetLove Shop | Tudo para seu Pet &#169; 2025 &#8212; Loja criada em 24h com Loja Pronta 24h &middot; Curitiba, PR</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
