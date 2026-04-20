@@ -1,1 +1,67 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 320" width="280" height="320"><defs><linearGradient id="cabg" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox"><stop offset="0%" stop-color="#fffbeb"/><stop offset="100%" stop-color="#fef9c3"/></linearGradient><radialGradient id="cabed" cx="50%" cy="40%" r="55%"><stop offset="0%" stop-color="#fde68a"/><stop offset="70%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#d97706"/></radialGradient><radialGradient id="cainside" cx="50%" cy="40%" r="55%"><stop offset="0%" stop-color="#fef3c7"/><stop offset="100%" stop-color="#fde68a"/></radialGradient></defs><rect width="280" height="320" fill="url(#cabg)"/><ellipse cx="140" cy="185" rx="118" ry="75" fill="url(#cabed)"/><ellipse cx="140" cy="185" rx="88" ry="52" fill="url(#cainside)"/><ellipse cx="140" cy="185" rx="112" ry="70" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2" stroke-dasharray="8,5"/><ellipse cx="140" cy="185" rx="93" ry="57" fill="none" stroke="#f59e0b" stroke-width="2" opacity="0.5"/><circle cx="140" cy="195" r="12.0" fill="rgba(217,119,6,0.35)"/><circle cx="129" cy="182" r="6" fill="rgba(217,119,6,0.35)"/><circle cx="140" cy="178" r="6" fill="rgba(217,119,6,0.35)"/><circle cx="151" cy="182" r="6" fill="rgba(217,119,6,0.35)"/><circle cx="122" cy="191" r="5" fill="rgba(217,119,6,0.35)"/><circle cx="158" cy="191" r="5" fill="rgba(217,119,6,0.35)"/><circle cx="35" cy="175" r="5" fill="rgba(255,255,255,0.4)"/><circle cx="22" cy="195" r="4" fill="rgba(255,255,255,0.3)"/><circle cx="245" cy="175" r="5" fill="rgba(255,255,255,0.4)"/><circle cx="258" cy="195" r="4" fill="rgba(255,255,255,0.3)"/><ellipse cx="115" cy="165" rx="35" ry="15" fill="rgba(255,255,255,0.2)"/><path d="M108 210 Q120 200 140 200 Q160 200 172 210 Q168 222 140 226 Q112 222 108 210 Z" fill="rgba(217,119,6,0.3)"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="480" height="480">
+  <defs>
+    <radialGradient id="bgcm" cx="50%" cy="42%" r="65%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="70%" stop-color="#fffbeb"/>
+      <stop offset="100%" stop-color="#fef3c7"/>
+    </radialGradient>
+    <linearGradient id="cmbase" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#92400e"/>
+    </linearGradient>
+    <linearGradient id="cmcushion" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#fde68a"/>
+      <stop offset="60%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <linearGradient id="cmbolster" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#fef3c7"/>
+      <stop offset="100%" stop-color="#fcd34d"/>
+    </linearGradient>
+    <radialGradient id="cmshine" cx="30%" cy="25%" r="50%">
+      <stop offset="0%" stop-color="rgba(255,255,255,.55)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </radialGradient>
+    <filter id="cmdrop">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#92400e" flood-opacity=".28"/>
+    </filter>
+    <filter id="cmblur"><feGaussianBlur stdDeviation="3"/></filter>
+  </defs>
+  <rect width="480" height="480" fill="url(#bgcm)"/>
+  <!-- Ground shadow -->
+  <ellipse cx="240" cy="458" rx="168" ry="20" fill="#92400e" opacity=".15" filter="url(#cmblur)"/>
+
+  <!-- BED RIM (base) -->
+  <ellipse cx="240" cy="370" rx="194" ry="56" fill="url(#cmbase)" filter="url(#cmdrop)"/>
+  <!-- Rim highlight -->
+  <ellipse cx="240" cy="358" rx="188" ry="48" fill="#b45309"/>
+
+  <!-- MAIN CUSHION -->
+  <ellipse cx="240" cy="340" rx="180" ry="46" fill="url(#cmcushion)"/>
+  <ellipse cx="240" cy="340" rx="180" ry="46" fill="url(#cmshine)"/>
+
+  <!-- BOLSTER (back raised part) -->
+  <ellipse cx="240" cy="218" rx="180" ry="64" fill="url(#cmbolster)" filter="url(#cmdrop)"/>
+  <ellipse cx="240" cy="210" rx="170" ry="54" fill="#fef9c3"/>
+  <!-- Bolster roll highlight -->
+  <ellipse cx="240" cy="202" rx="152" ry="38" fill="rgba(255,255,255,.35)"/>
+  <!-- Button tufts on bolster -->
+  <circle cx="162" cy="212" r="10" fill="#fbbf24" stroke="#d97706" stroke-width="2"/>
+  <circle cx="240" cy="208" r="10" fill="#fbbf24" stroke="#d97706" stroke-width="2"/>
+  <circle cx="318" cy="212" r="10" fill="#fbbf24" stroke="#d97706" stroke-width="2"/>
+
+  <!-- PLUSH INNER CUSHION -->
+  <ellipse cx="240" cy="336" rx="144" ry="34" fill="#fffbeb" opacity=".85"/>
+
+  <!-- PAW EMBOSSED on cushion -->
+  <g fill="#fbbf24" opacity=".7">
+    <ellipse cx="240" cy="334" rx="22" ry="18"/>
+    <circle cx="208" cy="316" r="10"/>
+    <circle cx="240" cy="310" r="10"/>
+    <circle cx="272" cy="316" r="10"/>
+  </g>
+
+  <!-- Cushion piping / seam -->
+  <ellipse cx="240" cy="340" rx="180" ry="46" fill="none" stroke="#d97706" stroke-width="2" opacity=".4"/>
+  <ellipse cx="240" cy="340" rx="165" ry="40" fill="none" stroke="rgba(255,255,255,.22)" stroke-width="1.5"/>
+</svg>

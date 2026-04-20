@@ -1,1 +1,78 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 320" width="280" height="320"><defs><linearGradient id="rbg" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox"><stop offset="0%" stop-color="#fff8f0"/><stop offset="100%" stop-color="#fdecd4"/></linearGradient><linearGradient id="rbag" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#92400e"/></linearGradient><linearGradient id="rlabel" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox"><stop offset="0%" stop-color="#fef3c7"/><stop offset="100%" stop-color="#fde68a"/></linearGradient></defs><rect width="280" height="320" fill="url(#rbg)"/><rect x="55" y="80" width="170" height="200" rx="12" fill="url(#rbag)"/><path d="M55 80 Q80 55 140 50 Q200 55 225 80 L210 92 Q170 68 140 65 Q110 68 70 92 Z" fill="#b45309"/><rect x="72" y="110" width="136" height="110" rx="8" fill="url(#rlabel)"/><text x="140" y="148" text-anchor="middle" font-family="Impact,sans-serif" font-size="17" font-weight="900" fill="#92400e" letter-spacing="2">PREMIUM</text><text x="140" y="168" text-anchor="middle" font-family="Impact,sans-serif" font-size="12" fill="#b45309" letter-spacing="1">RAÇÃO COMPLETA</text><circle cx="140" cy="198" r="7.0" fill="rgba(146,64,14,0.35)"/><circle cx="134" cy="190" r="4" fill="rgba(146,64,14,0.35)"/><circle cx="140" cy="188" r="4" fill="rgba(146,64,14,0.35)"/><circle cx="146" cy="190" r="4" fill="rgba(146,64,14,0.35)"/><circle cx="130" cy="196" r="3" fill="rgba(146,64,14,0.35)"/><circle cx="150" cy="196" r="3" fill="rgba(146,64,14,0.35)"/><path d="M88 236 Q96 228 112 236 Q104 244 88 236 Z" fill="rgba(255,255,255,0.3)"/><path d="M168 236 Q184 228 192 236 Q184 244 168 236 Z" fill="rgba(255,255,255,0.3)"/><line x1="112" y1="236" x2="168" y2="236" stroke="rgba(255,255,255,0.3)" stroke-width="6" stroke-linecap="round"/><text x="140" y="265" text-anchor="middle" font-family="Impact,sans-serif" font-size="13" fill="rgba(255,255,255,0.7)">15kg</text><path d="M60 85 L76 85 L76 272 L60 272 Z" fill="rgba(255,255,255,0.1)" rx="4"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="480" height="480">
+  <defs>
+    <radialGradient id="bgrc" cx="50%" cy="42%" r="65%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="70%" stop-color="#fff7ed"/>
+      <stop offset="100%" stop-color="#ffedd5"/>
+    </radialGradient>
+    <linearGradient id="rcbag" x1="25%" y1="0%" x2="75%" y2="100%">
+      <stop offset="0%" stop-color="#fb923c"/>
+      <stop offset="50%" stop-color="#ea580c"/>
+      <stop offset="100%" stop-color="#c2410c"/>
+    </linearGradient>
+    <linearGradient id="rctop" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#9a3412"/>
+      <stop offset="100%" stop-color="#7c2d12"/>
+    </linearGradient>
+    <linearGradient id="rcside" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7c2d12" stop-opacity=".6"/>
+      <stop offset="40%" stop-color="transparent"/>
+      <stop offset="100%" stop-color="#7c2d12" stop-opacity=".45"/>
+    </linearGradient>
+    <radialGradient id="rcshine" cx="30%" cy="22%" r="45%">
+      <stop offset="0%" stop-color="rgba(255,255,255,.48)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </radialGradient>
+    <filter id="rcdrop">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#c2410c" flood-opacity=".3"/>
+    </filter>
+    <filter id="rcblur"><feGaussianBlur stdDeviation="2.5"/></filter>
+  </defs>
+  <rect width="480" height="480" fill="url(#bgrc)"/>
+  <ellipse cx="240" cy="458" rx="124" ry="16" fill="#c2410c" opacity=".12" filter="url(#rcblur)"/>
+
+  <!-- BAG BODY -->
+  <path d="M100 96 L86 432 Q86 448 102 448 L378 448 Q394 448 394 432 L380 96 Q360 80 240 78 Q120 80 100 96 Z"
+        fill="url(#rcbag)" filter="url(#rcdrop)"/>
+  <!-- Side shading -->
+  <path d="M100 96 L86 432 Q86 448 102 448 L378 448 Q394 448 394 432 L380 96 Q360 80 240 78 Q120 80 100 96 Z"
+        fill="url(#rcside)"/>
+  <!-- Shine -->
+  <path d="M100 96 L86 432 Q86 448 102 448 L378 448 Q394 448 394 432 L380 96 Q360 80 240 78 Q120 80 100 96 Z"
+        fill="url(#rcshine)"/>
+
+  <!-- TOP FOLD -->
+  <ellipse cx="240" cy="100" rx="144" ry="36" fill="url(#rctop)"/>
+  <ellipse cx="240" cy="96" rx="134" ry="28" fill="#b45309"/>
+  <ellipse cx="240" cy="94" rx="120" ry="20" fill="#c2410c" opacity=".6"/>
+
+  <!-- CLIP SEAL -->
+  <rect x="170" y="52" width="140" height="30" rx="15" fill="#7c2d12"/>
+  <rect x="178" y="58" width="124" height="18" rx="9" fill="#6b2310" opacity=".8"/>
+  <rect x="200" y="60" width="80" height="14" rx="7" fill="rgba(255,255,255,.12)"/>
+
+  <!-- WHITE LABEL PANEL -->
+  <rect x="110" y="148" width="260" height="200" rx="16" fill="rgba(255,255,255,.18)" stroke="rgba(255,255,255,.2)" stroke-width="1"/>
+
+  <!-- BIG PAW PRINT on label -->
+  <g fill="rgba(255,255,255,.72)">
+    <ellipse cx="240" cy="210" rx="26" ry="22"/>
+    <circle cx="206" cy="186" r="13"/>
+    <circle cx="240" cy="178" r="13"/>
+    <circle cx="274" cy="186" r="13"/>
+  </g>
+
+  <!-- BRAND TEXT BARS -->
+  <rect x="136" y="254" width="208" height="10" rx="5" fill="rgba(255,255,255,.5)"/>
+  <rect x="154" y="270" width="172" height="7"  rx="3" fill="rgba(255,255,255,.32)"/>
+  <rect x="166" y="283" width="148" height="6"  rx="3" fill="rgba(255,255,255,.22)"/>
+
+  <!-- WEIGHT BADGE bottom -->
+  <rect x="110" y="362" width="260" height="36" rx="10" fill="rgba(0,0,0,.22)"/>
+  <rect x="128" y="372" width="224" height="8"  rx="4" fill="rgba(255,255,255,.35)"/>
+  <rect x="150" y="384" width="180" height="5"  rx="2" fill="rgba(255,255,255,.2)"/>
+
+  <!-- Bag crease lines -->
+  <path d="M108 120 L94 440" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="1.5"/>
+  <path d="M372 120 L386 440" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="1.5"/>
+</svg>

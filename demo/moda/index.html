@@ -125,6 +125,11 @@ img{display:block;max-width:100%;}
   font-size:10px;font-weight:800;padding:5px 12px;border-radius:100px;letter-spacing:.06em;text-transform:uppercase;}
 .pbadge.sale{background:#ef4444;}
 .pbadge.new{background:#7c3aed;}
+
+.pimg img{width:100%;height:100%;object-fit:contain;padding:8px;
+  transition:transform .4s cubic-bezier(.34,1.56,.64,1);}
+.pcard:hover .pimg img{transform:scale(1.08) translateY(-4px);}
+
 .pimg{position:relative;background:var(--light);display:flex;align-items:center;
   justify-content:center;height:210px;overflow:hidden;}
 .pimg svg{max-height:195px;width:auto;transition:transform .4s cubic-bezier(.34,1.56,.64,1);}
@@ -351,39 +356,7 @@ img{display:block;max-width:100%;}
       <div class="pcard">
 <div class="pbadge sale">OFERTA</div>
 <button class="pwish" title="Favoritar">&#9825;</button>
-<div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 260">
-<defs>
-  <linearGradient id="vg" x1="0%" y1="0%" x2="100%" y2="100%">
-    <stop offset="0%" stop-color="#f06292"/><stop offset="100%" stop-color="#ad1457"/>
-  </linearGradient>
-  <linearGradient id="vg2" x1="0%" y1="0%" x2="0%" y2="100%">
-    <stop offset="0%" stop-color="#e91e8c" stop-opacity=".5"/><stop offset="100%" stop-color="#880e4f" stop-opacity=".05"/>
-  </linearGradient>
-  <filter id="vsh"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#880e4f" flood-opacity=".3"/></filter>
-</defs>
-<!-- Main body -->
-<path d="M70 56 Q62 48 48 40 L26 55 L38 84 L52 73 L52 218 Q52 228 64 228 L136 228 Q148 228 148 218 L148 73 L162 84 L174 55 L152 40 Q138 48 130 56 Q116 46 100 44 Q84 46 70 56Z"
-  fill="url(#vg)" filter="url(#vsh)"/>
-<!-- Skirt flare gradient overlay -->
-<path d="M52 130 L52 218 Q52 228 64 228 L136 228 Q148 228 148 218 L148 130Z" fill="url(#vg2)"/>
-<!-- Bodice neckline V -->
-<path d="M78 54 Q100 76 122 54" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2"/>
-<!-- Waist seam -->
-<rect x="52" y="118" width="96" height="6" fill="rgba(255,255,255,.2)" rx="3"/>
-<!-- Floral print group -->
-<g opacity=".35" fill="#fff">
-  <circle cx="74" cy="148" r="6"/><circle cx="74" cy="148" r="3" fill="#f06292" opacity="1"/>
-  <circle cx="100" cy="162" r="6"/><circle cx="100" cy="162" r="3" fill="#f06292" opacity="1"/>
-  <circle cx="126" cy="148" r="6"/><circle cx="126" cy="148" r="3" fill="#f06292" opacity="1"/>
-  <circle cx="84" cy="176" r="5"/><circle cx="116" cy="178" r="5"/>
-  <circle cx="100" cy="192" r="5"/>
-</g>
-<!-- Shoulder straps -->
-<rect x="84" y="44" width="10" height="18" rx="5" fill="#c2185b"/>
-<rect x="106" y="44" width="10" height="18" rx="5" fill="#c2185b"/>
-<!-- Shine highlights -->
-<ellipse cx="68" cy="70" rx="14" ry="8" fill="rgba(255,255,255,.18)" transform="rotate(-20,68,70)"/>
-</svg><div class="pimg-overlay"></div></div>
+<div class="pimg"><img src="assets/products/vestido.svg" alt="" loading="lazy"><div class="pimg-overlay"></div></div>
 <div class="pinfo">
   <div class="pname">Vestido Floral Premium</div>
   <div class="pdesc">Tecido leve e flui&#769;do com estampa floral exclusiva. Ideal para o dia a dia.</div>
@@ -396,35 +369,7 @@ img{display:block;max-width:100%;}
 </div><div class="pcard">
 
 <button class="pwish" title="Favoritar">&#9825;</button>
-<div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 260">
-<defs>
-  <linearGradient id="cjg" x1="0%" y1="0%" x2="100%" y2="100%">
-    <stop offset="0%" stop-color="#bcaaa4"/><stop offset="100%" stop-color="#6d4c41"/>
-  </linearGradient>
-  <filter id="cjsh"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-opacity=".22"/></filter>
-</defs>
-<!-- Top blusa -->
-<path d="M64 52 L44 64 L54 90 L64 82 L64 130 L136 130 L136 82 L146 90 L156 64 L136 52 Q120 44 100 42 Q80 44 64 52Z"
-  fill="url(#cjg)" filter="url(#cjsh)"/>
-<!-- V collar -->
-<path d="M82 50 Q100 70 118 50" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="2"/>
-<!-- Buttons -->
-<circle cx="100" cy="74" r="3.5" fill="rgba(255,255,255,.5)"/>
-<circle cx="100" cy="88" r="3.5" fill="rgba(255,255,255,.5)"/>
-<circle cx="100" cy="102" r="3.5" fill="rgba(255,255,255,.5)"/>
-<circle cx="100" cy="116" r="3.5" fill="rgba(255,255,255,.5)"/>
-<!-- Waistband -->
-<rect x="62" y="130" width="76" height="12" fill="#5d4037" rx="4"/>
-<rect x="90" y="126" width="20" height="20" rx="5" fill="#795548" stroke="rgba(255,255,255,.3)" stroke-width="1.5"/>
-<!-- Pants left leg -->
-<path d="M62 142 L56 252 Q76 260 100 252 L100 142Z" fill="#8d6e63" opacity=".95"/>
-<!-- Pants right leg -->
-<path d="M138 142 L144 252 Q124 260 100 252 L100 142Z" fill="#795548" opacity=".95"/>
-<!-- Center seam -->
-<line x1="100" y1="144" x2="100" y2="250" stroke="rgba(255,255,255,.14)" stroke-width="1.5"/>
-<!-- Shine on top -->
-<ellipse cx="72" cy="68" rx="12" ry="7" fill="rgba(255,255,255,.18)" transform="rotate(-15,72,68)"/>
-</svg><div class="pimg-overlay"></div></div>
+<div class="pimg"><img src="assets/products/conjunto.svg" alt="" loading="lazy"><div class="pimg-overlay"></div></div>
 <div class="pinfo">
   <div class="pname">Conjunto Linho Feminino</div>
   <div class="pdesc">Conjunto cal&#231;a e blusa em linho premium. Elegante e confort&#225;vel para qualquer ocasi&#227;o.</div>
@@ -437,32 +382,7 @@ img{display:block;max-width:100%;}
 </div><div class="pcard">
 <div class="pbadge new">NOVO</div>
 <button class="pwish" title="Favoritar">&#9825;</button>
-<div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 210">
-<defs>
-  <linearGradient id="blg" x1="0%" y1="0%" x2="100%" y2="100%">
-    <stop offset="0%" stop-color="#1565c0"/><stop offset="100%" stop-color="#0d47a1"/>
-  </linearGradient>
-  <filter id="blsh"><feDropShadow dx="0" dy="6" stdDeviation="9" flood-color="#0d47a1" flood-opacity=".3"/></filter>
-</defs>
-<!-- Body -->
-<path d="M64 52 L46 36 L12 56 L30 98 L50 86 L50 180 Q50 190 62 190 L138 190 Q150 190 150 180 L150 86 L170 98 L188 56 L154 36 L136 52 Q120 44 100 42 Q80 44 64 52Z"
-  fill="url(#blg)" filter="url(#blsh)"/>
-<!-- Puff sleeve bubble left -->
-<ellipse cx="28" cy="74" rx="22" ry="16" fill="#1976d2" opacity=".55"/>
-<path d="M10 70 Q16 86 46 86" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="1.5"/>
-<!-- Puff sleeve bubble right -->
-<ellipse cx="172" cy="74" rx="22" ry="16" fill="#1976d2" opacity=".55"/>
-<path d="M190 70 Q184 86 154 86" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="1.5"/>
-<!-- V-neck -->
-<path d="M80 50 Q100 72 120 50" fill="none" stroke="rgba(255,255,255,.38)" stroke-width="2"/>
-<!-- Fabric texture horizontal lines -->
-<line x1="50" y1="106" x2="150" y2="106" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
-<line x1="50" y1="126" x2="150" y2="126" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
-<line x1="50" y1="146" x2="150" y2="146" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
-<line x1="50" y1="166" x2="150" y2="166" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
-<!-- Shine -->
-<ellipse cx="66" cy="66" rx="16" ry="9" fill="rgba(255,255,255,.2)" transform="rotate(-22,66,66)"/>
-</svg><div class="pimg-overlay"></div></div>
+<div class="pimg"><img src="assets/products/blusa.svg" alt="" loading="lazy"><div class="pimg-overlay"></div></div>
 <div class="pinfo">
   <div class="pname">Blusa Manga Puff Azul</div>
   <div class="pdesc">Blusa moderna com mangas puff e tecido de alta qualidade. Looks sofisticados.</div>
@@ -475,36 +395,7 @@ img{display:block;max-width:100%;}
 </div><div class="pcard">
 
 <button class="pwish" title="Favoritar">&#9825;</button>
-<div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 250">
-<defs>
-  <linearGradient id="sag" x1="0%" y1="0%" x2="100%" y2="100%">
-    <stop offset="0%" stop-color="#303f9f"/><stop offset="100%" stop-color="#1a237e"/>
-  </linearGradient>
-  <linearGradient id="sag2" x1="0%" y1="0%" x2="0%" y2="100%">
-    <stop offset="0%" stop-color="rgba(255,255,255,.06)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/>
-  </linearGradient>
-  <filter id="sash"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#1a237e" flood-opacity=".3"/></filter>
-</defs>
-<!-- Waistband -->
-<rect x="54" y="36" width="92" height="20" fill="#283593" rx="6"/>
-<!-- Zipper detail -->
-<rect x="97" y="38" width="6" height="16" fill="rgba(255,255,255,.25)" rx="2"/>
-<rect x="94" y="46" width="12" height="5" fill="rgba(255,255,255,.15)" rx="2"/>
-<!-- A-line skirt -->
-<path d="M54 56 Q30 108 16 236 L184 236 Q170 108 146 56Z" fill="url(#sag)" filter="url(#sash)"/>
-<!-- Overlay gradient for depth -->
-<path d="M54 56 Q30 108 16 236 L184 236 Q170 108 146 56Z" fill="url(#sag2)"/>
-<!-- Pleat lines -->
-<line x1="100" y1="58" x2="100" y2="234" stroke="rgba(255,255,255,.09)" stroke-width="1.5"/>
-<line x1="76"  y1="60" x2="58"  y2="234" stroke="rgba(255,255,255,.06)" stroke-width="1.5"/>
-<line x1="124" y1="60" x2="142" y2="234" stroke="rgba(255,255,255,.06)" stroke-width="1.5"/>
-<line x1="60"  y1="62" x2="32"  y2="234" stroke="rgba(255,255,255,.04)" stroke-width="1.5"/>
-<line x1="140" y1="62" x2="168" y2="234" stroke="rgba(255,255,255,.04)" stroke-width="1.5"/>
-<!-- Bottom hem -->
-<line x1="16" y1="230" x2="184" y2="230" stroke="rgba(255,255,255,.22)" stroke-width="2"/>
-<!-- Shine on waistband -->
-<ellipse cx="80" cy="45" rx="18" ry="5" fill="rgba(255,255,255,.2)"/>
-</svg><div class="pimg-overlay"></div></div>
+<div class="pimg"><img src="assets/products/saia.svg" alt="" loading="lazy"><div class="pimg-overlay"></div></div>
 <div class="pinfo">
   <div class="pname">Saia Midi Plissada</div>
   <div class="pdesc">Saia midi azul-marinho com pliss&#233; perfeito. Caimento elegante em qualquer corpo.</div>
@@ -517,36 +408,7 @@ img{display:block;max-width:100%;}
 </div><div class="pcard">
 <div class="pbadge ">TOP</div>
 <button class="pwish" title="Favoritar">&#9825;</button>
-<div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 272">
-<defs>
-  <linearGradient id="mcg" x1="0%" y1="0%" x2="100%" y2="100%">
-    <stop offset="0%" stop-color="#7b1fa2"/><stop offset="100%" stop-color="#4a148c"/>
-  </linearGradient>
-  <filter id="mcsh"><feDropShadow dx="0" dy="7" stdDeviation="9" flood-color="#4a148c" flood-opacity=".3"/></filter>
-</defs>
-<!-- Upper body -->
-<path d="M64 52 L46 38 L24 56 L38 88 L52 78 L52 136 L148 136 L148 78 L162 88 L176 56 L154 38 L136 52 Q120 44 100 42 Q80 44 64 52Z"
-  fill="url(#mcg)" filter="url(#mcsh)"/>
-<!-- Belt -->
-<rect x="50" y="132" width="100" height="13" fill="#6a1b9a" rx="5"/>
-<!-- Belt buckle -->
-<rect x="88" y="128" width="24" height="21" rx="6" fill="#9c27b0" stroke="rgba(255,255,255,.3)" stroke-width="1.5"/>
-<rect x="94" y="133" width="12" height="11" rx="3" fill="rgba(255,255,255,.2)"/>
-<!-- Left leg -->
-<path d="M50 145 L44 260 Q68 268 100 260 L100 145Z" fill="#6a1b9a" opacity=".95"/>
-<!-- Right leg -->
-<path d="M150 145 L156 260 Q132 268 100 260 L100 145Z" fill="#7b1fa2" opacity=".95"/>
-<!-- V neck -->
-<path d="M80 50 Q100 74 120 50" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="2"/>
-<!-- Lapel left -->
-<path d="M80 50 L70 70 L52 78 L64 52Z" fill="rgba(255,255,255,.06)"/>
-<!-- Lapel right -->
-<path d="M120 50 L130 70 L148 78 L136 52Z" fill="rgba(255,255,255,.06)"/>
-<!-- Center seam -->
-<line x1="100" y1="56" x2="100" y2="258" stroke="rgba(255,255,255,.12)" stroke-width="1.5"/>
-<!-- Shin highlight -->
-<ellipse cx="68" cy="68" rx="14" ry="8" fill="rgba(255,255,255,.2)" transform="rotate(-18,68,68)"/>
-</svg><div class="pimg-overlay"></div></div>
+<div class="pimg"><img src="assets/products/macacao.svg" alt="" loading="lazy"><div class="pimg-overlay"></div></div>
 <div class="pinfo">
   <div class="pname">Macac&#227;o Moderno Roxo</div>
   <div class="pdesc">Macac&#227;o com cinto incluso. Vers&#225;til para dia e noite com total sofistica&#231;&#227;o.</div>

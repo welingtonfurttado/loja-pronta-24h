@@ -125,6 +125,11 @@ img{display:block;max-width:100%;}
   font-size:10px;font-weight:800;padding:5px 12px;border-radius:100px;letter-spacing:.06em;text-transform:uppercase;}
 .pbadge.sale{background:#ef4444;}
 .pbadge.new{background:#7c3aed;}
+
+.pimg img{width:100%;height:100%;object-fit:contain;padding:8px;
+  transition:transform .4s cubic-bezier(.34,1.56,.64,1);}
+.pcard:hover .pimg img{transform:scale(1.08) translateY(-4px);}
+
 .pimg{position:relative;background:var(--light);display:flex;align-items:center;
   justify-content:center;height:210px;overflow:hidden;}
 .pimg svg{max-height:195px;width:auto;transition:transform .4s cubic-bezier(.34,1.56,.64,1);}
@@ -326,23 +331,7 @@ img{display:block;max-width:100%;}
       <div class="pcard">
 <div class="pbadge ">OFICIAL</div>
 <button class="pwish" title="Favoritar">&#9825;</button>
-<div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 310">
-<defs>
-  <clipPath id="jcpfla"><path d="M22 78 L6 38 L88 20 Q116 4 140 2 Q164 4 192 20 L274 38 L258 78 L206 62 L206 288 Q206 298 196 298 L84 298 Q74 298 74 288 L74 62Z"/></clipPath>
-  <filter id="jffla"><feDropShadow dx="0" dy="10" stdDeviation="14" flood-opacity=".3"/></filter>
-  <linearGradient id="jlgfla" x1="0%" y1="0%" x2="40%" y2="100%">
-    <stop offset="0%" stop-color="rgba(255,255,255,.18)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/>
-  </linearGradient>
-</defs>
-<path d="M22 78 L6 38 L88 20 Q116 4 140 2 Q164 4 192 20 L274 38 L258 78 L206 62 L206 288 Q206 298 196 298 L84 298 Q74 298 74 288 L74 62Z" fill="#dc2626" filter="url(#jffla)"/>
-<path d="M22 78 L6 38 L88 20 L74 62Z" fill="#111827"/>
-<path d="M206 62 L192 20 L274 38 L258 78Z" fill="#111827"/>
-<g clip-path="url(#jcpfla)"><rect x="0" y="82" width="280" height="42" fill="#111827"/><rect x="0" y="166" width="280" height="42" fill="#111827"/><rect x="0" y="248" width="280" height="42" fill="#111827"/></g>
-<!-- Fabric shine overlay -->
-<path d="M22 78 L6 38 L88 20 Q116 4 140 2 Q164 4 192 20 L274 38 L258 78 L206 62 L206 288 Q206 298 196 298 L84 298 Q74 298 74 288 L74 62Z" fill="url(#jlgfla)" clip-path="url(#jcpfla)"/>
-<!-- Collar -->
-<ellipse cx="140" cy="12" rx="32" ry="14" fill="#111" opacity=".92"/>
-</svg><div class="pimg-overlay"></div></div>
+<div class="pimg"><img src="assets/products/flamengo.svg" alt="" loading="lazy"><div class="pimg-overlay"></div></div>
 <div class="pinfo">
   <div class="pname">Camiseta Flamengo 2025</div>
   <div class="pdesc">Modelo oficial do Mengão 2025. Tecido Dri-Fit com prote&#231;&#227;o UV50+.</div>
@@ -355,23 +344,7 @@ img{display:block;max-width:100%;}
 </div><div class="pcard">
 
 <button class="pwish" title="Favoritar">&#9825;</button>
-<div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 310">
-<defs>
-  <clipPath id="jcpcor"><path d="M22 78 L6 38 L88 20 Q116 4 140 2 Q164 4 192 20 L274 38 L258 78 L206 62 L206 288 Q206 298 196 298 L84 298 Q74 298 74 288 L74 62Z"/></clipPath>
-  <filter id="jfcor"><feDropShadow dx="0" dy="10" stdDeviation="14" flood-opacity=".3"/></filter>
-  <linearGradient id="jlgcor" x1="0%" y1="0%" x2="40%" y2="100%">
-    <stop offset="0%" stop-color="rgba(255,255,255,.18)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/>
-  </linearGradient>
-</defs>
-<path d="M22 78 L6 38 L88 20 Q116 4 140 2 Q164 4 192 20 L274 38 L258 78 L206 62 L206 288 Q206 298 196 298 L84 298 Q74 298 74 288 L74 62Z" fill="#f9fafb" filter="url(#jfcor)"/>
-<path d="M22 78 L6 38 L88 20 L74 62Z" fill="#111827"/>
-<path d="M206 62 L192 20 L274 38 L258 78Z" fill="#111827"/>
-<g clip-path="url(#jcpcor)"><rect x="0" y="0" width="280" height="310" fill="#111827"/><rect x="74" y="0" width="132" height="310" fill="#f9fafb"/></g>
-<!-- Fabric shine overlay -->
-<path d="M22 78 L6 38 L88 20 Q116 4 140 2 Q164 4 192 20 L274 38 L258 78 L206 62 L206 288 Q206 298 196 298 L84 298 Q74 298 74 288 L74 62Z" fill="url(#jlgcor)" clip-path="url(#jcpcor)"/>
-<!-- Collar -->
-<ellipse cx="140" cy="12" rx="32" ry="14" fill="#111" opacity=".92"/>
-</svg><div class="pimg-overlay"></div></div>
+<div class="pimg"><img src="assets/products/corinthians.svg" alt="" loading="lazy"><div class="pimg-overlay"></div></div>
 <div class="pinfo">
   <div class="pname">Camiseta Corinthians</div>
   <div class="pdesc">A camisa do Tim&#227;o em material respirável premium. Torcedor raiz, use com orgulho!</div>
@@ -384,23 +357,7 @@ img{display:block;max-width:100%;}
 </div><div class="pcard">
 <div class="pbadge sale">OFERTA</div>
 <button class="pwish" title="Favoritar">&#9825;</button>
-<div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 310">
-<defs>
-  <clipPath id="jcppal"><path d="M22 78 L6 38 L88 20 Q116 4 140 2 Q164 4 192 20 L274 38 L258 78 L206 62 L206 288 Q206 298 196 298 L84 298 Q74 298 74 288 L74 62Z"/></clipPath>
-  <filter id="jfpal"><feDropShadow dx="0" dy="10" stdDeviation="14" flood-opacity=".3"/></filter>
-  <linearGradient id="jlgpal" x1="0%" y1="0%" x2="40%" y2="100%">
-    <stop offset="0%" stop-color="rgba(255,255,255,.18)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/>
-  </linearGradient>
-</defs>
-<path d="M22 78 L6 38 L88 20 Q116 4 140 2 Q164 4 192 20 L274 38 L258 78 L206 62 L206 288 Q206 298 196 298 L84 298 Q74 298 74 288 L74 62Z" fill="#14532d" filter="url(#jfpal)"/>
-<path d="M22 78 L6 38 L88 20 L74 62Z" fill="#14532d"/>
-<path d="M206 62 L192 20 L274 38 L258 78Z" fill="#14532d"/>
-<g clip-path="url(#jcppal)"><rect x="128" y="0" width="18" height="310" fill="rgba(255,255,255,.28)"/></g>
-<!-- Fabric shine overlay -->
-<path d="M22 78 L6 38 L88 20 Q116 4 140 2 Q164 4 192 20 L274 38 L258 78 L206 62 L206 288 Q206 298 196 298 L84 298 Q74 298 74 288 L74 62Z" fill="url(#jlgpal)" clip-path="url(#jcppal)"/>
-<!-- Collar -->
-<ellipse cx="140" cy="12" rx="32" ry="14" fill="#052e16" opacity=".92"/>
-</svg><div class="pimg-overlay"></div></div>
+<div class="pimg"><img src="assets/products/palmeiras.svg" alt="" loading="lazy"><div class="pimg-overlay"></div></div>
 <div class="pinfo">
   <div class="pname">Camiseta Palmeiras 2025</div>
   <div class="pdesc">A verde do Verd&#227;o com tecido de alta performance. Para jogar ou torcer com estilo.</div>
@@ -413,23 +370,7 @@ img{display:block;max-width:100%;}
 </div><div class="pcard">
 
 <button class="pwish" title="Favoritar">&#9825;</button>
-<div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 310">
-<defs>
-  <clipPath id="jcpsao"><path d="M22 78 L6 38 L88 20 Q116 4 140 2 Q164 4 192 20 L274 38 L258 78 L206 62 L206 288 Q206 298 196 298 L84 298 Q74 298 74 288 L74 62Z"/></clipPath>
-  <filter id="jfsao"><feDropShadow dx="0" dy="10" stdDeviation="14" flood-opacity=".3"/></filter>
-  <linearGradient id="jlgsao" x1="0%" y1="0%" x2="40%" y2="100%">
-    <stop offset="0%" stop-color="rgba(255,255,255,.18)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/>
-  </linearGradient>
-</defs>
-<path d="M22 78 L6 38 L88 20 Q116 4 140 2 Q164 4 192 20 L274 38 L258 78 L206 62 L206 288 Q206 298 196 298 L84 298 Q74 298 74 288 L74 62Z" fill="#f9fafb" filter="url(#jfsao)"/>
-<path d="M22 78 L6 38 L88 20 L74 62Z" fill="#111827"/>
-<path d="M206 62 L192 20 L274 38 L258 78Z" fill="#111827"/>
-<g clip-path="url(#jcpsao)"><rect x="0" y="108" width="280" height="8" fill="#111827"/><rect x="0" y="116" width="280" height="52" fill="#dc2626"/><rect x="0" y="168" width="280" height="8" fill="#111827"/></g>
-<!-- Fabric shine overlay -->
-<path d="M22 78 L6 38 L88 20 Q116 4 140 2 Q164 4 192 20 L274 38 L258 78 L206 62 L206 288 Q206 298 196 298 L84 298 Q74 298 74 288 L74 62Z" fill="url(#jlgsao)" clip-path="url(#jcpsao)"/>
-<!-- Collar -->
-<ellipse cx="140" cy="12" rx="32" ry="14" fill="#111" opacity=".92"/>
-</svg><div class="pimg-overlay"></div></div>
+<div class="pimg"><img src="assets/products/saopaulo.svg" alt="" loading="lazy"><div class="pimg-overlay"></div></div>
 <div class="pinfo">
   <div class="pname">Camiseta S&#227;o Paulo FC</div>
   <div class="pdesc">Tricolor paulista com as listras tradicionais. Qualidade premium e fit perfeito.</div>
@@ -442,23 +383,7 @@ img{display:block;max-width:100%;}
 </div><div class="pcard">
 
 <button class="pwish" title="Favoritar">&#9825;</button>
-<div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 310">
-<defs>
-  <clipPath id="jcpatl"><path d="M22 78 L6 38 L88 20 Q116 4 140 2 Q164 4 192 20 L274 38 L258 78 L206 62 L206 288 Q206 298 196 298 L84 298 Q74 298 74 288 L74 62Z"/></clipPath>
-  <filter id="jfatl"><feDropShadow dx="0" dy="10" stdDeviation="14" flood-opacity=".3"/></filter>
-  <linearGradient id="jlgatl" x1="0%" y1="0%" x2="40%" y2="100%">
-    <stop offset="0%" stop-color="rgba(255,255,255,.18)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/>
-  </linearGradient>
-</defs>
-<path d="M22 78 L6 38 L88 20 Q116 4 140 2 Q164 4 192 20 L274 38 L258 78 L206 62 L206 288 Q206 298 196 298 L84 298 Q74 298 74 288 L74 62Z" fill="#dc2626" filter="url(#jfatl)"/>
-<path d="M22 78 L6 38 L88 20 L74 62Z" fill="#111827"/>
-<path d="M206 62 L192 20 L274 38 L258 78Z" fill="#111827"/>
-<g clip-path="url(#jcpatl)"><rect x="140" y="0" width="140" height="310" fill="#111827"/><rect x="137" y="0" width="6" height="310" fill="rgba(255,255,255,.3)"/></g>
-<!-- Fabric shine overlay -->
-<path d="M22 78 L6 38 L88 20 Q116 4 140 2 Q164 4 192 20 L274 38 L258 78 L206 62 L206 288 Q206 298 196 298 L84 298 Q74 298 74 288 L74 62Z" fill="url(#jlgatl)" clip-path="url(#jcpatl)"/>
-<!-- Collar -->
-<ellipse cx="140" cy="12" rx="32" ry="14" fill="#111" opacity=".92"/>
-</svg><div class="pimg-overlay"></div></div>
+<div class="pimg"><img src="assets/products/atletico.svg" alt="" loading="lazy"><div class="pimg-overlay"></div></div>
 <div class="pinfo">
   <div class="pname">Camiseta Athletico PR</div>
   <div class="pdesc">A camisa do Furac&#227;o rubro-negra em edi&#231;&#227;o especial 2025. Orgulho paranaense!</div>
@@ -471,23 +396,7 @@ img{display:block;max-width:100%;}
 </div><div class="pcard">
 <div class="pbadge new">NOVO</div>
 <button class="pwish" title="Favoritar">&#9825;</button>
-<div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 310">
-<defs>
-  <clipPath id="jcpcrt"><path d="M22 78 L6 38 L88 20 Q116 4 140 2 Q164 4 192 20 L274 38 L258 78 L206 62 L206 288 Q206 298 196 298 L84 298 Q74 298 74 288 L74 62Z"/></clipPath>
-  <filter id="jfcrt"><feDropShadow dx="0" dy="10" stdDeviation="14" flood-opacity=".3"/></filter>
-  <linearGradient id="jlgcrt" x1="0%" y1="0%" x2="40%" y2="100%">
-    <stop offset="0%" stop-color="rgba(255,255,255,.18)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/>
-  </linearGradient>
-</defs>
-<path d="M22 78 L6 38 L88 20 Q116 4 140 2 Q164 4 192 20 L274 38 L258 78 L206 62 L206 288 Q206 298 196 298 L84 298 Q74 298 74 288 L74 62Z" fill="#f9fafb" filter="url(#jfcrt)"/>
-<path d="M22 78 L6 38 L88 20 L74 62Z" fill="#166534"/>
-<path d="M206 62 L192 20 L274 38 L258 78Z" fill="#166534"/>
-<g clip-path="url(#jcpcrt)"><rect x="0" y="0" width="14" height="310" fill="#14532d"/><rect x="28" y="0" width="14" height="310" fill="#14532d"/><rect x="56" y="0" width="14" height="310" fill="#14532d"/><rect x="84" y="0" width="14" height="310" fill="#14532d"/><rect x="112" y="0" width="14" height="310" fill="#14532d"/><rect x="140" y="0" width="14" height="310" fill="#14532d"/><rect x="168" y="0" width="14" height="310" fill="#14532d"/><rect x="196" y="0" width="14" height="310" fill="#14532d"/><rect x="224" y="0" width="14" height="310" fill="#14532d"/><rect x="252" y="0" width="14" height="310" fill="#14532d"/></g>
-<!-- Fabric shine overlay -->
-<path d="M22 78 L6 38 L88 20 Q116 4 140 2 Q164 4 192 20 L274 38 L258 78 L206 62 L206 288 Q206 298 196 298 L84 298 Q74 298 74 288 L74 62Z" fill="url(#jlgcrt)" clip-path="url(#jcpcrt)"/>
-<!-- Collar -->
-<ellipse cx="140" cy="12" rx="32" ry="14" fill="#052e16" opacity=".92"/>
-</svg><div class="pimg-overlay"></div></div>
+<div class="pimg"><img src="assets/products/coritiba.svg" alt="" loading="lazy"><div class="pimg-overlay"></div></div>
 <div class="pinfo">
   <div class="pname">Camiseta Coritiba FC</div>
   <div class="pdesc">A tradicional listrada verde e branca do Coxa-Branca. Qualidade premium garantida.</div>

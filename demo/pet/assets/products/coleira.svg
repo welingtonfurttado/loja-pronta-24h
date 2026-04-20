@@ -1,1 +1,65 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 320" width="280" height="320"><defs><linearGradient id="cobg" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox"><stop offset="0%" stop-color="#fff5f5"/><stop offset="100%" stop-color="#ffd0d0"/></linearGradient><linearGradient id="coleir" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox"><stop offset="0%" stop-color="#ef4444"/><stop offset="100%" stop-color="#b91c1c"/></linearGradient></defs><rect width="280" height="320" fill="url(#cobg)"/><ellipse cx="140" cy="175" rx="110" ry="48" fill="url(#coleir)"/><ellipse cx="140" cy="175" rx="86" ry="30" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/><ellipse cx="140" cy="175" rx="110" ry="48" fill="none" stroke="#991b1b" stroke-width="3"/><ellipse cx="140" cy="175" rx="105" ry="43" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1" stroke-dasharray="6,4"/><rect x="120" y="210" width="40" height="22" rx="5" fill="#9ca3af"/><rect x="128" y="215" width="24" height="12" rx="3" fill="#d1d5db"/><line x1="140" y1="210" x2="140" y2="232" stroke="#6b7280" stroke-width="3"/><circle cx="140" cy="138" r="14" fill="none" stroke="#d1d5db" stroke-width="4"/><path d="M140 96 Q145 88 153 88 Q162 88 162 97 Q162 104 140 118 Q118 104 118 97 Q118 88 127 88 Q135 88 140 96 Z" fill="#fca5a5"/><circle cx="90" cy="175" r="5.0" fill="rgba(255,255,255,0.25)"/><circle cx="86" cy="170" r="2" fill="rgba(255,255,255,0.25)"/><circle cx="90" cy="168" r="2" fill="rgba(255,255,255,0.25)"/><circle cx="94" cy="170" r="2" fill="rgba(255,255,255,0.25)"/><circle cx="82" cy="174" r="2" fill="rgba(255,255,255,0.25)"/><circle cx="98" cy="174" r="2" fill="rgba(255,255,255,0.25)"/><circle cx="190" cy="175" r="5.0" fill="rgba(255,255,255,0.25)"/><circle cx="186" cy="170" r="2" fill="rgba(255,255,255,0.25)"/><circle cx="190" cy="168" r="2" fill="rgba(255,255,255,0.25)"/><circle cx="194" cy="170" r="2" fill="rgba(255,255,255,0.25)"/><circle cx="182" cy="174" r="2" fill="rgba(255,255,255,0.25)"/><circle cx="198" cy="174" r="2" fill="rgba(255,255,255,0.25)"/><ellipse cx="140" cy="158" rx="108" ry="12" fill="rgba(255,255,255,0.12)"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="480" height="480">
+  <defs>
+    <radialGradient id="bgcl" cx="50%" cy="42%" r="65%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="70%" stop-color="#fff1f2"/>
+      <stop offset="100%" stop-color="#ffe4e6"/>
+    </radialGradient>
+    <radialGradient id="clstrap" cx="38%" cy="32%" r="70%">
+      <stop offset="0%" stop-color="#f87171"/>
+      <stop offset="60%" stop-color="#dc2626"/>
+      <stop offset="100%" stop-color="#991b1b"/>
+    </radialGradient>
+    <radialGradient id="clshine" cx="35%" cy="28%" r="45%">
+      <stop offset="0%" stop-color="rgba(255,255,255,.45)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </radialGradient>
+    <filter id="cldrop">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#991b1b" flood-opacity=".28"/>
+    </filter>
+    <filter id="clblur"><feGaussianBlur stdDeviation="2.5"/></filter>
+    <linearGradient id="clmetal" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e2e8f0"/>
+      <stop offset="50%" stop-color="#94a3b8"/>
+      <stop offset="100%" stop-color="#64748b"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="480" fill="url(#bgcl)"/>
+  <ellipse cx="240" cy="455" rx="140" ry="16" fill="#991b1b" opacity=".1" filter="url(#clblur)"/>
+
+  <!-- COLLAR OVAL (thick ring) -->
+  <ellipse cx="240" cy="268" rx="170" ry="118" fill="none" stroke="url(#clstrap)" stroke-width="52" filter="url(#cldrop)"/>
+  <!-- Shine on collar -->
+  <ellipse cx="240" cy="268" rx="170" ry="118" fill="none" stroke="url(#clshine)" stroke-width="52"/>
+  <!-- Inner edge shadow -->
+  <ellipse cx="240" cy="268" rx="144" ry="92" fill="none" stroke="rgba(0,0,0,.18)" stroke-width="3"/>
+
+  <!-- Stitching lines -->
+  <ellipse cx="240" cy="268" rx="164" ry="112" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="1.5" stroke-dasharray="6,5"/>
+  <ellipse cx="240" cy="268" rx="176" ry="124" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="1.5" stroke-dasharray="6,5"/>
+
+  <!-- ADJUSTMENT HOLES -->
+  <circle cx="240" cy="150" r="8" fill="#7f1d1d" stroke="rgba(0,0,0,.3)" stroke-width="1"/>
+  <circle cx="240" cy="386" r="8" fill="#7f1d1d" stroke="rgba(0,0,0,.3)" stroke-width="1"/>
+  <circle cx="70"  cy="268" r="8" fill="#7f1d1d" stroke="rgba(0,0,0,.3)" stroke-width="1"/>
+  <circle cx="410" cy="268" r="8" fill="#7f1d1d" stroke="rgba(0,0,0,.3)" stroke-width="1"/>
+
+  <!-- BUCKLE assembly -->
+  <rect x="205" y="104" width="70" height="44" rx="12" fill="url(#clmetal)" stroke="#94a3b8" stroke-width="2"/>
+  <rect x="213" y="110" width="54" height="32" rx="8" fill="rgba(255,255,255,.2)"/>
+  <rect x="234" y="108" width="12" height="36" rx="5" fill="#94a3b8"/>
+  <!-- Prong -->
+  <rect x="237" y="114" width="6" height="24" rx="3" fill="#64748b"/>
+  <!-- Buckle holes -->
+  <circle cx="222" cy="124" r="4" fill="#94a3b8" opacity=".7"/>
+  <circle cx="258" cy="124" r="4" fill="#94a3b8" opacity=".7"/>
+
+  <!-- D-RING bottom -->
+  <ellipse cx="240" cy="418" rx="26" ry="18" fill="none" stroke="url(#clmetal)" stroke-width="7"/>
+  <ellipse cx="240" cy="418" rx="26" ry="18" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="2"/>
+
+  <!-- HEART TAG -->
+  <path d="M240 460 Q240 436 256 436 Q270 436 270 448 Q270 460 240 476 Q210 460 210 448 Q210 436 224 436 Q240 436 240 460Z"
+        fill="#fbbf24" stroke="#d97706" stroke-width="2"/>
+  <text x="240" y="462" text-anchor="middle" font-size="18" fill="#78350f" font-weight="900" font-family="sans-serif">&#9829;</text>
+</svg>

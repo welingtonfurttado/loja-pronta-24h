@@ -1,1 +1,47 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 320" width="280" height="320"><defs><linearGradient id="brbg" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox"><stop offset="0%" stop-color="#f0fdf4"/><stop offset="100%" stop-color="#dcfce7"/></linearGradient><radialGradient id="brball" cx="50%" cy="40%" r="55%"><stop offset="0%" stop-color="#4ade80"/><stop offset="60%" stop-color="#16a34a"/><stop offset="100%" stop-color="#14532d"/></radialGradient></defs><rect width="280" height="320" fill="url(#brbg)"/><circle cx="140" cy="165" r="110" fill="url(#brball)"/><path d="M140 55 Q200 80 250 165 Q220 240 140 275 Z" fill="rgba(255,255,255,0.12)"/><path d="M140 55 Q80 80 30 165 Q60 240 140 275 Z" fill="rgba(0,0,0,0.08)"/><path d="M62 105 Q140 88 218 105" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2.5"/><path d="M38 170 Q140 195 242 170" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/><path d="M62 225 Q140 248 218 225" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/><circle cx="140" cy="150" r="11.0" fill="rgba(255,255,255,0.3)"/><circle cx="130" cy="138" r="6" fill="rgba(255,255,255,0.3)"/><circle cx="140" cy="135" r="6" fill="rgba(255,255,255,0.3)"/><circle cx="150" cy="138" r="6" fill="rgba(255,255,255,0.3)"/><circle cx="124" cy="147" r="4" fill="rgba(255,255,255,0.3)"/><circle cx="156" cy="147" r="4" fill="rgba(255,255,255,0.3)"/><circle cx="105" cy="200" r="6.0" fill="rgba(255,255,255,0.2)"/><circle cx="100" cy="193" r="3" fill="rgba(255,255,255,0.2)"/><circle cx="105" cy="192" r="3" fill="rgba(255,255,255,0.2)"/><circle cx="110" cy="193" r="3" fill="rgba(255,255,255,0.2)"/><circle cx="96" cy="198" r="2" fill="rgba(255,255,255,0.2)"/><circle cx="114" cy="198" r="2" fill="rgba(255,255,255,0.2)"/><circle cx="175" cy="200" r="6.0" fill="rgba(255,255,255,0.2)"/><circle cx="170" cy="193" r="3" fill="rgba(255,255,255,0.2)"/><circle cx="175" cy="192" r="3" fill="rgba(255,255,255,0.2)"/><circle cx="180" cy="193" r="3" fill="rgba(255,255,255,0.2)"/><circle cx="166" cy="198" r="2" fill="rgba(255,255,255,0.2)"/><circle cx="184" cy="198" r="2" fill="rgba(255,255,255,0.2)"/><text x="100" y="118" text-anchor="middle" font-size="18" fill="rgba(255,255,255,0.4)">&#10024;</text><text x="182" y="125" text-anchor="middle" font-size="14" fill="rgba(255,255,255,0.35)">&#10024;</text><circle cx="95" cy="105" r="22" fill="rgba(255,255,255,0.2)"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="480" height="480">
+  <defs>
+    <radialGradient id="bgbx" cx="50%" cy="42%" r="65%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="70%" stop-color="#f0fdf4"/>
+      <stop offset="100%" stop-color="#dcfce7"/>
+    </radialGradient>
+    <radialGradient id="bxball" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#86efac"/>
+      <stop offset="45%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#14532d"/>
+    </radialGradient>
+    <radialGradient id="bxshine" cx="32%" cy="25%" r="38%">
+      <stop offset="0%" stop-color="rgba(255,255,255,.7)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </radialGradient>
+    <filter id="bxdrop">
+      <feDropShadow dx="0" dy="14" stdDeviation="20" flood-color="#14532d" flood-opacity=".3"/>
+    </filter>
+    <filter id="bxblur"><feGaussianBlur stdDeviation="2.5"/></filter>
+  </defs>
+  <rect width="480" height="480" fill="url(#bgbx)"/>
+  <ellipse cx="240" cy="454" rx="138" ry="18" fill="#14532d" opacity=".12" filter="url(#bxblur)"/>
+
+  <!-- BALL -->
+  <circle cx="240" cy="230" r="172" fill="url(#bxball)" filter="url(#bxdrop)"/>
+
+  <!-- SEAM CURVES (soccer ball-style) -->
+  <path d="M112 112 Q240 186 368 112" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M68  230 Q240 286 412 230" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M112 348 Q240 274 368 348" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M172  68 Q196 230 172 392" fill="none" stroke="rgba(255,255,255,.2)"  stroke-width="3" stroke-linecap="round"/>
+  <path d="M308  68 Q284 230 308 392" fill="none" stroke="rgba(255,255,255,.2)"  stroke-width="3" stroke-linecap="round"/>
+
+  <!-- PAW PRINT (large, centered) -->
+  <g fill="rgba(255,255,255,.55)">
+    <ellipse cx="234" cy="228" rx="32" ry="26"/>
+    <circle cx="190" cy="196" r="14"/>
+    <circle cx="234" cy="183" r="14"/>
+    <circle cx="278" cy="196" r="14"/>
+  </g>
+
+  <!-- SHINE overlay -->
+  <circle cx="240" cy="230" r="172" fill="url(#bxshine)"/>
+  <!-- Secondary shine spot -->
+  <ellipse cx="188" cy="158" rx="52" ry="34" fill="rgba(255,255,255,.28)" transform="rotate(-28,188,158)"/>
+</svg>

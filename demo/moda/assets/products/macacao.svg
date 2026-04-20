@@ -1,1 +1,83 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 320" width="280" height="320"><defs><linearGradient id="mbg" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox"><stop offset="0%" stop-color="#f3e5f5"/><stop offset="100%" stop-color="#e1bee7"/></linearGradient><linearGradient id="mmac" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox"><stop offset="0%" stop-color="#4a148c"/><stop offset="100%" stop-color="#311b92"/></linearGradient><filter id="mshadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="rgba(0,0,0,0.25)"/></filter></defs><rect width="280" height="320" fill="url(#mbg)"/><path d="M100 30 L180 30 L185 145 L95 145 Z" fill="url(#mmac)" filter="url(#mshadow)"/><rect x="113" y="20" width="10" height="35" rx="5" fill="#4a148c"/><rect x="157" y="20" width="10" height="35" rx="5" fill="#4a148c"/><path d="M115 30 Q140 50 165 30" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2.5"/><path d="M95 140 L130 140 L115 305 L68 305 Z" fill="url(#mmac)"/><path d="M150 140 L185 140 L212 305 L165 305 Z" fill="url(#mmac)"/><rect x="93" y="138" width="94" height="14" rx="4" fill="#1a0050"/><rect x="133" y="134" width="14" height="22" rx="3" fill="#6a1b9a"/><line x1="103" y1="35" x2="103" y2="142" stroke="rgba(255,255,255,0.1)" stroke-width="1"/><line x1="177" y1="35" x2="177" y2="142" stroke="rgba(255,255,255,0.1)" stroke-width="1"/><path d="M100 30 L118 30 L116 145 L100 145 Z" fill="rgba(255,255,255,0.1)"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="480" height="480">
+  <defs>
+    <radialGradient id="bgmc" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="70%" stop-color="#faf5ff"/>
+      <stop offset="100%" stop-color="#f3e8ff"/>
+    </radialGradient>
+    <linearGradient id="mcbody" x1="25%" y1="0%" x2="75%" y2="100%">
+      <stop offset="0%" stop-color="#c084fc"/>
+      <stop offset="50%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#7e22ce"/>
+    </linearGradient>
+    <linearGradient id="mcpant" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#9333ea"/>
+      <stop offset="100%" stop-color="#581c87"/>
+    </linearGradient>
+    <linearGradient id="mcside" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#581c87" stop-opacity=".6"/>
+      <stop offset="40%" stop-color="transparent"/>
+      <stop offset="100%" stop-color="#581c87" stop-opacity=".45"/>
+    </linearGradient>
+    <radialGradient id="mcshine" cx="32%" cy="22%" r="40%">
+      <stop offset="0%" stop-color="rgba(255,255,255,.5)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </radialGradient>
+    <filter id="mcdrop">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#581c87" flood-opacity=".3"/>
+    </filter>
+    <filter id="mcblur"><feGaussianBlur stdDeviation="2.5"/></filter>
+  </defs>
+  <rect width="480" height="480" fill="url(#bgmc)"/>
+  <ellipse cx="240" cy="452" rx="112" ry="14" fill="#581c87" opacity=".12" filter="url(#mcblur)"/>
+
+  <!-- LEGS -->
+  <path d="M148 268 L132 448 Q182 458 240 454 L240 268 Z" fill="url(#mcpant)" filter="url(#mcdrop)"/>
+  <path d="M332 268 L348 448 Q298 458 240 454 L240 268 Z" fill="url(#mcpant)" filter="url(#mcdrop)"/>
+  <!-- Leg shadow sides -->
+  <path d="M148 268 L132 448 Q182 458 240 454 L240 268 Z" fill="url(#mcside)" opacity=".55"/>
+  <path d="M332 268 L348 448 Q298 458 240 454 L240 268 Z" fill="url(#mcside)" opacity=".55"/>
+  <!-- Leg fold lines -->
+  <path d="M175 272 Q162 350 148 448"  fill="none" stroke="rgba(255,255,255,.13)" stroke-width="1.5"/>
+  <path d="M305 272 Q318 350 332 448"  fill="none" stroke="rgba(255,255,255,.13)" stroke-width="1.5"/>
+  <line x1="240" y1="272" x2="240" y2="452" stroke="rgba(255,255,255,.14)" stroke-width="1.5"/>
+
+  <!-- BELT -->
+  <rect x="145" y="258" width="190" height="16" fill="#7e22ce" rx="6"/>
+  <!-- Belt buckle -->
+  <rect x="218" y="252" width="44" height="28" rx="8" fill="#a855f7" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/>
+  <rect x="226" y="258" width="28" height="16" rx="5" fill="rgba(255,255,255,.2)"/>
+  <line x1="240" y1="258" x2="240" y2="274" stroke="rgba(255,255,255,.5)" stroke-width="2"/>
+
+  <!-- UPPER BODY -->
+  <path d="M182 108 Q160 80 132 70 L96 98 L120 150 L152 134
+           L152 260 Q196 274 240 270 Q284 274 328 260 L328 134
+           L360 150 L384 98 L348 70 Q320 80 298 108
+           Q272 84 240 80 Q208 84 182 108 Z"
+        fill="url(#mcbody)" filter="url(#mcdrop)"/>
+  <path d="M182 108 Q160 80 132 70 L96 98 L120 150 L152 134
+           L152 260 Q196 274 240 270 Q284 274 328 260 L328 134
+           L360 150 L384 98 L348 70 Q320 80 298 108
+           Q272 84 240 80 Q208 84 182 108 Z"
+        fill="url(#mcside)" opacity=".4"/>
+  <path d="M182 108 Q160 80 132 70 L96 98 L120 150 L152 134
+           L152 260 Q196 274 240 270 Q284 274 328 260 L328 134
+           L360 150 L384 98 L348 70 Q320 80 298 108
+           Q272 84 240 80 Q208 84 182 108 Z"
+        fill="url(#mcshine)"/>
+
+  <!-- Collar / V-neck -->
+  <path d="M206 106 Q240 148 274 106" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="3"/>
+  <!-- Lapels -->
+  <path d="M206 106 L188 136 L152 134 L182 108Z" fill="rgba(255,255,255,.07)"/>
+  <path d="M274 106 L292 136 L328 134 L298 108Z" fill="rgba(255,255,255,.07)"/>
+  <!-- Center placket -->
+  <line x1="240" y1="110" x2="240" y2="268" stroke="rgba(255,255,255,.14)" stroke-width="2"/>
+  <!-- Fabric lines -->
+  <g stroke="rgba(255,255,255,.07)" stroke-width="1">
+    <line x1="154" y1="155" x2="326" y2="155"/>
+    <line x1="154" y1="185" x2="326" y2="185"/>
+    <line x1="154" y1="215" x2="326" y2="215"/>
+    <line x1="154" y1="245" x2="326" y2="245"/>
+  </g>
+</svg>

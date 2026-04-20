@@ -125,6 +125,11 @@ img{display:block;max-width:100%;}
   font-size:10px;font-weight:800;padding:5px 12px;border-radius:100px;letter-spacing:.06em;text-transform:uppercase;}
 .pbadge.sale{background:#ef4444;}
 .pbadge.new{background:#7c3aed;}
+
+.pimg img{width:100%;height:100%;object-fit:contain;padding:8px;
+  transition:transform .4s cubic-bezier(.34,1.56,.64,1);}
+.pcard:hover .pimg img{transform:scale(1.08) translateY(-4px);}
+
 .pimg{position:relative;background:var(--light);display:flex;align-items:center;
   justify-content:center;height:210px;overflow:hidden;}
 .pimg svg{max-height:195px;width:auto;transition:transform .4s cubic-bezier(.34,1.56,.64,1);}
@@ -346,37 +351,7 @@ img{display:block;max-width:100%;}
       <div class="pcard">
 <div class="pbadge ">TOP VENDA</div>
 <button class="pwish" title="Favoritar">&#9825;</button>
-<div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 250">
-<defs>
-  <linearGradient id="rg1" x1="0%" y1="0%" x2="0%" y2="100%">
-    <stop offset="0%" stop-color="#fb923c"/><stop offset="100%" stop-color="#c2410c"/>
-  </linearGradient>
-  <filter id="rf1"><feDropShadow dx="0" dy="6" stdDeviation="9" flood-color="#c2410c" flood-opacity=".3"/></filter>
-</defs>
-<!-- Bag -->
-<rect x="28" y="50" width="144" height="184" rx="16" fill="url(#rg1)" filter="url(#rf1)"/>
-<!-- Top fold shadow -->
-<ellipse cx="100" cy="52" rx="72" ry="22" fill="#9a3412"/>
-<!-- Clip seal -->
-<rect x="80" y="32" width="40" height="18" rx="9" fill="#7c2d12"/>
-<rect x="94" y="36" width="12" height="10" rx="5" fill="#6b2313" opacity=".7"/>
-<!-- White label -->
-<rect x="42" y="96" width="116" height="108" rx="12" fill="rgba(255,255,255,.16)"/>
-<!-- Big paw print -->
-<ellipse cx="100" cy="126" rx="17" ry="14" fill="rgba(255,255,255,.6)"/>
-<circle cx="82" cy="111" r="7.5" fill="rgba(255,255,255,.6)"/>
-<circle cx="100" cy="106" r="7.5" fill="rgba(255,255,255,.6)"/>
-<circle cx="118" cy="111" r="7.5" fill="rgba(255,255,255,.6)"/>
-<!-- Label lines -->
-<rect x="58" y="152" width="84" height="7" rx="3" fill="rgba(255,255,255,.45)"/>
-<rect x="66" y="164" width="68" height="5" rx="2" fill="rgba(255,255,255,.28)"/>
-<rect x="72" y="174" width="56" height="4" rx="2" fill="rgba(255,255,255,.18)"/>
-<!-- Weight badge -->
-<rect x="42" y="188" width="116" height="26" rx="8" fill="rgba(0,0,0,.2)"/>
-<rect x="50" y="195" width="100" height="5" rx="2" fill="rgba(255,255,255,.3)"/>
-<!-- Shine -->
-<ellipse cx="56" cy="72" rx="22" ry="10" fill="rgba(255,255,255,.22)" transform="rotate(-10,56,72)"/>
-</svg><div class="pimg-overlay"></div></div>
+<div class="pimg"><img src="assets/products/racao.svg" alt="" loading="lazy"><div class="pimg-overlay"></div></div>
 <div class="pinfo">
   <div class="pname">Ra&#231;&#227;o Premium Gold</div>
   <div class="pdesc">F&#243;rmula super premium para c&#227;es adultos de todas as ra&#231;as. Alta digestibilidade.</div>
@@ -389,33 +364,7 @@ img{display:block;max-width:100%;}
 </div><div class="pcard">
 
 <button class="pwish" title="Favoritar">&#9825;</button>
-<div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 210">
-<defs>
-  <radialGradient id="clg1" cx="40%" cy="35%">
-    <stop offset="0%" stop-color="#f87171"/><stop offset="100%" stop-color="#991b1b"/>
-  </radialGradient>
-  <filter id="clf1"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-opacity=".25"/></filter>
-</defs>
-<!-- Collar strap oval -->
-<ellipse cx="100" cy="118" rx="78" ry="52" fill="none" stroke="url(#clg1)" stroke-width="26" stroke-linecap="round" filter="url(#clf1)"/>
-<!-- Adjustment holes -->
-<circle cx="64"  cy="118" r="5" fill="#7f1d1d"/>
-<circle cx="100" cy="66"  r="5" fill="#7f1d1d"/>
-<circle cx="136" cy="118" r="5" fill="#7f1d1d"/>
-<!-- Buckle -->
-<rect x="83" y="55" width="34" height="22" rx="6" fill="#e5e7eb" stroke="#9ca3af" stroke-width="2"/>
-<rect x="97" y="57" width="6" height="18" rx="3" fill="#9ca3af"/>
-<!-- Holes in buckle -->
-<circle cx="90"  cy="66" r="2.5" fill="#9ca3af" opacity=".6"/>
-<circle cx="110" cy="66" r="2.5" fill="#9ca3af" opacity=".6"/>
-<!-- D-ring -->
-<ellipse cx="100" cy="168" rx="14" ry="9" fill="none" stroke="#cbd5e1" stroke-width="3.5"/>
-<!-- Heart tag -->
-<path d="M100 190 Q100 178 110 178 Q118 178 118 186 Q118 192 100 202 Q82 192 82 186 Q82 178 90 178 Q100 178 100 190Z" fill="#fbbf24" stroke="#d97706" stroke-width="1.5"/>
-<text x="100" y="196" text-anchor="middle" font-size="9" fill="#78350f" font-weight="900" font-family="sans-serif">&#9829;</text>
-<!-- Shine on strap -->
-<ellipse cx="64" cy="96" rx="10" ry="5" fill="rgba(255,255,255,.3)" transform="rotate(-30,64,96)"/>
-</svg><div class="pimg-overlay"></div></div>
+<div class="pimg"><img src="assets/products/coleira.svg" alt="" loading="lazy"><div class="pimg-overlay"></div></div>
 <div class="pinfo">
   <div class="pname">Coleira Ajust&#225;vel Premium</div>
   <div class="pdesc">Coleira em nylon refor&#231;ado com fivela met&#225;lica inox. Tamanhos P, M e G.</div>
@@ -428,28 +377,7 @@ img{display:block;max-width:100%;}
 </div><div class="pcard">
 <div class="pbadge sale">OFERTA</div>
 <button class="pwish" title="Favoritar">&#9825;</button>
-<div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 210">
-<defs>
-  <radialGradient id="bxg" cx="36%" cy="32%">
-    <stop offset="0%" stop-color="#86efac"/><stop offset="40%" stop-color="#22c55e"/><stop offset="100%" stop-color="#15803d"/>
-  </radialGradient>
-  <filter id="bxf"><feDropShadow dx="0" dy="7" stdDeviation="10" flood-color="#15803d" flood-opacity=".3"/></filter>
-</defs>
-<!-- Ball -->
-<circle cx="100" cy="110" r="78" fill="url(#bxg)" filter="url(#bxf)"/>
-<!-- Seam curves -->
-<path d="M54 56 Q100 90 146 56"  fill="none" stroke="rgba(255,255,255,.32)" stroke-width="3.5"/>
-<path d="M34 110 Q100 136 166 110" fill="none" stroke="rgba(255,255,255,.32)" stroke-width="3.5"/>
-<path d="M54 164 Q100 130 146 164" fill="none" stroke="rgba(255,255,255,.32)" stroke-width="3.5"/>
-<!-- Paw print -->
-<ellipse cx="92" cy="104" rx="12" ry="10" fill="rgba(255,255,255,.5)"/>
-<circle cx="78"  cy="93"  r="5.5" fill="rgba(255,255,255,.5)"/>
-<circle cx="92"  cy="89"  r="5.5" fill="rgba(255,255,255,.5)"/>
-<circle cx="106" cy="93"  r="5.5" fill="rgba(255,255,255,.5)"/>
-<!-- Shine -->
-<ellipse cx="68" cy="72" rx="20" ry="12" fill="rgba(255,255,255,.28)" transform="rotate(-30,68,72)"/>
-<ellipse cx="80" cy="80" rx="8"  ry="5"  fill="rgba(255,255,255,.4)"  transform="rotate(-30,80,80)"/>
-</svg><div class="pimg-overlay"></div></div>
+<div class="pimg"><img src="assets/products/brinquedo.svg" alt="" loading="lazy"><div class="pimg-overlay"></div></div>
 <div class="pinfo">
   <div class="pname">Bola Pata Pet</div>
   <div class="pdesc">Bola indestru&#237;vel de borracha natural para c&#227;es brincalh&#245;es. Material 100% at&#243;xico.</div>
@@ -462,36 +390,7 @@ img{display:block;max-width:100%;}
 </div><div class="pcard">
 
 <button class="pwish" title="Favoritar">&#9825;</button>
-<div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 196">
-<defs>
-  <linearGradient id="cmg" x1="0%" y1="0%" x2="0%" y2="100%">
-    <stop offset="0%" stop-color="#fde68a"/><stop offset="100%" stop-color="#d97706"/>
-  </linearGradient>
-  <filter id="cmf"><feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#92400e" flood-opacity=".3"/></filter>
-</defs>
-<!-- Shadow base -->
-<ellipse cx="120" cy="176" rx="100" ry="16" fill="#92400e" opacity=".2"/>
-<!-- Bed rim -->
-<ellipse cx="120" cy="150" rx="98" ry="30" fill="#b45309" filter="url(#cmf)"/>
-<!-- Cushion -->
-<ellipse cx="120" cy="142" rx="94" ry="26" fill="url(#cmg)"/>
-<!-- Bolster back -->
-<ellipse cx="120" cy="112" rx="94" ry="30" fill="#fcd34d"/>
-<ellipse cx="120" cy="108" rx="86" ry="24" fill="#fef9c3"/>
-<!-- Button details on bolster -->
-<circle cx="80"  cy="108" r="6" fill="#fbbf24" stroke="#d97706" stroke-width="1.5"/>
-<circle cx="120" cy="108" r="6" fill="#fbbf24" stroke="#d97706" stroke-width="1.5"/>
-<circle cx="160" cy="108" r="6" fill="#fbbf24" stroke="#d97706" stroke-width="1.5"/>
-<!-- Plush inner -->
-<ellipse cx="120" cy="138" rx="72" ry="19" fill="#fffbeb" opacity=".8"/>
-<!-- Big paw on cushion -->
-<ellipse cx="120" cy="138" rx="13" ry="11" fill="#fbbf24" opacity=".6"/>
-<circle cx="106" cy="127" r="5.5" fill="#fbbf24" opacity=".6"/>
-<circle cx="120" cy="122" r="5.5" fill="#fbbf24" opacity=".6"/>
-<circle cx="134" cy="127" r="5.5" fill="#fbbf24" opacity=".6"/>
-<!-- Shine -->
-<ellipse cx="80" cy="116" rx="20" ry="8" fill="rgba(255,255,255,.3)" transform="rotate(-10,80,116)"/>
-</svg><div class="pimg-overlay"></div></div>
+<div class="pimg"><img src="assets/products/caminha.svg" alt="" loading="lazy"><div class="pimg-overlay"></div></div>
 <div class="pinfo">
   <div class="pname">Caminha Oval Deluxe</div>
   <div class="pdesc">Caminha super confort&#225;vel com enchimento antial&#233;rgico. Capa lav&#225;vel na m&#225;quina.</div>
@@ -504,42 +403,7 @@ img{display:block;max-width:100%;}
 </div><div class="pcard">
 <div class="pbadge ">PROMO</div>
 <button class="pwish" title="Favoritar">&#9825;</button>
-<div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 210">
-<defs>
-  <filter id="tpf"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity=".18"/></filter>
-</defs>
-<!-- Main pad -->
-<rect x="16" y="36" width="168" height="148" rx="18" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2" filter="url(#tpf)"/>
-<!-- Top colored band -->
-<rect x="16" y="36" width="168" height="20" rx="18 18 0 0" fill="#eff6ff"/>
-<!-- Grid lines vertical -->
-<line x1="58"  y1="36"  x2="58"  y2="184" stroke="#e2e8f0" stroke-width="1.2"/>
-<line x1="100" y1="36"  x2="100" y2="184" stroke="#e2e8f0" stroke-width="1.2"/>
-<line x1="142" y1="36"  x2="142" y2="184" stroke="#e2e8f0" stroke-width="1.2"/>
-<!-- Grid lines horizontal -->
-<line x1="16"  y1="85"  x2="184" y2="85"  stroke="#e2e8f0" stroke-width="1.2"/>
-<line x1="16"  y1="134" x2="184" y2="134" stroke="#e2e8f0" stroke-width="1.2"/>
-<!-- Blue absorb dots grid -->
-<g fill="#bfdbfe" opacity=".8">
-  <circle cx="37" cy="61" r="3.5"/><circle cx="79" cy="61" r="3.5"/>
-  <circle cx="121" cy="61" r="3.5"/><circle cx="163" cy="61" r="3.5"/>
-  <circle cx="37" cy="110" r="3.5"/><circle cx="79" cy="110" r="3.5"/>
-  <circle cx="121" cy="110" r="3.5"/><circle cx="163" cy="110" r="3.5"/>
-  <circle cx="37" cy="159" r="3.5"/><circle cx="79" cy="159" r="3.5"/>
-  <circle cx="121" cy="159" r="3.5"/><circle cx="163" cy="159" r="3.5"/>
-</g>
-<!-- Center badge -->
-<rect x="68" y="90" width="64" height="32" rx="8" fill="rgba(59,130,246,.1)"/>
-<text x="100" y="108" text-anchor="middle" font-size="11" fill="#3b82f6" font-weight="800" font-family="sans-serif">HIGIENE+</text>
-<!-- Blue bottom strip indicator -->
-<rect x="16" y="166" width="168" height="18" rx="0 0 18 18" fill="#bfdbfe" opacity=".6"/>
-<text x="100" y="179" text-anchor="middle" font-size="9" fill="#1e40af" font-weight="700" font-family="sans-serif">ULTRA ABSORVENTE</text>
-<!-- Corner rings -->
-<circle cx="32"  cy="52" r="4.5" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
-<circle cx="168" cy="52" r="4.5" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
-<circle cx="32"  cy="168" r="4.5" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
-<circle cx="168" cy="168" r="4.5" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
-</svg><div class="pimg-overlay"></div></div>
+<div class="pimg"><img src="assets/products/tapete.svg" alt="" loading="lazy"><div class="pimg-overlay"></div></div>
 <div class="pinfo">
   <div class="pname">Tapete Higi&#234;nico 30un</div>
   <div class="pdesc">Tapete com tecnologia ultra-absorvente e indicador de umidade. Para adestramento di&#225;rio.</div>
