@@ -65,7 +65,9 @@
 
     .product-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: transform 0.2s, box-shadow 0.2s; }
     .product-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.12); }
-    .card-image { background: linear-gradient(135deg, var(--dark), #16213e); aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; }
+    .card-image{background:linear-gradient(135deg,#0d1b36,#1a2744);aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:20px;}
+    .card-image img{width:100%;height:100%;object-fit:contain;display:block;transition:transform 0.3s ease;}
+    .product-card:hover .card-image img{transform:scale(1.06);}
     .card-body { padding: 1rem; }
     .card-badge { display: inline-block; background: var(--red); color: white; font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 4px; margin-bottom: 0.5rem; }
     .card-name { font-weight: 700; font-size: 0.95rem; color: var(--dark); margin-bottom: 0.25rem; }
@@ -278,131 +280,101 @@
 <section class="products-section" id="products">
   <div class="container">
     <div class="section-header">
-      <h2 class="section-title">Nossos Produtos</h2>
-      <p class="section-sub">10 camisetas selecionadas dos times mais amados do futebol</p>
+      <h2 class="section-title">Camisetas Oficiais</h2>
+      <p class="section-sub">Times do coração com qualidade premium e entrega garantida</p>
     </div>
     <div class="products-grid">
 
       <div class="product-card">
-        <div class="card-image" style="font-size:4rem;">🔴⚫</div>
+        <div class="card-image">
+          <img src="assets/products/flamengo.svg" alt="Camiseta Flamengo 2024/25" loading="lazy">
+        </div>
         <div class="card-body">
           <span class="card-badge">-17%</span>
           <h3 class="card-name">Flamengo 2024/25 Home</h3>
-          <div class="card-rating">⭐⭐⭐⭐ <span>4.8 (142)</span></div>
-          <div class="card-price-original">R$ 229.90</div>
-          <div class="card-price">R$ 189.90</div>
-          <div class="card-installment">6x R$ 31.65 sem juros</div>
-          <a href="product_pages/ds_001_flamengo.html" class="card-btn">Ver Produto</a>
+          <div class="card-rating">&#11088;&#11088;&#11088;&#11088;&#11088; <span>4.9 (342)</span></div>
+          <div class="card-price-original">R$ 229,90</div>
+          <div class="card-price">R$ 189,90</div>
+          <div class="card-installment">6x R$ 31,65 sem juros</div>
+          <a href="product_pages/ds_001_flamengo.html" class="card-btn">&#128722; Adicionar ao Carrinho</a>
         </div>
       </div>
+
       <div class="product-card">
-        <div class="card-image" style="font-size:4rem;">🔵⚫⚪</div>
+        <div class="card-image">
+          <img src="assets/products/corinthians.svg" alt="Camiseta Corinthians 2024/25" loading="lazy">
+        </div>
         <div class="card-body">
           <span class="card-badge">-18%</span>
-          <h3 class="card-name">Grêmio 2024/25 Home</h3>
-          <div class="card-rating">⭐⭐⭐⭐ <span>4.7 (89)</span></div>
-          <div class="card-price-original">R$ 219.90</div>
-          <div class="card-price">R$ 179.90</div>
-          <div class="card-installment">6x R$ 29.98 sem juros</div>
-          <a href="product_pages/ds_002_gremio.html" class="card-btn">Ver Produto</a>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="card-image" style="font-size:4rem;">⚪⚫</div>
-        <div class="card-body">
-          <span class="card-badge">-17%</span>
           <h3 class="card-name">Corinthians 2024/25 Home</h3>
-          <div class="card-rating">⭐⭐⭐⭐ <span>4.9 (198)</span></div>
-          <div class="card-price-original">R$ 229.90</div>
-          <div class="card-price">R$ 189.90</div>
-          <div class="card-installment">6x R$ 31.65 sem juros</div>
-          <a href="product_pages/ds_003_corinthians.html" class="card-btn">Ver Produto</a>
+          <div class="card-rating">&#11088;&#11088;&#11088;&#11088;&#11088; <span>4.9 (298)</span></div>
+          <div class="card-price-original">R$ 229,90</div>
+          <div class="card-price">R$ 189,90</div>
+          <div class="card-installment">6x R$ 31,65 sem juros</div>
+          <a href="product_pages/ds_003_corinthians.html" class="card-btn">&#128722; Adicionar ao Carrinho</a>
         </div>
       </div>
+
       <div class="product-card">
-        <div class="card-image" style="font-size:4rem;">🟢⚪</div>
+        <div class="card-image">
+          <img src="assets/products/palmeiras.svg" alt="Camiseta Palmeiras 2024/25" loading="lazy">
+        </div>
         <div class="card-body">
-          <span class="card-badge">-17%</span>
+          <span class="card-badge">-15%</span>
           <h3 class="card-name">Palmeiras 2024/25 Home</h3>
-          <div class="card-rating">⭐⭐⭐⭐ <span>4.8 (175)</span></div>
-          <div class="card-price-original">R$ 229.90</div>
-          <div class="card-price">R$ 189.90</div>
-          <div class="card-installment">6x R$ 31.65 sem juros</div>
-          <a href="product_pages/ds_004_palmeiras.html" class="card-btn">Ver Produto</a>
+          <div class="card-rating">&#11088;&#11088;&#11088;&#11088;&#11088; <span>4.8 (215)</span></div>
+          <div class="card-price-original">R$ 219,90</div>
+          <div class="card-price">R$ 186,90</div>
+          <div class="card-installment">6x R$ 31,15 sem juros</div>
+          <a href="product_pages/ds_004_palmeiras.html" class="card-btn">&#128722; Adicionar ao Carrinho</a>
         </div>
       </div>
+
       <div class="product-card">
-        <div class="card-image" style="font-size:4rem;">⚪🔴⚫</div>
+        <div class="card-image">
+          <img src="assets/products/saopaulo.svg" alt="Camiseta Sao Paulo 2024/25" loading="lazy">
+        </div>
         <div class="card-body">
-          <span class="card-badge">-18%</span>
-          <h3 class="card-name">São Paulo 2024/25 Home</h3>
-          <div class="card-rating">⭐⭐⭐⭐ <span>4.7 (112)</span></div>
-          <div class="card-price-original">R$ 219.90</div>
-          <div class="card-price">R$ 179.90</div>
-          <div class="card-installment">6x R$ 29.98 sem juros</div>
-          <a href="product_pages/ds_005_saopaulo.html" class="card-btn">Ver Produto</a>
+          <span class="card-badge">-16%</span>
+          <h3 class="card-name">S&#227;o Paulo 2024/25 Home</h3>
+          <div class="card-rating">&#11088;&#11088;&#11088;&#11088; <span>4.7 (189)</span></div>
+          <div class="card-price-original">R$ 219,90</div>
+          <div class="card-price">R$ 184,90</div>
+          <div class="card-installment">6x R$ 30,82 sem juros</div>
+          <a href="product_pages/ds_005_saopaulo.html" class="card-btn">&#128722; Adicionar ao Carrinho</a>
         </div>
       </div>
+
       <div class="product-card">
-        <div class="card-image" style="font-size:4rem;">⚪🐟</div>
-        <div class="card-body">
-          <span class="card-badge">-19%</span>
-          <h3 class="card-name">Santos 2024/25 Home</h3>
-          <div class="card-rating">⭐⭐⭐⭐ <span>4.6 (68)</span></div>
-          <div class="card-price-original">R$ 209.90</div>
-          <div class="card-price">R$ 169.90</div>
-          <div class="card-installment">6x R$ 28.32 sem juros</div>
-          <a href="product_pages/ds_006_santos.html" class="card-btn">Ver Produto</a>
+        <div class="card-image">
+          <img src="assets/products/atletico.svg" alt="Camiseta Athletico PR 2024/25" loading="lazy">
         </div>
-      </div>
-      <div class="product-card">
-        <div class="card-image" style="font-size:4rem;">⚪⚫⚓</div>
         <div class="card-body">
           <span class="card-badge">-19%</span>
-          <h3 class="card-name">Vasco 2024/25 Home</h3>
-          <div class="card-rating">⭐⭐⭐⭐ <span>4.6 (54)</span></div>
-          <div class="card-price-original">R$ 209.90</div>
-          <div class="card-price">R$ 169.90</div>
-          <div class="card-installment">6x R$ 28.32 sem juros</div>
-          <a href="product_pages/ds_007_vasco.html" class="card-btn">Ver Produto</a>
+          <h3 class="card-name">Athletico-PR 2024/25 Home</h3>
+          <div class="card-rating">&#11088;&#11088;&#11088;&#11088; <span>4.8 (127)</span></div>
+          <div class="card-price-original">R$ 199,90</div>
+          <div class="card-price">R$ 161,90</div>
+          <div class="card-installment">6x R$ 26,98 sem juros</div>
+          <a href="product_pages/ds_008_atletico.html" class="card-btn">&#128722; Adicionar ao Carrinho</a>
         </div>
       </div>
+
       <div class="product-card">
-        <div class="card-image" style="font-size:4rem;">⚫⚪🐓</div>
+        <div class="card-image">
+          <img src="assets/products/coritiba.svg" alt="Camiseta Coritiba 2024/25" loading="lazy">
+        </div>
         <div class="card-body">
-          <span class="card-badge">-18%</span>
-          <h3 class="card-name">Atlético-MG 2024/25 Home</h3>
-          <div class="card-rating">⭐⭐⭐⭐ <span>4.7 (97)</span></div>
-          <div class="card-price-original">R$ 219.90</div>
-          <div class="card-price">R$ 179.90</div>
-          <div class="card-installment">6x R$ 29.98 sem juros</div>
-          <a href="product_pages/ds_008_atletico.html" class="card-btn">Ver Produto</a>
+          <span class="card-badge">-20%</span>
+          <h3 class="card-name">Coritiba 2024/25 Home</h3>
+          <div class="card-rating">&#11088;&#11088;&#11088;&#11088; <span>4.7 (98)</span></div>
+          <div class="card-price-original">R$ 179,90</div>
+          <div class="card-price">R$ 143,90</div>
+          <div class="card-installment">6x R$ 23,98 sem juros</div>
+          <a href="product_pages/ds_009_barcelona.html" class="card-btn">&#128722; Adicionar ao Carrinho</a>
         </div>
       </div>
-      <div class="product-card">
-        <div class="card-image" style="font-size:4rem;">🔵🔴</div>
-        <div class="card-body">
-          <span class="card-badge">-15%</span>
-          <h3 class="card-name">Barcelona 2024/25 Home</h3>
-          <div class="card-rating">⭐⭐⭐⭐ <span>4.9 (201)</span></div>
-          <div class="card-price-original">R$ 259.90</div>
-          <div class="card-price">R$ 219.90</div>
-          <div class="card-installment">6x R$ 36.65 sem juros</div>
-          <a href="product_pages/ds_009_barcelona.html" class="card-btn">Ver Produto</a>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="card-image" style="font-size:4rem;">⚪👑</div>
-        <div class="card-body">
-          <span class="card-badge">-15%</span>
-          <h3 class="card-name">Real Madrid 2024/25 Home</h3>
-          <div class="card-rating">⭐⭐⭐⭐ <span>4.9 (215)</span></div>
-          <div class="card-price-original">R$ 259.90</div>
-          <div class="card-price">R$ 219.90</div>
-          <div class="card-installment">6x R$ 36.65 sem juros</div>
-          <a href="product_pages/ds_010_realmadrid.html" class="card-btn">Ver Produto</a>
-        </div>
-      </div>
+
     </div>
   </div>
 </section>
