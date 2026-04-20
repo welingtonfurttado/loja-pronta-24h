@@ -5,495 +5,477 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>PetLove Shop | Produtos para Pets</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 
-  #demo-backnav{position:fixed;top:0;left:0;right:0;z-index:400;height:48px;
-    background:#0f172a;border-bottom:1px solid rgba(255,255,255,0.07);
-    display:flex;align-items:center;}
-  .backnav-inner{width:100%;max-width:1200px;margin:0 auto;padding:0 20px;
-    display:flex;align-items:center;justify-content:space-between;gap:12px;}
-  .backnav-left{display:flex;align-items:center;gap:10px;}
-  .backnav-back{display:inline-flex;align-items:center;gap:6px;color:#94a3b8;
-    font-size:13px;font-weight:600;text-decoration:none;padding:6px 12px;
-    border-radius:6px;border:1px solid rgba(255,255,255,0.1);transition:all .2s;}
-  .backnav-back:hover{color:#22d3ee;border-color:rgba(34,211,238,0.4);}
-  .backnav-label{font-size:12px;color:rgba(255,255,255,0.3);display:none;}
-  @media(min-width:560px){.backnav-label{display:block;}}
-  .backnav-wa{display:inline-flex;align-items:center;gap:6px;background:#25d366;
-    color:#fff;font-size:13px;font-weight:700;padding:6px 14px;border-radius:6px;
-    text-decoration:none;transition:background .2s;}
-  .backnav-wa:hover{background:#1ebe5c;}
+#bnav{position:fixed;top:0;left:0;right:0;z-index:9999;height:50px;
+  background:#0b1120;border-bottom:1px solid rgba(255,255,255,0.07);
+  display:flex;align-items:center;}
+.bnav-wrap{width:100%;max-width:1280px;margin:0 auto;padding:0 20px;
+  display:flex;align-items:center;justify-content:space-between;}
+.bnav-l{display:flex;align-items:center;gap:12px;}
+.bnav-home{display:inline-flex;align-items:center;gap:7px;color:#94a3b8;
+  font-size:13px;font-weight:600;text-decoration:none;padding:7px 14px;
+  border-radius:7px;border:1px solid rgba(255,255,255,0.10);transition:.2s;}
+.bnav-home:hover{color:#e2e8f0;border-color:rgba(255,255,255,0.25);}
+.bnav-tag{font-size:12px;color:rgba(255,255,255,0.25);display:none;}
+@media(min-width:520px){.bnav-tag{display:block;}}
+.bnav-wa{display:inline-flex;align-items:center;gap:7px;background:#25d366;
+  color:#fff;font-size:13px;font-weight:700;padding:8px 16px;border-radius:7px;
+  text-decoration:none;white-space:nowrap;transition:.2s;}
+.bnav-wa:hover{background:#1db954;}
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--pri:#f97316;--dark:#1c1917;--light:#fff7ed;--text:#1e293b;--muted:#64748b;--border:#e2e8f0;}
-body{font-family:'Inter',Inter,sans-serif;background:#fff;color:var(--text);padding-top:48px;}
+:root{--pri:#f97316;--dark:#1c1917;--light:#fff7ed;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',Inter,sans-serif;background:#fff;color:#1e293b;padding-top:50px;-webkit-font-smoothing:antialiased;}
 a{text-decoration:none;color:inherit;}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px;}
 
-/* ── NAVBAR ── */
-.navbar{position:sticky;top:48px;z-index:200;background:rgba(255,255,255,0.97);
-  backdrop-filter:blur(10px);border-bottom:1px solid var(--border);
-  padding:0 24px;height:68px;display:flex;align-items:center;}
-.nav-inner{max-width:1200px;margin:0 auto;width:100%;display:flex;align-items:center;
-  justify-content:space-between;gap:16px;}
-.nav-links{display:flex;gap:24px;list-style:none;}
-.nav-links a{font-size:14px;font-weight:600;color:var(--muted);transition:color .2s;}
+/* NAVBAR */
+.nav{position:sticky;top:50px;z-index:300;background:rgba(255,255,255,.96);
+  backdrop-filter:blur(12px);border-bottom:1px solid #e2e8f0;}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:66px;}
+.nav-links{display:flex;gap:28px;list-style:none;}
+.nav-links a{font-size:14px;font-weight:600;color:#64748b;transition:color .2s;}
 .nav-links a:hover{color:var(--pri);}
-.nav-cart{display:flex;align-items:center;gap:8px;position:relative;}
-.nav-cart-btn{background:var(--pri);color:#fff;border:none;border-radius:8px;
-  padding:9px 18px;font-size:14px;font-weight:700;cursor:pointer;
-  display:flex;align-items:center;gap:6px;transition:opacity .2s;}
-.nav-cart-btn:hover{opacity:.88;}
-#cart-badge{position:absolute;top:-6px;right:-6px;background:#ef4444;color:#fff;
-  font-size:11px;font-weight:800;width:20px;height:20px;border-radius:50%;
-  display:none;align-items:center;justify-content:center;border:2px solid #fff;}
+.nav-r{display:flex;align-items:center;gap:10px;}
+.nav-wa{display:inline-flex;align-items:center;gap:6px;background:#25d366;color:#fff;
+  font-size:13px;font-weight:700;padding:9px 18px;border-radius:8px;transition:.2s;}
+.nav-wa:hover{background:#1db954;}
+.nav-cart{position:relative;}
+.cart-btn{display:inline-flex;align-items:center;gap:7px;background:var(--pri);color:#fff;
+  border:none;border-radius:8px;padding:9px 18px;font-size:13px;font-weight:700;cursor:pointer;transition:.2s;}
+.cart-btn:hover{opacity:.88;}
+#cbadge{position:absolute;top:-6px;right:-6px;background:#ef4444;color:#fff;font-size:10px;
+  font-weight:800;width:18px;height:18px;border-radius:50%;display:none;align-items:center;
+  justify-content:center;border:2px solid #fff;}
 
-/* ── BANNER ── */
-.banner{background:linear-gradient(135deg,#7c2d12 0%,#c2410c 50%,#f97316 100%);padding:72px 24px;}
-.banner-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;
-  gap:48px;align-items:center;}
-.banner-tag{display:inline-block;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);
-  color:rgba(255,255,255,0.9);font-size:12px;font-weight:700;letter-spacing:.1em;
-  text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:20px;}
-.banner h1{font-size:clamp(28px,4vw,50px);font-weight:900;color:#fff;line-height:1.1;
-  margin-bottom:16px;letter-spacing:-0.02em;}
+/* BANNER */
+.banner{background:linear-gradient(135deg,#7c2d12 0%,#c2410c 55%,#f97316 100%);padding:76px 24px;}
+.banner-in{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;
+  gap:52px;align-items:center;}
+.btag{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);
+  color:rgba(255,255,255,.9);font-size:11px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;padding:7px 18px;border-radius:100px;margin-bottom:22px;}
+.banner h1{font-size:clamp(28px,4.2vw,52px);font-weight:900;color:#fff;line-height:1.1;
+  margin-bottom:18px;letter-spacing:-.02em;}
 .banner h1 em{font-style:normal;color:#fde68a;}
-.banner p{font-size:16px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:32px;max-width:420px;}
-.banner-btns{display:flex;gap:12px;flex-wrap:wrap;}
-.btn-ban-pri{background:#fff;color:#1c1917;font-weight:800;font-size:15px;
-  padding:14px 32px;border-radius:10px;transition:transform .15s,box-shadow .15s;
-  box-shadow:0 4px 20px rgba(0,0,0,0.15);}
-.btn-ban-pri:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.2);}
-.btn-ban-sec{background:rgba(255,255,255,.12);color:#fff;font-weight:700;font-size:15px;
-  padding:14px 32px;border-radius:10px;border:2px solid rgba(255,255,255,.3);
-  transition:background .2s;}
-.btn-ban-sec:hover{background:rgba(255,255,255,.2);}
-.banner-visual{display:flex;justify-content:center;align-items:center;gap:16px;}
-.banner-visual svg{filter:drop-shadow(0 12px 32px rgba(0,0,0,0.35));}
+.banner-sub{font-size:17px;color:rgba(255,255,255,.72);line-height:1.72;margin-bottom:34px;max-width:420px;}
+.bbtns{display:flex;gap:12px;flex-wrap:wrap;}
+.bb-main{background:#fff;color:#1c1917;font-weight:800;font-size:15px;padding:14px 32px;
+  border-radius:10px;transition:.18s;box-shadow:0 4px 20px rgba(0,0,0,.18);}
+.bb-main:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.24);}
+.bb-sec{background:rgba(255,255,255,.1);color:#fff;font-weight:700;font-size:15px;padding:14px 32px;
+  border-radius:10px;border:2px solid rgba(255,255,255,.28);transition:.2s;}
+.bb-sec:hover{background:rgba(255,255,255,.18);}
+.bvis{display:flex;justify-content:center;align-items:flex-end;gap:14px;}
+.bvis svg{filter:drop-shadow(0 10px 30px rgba(0,0,0,.32));}
 
-/* ── TRUST STRIP ── */
-.trust-strip{background:#fff7ed;border-top:1px solid var(--border);border-bottom:1px solid var(--border);
-  padding:14px 24px;}
-.trust-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:center;
-  flex-wrap:wrap;gap:28px;}
-.trust-item{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#1c1917;}
-.trust-icon{font-size:16px;}
+/* TRUST */
+.trust{background:var(--light);border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;padding:14px 24px;}
+.trust-in{max-width:1240px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:center;gap:24px;}
+.tpill{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#1c1917;}
+.tpill span{font-size:15px;}
 
-/* ── PRODUCTS ── */
-.products-sec{padding:72px 24px;}
-.products-inner{max-width:1200px;margin:0 auto;}
-.sec-header{text-align:center;margin-bottom:48px;}
-.sec-label{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
-  color:#f97316;margin-bottom:10px;}
-.sec-title{font-size:clamp(24px,3.5vw,38px);font-weight:900;color:#1c1917;line-height:1.2;}
-.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:24px;}
-.p-card{background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden;
-  position:relative;transition:transform .25s,box-shadow .25s;}
-.p-card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(0,0,0,0.1);}
-.p-badge{position:absolute;top:14px;left:14px;z-index:2;background:#f97316;color:#fff;
-  font-size:11px;font-weight:800;padding:4px 10px;border-radius:100px;letter-spacing:.04em;}
-.p-img{background:#fff7ed;display:flex;align-items:center;justify-content:center;
+/* PRODUCTS */
+.psec{padding:76px 24px;}
+.psec-in{max-width:1240px;margin:0 auto;}
+.sec-top{text-align:center;margin-bottom:52px;}
+.slabel{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--pri);margin-bottom:10px;}
+.stitle{font-size:clamp(24px,3.8vw,40px);font-weight:900;color:#1c1917;line-height:1.18;}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:26px;}
+.pcard{background:#fff;border:1px solid #e2e8f0;border-radius:18px;overflow:hidden;
+  position:relative;transition:.28s;}
+.pcard:hover{transform:translateY(-7px);box-shadow:0 20px 56px rgba(0,0,0,.1);border-color:rgba(0,0,0,.08);}
+.pbadge{position:absolute;top:14px;left:14px;z-index:2;background:var(--pri);color:#fff;
+  font-size:10px;font-weight:800;padding:5px 12px;border-radius:100px;letter-spacing:.05em;text-transform:uppercase;}
+.pimg{background:var(--light);display:flex;align-items:center;justify-content:center;
   height:200px;overflow:hidden;}
-.p-img svg{max-height:180px;width:auto;transition:transform .35s;}
-.p-card:hover .p-img svg{transform:scale(1.06);}
-.p-info{padding:20px;}
-.p-name{font-size:16px;font-weight:700;color:#1c1917;margin-bottom:6px;}
-.p-desc{font-size:13px;color:var(--muted);line-height:1.55;margin-bottom:14px;}
-.p-price-row{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
-.p-old{font-size:13px;color:#94a3b8;text-decoration:line-through;}
-.p-price{font-size:22px;font-weight:900;}
-.btn-cart{width:100%;background:#f97316;color:#fff;border:none;border-radius:10px;
-  padding:12px;font-size:14px;font-weight:700;cursor:pointer;transition:opacity .2s,transform .15s;}
-.btn-cart:hover{opacity:.88;transform:translateY(-1px);}
+.pimg svg{max-height:185px;width:auto;transition:.35s;}
+.pcard:hover .pimg svg{transform:scale(1.08);}
+.pinfo{padding:20px;}
+.pname{font-size:16px;font-weight:800;color:#1c1917;margin-bottom:6px;line-height:1.3;}
+.pdesc{font-size:13px;color:#64748b;line-height:1.6;margin-bottom:14px;}
+.prow{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.pold{font-size:13px;color:#94a3b8;}
+.pprice{font-size:24px;font-weight:900;}
+.add-btn{width:100%;background:var(--pri);color:#fff;border:none;border-radius:10px;
+  padding:13px;font-size:14px;font-weight:700;cursor:pointer;transition:.2s;letter-spacing:.02em;}
+.add-btn:hover{opacity:.88;transform:translateY(-1px);}
+.add-btn:disabled{opacity:.65;cursor:default;transform:none;}
 
-/* ── FOOTER ── */
-.footer{background:#1c1917;color:rgba(255,255,255,.65);padding:56px 24px 0;}
-.footer-inner{max-width:1200px;margin:0 auto;}
-.footer-brand{display:flex;align-items:center;gap:16px;padding-bottom:40px;
-  border-bottom:1px solid rgba(255,255,255,.07);margin-bottom:40px;}
-.footer-brand p{font-size:13px;color:rgba(255,255,255,.4);max-width:320px;margin-top:8px;line-height:1.6;}
-.footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-bottom:40px;}
-.footer-col h4{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
-  color:rgba(255,255,255,.9);margin-bottom:16px;}
-.footer-col a,.footer-col p{font-size:13px;color:rgba(255,255,255,.5);line-height:1.8;display:block;
-  margin-bottom:4px;transition:color .2s;}
-.footer-col a:hover{color:#f97316;}
-.footer-col ul{list-style:none;}
-.footer-col ul li{font-size:13px;color:rgba(255,255,255,.5);line-height:2;padding-left:14px;position:relative;}
-.footer-col ul li::before{content:"\2713";position:absolute;left:0;color:#4ade80;font-size:11px;}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding:20px 0;text-align:center;
-  font-size:12px;color:rgba(255,255,255,.25);}
+/* FOOTER */
+.footer{background:#1c1917;color:rgba(255,255,255,.6);padding:60px 24px 0;}
+.footer-in{max-width:1240px;margin:0 auto;}
+.fhd{display:flex;align-items:center;gap:18px;padding-bottom:44px;
+  border-bottom:1px solid rgba(255,255,255,.07);margin-bottom:44px;}
+.fhd p{font-size:13px;color:rgba(255,255,255,.38);max-width:300px;margin-top:8px;line-height:1.65;}
+.fgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-bottom:44px;}
+.fcol h4{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(255,255,255,.85);margin-bottom:18px;}
+.fcol a,.fcol p{font-size:13px;color:rgba(255,255,255,.48);line-height:1.9;display:block;
+  margin-bottom:3px;transition:.2s;}
+.fcol a:hover{color:var(--pri);}
+.fcol ul{list-style:none;}
+.fcol li{font-size:13px;color:rgba(255,255,255,.48);line-height:2;padding-left:16px;position:relative;}
+.fcol li::before{content:"&#10003;";position:absolute;left:0;color:#4ade80;font-size:11px;}
+.fbot{border-top:1px solid rgba(255,255,255,.06);padding:22px 0;text-align:center;
+  font-size:12px;color:rgba(255,255,255,.22);}
 
-/* ── RESPONSIVE ── */
-@media(max-width:900px){
-  .banner-inner{grid-template-columns:1fr;}
-  .banner-visual{display:none;}
-  .footer-grid{grid-template-columns:1fr 1fr;}
+/* TOAST */
+#ctoast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);
+  background:#15803d;color:#fff;padding:14px 28px;border-radius:12px;font-size:14px;
+  font-weight:700;opacity:0;pointer-events:none;z-index:9999;transition:opacity .3s;
+  box-shadow:0 6px 24px rgba(0,0,0,.28);white-space:nowrap;}
+#ctoast.on{opacity:1;}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  .banner-in{grid-template-columns:1fr;}
+  .bvis{display:none;}
+  .fgrid{grid-template-columns:1fr 1fr;}
 }
 @media(max-width:600px){
   .nav-links{display:none;}
-  .footer-grid{grid-template-columns:1fr;gap:24px;}
-  .banner{padding:48px 20px;}
+  .fgrid{grid-template-columns:1fr;gap:28px;}
+  .banner{padding:52px 20px;}
+  .psec{padding:52px 20px;}
 }
 </style>
 </head>
 <body>
-
-<div id="demo-backnav">
-  <div class="backnav-inner">
-    <div class="backnav-left">
-      <a href="/" class="backnav-back">&#8592; Voltar para Home</a>
-      <span class="backnav-label">Exemplo de loja criada em 24h</span>
+<div id="bnav">
+  <div class="bnav-wrap">
+    <div class="bnav-l">
+      <a href="/" class="bnav-home">&#8592; Voltar para Home</a>
+      <span class="bnav-tag">Exemplo de loja criada em 24h</span>
     </div>
-    <a href="https://wa.me/5541998355581" target="_blank" class="backnav-wa">
-      &#128172; <span>Quero a minha</span>
+    <a href="https://wa.me/5541998355581" target="_blank" class="bnav-wa">
+      &#128172; Quero uma loja assim
     </a>
   </div>
 </div>
 
 <!-- NAVBAR -->
-<nav class="navbar">
-  <div class="nav-inner">
-    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 56" width="200" height="56">
-  <!-- Paw icon circle -->
-  <circle cx="28" cy="28" r="22" fill="#f97316" opacity="0.9"/>
-  <ellipse cx="28" cy="32" rx="10" ry="8" fill="#fff" opacity="0.9"/>
-  <circle cx="19" cy="21" r="4.5" fill="#fff" opacity="0.9"/>
-  <circle cx="28" cy="18" r="4.5" fill="#fff" opacity="0.9"/>
-  <circle cx="37" cy="21" r="4.5" fill="#fff" opacity="0.9"/>
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 58" width="210" height="58">
+  <!-- Paw circle -->
+  <circle cx="29" cy="29" r="23" fill="#f97316" opacity=".92"/>
+  <ellipse cx="29" cy="33" rx="11" ry="9" fill="#fff" opacity=".9"/>
+  <circle cx="18" cy="22" r="5"   fill="#fff" opacity=".9"/>
+  <circle cx="29" cy="18" r="5"   fill="#fff" opacity=".9"/>
+  <circle cx="40" cy="22" r="5"   fill="#fff" opacity=".9"/>
   <!-- Divider -->
-  <line x1="60" y1="10" x2="60" y2="46" stroke="rgba(249,115,22,0.2)" stroke-width="1.5"/>
-  <!-- Text -->
-  <text x="70" y="31" font-family="Arial Rounded MT Bold,Arial,sans-serif" font-size="20"
-        font-weight="900" fill="#f8fafc" letter-spacing="1">PetLove</text>
-  <text x="70" y="46" font-family="Arial,sans-serif" font-size="11" fill="#f97316"
-        letter-spacing="3">SHOP</text>
+  <line x1="64" y1="12" x2="64" y2="46" stroke="rgba(249,115,22,0.22)" stroke-width="1.5"/>
+  <text x="74" y="34" font-family="'Arial Rounded MT Bold',Arial,sans-serif" font-size="22" font-weight="900" fill="#f8fafc" letter-spacing="1">PetLove</text>
+  <text x="74" y="50" font-family="Arial,sans-serif" font-size="11" fill="#f97316" letter-spacing="4">SHOP</text>
 </svg></a>
     <ul class="nav-links">
-      <li><a href="#">Produtos</a></li>
+      <li><a href="#produtos">Produtos</a></li>
       <li><a href="#sobre">Sobre</a></li>
       <li><a href="#contato">Contato</a></li>
     </ul>
-    <div class="nav-cart">
-      <button class="nav-cart-btn">&#128722; Carrinho</button>
-      <div id="cart-badge">0</div>
+    <div class="nav-r">
+      <a href="https://wa.me/5541998355581" target="_blank" class="nav-wa">&#128172; WhatsApp</a>
+      <div class="nav-cart">
+        <button class="cart-btn">&#128722; Carrinho</button>
+        <div id="cbadge"></div>
+      </div>
     </div>
   </div>
 </nav>
 
 <!-- BANNER -->
 <section class="banner">
-  <div class="banner-inner">
+  <div class="banner-in">
     <div>
-      <div class="banner-tag">&#127944; Seu Pet Merece o Melhor</div>
-      <h1>Tudo para o seu <em>pet</em> em um só lugar</h1>
-      <p>Ra&#231;&#245;es premium, acess&#243;rios e produtos de higiene. Qualidade, pre&#231;o justo e entrega r&#225;pida.</p>
-      <div class="banner-btns">
-        <a href="#produtos" class="btn-ban-pri">Ver Produtos &rarr;</a>
-        <a href="https://wa.me/5541998355581" target="_blank" class="btn-ban-sec">&#128172; WhatsApp</a>
+      <div class="btag">&#128054; Tudo para seu Pet</div>
+      <h1>Qualidade e <em>amor</em><br>em cada produto</h1>
+      <p class="banner-sub">Ra&#231;&#245;es premium, acess&#243;rios e produtos de higiene. Qualidade e Amor em Cada Produto. Entrega r&#225;pida.</p>
+      <div class="bbtns">
+        <a href="#produtos" class="bb-main">Ver Produtos &#8594;</a>
+        <a href="https://wa.me/5541998355581" target="_blank" class="bb-sec">&#128172; WhatsApp</a>
       </div>
     </div>
-    <div class="banner-visual"><div style="transform:rotate(6deg) translateY(-10px)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 180" width="220" height="180">
-  <defs><linearGradient id="camg" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#fde68a"/><stop offset="100%" stop-color="#f59e0b"/>
-  </linearGradient></defs>
-  <!-- Bed base -->
-  <ellipse cx="110" cy="130" rx="95" ry="35" fill="#b45309"/>
-  <!-- Cushion -->
-  <ellipse cx="110" cy="122" rx="90" ry="30" fill="url(#camg)"/>
-  <!-- Back bolster -->
-  <ellipse cx="110" cy="92" rx="90" ry="28" fill="#fcd34d"/>
-  <ellipse cx="110" cy="88" rx="82" ry="22" fill="#fde68a"/>
-  <!-- Inner plush -->
-  <ellipse cx="110" cy="118" rx="68" ry="20" fill="#fef3c7" opacity="0.8"/>
-  <!-- Paw embossed -->
-  <ellipse cx="110" cy="118" rx="10" ry="8" fill="#fbbf24" opacity="0.6"/>
-  <circle cx="98" cy="109" r="4" fill="#fbbf24" opacity="0.6"/>
-  <circle cx="110" cy="106" r="4" fill="#fbbf24" opacity="0.6"/>
-  <circle cx="122" cy="109" r="4" fill="#fbbf24" opacity="0.6"/>
-</svg></div><div style="transform:scale(0.9)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
-  <defs>
-    <radialGradient id="ball" cx="38%" cy="35%">
-      <stop offset="0%" stop-color="#86efac"/><stop offset="100%" stop-color="#15803d"/>
-    </radialGradient>
-  </defs>
-  <!-- Ball -->
-  <circle cx="100" cy="105" r="75" fill="url(#ball)" opacity="0.95"/>
-  <!-- Seam lines -->
-  <path d="M58 55 Q100 90 142 55" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="3"/>
-  <path d="M38 105 Q100 130 162 105" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="3"/>
-  <path d="M58 155 Q100 120 142 155" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="3"/>
-  <!-- Paw prints on ball -->
-  <ellipse cx="90" cy="98" rx="9" ry="7" fill="rgba(255,255,255,0.4)"/>
-  <circle cx="80" cy="90" r="4" fill="rgba(255,255,255,0.4)"/>
-  <circle cx="90" cy="87" r="4" fill="rgba(255,255,255,0.4)"/>
-  <circle cx="100" cy="90" r="4" fill="rgba(255,255,255,0.4)"/>
-  <!-- Shine -->
-  <ellipse cx="74" cy="72" rx="16" ry="10" fill="rgba(255,255,255,0.2)" transform="rotate(-30,74,72)"/>
-</svg></div></div>
+    <div class="bvis">
+  <div style="transform:rotate(6deg) translateY(-12px);filter:drop-shadow(0 12px 28px rgba(0,0,0,.35));"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 180">
+<defs>
+  <linearGradient id="camg1" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#fde68a"/><stop offset="100%" stop-color="#d97706"/>
+  </linearGradient>
+</defs>
+<!-- Base shadow -->
+<ellipse cx="110" cy="140" rx="96" ry="30" fill="#92400e" opacity=".35"/>
+<!-- Bed base -->
+<ellipse cx="110" cy="132" rx="92" ry="28" fill="#b45309"/>
+<!-- Cushion -->
+<ellipse cx="110" cy="124" rx="88" ry="24" fill="url(#camg1)"/>
+<!-- Back bolster -->
+<ellipse cx="110" cy="96" rx="88" ry="26" fill="#fcd34d"/>
+<ellipse cx="110" cy="92" rx="80" ry="20" fill="#fef3c7"/>
+<!-- Plush inner -->
+<ellipse cx="110" cy="120" rx="66" ry="18" fill="#fffbeb" opacity=".75"/>
+<!-- Paw emboss -->
+<ellipse cx="110" cy="120" rx="11" ry="9"  fill="#fbbf24" opacity=".55"/>
+<circle cx="98"  cy="111" r="4.5" fill="#fbbf24" opacity=".55"/>
+<circle cx="110" cy="107" r="4.5" fill="#fbbf24" opacity=".55"/>
+<circle cx="122" cy="111" r="4.5" fill="#fbbf24" opacity=".55"/>
+</svg></div>
+  <div style="transform:scale(.9);filter:drop-shadow(0 16px 32px rgba(0,0,0,.35));"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+  <radialGradient id="bg2" cx="36%" cy="32%">
+    <stop offset="0%" stop-color="#86efac"/><stop offset="100%" stop-color="#15803d"/>
+  </radialGradient>
+</defs>
+<circle cx="100" cy="108" r="74" fill="url(#bg2)"/>
+<!-- Seams -->
+<path d="M56 54 Q100 88 144 54" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="3"/>
+<path d="M36 108 Q100 132 164 108" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="3"/>
+<path d="M56 162 Q100 128 144 162" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="3"/>
+<!-- Paw on ball -->
+<ellipse cx="92" cy="100" rx="10" ry="8" fill="rgba(255,255,255,.45)"/>
+<circle cx="80"  cy="91"  r="4.5" fill="rgba(255,255,255,.45)"/>
+<circle cx="92"  cy="87"  r="4.5" fill="rgba(255,255,255,.45)"/>
+<circle cx="104" cy="91"  r="4.5" fill="rgba(255,255,255,.45)"/>
+<!-- Shine -->
+<ellipse cx="72" cy="74" rx="16" ry="10" fill="rgba(255,255,255,.22)" transform="rotate(-30 72 74)"/>
+</svg></div>
+</div>
   </div>
 </section>
 
 <!-- TRUST STRIP -->
-<div class="trust-strip">
-  <div class="trust-inner">
-    <div class="trust-item"><span class="trust-icon">&#9989;</span>Produtos veterin&#225;rios aprovados</div><div class="trust-item"><span class="trust-icon">&#128260;</span>Troca em 30 dias</div><div class="trust-item"><span class="trust-icon">&#128274;</span>Compra segura</div><div class="trust-item"><span class="trust-icon">&#9989;</span>Frete gr&#225;tis acima de R$150</div>
-  </div>
+<div class="trust">
+  <div class="trust-in"><div class="tpill"><span>&#9989;</span>Aprovado por veterin&#225;rios</div><div class="tpill"><span>&#128260;</span>Troca em 30 dias</div><div class="tpill"><span>&#128274;</span>Compra segura</div><div class="tpill"><span>&#9989;</span>Frete gr&#225;tis acima de R$150</div></div>
 </div>
 
 <!-- PRODUCTS -->
-<section class="products-sec" id="produtos">
-  <div class="products-inner">
-    <div class="sec-header">
-      <p class="sec-label">Produtos</p>
-      <h2 class="sec-title">Mais Vendidos</h2>
+<section class="psec" id="produtos">
+  <div class="psec-in">
+    <div class="sec-top">
+      <p class="slabel">Produtos</p>
+      <h2 class="stitle">Mais Vendidos</h2>
     </div>
-    <div class="products-grid">
-      
-    <div class="p-card">
-      <span class="p-badge">TOP VENDA</span>
-      <div class="p-img"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="200" height="240">
-  <defs><linearGradient id="rg" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#ea580c"/><stop offset="100%" stop-color="#c2410c"/>
-  </linearGradient></defs>
-  <!-- Bag body -->
-  <rect x="35" y="50" width="130" height="175" rx="12" fill="url(#rg)"/>
-  <!-- Bag top fold -->
-  <ellipse cx="100" cy="52" rx="65" ry="18" fill="#9a3412"/>
-  <!-- Clip -->
-  <rect x="82" y="36" width="36" height="14" rx="7" fill="#7c2d12"/>
-  <!-- Label -->
-  <rect x="50" y="95" width="100" height="95" rx="8" fill="rgba(255,255,255,0.15)"/>
-  <!-- Paw on label -->
-  <ellipse cx="100" cy="125" rx="14" ry="12" fill="rgba(255,255,255,0.5)"/>
-  <circle cx="84" cy="112" r="6" fill="rgba(255,255,255,0.5)"/>
-  <circle cx="100" cy="108" r="6" fill="rgba(255,255,255,0.5)"/>
-  <circle cx="116" cy="112" r="6" fill="rgba(255,255,255,0.5)"/>
-  <!-- Brand text area -->
-  <rect x="60" y="150" width="80" height="28" rx="4" fill="rgba(255,255,255,0.1)"/>
-  <rect x="68" y="156" width="64" height="6" rx="2" fill="rgba(255,255,255,0.4)"/>
-  <rect x="74" y="166" width="52" height="4" rx="2" fill="rgba(255,255,255,0.25)"/>
+    <div class="pgrid"><div class="pcard">
+  <div class="pbadge">TOP VENDA</div>
+  <div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240">
+<defs>
+  <linearGradient id="rg1" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#f97316"/><stop offset="100%" stop-color="#c2410c"/>
+  </linearGradient>
+</defs>
+<rect x="30" y="48" width="140" height="178" rx="14" fill="url(#rg1)"/>
+<ellipse cx="100" cy="50" rx="70" ry="20" fill="#9a3412"/>
+<rect x="82" y="32" width="36" height="16" rx="8" fill="#7c2d12"/>
+<!-- Label -->
+<rect x="44" y="92" width="112" height="100" rx="10" fill="rgba(255,255,255,.14)"/>
+<!-- Paw print -->
+<ellipse cx="100" cy="122" rx="15" ry="13" fill="rgba(255,255,255,.55)"/>
+<circle cx="83"  cy="108" r="6.5" fill="rgba(255,255,255,.55)"/>
+<circle cx="100" cy="103" r="6.5" fill="rgba(255,255,255,.55)"/>
+<circle cx="117" cy="108" r="6.5" fill="rgba(255,255,255,.55)"/>
+<!-- Label text bars -->
+<rect x="58" y="148" width="84" height="7" rx="3" fill="rgba(255,255,255,.4)"/>
+<rect x="66" y="160" width="68" height="5" rx="2" fill="rgba(255,255,255,.25)"/>
+<!-- Weight badge -->
+<rect x="44" y="202" width="112" height="22" rx="6" fill="rgba(0,0,0,.2)"/>
+<rect x="52" y="207" width="96" height="5" rx="2" fill="rgba(255,255,255,.3)"/>
 </svg></div>
-      <div class="p-info">
-        <h3 class="p-name">Ra&#231;&#227;o Premium Gold</h3>
-        <p class="p-desc">F&#243;rmula premium para c&#227;es adultos. Alta digestibilidade e sabor irresistível.</p>
-        <div class="p-price-row">
-          <span class="p-old">R$119,90</span>
-          <span class="p-price" style="color:#f97316;">R$89,90</span>
-        </div>
-        <button class="btn-cart" style="background:#f97316;">&#128722; Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="p-card">
-      
-      <div class="p-img"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
-  <defs><radialGradient id="coll" cx="50%" cy="40%">
-    <stop offset="0%" stop-color="#ef4444"/><stop offset="100%" stop-color="#991b1b"/>
-  </radialGradient></defs>
-  <!-- Collar oval shape -->
-  <ellipse cx="100" cy="110" rx="80" ry="55" fill="none" stroke="url(#coll)" stroke-width="22" stroke-linecap="round"/>
-  <!-- Buckle -->
-  <rect x="84" y="50" width="32" height="20" rx="4" fill="#d1d5db" stroke="#9ca3af" stroke-width="2"/>
-  <rect x="96" y="52" width="8" height="16" rx="2" fill="#9ca3af"/>
-  <!-- Holes on collar -->
-  <circle cx="68" cy="110" r="4" fill="#7f1d1d"/>
-  <circle cx="100" cy="65" r="4" fill="#7f1d1d"/>
-  <circle cx="132" cy="110" r="4" fill="#7f1d1d"/>
-  <!-- D-ring -->
-  <ellipse cx="100" cy="158" rx="12" ry="8" fill="none" stroke="#e5e7eb" stroke-width="3"/>
-  <!-- Tag -->
-  <circle cx="100" cy="174" r="10" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
-  <text x="100" y="178" text-anchor="middle" font-size="10" fill="#92400e" font-family="sans-serif" font-weight="bold">&#9733;</text>
+  <div class="pinfo">
+    <h3 class="pname">Ra&#231;&#227;o Premium</h3>
+    <p class="pdesc">F&#243;rmula premium para c&#227;es adultos. Alta digestibilidade, sabor irresist&#237;vel.</p>
+    <div class="prow"><s class="pold">R$119,90</s><span class="pprice" style="color:#f97316">R$89,90</span></div>
+    <button class="add-btn" style="--pri:#f97316">&#128722; Adicionar ao Carrinho</button>
+  </div>
+</div><div class="pcard">
+  
+  <div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+  <radialGradient id="cg2" cx="40%" cy="35%">
+    <stop offset="0%" stop-color="#f87171"/><stop offset="100%" stop-color="#991b1b"/>
+  </radialGradient>
+</defs>
+<!-- Collar ring -->
+<ellipse cx="100" cy="112" rx="78" ry="52" fill="none" stroke="url(#cg2)" stroke-width="24" stroke-linecap="round"/>
+<!-- Buckle body -->
+<rect x="83" y="54" width="34" height="22" rx="5" fill="#e5e7eb" stroke="#9ca3af" stroke-width="2"/>
+<rect x="97" y="56" width="6" height="18" rx="3" fill="#9ca3af"/>
+<!-- Adjustment holes -->
+<circle cx="66"  cy="112" r="4" fill="#7f1d1d"/>
+<circle cx="100" cy="62"  r="4" fill="#7f1d1d"/>
+<circle cx="134" cy="112" r="4" fill="#7f1d1d"/>
+<!-- D-ring -->
+<ellipse cx="100" cy="162" rx="13" ry="9" fill="none" stroke="#d1d5db" stroke-width="3"/>
+<!-- Tag -->
+<circle cx="100" cy="178" r="11" fill="#fbbf24" stroke="#d97706" stroke-width="2"/>
+<text x="100" y="183" text-anchor="middle" font-size="11" fill="#78350f" font-weight="900" font-family="sans-serif">&#9733;</text>
 </svg></div>
-      <div class="p-info">
-        <h3 class="p-name">Coleira Confort Vermelha</h3>
-        <p class="p-desc">Coleira ajust&#225;vel em nylon resistente com fivela met&#225;lica. Tamanhos P/M/G.</p>
-        <div class="p-price-row">
-          
-          <span class="p-price" style="color:#f97316;">R$39,90</span>
-        </div>
-        <button class="btn-cart" style="background:#f97316;">&#128722; Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="p-card">
-      <span class="p-badge">OFERTA</span>
-      <div class="p-img"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
-  <defs>
-    <radialGradient id="ball" cx="38%" cy="35%">
-      <stop offset="0%" stop-color="#86efac"/><stop offset="100%" stop-color="#15803d"/>
-    </radialGradient>
-  </defs>
-  <!-- Ball -->
-  <circle cx="100" cy="105" r="75" fill="url(#ball)" opacity="0.95"/>
-  <!-- Seam lines -->
-  <path d="M58 55 Q100 90 142 55" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="3"/>
-  <path d="M38 105 Q100 130 162 105" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="3"/>
-  <path d="M58 155 Q100 120 142 155" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="3"/>
-  <!-- Paw prints on ball -->
-  <ellipse cx="90" cy="98" rx="9" ry="7" fill="rgba(255,255,255,0.4)"/>
-  <circle cx="80" cy="90" r="4" fill="rgba(255,255,255,0.4)"/>
-  <circle cx="90" cy="87" r="4" fill="rgba(255,255,255,0.4)"/>
-  <circle cx="100" cy="90" r="4" fill="rgba(255,255,255,0.4)"/>
-  <!-- Shine -->
-  <ellipse cx="74" cy="72" rx="16" ry="10" fill="rgba(255,255,255,0.2)" transform="rotate(-30,74,72)"/>
+  <div class="pinfo">
+    <h3 class="pname">Coleira Ajust&#225;vel</h3>
+    <p class="pdesc">Coleira em nylon resistente com fivela met&#225;lica. Tamanhos P, M e G.</p>
+    <div class="prow"><span class="pprice" style="color:#f97316">R$39,90</span></div>
+    <button class="add-btn" style="--pri:#f97316">&#128722; Adicionar ao Carrinho</button>
+  </div>
+</div><div class="pcard">
+  <div class="pbadge">OFERTA</div>
+  <div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+  <radialGradient id="bg2" cx="36%" cy="32%">
+    <stop offset="0%" stop-color="#86efac"/><stop offset="100%" stop-color="#15803d"/>
+  </radialGradient>
+</defs>
+<circle cx="100" cy="108" r="74" fill="url(#bg2)"/>
+<!-- Seams -->
+<path d="M56 54 Q100 88 144 54" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="3"/>
+<path d="M36 108 Q100 132 164 108" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="3"/>
+<path d="M56 162 Q100 128 144 162" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="3"/>
+<!-- Paw on ball -->
+<ellipse cx="92" cy="100" rx="10" ry="8" fill="rgba(255,255,255,.45)"/>
+<circle cx="80"  cy="91"  r="4.5" fill="rgba(255,255,255,.45)"/>
+<circle cx="92"  cy="87"  r="4.5" fill="rgba(255,255,255,.45)"/>
+<circle cx="104" cy="91"  r="4.5" fill="rgba(255,255,255,.45)"/>
+<!-- Shine -->
+<ellipse cx="72" cy="74" rx="16" ry="10" fill="rgba(255,255,255,.22)" transform="rotate(-30 72 74)"/>
 </svg></div>
-      <div class="p-info">
-        <h3 class="p-name">Bola Pata Verde</h3>
-        <p class="p-desc">Bola indestrut&#237;vel para c&#227;es brinc&#245;es. Material atóxico e resistente.</p>
-        <div class="p-price-row">
-          <span class="p-old">R$44,90</span>
-          <span class="p-price" style="color:#f97316;">R$29,90</span>
-        </div>
-        <button class="btn-cart" style="background:#f97316;">&#128722; Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="p-card">
-      
-      <div class="p-img"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 180" width="220" height="180">
-  <defs><linearGradient id="camg" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#fde68a"/><stop offset="100%" stop-color="#f59e0b"/>
-  </linearGradient></defs>
-  <!-- Bed base -->
-  <ellipse cx="110" cy="130" rx="95" ry="35" fill="#b45309"/>
-  <!-- Cushion -->
-  <ellipse cx="110" cy="122" rx="90" ry="30" fill="url(#camg)"/>
-  <!-- Back bolster -->
-  <ellipse cx="110" cy="92" rx="90" ry="28" fill="#fcd34d"/>
-  <ellipse cx="110" cy="88" rx="82" ry="22" fill="#fde68a"/>
-  <!-- Inner plush -->
-  <ellipse cx="110" cy="118" rx="68" ry="20" fill="#fef3c7" opacity="0.8"/>
-  <!-- Paw embossed -->
-  <ellipse cx="110" cy="118" rx="10" ry="8" fill="#fbbf24" opacity="0.6"/>
-  <circle cx="98" cy="109" r="4" fill="#fbbf24" opacity="0.6"/>
-  <circle cx="110" cy="106" r="4" fill="#fbbf24" opacity="0.6"/>
-  <circle cx="122" cy="109" r="4" fill="#fbbf24" opacity="0.6"/>
+  <div class="pinfo">
+    <h3 class="pname">Brinquedo Pet</h3>
+    <p class="pdesc">Bola indestru&#237;vel para c&#227;es brincalh&#245;es. Material at&#243;xico e resistente.</p>
+    <div class="prow"><s class="pold">R$44,90</s><span class="pprice" style="color:#f97316">R$29,90</span></div>
+    <button class="add-btn" style="--pri:#f97316">&#128722; Adicionar ao Carrinho</button>
+  </div>
+</div><div class="pcard">
+  
+  <div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 180">
+<defs>
+  <linearGradient id="camg1" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#fde68a"/><stop offset="100%" stop-color="#d97706"/>
+  </linearGradient>
+</defs>
+<!-- Base shadow -->
+<ellipse cx="110" cy="140" rx="96" ry="30" fill="#92400e" opacity=".35"/>
+<!-- Bed base -->
+<ellipse cx="110" cy="132" rx="92" ry="28" fill="#b45309"/>
+<!-- Cushion -->
+<ellipse cx="110" cy="124" rx="88" ry="24" fill="url(#camg1)"/>
+<!-- Back bolster -->
+<ellipse cx="110" cy="96" rx="88" ry="26" fill="#fcd34d"/>
+<ellipse cx="110" cy="92" rx="80" ry="20" fill="#fef3c7"/>
+<!-- Plush inner -->
+<ellipse cx="110" cy="120" rx="66" ry="18" fill="#fffbeb" opacity=".75"/>
+<!-- Paw emboss -->
+<ellipse cx="110" cy="120" rx="11" ry="9"  fill="#fbbf24" opacity=".55"/>
+<circle cx="98"  cy="111" r="4.5" fill="#fbbf24" opacity=".55"/>
+<circle cx="110" cy="107" r="4.5" fill="#fbbf24" opacity=".55"/>
+<circle cx="122" cy="111" r="4.5" fill="#fbbf24" opacity=".55"/>
 </svg></div>
-      <div class="p-info">
-        <h3 class="p-name">Caminha Oval Deluxe</h3>
-        <p class="p-desc">Caminha confort&#225;vel e quentinha. Cobertura lavável na m&#225;quina.</p>
-        <div class="p-price-row">
-          <span class="p-old">R$159,00</span>
-          <span class="p-price" style="color:#f97316;">R$119,00</span>
-        </div>
-        <button class="btn-cart" style="background:#f97316;">&#128722; Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="p-card">
-      <span class="p-badge">PROMO</span>
-      <div class="p-img"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
-  <!-- Pad base -->
-  <rect x="20" y="40" width="160" height="130" rx="16" fill="#e5e7eb" stroke="#d1d5db" stroke-width="2"/>
-  <!-- Grid lines (absorb texture) -->
-  <line x1="60" y1="40" x2="60" y2="170" stroke="#d1d5db" stroke-width="1"/>
-  <line x1="100" y1="40" x2="100" y2="170" stroke="#d1d5db" stroke-width="1"/>
-  <line x1="140" y1="40" x2="140" y2="170" stroke="#d1d5db" stroke-width="1"/>
-  <line x1="20" y1="83" x2="180" y2="83" stroke="#d1d5db" stroke-width="1"/>
-  <line x1="20" y1="126" x2="180" y2="126" stroke="#d1d5db" stroke-width="1"/>
-  <!-- Blue indicator strip -->
-  <rect x="20" y="155" width="160" height="15" rx="0 0 16 16" fill="#3b82f6" opacity="0.35"/>
-  <!-- Corner dots -->
-  <circle cx="36" cy="56" r="4" fill="#9ca3af" opacity="0.5"/>
-  <circle cx="164" cy="56" r="4" fill="#9ca3af" opacity="0.5"/>
-  <circle cx="36" cy="154" r="4" fill="#9ca3af" opacity="0.5"/>
-  <circle cx="164" cy="154" r="4" fill="#9ca3af" opacity="0.5"/>
-  <!-- Center label -->
-  <rect x="72" y="85" width="56" height="30" rx="6" fill="rgba(59,130,246,0.15)"/>
-  <text x="100" y="104" text-anchor="middle" font-size="11" fill="#3b82f6" font-family="sans-serif" font-weight="700">HIGIENE</text>
+  <div class="pinfo">
+    <h3 class="pname">Caminha Pet</h3>
+    <p class="pdesc">Caminha confort&#225;vel e quentinha. Cobertura lav&#225;vel na m&#225;quina.</p>
+    <div class="prow"><s class="pold">R$159,00</s><span class="pprice" style="color:#f97316">R$119,00</span></div>
+    <button class="add-btn" style="--pri:#f97316">&#128722; Adicionar ao Carrinho</button>
+  </div>
+</div><div class="pcard">
+  <div class="pbadge">PROMO</div>
+  <div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<!-- Base pad -->
+<rect x="18" y="38" width="164" height="132" rx="16" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/>
+<!-- Grid lines -->
+<line x1="60"  y1="38" x2="60"  y2="170" stroke="#e2e8f0" stroke-width="1.2"/>
+<line x1="100" y1="38" x2="100" y2="170" stroke="#e2e8f0" stroke-width="1.2"/>
+<line x1="140" y1="38" x2="140" y2="170" stroke="#e2e8f0" stroke-width="1.2"/>
+<line x1="18"  y1="80" x2="182" y2="80"  stroke="#e2e8f0" stroke-width="1.2"/>
+<line x1="18"  y1="122" x2="182" y2="122" stroke="#e2e8f0" stroke-width="1.2"/>
+<!-- Absorbency dots -->
+<circle cx="39"  cy="59" r="3" fill="#bfdbfe" opacity=".7"/>
+<circle cx="79"  cy="59" r="3" fill="#bfdbfe" opacity=".7"/>
+<circle cx="119" cy="59" r="3" fill="#bfdbfe" opacity=".7"/>
+<circle cx="159" cy="59" r="3" fill="#bfdbfe" opacity=".7"/>
+<circle cx="39"  cy="101" r="3" fill="#bfdbfe" opacity=".7"/>
+<circle cx="79"  cy="101" r="3" fill="#bfdbfe" opacity=".7"/>
+<circle cx="119" cy="101" r="3" fill="#bfdbfe" opacity=".7"/>
+<circle cx="159" cy="101" r="3" fill="#bfdbfe" opacity=".7"/>
+<!-- Blue indicator strip -->
+<rect x="18" y="154" width="164" height="16" rx="0 0 16 16" fill="#3b82f6" opacity=".3"/>
+<!-- Center badge -->
+<rect x="70" y="84" width="60" height="28" rx="7" fill="rgba(59,130,246,.12)"/>
+<text x="100" y="101" text-anchor="middle" font-size="10" fill="#3b82f6" font-weight="700" font-family="sans-serif">HIGIENE</text>
+<!-- Corner rings -->
+<circle cx="34"  cy="54" r="4" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+<circle cx="166" cy="54" r="4" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+<circle cx="34"  cy="154" r="4" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+<circle cx="166" cy="154" r="4" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
 </svg></div>
-      <div class="p-info">
-        <h3 class="p-name">Tapete Higi&#234;nico 30un</h3>
-        <p class="p-desc">Tapete com tecnologia ultra-absorvente. Ideal para adestramento.</p>
-        <div class="p-price-row">
-          
-          <span class="p-price" style="color:#f97316;">R$34,90</span>
-        </div>
-        <button class="btn-cart" style="background:#f97316;">&#128722; Adicionar ao Carrinho</button>
-      </div>
-    </div>
-    </div>
+  <div class="pinfo">
+    <h3 class="pname">Tapete Higi&#234;nico 30un</h3>
+    <p class="pdesc">Tapete com tecnologia ultra-absorvente. Ideal para adestramento e higiene di&#225;ria.</p>
+    <div class="prow"><span class="pprice" style="color:#f97316">R$34,90</span></div>
+    <button class="add-btn" style="--pri:#f97316">&#128722; Adicionar ao Carrinho</button>
+  </div>
+</div></div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer class="footer" id="contato">
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 56" width="200" height="56">
-  <!-- Paw icon circle -->
-  <circle cx="28" cy="28" r="22" fill="#f97316" opacity="0.9"/>
-  <ellipse cx="28" cy="32" rx="10" ry="8" fill="#fff" opacity="0.9"/>
-  <circle cx="19" cy="21" r="4.5" fill="#fff" opacity="0.9"/>
-  <circle cx="28" cy="18" r="4.5" fill="#fff" opacity="0.9"/>
-  <circle cx="37" cy="21" r="4.5" fill="#fff" opacity="0.9"/>
+  <div class="footer-in">
+    <div class="fhd">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 58" width="210" height="58">
+  <!-- Paw circle -->
+  <circle cx="29" cy="29" r="23" fill="#f97316" opacity=".92"/>
+  <ellipse cx="29" cy="33" rx="11" ry="9" fill="#fff" opacity=".9"/>
+  <circle cx="18" cy="22" r="5"   fill="#fff" opacity=".9"/>
+  <circle cx="29" cy="18" r="5"   fill="#fff" opacity=".9"/>
+  <circle cx="40" cy="22" r="5"   fill="#fff" opacity=".9"/>
   <!-- Divider -->
-  <line x1="60" y1="10" x2="60" y2="46" stroke="rgba(249,115,22,0.2)" stroke-width="1.5"/>
-  <!-- Text -->
-  <text x="70" y="31" font-family="Arial Rounded MT Bold,Arial,sans-serif" font-size="20"
-        font-weight="900" fill="#f8fafc" letter-spacing="1">PetLove</text>
-  <text x="70" y="46" font-family="Arial,sans-serif" font-size="11" fill="#f97316"
-        letter-spacing="3">SHOP</text>
+  <line x1="64" y1="12" x2="64" y2="46" stroke="rgba(249,115,22,0.22)" stroke-width="1.5"/>
+  <text x="74" y="34" font-family="'Arial Rounded MT Bold',Arial,sans-serif" font-size="22" font-weight="900" fill="#f8fafc" letter-spacing="1">PetLove</text>
+  <text x="74" y="50" font-family="Arial,sans-serif" font-size="11" fill="#f97316" letter-spacing="4">SHOP</text>
 </svg>
-      <div>
-        <div style="font-size:13px;color:rgba(255,255,255,.9);font-weight:700;margin-bottom:4px;">PetLove Shop</div>
-        <p>Produtos selecionados para c&#227;es e gatos. Curitiba, PR.</p>
+      <div id="sobre">
+        <div style="font-size:14px;color:rgba(255,255,255,.9);font-weight:700;margin-bottom:5px;">PetLove Shop</div>
+        <p>Loja especializada em produtos para pets desde 2019. Ra&#231;&#245;es, acess&#243;rios e muito amor pelo seu animal.</p>
       </div>
     </div>
-    <div class="footer-grid">
-      <div class="footer-col" id="sobre">
+    <div class="fgrid">
+      <div class="fcol">
         <h4>Sobre n&#243;s</h4>
         <p>Loja especializada em produtos para pets desde 2019. Ra&#231;&#245;es, acess&#243;rios e muito amor pelo seu animal.</p>
       </div>
-      <div class="footer-col">
+      <div class="fcol">
         <h4>Pol&#237;tica de troca</h4>
         <ul>
           <li>Troca gratuita em at&#233; 30 dias</li>
           <li>Produto sem uso e com etiqueta</li>
           <li>Defeito de f&#225;brica: troca imediata</li>
           <li>Frete de retorno por nossa conta</li>
+          <li>Tamanho errado: basta solicitar</li>
         </ul>
       </div>
-      <div class="footer-col">
+      <div class="fcol">
         <h4>Contato</h4>
-        <a href="https://wa.me/5541998355581" target="_blank">&#128172; (41) 99835-5581 &mdash; WhatsApp</a>
+        <a href="https://wa.me/5541998355581" target="_blank">&#128172; (41) 99835-5581 &#8212; WhatsApp</a>
         <p>&#128140; contato@petloveshop.com.br</p>
-        <p>&#128205; Curitiba, PR &mdash; Brasil</p>
-        <p>&#128336; Seg a Sex, 9h&ndash;18h</p>
+        <p>&#128205; Curitiba, PR &#8212; Brasil</p>
+        <p>&#128336; Seg a Sex, 9h&#8211;18h</p>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>PetLove Shop &copy; 2025 &mdash; Curitiba, PR</p>
-    </div>
+    <div class="fbot"><p>PetLove Shop &copy; 2025/26 &#8212; Curitiba, PR</p></div>
   </div>
 </footer>
 
-
-<div id="cart-toast" style="position:fixed;bottom:24px;left:50%;transform:translateX(-50%);
-  background:#16a34a;color:#fff;padding:12px 24px;border-radius:10px;font-size:14px;
-  font-weight:700;opacity:0;transition:opacity .3s;pointer-events:none;z-index:9999;
-  box-shadow:0 4px 20px rgba(0,0,0,0.3);"></div>
-<style>#cart-toast.show{opacity:1;}</style>
-
+<div id="ctoast">&#10003; Adicionado ao carrinho!</div>
 <script>
 (function(){
-  var count = 0;
-  var toast = document.getElementById('cart-toast');
-  var badge = document.getElementById('cart-badge');
-  document.querySelectorAll('.btn-cart').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      count++;
-      badge.textContent = count;
-      badge.style.display = 'flex';
-      toast.textContent = '\u2713 Adicionado ao carrinho!';
-      toast.classList.add('show');
-      setTimeout(function(){ toast.classList.remove('show'); }, 2000);
-      var orig = btn.textContent;
-      btn.textContent = '\u2713 Adicionado!';
-      btn.style.background = '#16a34a';
-      setTimeout(function(){ btn.textContent = orig; btn.style.background = ''; }, 1500);
+  var n=0,badge=document.getElementById('cbadge'),toast=document.getElementById('ctoast');
+  document.querySelectorAll('.add-btn').forEach(function(b){
+    b.addEventListener('click',function(){
+      n++;badge.textContent=n;badge.style.display='flex';
+      toast.classList.add('on');setTimeout(function(){toast.classList.remove('on');},2200);
+      var t=b.textContent;b.textContent='✓ Adicionado!';b.disabled=true;
+      setTimeout(function(){b.textContent=t;b.disabled=false;},1600);
     });
   });
 })();

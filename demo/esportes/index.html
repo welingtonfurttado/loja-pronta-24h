@@ -3,459 +3,418 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Arena Camisas Brasil | Camisetas Oficiais</title>
+<title>Arena Camisas Brasil | Camisetas Oficiais de Futebol</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 
-  #demo-backnav{position:fixed;top:0;left:0;right:0;z-index:400;height:48px;
-    background:#0f172a;border-bottom:1px solid rgba(255,255,255,0.07);
-    display:flex;align-items:center;}
-  .backnav-inner{width:100%;max-width:1200px;margin:0 auto;padding:0 20px;
-    display:flex;align-items:center;justify-content:space-between;gap:12px;}
-  .backnav-left{display:flex;align-items:center;gap:10px;}
-  .backnav-back{display:inline-flex;align-items:center;gap:6px;color:#94a3b8;
-    font-size:13px;font-weight:600;text-decoration:none;padding:6px 12px;
-    border-radius:6px;border:1px solid rgba(255,255,255,0.1);transition:all .2s;}
-  .backnav-back:hover{color:#22d3ee;border-color:rgba(34,211,238,0.4);}
-  .backnav-label{font-size:12px;color:rgba(255,255,255,0.3);display:none;}
-  @media(min-width:560px){.backnav-label{display:block;}}
-  .backnav-wa{display:inline-flex;align-items:center;gap:6px;background:#25d366;
-    color:#fff;font-size:13px;font-weight:700;padding:6px 14px;border-radius:6px;
-    text-decoration:none;transition:background .2s;}
-  .backnav-wa:hover{background:#1ebe5c;}
+#bnav{position:fixed;top:0;left:0;right:0;z-index:9999;height:50px;
+  background:#0b1120;border-bottom:1px solid rgba(255,255,255,0.07);
+  display:flex;align-items:center;}
+.bnav-wrap{width:100%;max-width:1280px;margin:0 auto;padding:0 20px;
+  display:flex;align-items:center;justify-content:space-between;}
+.bnav-l{display:flex;align-items:center;gap:12px;}
+.bnav-home{display:inline-flex;align-items:center;gap:7px;color:#94a3b8;
+  font-size:13px;font-weight:600;text-decoration:none;padding:7px 14px;
+  border-radius:7px;border:1px solid rgba(255,255,255,0.10);transition:.2s;}
+.bnav-home:hover{color:#e2e8f0;border-color:rgba(255,255,255,0.25);}
+.bnav-tag{font-size:12px;color:rgba(255,255,255,0.25);display:none;}
+@media(min-width:520px){.bnav-tag{display:block;}}
+.bnav-wa{display:inline-flex;align-items:center;gap:7px;background:#25d366;
+  color:#fff;font-size:13px;font-weight:700;padding:8px 16px;border-radius:7px;
+  text-decoration:none;white-space:nowrap;transition:.2s;}
+.bnav-wa:hover{background:#1db954;}
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--pri:#e63946;--dark:#1a1a2e;--light:#f0f4ff;--text:#1e293b;--muted:#64748b;--border:#e2e8f0;}
-body{font-family:'Inter',Inter,sans-serif;background:#fff;color:var(--text);padding-top:48px;}
+:root{--pri:#e63946;--dark:#0d0d1a;--light:#f0f4ff;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',Inter,sans-serif;background:#fff;color:#1e293b;padding-top:50px;-webkit-font-smoothing:antialiased;}
 a{text-decoration:none;color:inherit;}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px;}
 
-/* ── NAVBAR ── */
-.navbar{position:sticky;top:48px;z-index:200;background:rgba(255,255,255,0.97);
-  backdrop-filter:blur(10px);border-bottom:1px solid var(--border);
-  padding:0 24px;height:68px;display:flex;align-items:center;}
-.nav-inner{max-width:1200px;margin:0 auto;width:100%;display:flex;align-items:center;
-  justify-content:space-between;gap:16px;}
-.nav-links{display:flex;gap:24px;list-style:none;}
-.nav-links a{font-size:14px;font-weight:600;color:var(--muted);transition:color .2s;}
+/* NAVBAR */
+.nav{position:sticky;top:50px;z-index:300;background:rgba(255,255,255,.96);
+  backdrop-filter:blur(12px);border-bottom:1px solid #e2e8f0;}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:66px;}
+.nav-links{display:flex;gap:28px;list-style:none;}
+.nav-links a{font-size:14px;font-weight:600;color:#64748b;transition:color .2s;}
 .nav-links a:hover{color:var(--pri);}
-.nav-cart{display:flex;align-items:center;gap:8px;position:relative;}
-.nav-cart-btn{background:var(--pri);color:#fff;border:none;border-radius:8px;
-  padding:9px 18px;font-size:14px;font-weight:700;cursor:pointer;
-  display:flex;align-items:center;gap:6px;transition:opacity .2s;}
-.nav-cart-btn:hover{opacity:.88;}
-#cart-badge{position:absolute;top:-6px;right:-6px;background:#ef4444;color:#fff;
-  font-size:11px;font-weight:800;width:20px;height:20px;border-radius:50%;
-  display:none;align-items:center;justify-content:center;border:2px solid #fff;}
+.nav-r{display:flex;align-items:center;gap:10px;}
+.nav-wa{display:inline-flex;align-items:center;gap:6px;background:#25d366;color:#fff;
+  font-size:13px;font-weight:700;padding:9px 18px;border-radius:8px;transition:.2s;}
+.nav-wa:hover{background:#1db954;}
+.nav-cart{position:relative;}
+.cart-btn{display:inline-flex;align-items:center;gap:7px;background:var(--pri);color:#fff;
+  border:none;border-radius:8px;padding:9px 18px;font-size:13px;font-weight:700;cursor:pointer;transition:.2s;}
+.cart-btn:hover{opacity:.88;}
+#cbadge{position:absolute;top:-6px;right:-6px;background:#ef4444;color:#fff;font-size:10px;
+  font-weight:800;width:18px;height:18px;border-radius:50%;display:none;align-items:center;
+  justify-content:center;border:2px solid #fff;}
 
-/* ── BANNER ── */
-.banner{background:linear-gradient(135deg,#0d0d1a 0%,#1a1a2e 50%,#16213e 100%);padding:72px 24px;}
-.banner-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;
-  gap:48px;align-items:center;}
-.banner-tag{display:inline-block;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);
-  color:rgba(255,255,255,0.9);font-size:12px;font-weight:700;letter-spacing:.1em;
-  text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:20px;}
-.banner h1{font-size:clamp(28px,4vw,50px);font-weight:900;color:#fff;line-height:1.1;
-  margin-bottom:16px;letter-spacing:-0.02em;}
+/* BANNER */
+.banner{background:linear-gradient(135deg,#0d0d1a 0%,#1a1a2e 60%,#16213e 100%);padding:76px 24px;}
+.banner-in{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;
+  gap:52px;align-items:center;}
+.btag{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);
+  color:rgba(255,255,255,.9);font-size:11px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;padding:7px 18px;border-radius:100px;margin-bottom:22px;}
+.banner h1{font-size:clamp(28px,4.2vw,52px);font-weight:900;color:#fff;line-height:1.1;
+  margin-bottom:18px;letter-spacing:-.02em;}
 .banner h1 em{font-style:normal;color:#f4d35e;}
-.banner p{font-size:16px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:32px;max-width:420px;}
-.banner-btns{display:flex;gap:12px;flex-wrap:wrap;}
-.btn-ban-pri{background:#fff;color:#1a1a2e;font-weight:800;font-size:15px;
-  padding:14px 32px;border-radius:10px;transition:transform .15s,box-shadow .15s;
-  box-shadow:0 4px 20px rgba(0,0,0,0.15);}
-.btn-ban-pri:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.2);}
-.btn-ban-sec{background:rgba(255,255,255,.12);color:#fff;font-weight:700;font-size:15px;
-  padding:14px 32px;border-radius:10px;border:2px solid rgba(255,255,255,.3);
-  transition:background .2s;}
-.btn-ban-sec:hover{background:rgba(255,255,255,.2);}
-.banner-visual{display:flex;justify-content:center;align-items:center;gap:16px;}
-.banner-visual svg{filter:drop-shadow(0 12px 32px rgba(0,0,0,0.35));}
+.banner-sub{font-size:17px;color:rgba(255,255,255,.72);line-height:1.72;margin-bottom:34px;max-width:420px;}
+.bbtns{display:flex;gap:12px;flex-wrap:wrap;}
+.bb-main{background:#fff;color:#0d0d1a;font-weight:800;font-size:15px;padding:14px 32px;
+  border-radius:10px;transition:.18s;box-shadow:0 4px 20px rgba(0,0,0,.18);}
+.bb-main:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.24);}
+.bb-sec{background:rgba(255,255,255,.1);color:#fff;font-weight:700;font-size:15px;padding:14px 32px;
+  border-radius:10px;border:2px solid rgba(255,255,255,.28);transition:.2s;}
+.bb-sec:hover{background:rgba(255,255,255,.18);}
+.bvis{display:flex;justify-content:center;align-items:flex-end;gap:14px;}
+.bvis svg{filter:drop-shadow(0 10px 30px rgba(0,0,0,.32));}
 
-/* ── TRUST STRIP ── */
-.trust-strip{background:#f0f4ff;border-top:1px solid var(--border);border-bottom:1px solid var(--border);
-  padding:14px 24px;}
-.trust-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:center;
-  flex-wrap:wrap;gap:28px;}
-.trust-item{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#1a1a2e;}
-.trust-icon{font-size:16px;}
+/* TRUST */
+.trust{background:var(--light);border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;padding:14px 24px;}
+.trust-in{max-width:1240px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:center;gap:24px;}
+.tpill{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#0d0d1a;}
+.tpill span{font-size:15px;}
 
-/* ── PRODUCTS ── */
-.products-sec{padding:72px 24px;}
-.products-inner{max-width:1200px;margin:0 auto;}
-.sec-header{text-align:center;margin-bottom:48px;}
-.sec-label{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
-  color:#e63946;margin-bottom:10px;}
-.sec-title{font-size:clamp(24px,3.5vw,38px);font-weight:900;color:#1a1a2e;line-height:1.2;}
-.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:24px;}
-.p-card{background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden;
-  position:relative;transition:transform .25s,box-shadow .25s;}
-.p-card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(0,0,0,0.1);}
-.p-badge{position:absolute;top:14px;left:14px;z-index:2;background:#e63946;color:#fff;
-  font-size:11px;font-weight:800;padding:4px 10px;border-radius:100px;letter-spacing:.04em;}
-.p-img{background:#f0f4ff;display:flex;align-items:center;justify-content:center;
+/* PRODUCTS */
+.psec{padding:76px 24px;}
+.psec-in{max-width:1240px;margin:0 auto;}
+.sec-top{text-align:center;margin-bottom:52px;}
+.slabel{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--pri);margin-bottom:10px;}
+.stitle{font-size:clamp(24px,3.8vw,40px);font-weight:900;color:#0d0d1a;line-height:1.18;}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:26px;}
+.pcard{background:#fff;border:1px solid #e2e8f0;border-radius:18px;overflow:hidden;
+  position:relative;transition:.28s;}
+.pcard:hover{transform:translateY(-7px);box-shadow:0 20px 56px rgba(0,0,0,.1);border-color:rgba(0,0,0,.08);}
+.pbadge{position:absolute;top:14px;left:14px;z-index:2;background:var(--pri);color:#fff;
+  font-size:10px;font-weight:800;padding:5px 12px;border-radius:100px;letter-spacing:.05em;text-transform:uppercase;}
+.pimg{background:var(--light);display:flex;align-items:center;justify-content:center;
   height:200px;overflow:hidden;}
-.p-img svg{max-height:180px;width:auto;transition:transform .35s;}
-.p-card:hover .p-img svg{transform:scale(1.06);}
-.p-info{padding:20px;}
-.p-name{font-size:16px;font-weight:700;color:#1a1a2e;margin-bottom:6px;}
-.p-desc{font-size:13px;color:var(--muted);line-height:1.55;margin-bottom:14px;}
-.p-price-row{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
-.p-old{font-size:13px;color:#94a3b8;text-decoration:line-through;}
-.p-price{font-size:22px;font-weight:900;}
-.btn-cart{width:100%;background:#e63946;color:#fff;border:none;border-radius:10px;
-  padding:12px;font-size:14px;font-weight:700;cursor:pointer;transition:opacity .2s,transform .15s;}
-.btn-cart:hover{opacity:.88;transform:translateY(-1px);}
+.pimg svg{max-height:185px;width:auto;transition:.35s;}
+.pcard:hover .pimg svg{transform:scale(1.08);}
+.pinfo{padding:20px;}
+.pname{font-size:16px;font-weight:800;color:#0d0d1a;margin-bottom:6px;line-height:1.3;}
+.pdesc{font-size:13px;color:#64748b;line-height:1.6;margin-bottom:14px;}
+.prow{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.pold{font-size:13px;color:#94a3b8;}
+.pprice{font-size:24px;font-weight:900;}
+.add-btn{width:100%;background:var(--pri);color:#fff;border:none;border-radius:10px;
+  padding:13px;font-size:14px;font-weight:700;cursor:pointer;transition:.2s;letter-spacing:.02em;}
+.add-btn:hover{opacity:.88;transform:translateY(-1px);}
+.add-btn:disabled{opacity:.65;cursor:default;transform:none;}
 
-/* ── FOOTER ── */
-.footer{background:#1a1a2e;color:rgba(255,255,255,.65);padding:56px 24px 0;}
-.footer-inner{max-width:1200px;margin:0 auto;}
-.footer-brand{display:flex;align-items:center;gap:16px;padding-bottom:40px;
-  border-bottom:1px solid rgba(255,255,255,.07);margin-bottom:40px;}
-.footer-brand p{font-size:13px;color:rgba(255,255,255,.4);max-width:320px;margin-top:8px;line-height:1.6;}
-.footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-bottom:40px;}
-.footer-col h4{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
-  color:rgba(255,255,255,.9);margin-bottom:16px;}
-.footer-col a,.footer-col p{font-size:13px;color:rgba(255,255,255,.5);line-height:1.8;display:block;
-  margin-bottom:4px;transition:color .2s;}
-.footer-col a:hover{color:#e63946;}
-.footer-col ul{list-style:none;}
-.footer-col ul li{font-size:13px;color:rgba(255,255,255,.5);line-height:2;padding-left:14px;position:relative;}
-.footer-col ul li::before{content:"\2713";position:absolute;left:0;color:#4ade80;font-size:11px;}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding:20px 0;text-align:center;
-  font-size:12px;color:rgba(255,255,255,.25);}
+/* FOOTER */
+.footer{background:#0d0d1a;color:rgba(255,255,255,.6);padding:60px 24px 0;}
+.footer-in{max-width:1240px;margin:0 auto;}
+.fhd{display:flex;align-items:center;gap:18px;padding-bottom:44px;
+  border-bottom:1px solid rgba(255,255,255,.07);margin-bottom:44px;}
+.fhd p{font-size:13px;color:rgba(255,255,255,.38);max-width:300px;margin-top:8px;line-height:1.65;}
+.fgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-bottom:44px;}
+.fcol h4{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(255,255,255,.85);margin-bottom:18px;}
+.fcol a,.fcol p{font-size:13px;color:rgba(255,255,255,.48);line-height:1.9;display:block;
+  margin-bottom:3px;transition:.2s;}
+.fcol a:hover{color:var(--pri);}
+.fcol ul{list-style:none;}
+.fcol li{font-size:13px;color:rgba(255,255,255,.48);line-height:2;padding-left:16px;position:relative;}
+.fcol li::before{content:"&#10003;";position:absolute;left:0;color:#4ade80;font-size:11px;}
+.fbot{border-top:1px solid rgba(255,255,255,.06);padding:22px 0;text-align:center;
+  font-size:12px;color:rgba(255,255,255,.22);}
 
-/* ── RESPONSIVE ── */
-@media(max-width:900px){
-  .banner-inner{grid-template-columns:1fr;}
-  .banner-visual{display:none;}
-  .footer-grid{grid-template-columns:1fr 1fr;}
+/* TOAST */
+#ctoast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);
+  background:#15803d;color:#fff;padding:14px 28px;border-radius:12px;font-size:14px;
+  font-weight:700;opacity:0;pointer-events:none;z-index:9999;transition:opacity .3s;
+  box-shadow:0 6px 24px rgba(0,0,0,.28);white-space:nowrap;}
+#ctoast.on{opacity:1;}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  .banner-in{grid-template-columns:1fr;}
+  .bvis{display:none;}
+  .fgrid{grid-template-columns:1fr 1fr;}
 }
 @media(max-width:600px){
   .nav-links{display:none;}
-  .footer-grid{grid-template-columns:1fr;gap:24px;}
-  .banner{padding:48px 20px;}
+  .fgrid{grid-template-columns:1fr;gap:28px;}
+  .banner{padding:52px 20px;}
+  .psec{padding:52px 20px;}
 }
 </style>
 </head>
 <body>
-
-<div id="demo-backnav">
-  <div class="backnav-inner">
-    <div class="backnav-left">
-      <a href="/" class="backnav-back">&#8592; Voltar para Home</a>
-      <span class="backnav-label">Exemplo de loja criada em 24h</span>
+<div id="bnav">
+  <div class="bnav-wrap">
+    <div class="bnav-l">
+      <a href="/" class="bnav-home">&#8592; Voltar para Home</a>
+      <span class="bnav-tag">Exemplo de loja criada em 24h</span>
     </div>
-    <a href="https://wa.me/5541998355581" target="_blank" class="backnav-wa">
-      &#128172; <span>Quero a minha</span>
+    <a href="https://wa.me/5541998355581" target="_blank" class="bnav-wa">
+      &#128172; Quero uma loja assim
     </a>
   </div>
 </div>
 
 <!-- NAVBAR -->
-<nav class="navbar">
-  <div class="nav-inner">
-    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 56" width="240" height="56">
-  <path d="M21 4 L39 11 L39 30 Q39 46 21 52 Q3 46 3 30 L3 11 Z"
-        fill="#1a1a2e" stroke="#e63946" stroke-width="2.5"/>
-  <path d="M14 23 L10 18 L16.5 15.5 Q18 13 21 13 Q24 13 25.5 15.5 L32 18 L28 23 L25.5 21 L25.5 36 L16.5 36 L16.5 21 Z"
-        fill="#f4d35e"/>
-  <line x1="52" y1="8" x2="52" y2="48" stroke="rgba(244,211,94,0.25)" stroke-width="1.5"/>
-  <text x="62" y="30" font-family="Impact,sans-serif" font-size="18" letter-spacing="3"
-        fill="#f8fafc">ARENA CAMISAS</text>
-  <text x="62" y="48" font-family="Impact,sans-serif" font-size="18" letter-spacing="3"
-        fill="#e63946">BRASIL</text>
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 58" width="250" height="58">
+  <!-- Shield -->
+  <path d="M22 4 L40 11 L40 31 Q40 48 22 54 Q4 48 4 31 L4 11Z" fill="#1a1a2e" stroke="#e63946" stroke-width="2.5"/>
+  <!-- Jersey inside shield -->
+  <path d="M14 24 L10 19 L16.5 16.5 Q18 14 22 14 Q26 14 27.5 16.5 L34 19 L30 24 L27 22 L27 37 L17 37 L17 22Z" fill="#f4d35e"/>
+  <!-- Stars -->
+  <text x="22" y="14" text-anchor="middle" font-size="5" fill="#f4d35e" letter-spacing="1.5">&#9733;&#9733;&#9733;</text>
+  <!-- Divider -->
+  <line x1="54" y1="10" x2="54" y2="48" stroke="rgba(244,211,94,0.22)" stroke-width="1.5"/>
+  <text x="64" y="33" font-family="Impact,'Arial Narrow',sans-serif" font-size="19" letter-spacing="3" fill="#f8fafc">ARENA CAMISAS</text>
+  <text x="64" y="50" font-family="Impact,'Arial Narrow',sans-serif" font-size="19" letter-spacing="3" fill="#e63946">BRASIL</text>
 </svg></a>
     <ul class="nav-links">
-      <li><a href="#">Produtos</a></li>
+      <li><a href="#produtos">Produtos</a></li>
       <li><a href="#sobre">Sobre</a></li>
       <li><a href="#contato">Contato</a></li>
     </ul>
-    <div class="nav-cart">
-      <button class="nav-cart-btn">&#128722; Carrinho</button>
-      <div id="cart-badge">0</div>
+    <div class="nav-r">
+      <a href="https://wa.me/5541998355581" target="_blank" class="nav-wa">&#128172; WhatsApp</a>
+      <div class="nav-cart">
+        <button class="cart-btn">&#128722; Carrinho</button>
+        <div id="cbadge"></div>
+      </div>
     </div>
   </div>
 </nav>
 
 <!-- BANNER -->
 <section class="banner">
-  <div class="banner-inner">
+  <div class="banner-in">
     <div>
-      <div class="banner-tag">Camisetas Oficiais dos Maiores Times</div>
+      <div class="btag">&#9917; Camisetas dos Maiores Times</div>
       <h1>Vista as cores do <em>seu time</em></h1>
-      <p>Camisetas oficiais com qualidade premium, tecido Dri-Fit e autentica&#231;&#227;o garantida. Torcedor raiz.</p>
-      <div class="banner-btns">
-        <a href="#produtos" class="btn-ban-pri">Ver Camisetas &rarr;</a>
-        <a href="https://wa.me/5541998355581" target="_blank" class="btn-ban-sec">&#128172; WhatsApp</a>
+      <p class="banner-sub">Camisetas oficiais com qualidade premium e autentica&#231;&#227;o garantida. Entrega R&#225;pida para Todo o Brasil.</p>
+      <div class="bbtns">
+        <a href="#produtos" class="bb-main">Ver Camisetas &#8594;</a>
+        <a href="https://wa.me/5541998355581" target="_blank" class="bb-sec">&#128172; WhatsApp</a>
       </div>
     </div>
-    <div class="banner-visual"><div style="transform:rotate(-6deg)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 300" width="280" height="300">
-  <defs>
-    <clipPath id="jcdc2626"><path d="M20 70 L8 34 L90 20 Q118 6 140 4 Q162 6 190 20 L272 34 L260 70 L208 58 L208 280 Q208 290 198 290 L82 290 Q72 290 72 280 L72 58 Z"/></clipPath>
-    <filter id="jfdc2626"><feDropShadow dx="0" dy="6" stdDeviation="10" flood-opacity="0.3"/></filter>
-  </defs>
-  <path d="M20 70 L8 34 L90 20 Q118 6 140 4 Q162 6 190 20 L272 34 L260 70 L208 58 L208 280 Q208 290 198 290 L82 290 Q72 290 72 280 L72 58 Z" fill="#dc2626" filter="url(#jfdc2626)"/>
-  <path d="M20 70 L8 34 L90 20 L72 58 Z" fill="#111827"/>
-  <path d="M208 58 L190 20 L272 34 L260 70 Z" fill="#111827"/>
-  <g clip-path="url(#jcdc2626)"><rect x="0" y="86" width="280" height="38" fill="#111827"/><rect x="0" y="162" width="280" height="38" fill="#111827"/><rect x="0" y="238" width="280" height="38" fill="#111827"/></g>
-  <!-- collar -->
-  <ellipse cx="140" cy="14" rx="28" ry="12" fill="#111827" opacity="0.85"/>
-</svg></div><div style="transform:scale(0.85);margin-top:20px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 300" width="280" height="300">
-  <defs>
-    <clipPath id="jcf9fafb"><path d="M20 70 L8 34 L90 20 Q118 6 140 4 Q162 6 190 20 L272 34 L260 70 L208 58 L208 280 Q208 290 198 290 L82 290 Q72 290 72 280 L72 58 Z"/></clipPath>
-    <filter id="jff9fafb"><feDropShadow dx="0" dy="6" stdDeviation="10" flood-opacity="0.3"/></filter>
-  </defs>
-  <path d="M20 70 L8 34 L90 20 Q118 6 140 4 Q162 6 190 20 L272 34 L260 70 L208 58 L208 280 Q208 290 198 290 L82 290 Q72 290 72 280 L72 58 Z" fill="#f9fafb" filter="url(#jff9fafb)"/>
-  <path d="M20 70 L8 34 L90 20 L72 58 Z" fill="#111827"/>
-  <path d="M208 58 L190 20 L272 34 L260 70 Z" fill="#111827"/>
-  <g clip-path="url(#jcf9fafb)"><rect x="0" y="0" width="280" height="300" fill="#111827"/><rect x="72" y="0" width="136" height="300" fill="#f9fafb"/></g>
-  <!-- collar -->
-  <ellipse cx="140" cy="14" rx="28" ry="12" fill="#111827" opacity="0.85"/>
-</svg></div></div>
+    <div class="bvis">
+  <div style="transform:rotate(-6deg) translateY(10px);filter:drop-shadow(0 16px 40px rgba(0,0,0,.4));"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 300">
+<defs>
+  <clipPath id="jcpdc2626111"><path d="M22 74 L8 36 L88 20 Q116 4 140 2 Q164 4 192 20 L272 36 L258 74 L206 60 L206 286 Q206 296 196 296 L84 296 Q74 296 74 286 L74 60Z"/></clipPath>
+  <filter id="jshdc2626111"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-opacity=".28"/></filter>
+</defs>
+<path d="M22 74 L8 36 L88 20 Q116 4 140 2 Q164 4 192 20 L272 36 L258 74 L206 60 L206 286 Q206 296 196 296 L84 296 Q74 296 74 286 L74 60Z" fill="#dc2626" filter="url(#jshdc2626111)"/>
+<path d="M22 74 L8 36 L88 20 L74 60Z" fill="#111827"/>
+<path d="M206 60 L192 20 L272 36 L258 74Z" fill="#111827"/>
+<g clip-path="url(#jcpdc2626111)"><rect x="0" y="84" width="280" height="40" fill="#111827"/><rect x="0" y="162" width="280" height="40" fill="#111827"/><rect x="0" y="240" width="280" height="40" fill="#111827"/></g>
+<ellipse cx="140" cy="12" rx="30" ry="13" fill="#111" opacity=".9"/>
+</svg></div>
+  <div style="transform:scale(.82) translateY(-10px);filter:drop-shadow(0 12px 28px rgba(0,0,0,.35));"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 300">
+<defs>
+  <clipPath id="jcp14532d145"><path d="M22 74 L8 36 L88 20 Q116 4 140 2 Q164 4 192 20 L272 36 L258 74 L206 60 L206 286 Q206 296 196 296 L84 296 Q74 296 74 286 L74 60Z"/></clipPath>
+  <filter id="jsh14532d145"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-opacity=".28"/></filter>
+</defs>
+<path d="M22 74 L8 36 L88 20 Q116 4 140 2 Q164 4 192 20 L272 36 L258 74 L206 60 L206 286 Q206 296 196 296 L84 296 Q74 296 74 286 L74 60Z" fill="#14532d" filter="url(#jsh14532d145)"/>
+<path d="M22 74 L8 36 L88 20 L74 60Z" fill="#14532d"/>
+<path d="M206 60 L192 20 L272 36 L258 74Z" fill="#14532d"/>
+<g clip-path="url(#jcp14532d145)"><rect x="128" y="0" width="16" height="300" fill="rgba(255,255,255,.3)"/></g>
+<ellipse cx="140" cy="12" rx="30" ry="13" fill="#052e16" opacity=".9"/>
+</svg></div>
+</div>
   </div>
 </section>
 
 <!-- TRUST STRIP -->
-<div class="trust-strip">
-  <div class="trust-inner">
-    <div class="trust-item"><span class="trust-icon">&#9989;</span>Produto 100% oficial</div><div class="trust-item"><span class="trust-icon">&#128260;</span>Troca gr&#225;tis em 30 dias</div><div class="trust-item"><span class="trust-icon">&#128274;</span>Compra segura</div><div class="trust-item"><span class="trust-icon">&#9889;</span>Entrega em 2&#8211;4 dias</div>
-  </div>
+<div class="trust">
+  <div class="trust-in"><div class="tpill"><span>&#9989;</span>Produto 100% oficial</div><div class="tpill"><span>&#128260;</span>Troca gr&#225;tis em 30 dias</div><div class="tpill"><span>&#9917;</span>Tamanhos P ao GGG</div><div class="tpill"><span>&#9889;</span>Entrega r&#225;pida para todo o Brasil</div></div>
 </div>
 
 <!-- PRODUCTS -->
-<section class="products-sec" id="produtos">
-  <div class="products-inner">
-    <div class="sec-header">
-      <p class="sec-label">Cat&#225;logo</p>
-      <h2 class="sec-title">Camisetas dos Times</h2>
+<section class="psec" id="produtos">
+  <div class="psec-in">
+    <div class="sec-top">
+      <p class="slabel">Cat&#225;logo</p>
+      <h2 class="stitle">Camisetas dos Times</h2>
     </div>
-    <div class="products-grid">
-      
-    <div class="p-card">
-      <span class="p-badge">OFICIAL</span>
-      <div class="p-img"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 300" width="280" height="300">
-  <defs>
-    <clipPath id="jcdc2626"><path d="M20 70 L8 34 L90 20 Q118 6 140 4 Q162 6 190 20 L272 34 L260 70 L208 58 L208 280 Q208 290 198 290 L82 290 Q72 290 72 280 L72 58 Z"/></clipPath>
-    <filter id="jfdc2626"><feDropShadow dx="0" dy="6" stdDeviation="10" flood-opacity="0.3"/></filter>
-  </defs>
-  <path d="M20 70 L8 34 L90 20 Q118 6 140 4 Q162 6 190 20 L272 34 L260 70 L208 58 L208 280 Q208 290 198 290 L82 290 Q72 290 72 280 L72 58 Z" fill="#dc2626" filter="url(#jfdc2626)"/>
-  <path d="M20 70 L8 34 L90 20 L72 58 Z" fill="#111827"/>
-  <path d="M208 58 L190 20 L272 34 L260 70 Z" fill="#111827"/>
-  <g clip-path="url(#jcdc2626)"><rect x="0" y="86" width="280" height="38" fill="#111827"/><rect x="0" y="162" width="280" height="38" fill="#111827"/><rect x="0" y="238" width="280" height="38" fill="#111827"/></g>
-  <!-- collar -->
-  <ellipse cx="140" cy="14" rx="28" ry="12" fill="#111827" opacity="0.85"/>
+    <div class="pgrid"><div class="pcard">
+  <div class="pbadge">OFICIAL</div>
+  <div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 300">
+<defs>
+  <clipPath id="jcpdc2626111"><path d="M22 74 L8 36 L88 20 Q116 4 140 2 Q164 4 192 20 L272 36 L258 74 L206 60 L206 286 Q206 296 196 296 L84 296 Q74 296 74 286 L74 60Z"/></clipPath>
+  <filter id="jshdc2626111"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-opacity=".28"/></filter>
+</defs>
+<path d="M22 74 L8 36 L88 20 Q116 4 140 2 Q164 4 192 20 L272 36 L258 74 L206 60 L206 286 Q206 296 196 296 L84 296 Q74 296 74 286 L74 60Z" fill="#dc2626" filter="url(#jshdc2626111)"/>
+<path d="M22 74 L8 36 L88 20 L74 60Z" fill="#111827"/>
+<path d="M206 60 L192 20 L272 36 L258 74Z" fill="#111827"/>
+<g clip-path="url(#jcpdc2626111)"><rect x="0" y="84" width="280" height="40" fill="#111827"/><rect x="0" y="162" width="280" height="40" fill="#111827"/><rect x="0" y="240" width="280" height="40" fill="#111827"/></g>
+<ellipse cx="140" cy="12" rx="30" ry="13" fill="#111" opacity=".9"/>
 </svg></div>
-      <div class="p-info">
-        <h3 class="p-name">Camiseta Flamengo 2025</h3>
-        <p class="p-desc">Modelo oficial do Mengão. Tecido Dri-Fit com proteção UV50+.</p>
-        <div class="p-price-row">
-          <span class="p-old">R$249,90</span>
-          <span class="p-price" style="color:#e63946;">R$189,90</span>
-        </div>
-        <button class="btn-cart" style="background:#e63946;">&#128722; Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="p-card">
-      
-      <div class="p-img"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 300" width="280" height="300">
-  <defs>
-    <clipPath id="jcf9fafb"><path d="M20 70 L8 34 L90 20 Q118 6 140 4 Q162 6 190 20 L272 34 L260 70 L208 58 L208 280 Q208 290 198 290 L82 290 Q72 290 72 280 L72 58 Z"/></clipPath>
-    <filter id="jff9fafb"><feDropShadow dx="0" dy="6" stdDeviation="10" flood-opacity="0.3"/></filter>
-  </defs>
-  <path d="M20 70 L8 34 L90 20 Q118 6 140 4 Q162 6 190 20 L272 34 L260 70 L208 58 L208 280 Q208 290 198 290 L82 290 Q72 290 72 280 L72 58 Z" fill="#f9fafb" filter="url(#jff9fafb)"/>
-  <path d="M20 70 L8 34 L90 20 L72 58 Z" fill="#111827"/>
-  <path d="M208 58 L190 20 L272 34 L260 70 Z" fill="#111827"/>
-  <g clip-path="url(#jcf9fafb)"><rect x="0" y="0" width="280" height="300" fill="#111827"/><rect x="72" y="0" width="136" height="300" fill="#f9fafb"/></g>
-  <!-- collar -->
-  <ellipse cx="140" cy="14" rx="28" ry="12" fill="#111827" opacity="0.85"/>
+  <div class="pinfo">
+    <h3 class="pname">Camiseta Flamengo</h3>
+    <p class="pdesc">Modelo oficial 2025. Tecido Dri-Fit com prote&#231;&#227;o UV50+. O Mengão chegou!</p>
+    <div class="prow"><s class="pold">R$249,90</s><span class="pprice" style="color:#e63946">R$189,90</span></div>
+    <button class="add-btn" style="--pri:#e63946">&#128722; Adicionar ao Carrinho</button>
+  </div>
+</div><div class="pcard">
+  
+  <div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 300">
+<defs>
+  <clipPath id="jcpf9fafb111"><path d="M22 74 L8 36 L88 20 Q116 4 140 2 Q164 4 192 20 L272 36 L258 74 L206 60 L206 286 Q206 296 196 296 L84 296 Q74 296 74 286 L74 60Z"/></clipPath>
+  <filter id="jshf9fafb111"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-opacity=".28"/></filter>
+</defs>
+<path d="M22 74 L8 36 L88 20 Q116 4 140 2 Q164 4 192 20 L272 36 L258 74 L206 60 L206 286 Q206 296 196 296 L84 296 Q74 296 74 286 L74 60Z" fill="#f9fafb" filter="url(#jshf9fafb111)"/>
+<path d="M22 74 L8 36 L88 20 L74 60Z" fill="#111827"/>
+<path d="M206 60 L192 20 L272 36 L258 74Z" fill="#111827"/>
+<g clip-path="url(#jcpf9fafb111)"><rect x="0" y="0" width="280" height="300" fill="#111827"/><rect x="74" y="0" width="132" height="300" fill="#f9fafb"/></g>
+<ellipse cx="140" cy="12" rx="30" ry="13" fill="#111" opacity=".9"/>
 </svg></div>
-      <div class="p-info">
-        <h3 class="p-name">Camiseta Corinthians</h3>
-        <p class="p-desc">A camisa do Timão em material respirável premium. Torcedor raiz!</p>
-        <div class="p-price-row">
-          
-          <span class="p-price" style="color:#e63946;">R$189,90</span>
-        </div>
-        <button class="btn-cart" style="background:#e63946;">&#128722; Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="p-card">
-      <span class="p-badge">OFERTA</span>
-      <div class="p-img"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 300" width="280" height="300">
-  <defs>
-    <clipPath id="jc166534"><path d="M20 70 L8 34 L90 20 Q118 6 140 4 Q162 6 190 20 L272 34 L260 70 L208 58 L208 280 Q208 290 198 290 L82 290 Q72 290 72 280 L72 58 Z"/></clipPath>
-    <filter id="jf166534"><feDropShadow dx="0" dy="6" stdDeviation="10" flood-opacity="0.3"/></filter>
-  </defs>
-  <path d="M20 70 L8 34 L90 20 Q118 6 140 4 Q162 6 190 20 L272 34 L260 70 L208 58 L208 280 Q208 290 198 290 L82 290 Q72 290 72 280 L72 58 Z" fill="#166534" filter="url(#jf166534)"/>
-  <path d="M20 70 L8 34 L90 20 L72 58 Z" fill="#166534"/>
-  <path d="M208 58 L190 20 L272 34 L260 70 Z" fill="#166534"/>
-  <g clip-path="url(#jc166534)"><rect x="126" y="0" width="18" height="300" fill="rgba(255,255,255,0.25)"/></g>
-  <!-- collar -->
-  <ellipse cx="140" cy="14" rx="28" ry="12" fill="#14532d" opacity="0.85"/>
+  <div class="pinfo">
+    <h3 class="pname">Camiseta Corinthians</h3>
+    <p class="pdesc">A camisa do Tim&#227;o em material respirável premium. Torcedor raiz!</p>
+    <div class="prow"><span class="pprice" style="color:#e63946">R$189,90</span></div>
+    <button class="add-btn" style="--pri:#e63946">&#128722; Adicionar ao Carrinho</button>
+  </div>
+</div><div class="pcard">
+  <div class="pbadge">OFERTA</div>
+  <div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 300">
+<defs>
+  <clipPath id="jcp14532d145"><path d="M22 74 L8 36 L88 20 Q116 4 140 2 Q164 4 192 20 L272 36 L258 74 L206 60 L206 286 Q206 296 196 296 L84 296 Q74 296 74 286 L74 60Z"/></clipPath>
+  <filter id="jsh14532d145"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-opacity=".28"/></filter>
+</defs>
+<path d="M22 74 L8 36 L88 20 Q116 4 140 2 Q164 4 192 20 L272 36 L258 74 L206 60 L206 286 Q206 296 196 296 L84 296 Q74 296 74 286 L74 60Z" fill="#14532d" filter="url(#jsh14532d145)"/>
+<path d="M22 74 L8 36 L88 20 L74 60Z" fill="#14532d"/>
+<path d="M206 60 L192 20 L272 36 L258 74Z" fill="#14532d"/>
+<g clip-path="url(#jcp14532d145)"><rect x="128" y="0" width="16" height="300" fill="rgba(255,255,255,.3)"/></g>
+<ellipse cx="140" cy="12" rx="30" ry="13" fill="#052e16" opacity=".9"/>
 </svg></div>
-      <div class="p-info">
-        <h3 class="p-name">Camiseta Palmeiras</h3>
-        <p class="p-desc">A verde do Verdão com tecido de alta performance para jogar ou torcer.</p>
-        <div class="p-price-row">
-          <span class="p-old">R$229,90</span>
-          <span class="p-price" style="color:#e63946;">R$189,90</span>
-        </div>
-        <button class="btn-cart" style="background:#e63946;">&#128722; Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="p-card">
-      
-      <div class="p-img"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 300" width="280" height="300">
-  <defs>
-    <clipPath id="jcf9fafb"><path d="M20 70 L8 34 L90 20 Q118 6 140 4 Q162 6 190 20 L272 34 L260 70 L208 58 L208 280 Q208 290 198 290 L82 290 Q72 290 72 280 L72 58 Z"/></clipPath>
-    <filter id="jff9fafb"><feDropShadow dx="0" dy="6" stdDeviation="10" flood-opacity="0.3"/></filter>
-  </defs>
-  <path d="M20 70 L8 34 L90 20 Q118 6 140 4 Q162 6 190 20 L272 34 L260 70 L208 58 L208 280 Q208 290 198 290 L82 290 Q72 290 72 280 L72 58 Z" fill="#f9fafb" filter="url(#jff9fafb)"/>
-  <path d="M20 70 L8 34 L90 20 L72 58 Z" fill="#111827"/>
-  <path d="M208 58 L190 20 L272 34 L260 70 Z" fill="#111827"/>
-  <g clip-path="url(#jcf9fafb)"><rect x="0" y="104" width="280" height="8" fill="#111827"/><rect x="0" y="112" width="280" height="48" fill="#dc2626"/><rect x="0" y="160" width="280" height="8" fill="#111827"/></g>
-  <!-- collar -->
-  <ellipse cx="140" cy="14" rx="28" ry="12" fill="#111827" opacity="0.85"/>
+  <div class="pinfo">
+    <h3 class="pname">Camiseta Palmeiras</h3>
+    <p class="pdesc">A verde do Verd&#227;o. Tecido de alta performance para jogar ou torcer.</p>
+    <div class="prow"><s class="pold">R$229,90</s><span class="pprice" style="color:#e63946">R$189,90</span></div>
+    <button class="add-btn" style="--pri:#e63946">&#128722; Adicionar ao Carrinho</button>
+  </div>
+</div><div class="pcard">
+  
+  <div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 300">
+<defs>
+  <clipPath id="jcpf9fafb111"><path d="M22 74 L8 36 L88 20 Q116 4 140 2 Q164 4 192 20 L272 36 L258 74 L206 60 L206 286 Q206 296 196 296 L84 296 Q74 296 74 286 L74 60Z"/></clipPath>
+  <filter id="jshf9fafb111"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-opacity=".28"/></filter>
+</defs>
+<path d="M22 74 L8 36 L88 20 Q116 4 140 2 Q164 4 192 20 L272 36 L258 74 L206 60 L206 286 Q206 296 196 296 L84 296 Q74 296 74 286 L74 60Z" fill="#f9fafb" filter="url(#jshf9fafb111)"/>
+<path d="M22 74 L8 36 L88 20 L74 60Z" fill="#111827"/>
+<path d="M206 60 L192 20 L272 36 L258 74Z" fill="#111827"/>
+<g clip-path="url(#jcpf9fafb111)"><rect x="0" y="106" width="280" height="8" fill="#111827"/><rect x="0" y="114" width="280" height="50" fill="#dc2626"/><rect x="0" y="164" width="280" height="8" fill="#111827"/></g>
+<ellipse cx="140" cy="12" rx="30" ry="13" fill="#111" opacity=".9"/>
 </svg></div>
-      <div class="p-info">
-        <h3 class="p-name">Camiseta S&#227;o Paulo FC</h3>
-        <p class="p-desc">Tricolor paulista com listras tradicionais. Qualidade premium.</p>
-        <div class="p-price-row">
-          
-          <span class="p-price" style="color:#e63946;">R$189,90</span>
-        </div>
-        <button class="btn-cart" style="background:#e63946;">&#128722; Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="p-card">
-      
-      <div class="p-img"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 300" width="280" height="300">
-  <defs>
-    <clipPath id="jcdc2626"><path d="M20 70 L8 34 L90 20 Q118 6 140 4 Q162 6 190 20 L272 34 L260 70 L208 58 L208 280 Q208 290 198 290 L82 290 Q72 290 72 280 L72 58 Z"/></clipPath>
-    <filter id="jfdc2626"><feDropShadow dx="0" dy="6" stdDeviation="10" flood-opacity="0.3"/></filter>
-  </defs>
-  <path d="M20 70 L8 34 L90 20 Q118 6 140 4 Q162 6 190 20 L272 34 L260 70 L208 58 L208 280 Q208 290 198 290 L82 290 Q72 290 72 280 L72 58 Z" fill="#dc2626" filter="url(#jfdc2626)"/>
-  <path d="M20 70 L8 34 L90 20 L72 58 Z" fill="#111827"/>
-  <path d="M208 58 L190 20 L272 34 L260 70 Z" fill="#111827"/>
-  <g clip-path="url(#jcdc2626)"><rect x="140" y="0" width="140" height="300" fill="#111827"/><line x1="140" y1="0" x2="140" y2="300" stroke="#fff" stroke-width="3" opacity="0.5"/></g>
-  <!-- collar -->
-  <ellipse cx="140" cy="14" rx="28" ry="12" fill="#111827" opacity="0.85"/>
+  <div class="pinfo">
+    <h3 class="pname">Camiseta S&#227;o Paulo</h3>
+    <p class="pdesc">Tricolor paulista com listras tradicionais. Qualidade premium garantida.</p>
+    <div class="prow"><span class="pprice" style="color:#e63946">R$189,90</span></div>
+    <button class="add-btn" style="--pri:#e63946">&#128722; Adicionar ao Carrinho</button>
+  </div>
+</div><div class="pcard">
+  
+  <div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 300">
+<defs>
+  <clipPath id="jcpdc2626111"><path d="M22 74 L8 36 L88 20 Q116 4 140 2 Q164 4 192 20 L272 36 L258 74 L206 60 L206 286 Q206 296 196 296 L84 296 Q74 296 74 286 L74 60Z"/></clipPath>
+  <filter id="jshdc2626111"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-opacity=".28"/></filter>
+</defs>
+<path d="M22 74 L8 36 L88 20 Q116 4 140 2 Q164 4 192 20 L272 36 L258 74 L206 60 L206 286 Q206 296 196 296 L84 296 Q74 296 74 286 L74 60Z" fill="#dc2626" filter="url(#jshdc2626111)"/>
+<path d="M22 74 L8 36 L88 20 L74 60Z" fill="#111827"/>
+<path d="M206 60 L192 20 L272 36 L258 74Z" fill="#111827"/>
+<g clip-path="url(#jcpdc2626111)"><rect x="140" y="0" width="140" height="300" fill="#111827"/><rect x="138" y="0" width="4" height="300" fill="rgba(255,255,255,.35)"/></g>
+<ellipse cx="140" cy="12" rx="30" ry="13" fill="#111" opacity=".9"/>
 </svg></div>
-      <div class="p-info">
-        <h3 class="p-name">Camiseta Ath. Paranaense</h3>
-        <p class="p-desc">A camisa do Furacao rubro-negra em edição especial.</p>
-        <div class="p-price-row">
-          <span class="p-old">R$219,90</span>
-          <span class="p-price" style="color:#e63946;">R$179,90</span>
-        </div>
-        <button class="btn-cart" style="background:#e63946;">&#128722; Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="p-card">
-      <span class="p-badge">NOVO</span>
-      <div class="p-img"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 300" width="280" height="300">
-  <defs>
-    <clipPath id="jcf9fafb"><path d="M20 70 L8 34 L90 20 Q118 6 140 4 Q162 6 190 20 L272 34 L260 70 L208 58 L208 280 Q208 290 198 290 L82 290 Q72 290 72 280 L72 58 Z"/></clipPath>
-    <filter id="jff9fafb"><feDropShadow dx="0" dy="6" stdDeviation="10" flood-opacity="0.3"/></filter>
-  </defs>
-  <path d="M20 70 L8 34 L90 20 Q118 6 140 4 Q162 6 190 20 L272 34 L260 70 L208 58 L208 280 Q208 290 198 290 L82 290 Q72 290 72 280 L72 58 Z" fill="#f9fafb" filter="url(#jff9fafb)"/>
-  <path d="M20 70 L8 34 L90 20 L72 58 Z" fill="#166534"/>
-  <path d="M208 58 L190 20 L272 34 L260 70 Z" fill="#166534"/>
-  <g clip-path="url(#jcf9fafb)"><rect x="0" y="0" width="14" height="300" fill="#166534"/><rect x="28" y="0" width="14" height="300" fill="#166534"/><rect x="56" y="0" width="14" height="300" fill="#166534"/><rect x="84" y="0" width="14" height="300" fill="#166534"/><rect x="112" y="0" width="14" height="300" fill="#166534"/><rect x="140" y="0" width="14" height="300" fill="#166534"/><rect x="168" y="0" width="14" height="300" fill="#166534"/><rect x="196" y="0" width="14" height="300" fill="#166534"/><rect x="224" y="0" width="14" height="300" fill="#166534"/><rect x="252" y="0" width="14" height="300" fill="#166534"/></g>
-  <!-- collar -->
-  <ellipse cx="140" cy="14" rx="28" ry="12" fill="#14532d" opacity="0.85"/>
+  <div class="pinfo">
+    <h3 class="pname">Camiseta Athletico PR</h3>
+    <p class="pdesc">A camisa do Furac&#227;o rubro-negra em edi&#231;&#227;o especial 2025.</p>
+    <div class="prow"><s class="pold">R$219,90</s><span class="pprice" style="color:#e63946">R$179,90</span></div>
+    <button class="add-btn" style="--pri:#e63946">&#128722; Adicionar ao Carrinho</button>
+  </div>
+</div><div class="pcard">
+  <div class="pbadge">NOVO</div>
+  <div class="pimg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 300">
+<defs>
+  <clipPath id="jcpf9fafb145"><path d="M22 74 L8 36 L88 20 Q116 4 140 2 Q164 4 192 20 L272 36 L258 74 L206 60 L206 286 Q206 296 196 296 L84 296 Q74 296 74 286 L74 60Z"/></clipPath>
+  <filter id="jshf9fafb145"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-opacity=".28"/></filter>
+</defs>
+<path d="M22 74 L8 36 L88 20 Q116 4 140 2 Q164 4 192 20 L272 36 L258 74 L206 60 L206 286 Q206 296 196 296 L84 296 Q74 296 74 286 L74 60Z" fill="#f9fafb" filter="url(#jshf9fafb145)"/>
+<path d="M22 74 L8 36 L88 20 L74 60Z" fill="#14532d"/>
+<path d="M206 60 L192 20 L272 36 L258 74Z" fill="#14532d"/>
+<g clip-path="url(#jcpf9fafb145)"><rect x="0" y="0" width="14" height="300" fill="#14532d"/><rect x="28" y="0" width="14" height="300" fill="#14532d"/><rect x="56" y="0" width="14" height="300" fill="#14532d"/><rect x="84" y="0" width="14" height="300" fill="#14532d"/><rect x="112" y="0" width="14" height="300" fill="#14532d"/><rect x="140" y="0" width="14" height="300" fill="#14532d"/><rect x="168" y="0" width="14" height="300" fill="#14532d"/><rect x="196" y="0" width="14" height="300" fill="#14532d"/><rect x="224" y="0" width="14" height="300" fill="#14532d"/><rect x="252" y="0" width="14" height="300" fill="#14532d"/></g>
+<ellipse cx="140" cy="12" rx="30" ry="13" fill="#052e16" opacity=".9"/>
 </svg></div>
-      <div class="p-info">
-        <h3 class="p-name">Camiseta Coritiba FC</h3>
-        <p class="p-desc">A tradicional listrada do Coxa-Branca. Orgulho paranaense!</p>
-        <div class="p-price-row">
-          
-          <span class="p-price" style="color:#e63946;">R$179,90</span>
-        </div>
-        <button class="btn-cart" style="background:#e63946;">&#128722; Adicionar ao Carrinho</button>
-      </div>
-    </div>
-    </div>
+  <div class="pinfo">
+    <h3 class="pname">Camiseta Coritiba FC</h3>
+    <p class="pdesc">A tradicional listrada do Coxa-Branca. Orgulho paranaense!</p>
+    <div class="prow"><span class="pprice" style="color:#e63946">R$179,90</span></div>
+    <button class="add-btn" style="--pri:#e63946">&#128722; Adicionar ao Carrinho</button>
+  </div>
+</div></div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer class="footer" id="contato">
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 56" width="240" height="56">
-  <path d="M21 4 L39 11 L39 30 Q39 46 21 52 Q3 46 3 30 L3 11 Z"
-        fill="#1a1a2e" stroke="#e63946" stroke-width="2.5"/>
-  <path d="M14 23 L10 18 L16.5 15.5 Q18 13 21 13 Q24 13 25.5 15.5 L32 18 L28 23 L25.5 21 L25.5 36 L16.5 36 L16.5 21 Z"
-        fill="#f4d35e"/>
-  <line x1="52" y1="8" x2="52" y2="48" stroke="rgba(244,211,94,0.25)" stroke-width="1.5"/>
-  <text x="62" y="30" font-family="Impact,sans-serif" font-size="18" letter-spacing="3"
-        fill="#f8fafc">ARENA CAMISAS</text>
-  <text x="62" y="48" font-family="Impact,sans-serif" font-size="18" letter-spacing="3"
-        fill="#e63946">BRASIL</text>
+  <div class="footer-in">
+    <div class="fhd">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 58" width="250" height="58">
+  <!-- Shield -->
+  <path d="M22 4 L40 11 L40 31 Q40 48 22 54 Q4 48 4 31 L4 11Z" fill="#1a1a2e" stroke="#e63946" stroke-width="2.5"/>
+  <!-- Jersey inside shield -->
+  <path d="M14 24 L10 19 L16.5 16.5 Q18 14 22 14 Q26 14 27.5 16.5 L34 19 L30 24 L27 22 L27 37 L17 37 L17 22Z" fill="#f4d35e"/>
+  <!-- Stars -->
+  <text x="22" y="14" text-anchor="middle" font-size="5" fill="#f4d35e" letter-spacing="1.5">&#9733;&#9733;&#9733;</text>
+  <!-- Divider -->
+  <line x1="54" y1="10" x2="54" y2="48" stroke="rgba(244,211,94,0.22)" stroke-width="1.5"/>
+  <text x="64" y="33" font-family="Impact,'Arial Narrow',sans-serif" font-size="19" letter-spacing="3" fill="#f8fafc">ARENA CAMISAS</text>
+  <text x="64" y="50" font-family="Impact,'Arial Narrow',sans-serif" font-size="19" letter-spacing="3" fill="#e63946">BRASIL</text>
 </svg>
-      <div>
-        <div style="font-size:13px;color:rgba(255,255,255,.9);font-weight:700;margin-bottom:4px;">Arena Camisas Brasil</div>
-        <p>Camisetas oficiais de futebol desde 2018. Curitiba, PR.</p>
+      <div id="sobre">
+        <div style="font-size:14px;color:rgba(255,255,255,.9);font-weight:700;margin-bottom:5px;">Arena Camisas Brasil</div>
+        <p>Especialistas em camisetas oficiais de futebol desde 2018. Trabalhamos com os maiores times do Brasil.</p>
       </div>
     </div>
-    <div class="footer-grid">
-      <div class="footer-col" id="sobre">
+    <div class="fgrid">
+      <div class="fcol">
         <h4>Sobre n&#243;s</h4>
-        <p>Especialistas em camisetas oficiais de futebol. Trabalhamos com os maiores times do Brasil com autentica&#231;&#227;o e nota fiscal.</p>
+        <p>Especialistas em camisetas oficiais de futebol desde 2018. Trabalhamos com os maiores times do Brasil.</p>
       </div>
-      <div class="footer-col">
+      <div class="fcol">
         <h4>Pol&#237;tica de troca</h4>
         <ul>
           <li>Troca gratuita em at&#233; 30 dias</li>
           <li>Produto sem uso e com etiqueta</li>
           <li>Defeito de f&#225;brica: troca imediata</li>
           <li>Frete de retorno por nossa conta</li>
+          <li>Tamanho errado: basta solicitar</li>
         </ul>
       </div>
-      <div class="footer-col">
+      <div class="fcol">
         <h4>Contato</h4>
-        <a href="https://wa.me/5541998355581" target="_blank">&#128172; (41) 99835-5581 &mdash; WhatsApp</a>
+        <a href="https://wa.me/5541998355581" target="_blank">&#128172; (41) 99835-5581 &#8212; WhatsApp</a>
         <p>&#128140; contato@arenacamisas.com.br</p>
-        <p>&#128205; Curitiba, PR &mdash; Brasil</p>
-        <p>&#128336; Seg a Sex, 9h&ndash;18h</p>
+        <p>&#128205; Curitiba, PR &#8212; Brasil</p>
+        <p>&#128336; Seg a Sex, 9h&#8211;18h</p>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>Arena Camisas Brasil &copy; 2025 &mdash; Curitiba, PR</p>
-    </div>
+    <div class="fbot"><p>Arena Camisas Brasil &copy; 2025/26 &#8212; Curitiba, PR</p></div>
   </div>
 </footer>
 
-
-<div id="cart-toast" style="position:fixed;bottom:24px;left:50%;transform:translateX(-50%);
-  background:#16a34a;color:#fff;padding:12px 24px;border-radius:10px;font-size:14px;
-  font-weight:700;opacity:0;transition:opacity .3s;pointer-events:none;z-index:9999;
-  box-shadow:0 4px 20px rgba(0,0,0,0.3);"></div>
-<style>#cart-toast.show{opacity:1;}</style>
-
+<div id="ctoast">&#10003; Adicionado ao carrinho!</div>
 <script>
 (function(){
-  var count = 0;
-  var toast = document.getElementById('cart-toast');
-  var badge = document.getElementById('cart-badge');
-  document.querySelectorAll('.btn-cart').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      count++;
-      badge.textContent = count;
-      badge.style.display = 'flex';
-      toast.textContent = '\u2713 Adicionado ao carrinho!';
-      toast.classList.add('show');
-      setTimeout(function(){ toast.classList.remove('show'); }, 2000);
-      var orig = btn.textContent;
-      btn.textContent = '\u2713 Adicionado!';
-      btn.style.background = '#16a34a';
-      setTimeout(function(){ btn.textContent = orig; btn.style.background = ''; }, 1500);
+  var n=0,badge=document.getElementById('cbadge'),toast=document.getElementById('ctoast');
+  document.querySelectorAll('.add-btn').forEach(function(b){
+    b.addEventListener('click',function(){
+      n++;badge.textContent=n;badge.style.display='flex';
+      toast.classList.add('on');setTimeout(function(){toast.classList.remove('on');},2200);
+      var t=b.textContent;b.textContent='✓ Adicionado!';b.disabled=true;
+      setTimeout(function(){b.textContent=t;b.disabled=false;},1600);
     });
   });
 })();
