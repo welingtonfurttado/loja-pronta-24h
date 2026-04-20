@@ -1,236 +1,499 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bella Moda Store | Moda Feminina Online</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    :root{
-      --primary:#e91e8c;
-      --primary-dark:#c2185b;
-      --accent:#f48fb1;
-      --dark:#1a1a1a;
-      --text:#222;
-      --muted:#777;
-      --bg:#fff5f9;
-      --card-bg:#fff;
-      --hero-font:'Playfair Display',Georgia,serif;
-      --body-font:'Inter',sans-serif;
-    }
-    html{scroll-behavior:smooth;}
-    body{font-family:var(--body-font);background:var(--bg);color:var(--text);line-height:1.6;padding-top:52px;}
-    .container{max-width:1100px;margin:0 auto;padding:0 20px;}
-    
-#demo-backnav{position:fixed;top:0;left:0;right:0;z-index:300;height:52px;background:#0f172a;border-bottom:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;}
-.backnav-inner{max-width:1200px;margin:0 auto;padding:0 20px;width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;}
-.backnav-back{display:inline-flex;align-items:center;gap:6px;color:#f8fafc;text-decoration:none;font-size:13px;font-weight:600;padding:7px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.12);white-space:nowrap;transition:background .2s,border-color .2s,color .2s;}
-.backnav-back:hover{background:rgba(34,211,238,0.1);border-color:rgba(34,211,238,0.45);color:#22d3ee;}
-.backnav-label{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(248,250,252,0.3);white-space:nowrap;}
-.backnav-wa{display:inline-flex;align-items:center;gap:6px;color:#fff;text-decoration:none;font-size:13px;font-weight:600;padding:7px 14px;border-radius:8px;background:#25d366;white-space:nowrap;transition:background .2s;}
-.backnav-wa:hover{background:#1ebe5c;}
-@media(max-width:580px){.backnav-label{display:none;}.backnav-wa .wa-text{display:none;}}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Bella Moda Store | Moda Feminina</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
 
-    /* NAVBAR */
-    .navbar{background:var(--dark);position:sticky;top:52px;z-index:200;box-shadow:0 2px 12px rgba(0,0,0,0.3);}
-    .navbar-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;}
-    .navbar-logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none;}
-    .navbar-links{display:flex;gap:24px;}
-    .navbar-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s;}
-    .navbar-links a:hover{color:var(--primary);}
-    @media(max-width:600px){.navbar-links{display:none;}}
-    /* HERO */
-    .hero{background:linear-gradient(135deg,#1a1a1a 0%,#3d0030 100%);color:white;padding:72px 0 60px;position:relative;overflow:hidden;}
-    .hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,0.025) 1px,transparent 1px);background-size:24px 24px;pointer-events:none;}
-    .hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;position:relative;z-index:1;}
-    @media(max-width:768px){.hero-inner{grid-template-columns:1fr;text-align:center;}}
-    .hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:white;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:6px 14px;border-radius:100px;margin-bottom:18px;}
-    .hero-dot{width:6px;height:6px;border-radius:50%;background:var(--primary);animation:blink 1.5s infinite;flex-shrink:0;}
-    @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
-    .hero h1{font-family:var(--hero-font);font-size:clamp(2.2rem,4.5vw,3.8rem);line-height:1.05;margin-bottom:16px;}
-    .hero h1 span{color:var(--accent);}
-    .hero-sub{font-size:15px;color:rgba(255,255,255,0.65);margin-bottom:28px;}
-    .hero-sub b{color:rgba(255,255,255,0.9);}
-    .hero-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
-    @media(max-width:768px){.hero-actions{justify-content:center;}}
-    .btn-hero{display:inline-flex;align-items:center;gap:8px;background:var(--primary);color:#fff;font-weight:700;font-size:16px;padding:14px 32px;border-radius:10px;text-decoration:none;transition:background .2s,transform .15s,box-shadow .2s;box-shadow:0 4px 20px rgba(0,0,0,0.25);letter-spacing:.02em;}
-    .btn-hero:hover{background:var(--primary-dark);transform:translateY(-2px);}
-    .hero-shipping{font-size:13px;color:rgba(255,255,255,0.55);}
-    .hero-visual{display:flex;justify-content:center;align-items:center;}
-    @media(max-width:768px){.hero-visual{display:none;}}
-    /* TRUST */
-    .trust{background:white;border-bottom:1px solid #f0f0f0;padding:14px 0;}
-    .trust-inner{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;}
-    .trust-item{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#444;}
-    /* PRODUCTS */
-    .products{padding:60px 0;}
-    .section-head{text-align:center;margin-bottom:40px;}
-    .section-label{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--primary);margin-bottom:8px;}
-    .section-title{font-family:var(--hero-font);font-size:clamp(1.8rem,3vw,2.8rem);color:var(--dark);line-height:1.1;}
-    .products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px;}
-    .product-card{background:var(--card-bg);border-radius:16px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,0.06);transition:transform .2s,box-shadow .2s;}
-    .product-card:hover{transform:translateY(-5px);box-shadow:0 10px 28px rgba(0,0,0,0.12);}
-    .card-image{aspect-ratio:1;overflow:hidden;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#fff0f6,#fce4ec);padding:20px;}
-    .card-image img{width:100%;height:100%;object-fit:contain;transition:transform .3s;}
-    .product-card:hover .card-image img{transform:scale(1.07);}
-    .card-body{padding:16px;}
-    .card-badge{display:inline-block;background:var(--primary);color:white;font-size:11px;font-weight:700;padding:3px 8px;border-radius:4px;margin-bottom:8px;}
-    .card-name{font-weight:700;font-size:15px;color:var(--dark);margin-bottom:6px;line-height:1.3;}
-    .card-rating{font-size:12px;color:var(--muted);margin-bottom:8px;}
-    .card-price-from{font-size:12px;color:var(--muted);margin-bottom:2px;}
-    .card-price{font-family:var(--hero-font);font-size:1.6rem;color:var(--primary);line-height:1;margin-bottom:4px;}
-    .card-installment{font-size:12px;color:var(--muted);margin-bottom:12px;}
-    .card-btn{display:block;width:100%;background:var(--dark);color:white;border:none;padding:11px;border-radius:8px;font-weight:700;font-size:13px;cursor:pointer;transition:background .2s,transform .1s;letter-spacing:.02em;}
-    .card-btn:hover{background:var(--primary);transform:scale(1.01);}
-    /* FOOTER */
-    footer{background:var(--dark);color:rgba(255,255,255,0.6);padding:48px 0 0;}
-    .footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-bottom:32px;}
-    @media(max-width:640px){.footer-grid{grid-template-columns:1fr;}}
-    .footer-col h4{font-family:var(--hero-font);font-size:.95rem;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:14px;}
-    .footer-col p{font-size:13px;line-height:1.7;margin-bottom:6px;}
-    .footer-col a{display:block;color:rgba(255,255,255,0.55);text-decoration:none;font-size:13px;margin-bottom:6px;transition:color .2s;}
-    .footer-col a:hover{color:var(--primary);}
-    .footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding:20px 0;text-align:center;font-size:12px;color:rgba(255,255,255,0.3);}
-  </style>
+  #demo-backnav{position:fixed;top:0;left:0;right:0;z-index:400;height:48px;
+    background:#0f172a;border-bottom:1px solid rgba(255,255,255,0.07);
+    display:flex;align-items:center;}
+  .backnav-inner{width:100%;max-width:1200px;margin:0 auto;padding:0 20px;
+    display:flex;align-items:center;justify-content:space-between;gap:12px;}
+  .backnav-left{display:flex;align-items:center;gap:10px;}
+  .backnav-back{display:inline-flex;align-items:center;gap:6px;color:#94a3b8;
+    font-size:13px;font-weight:600;text-decoration:none;padding:6px 12px;
+    border-radius:6px;border:1px solid rgba(255,255,255,0.1);transition:all .2s;}
+  .backnav-back:hover{color:#22d3ee;border-color:rgba(34,211,238,0.4);}
+  .backnav-label{font-size:12px;color:rgba(255,255,255,0.3);display:none;}
+  @media(min-width:560px){.backnav-label{display:block;}}
+  .backnav-wa{display:inline-flex;align-items:center;gap:6px;background:#25d366;
+    color:#fff;font-size:13px;font-weight:700;padding:6px 14px;border-radius:6px;
+    text-decoration:none;transition:background .2s;}
+  .backnav-wa:hover{background:#1ebe5c;}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--pri:#e91e8c;--dark:#1a1a1a;--light:#fff5f9;--text:#1e293b;--muted:#64748b;--border:#e2e8f0;}
+body{font-family:'Playfair Display',Inter,sans-serif;background:#fff;color:var(--text);padding-top:48px;}
+a{text-decoration:none;color:inherit;}
+
+/* ── NAVBAR ── */
+.navbar{position:sticky;top:48px;z-index:200;background:rgba(255,255,255,0.97);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--border);
+  padding:0 24px;height:68px;display:flex;align-items:center;}
+.nav-inner{max-width:1200px;margin:0 auto;width:100%;display:flex;align-items:center;
+  justify-content:space-between;gap:16px;}
+.nav-links{display:flex;gap:24px;list-style:none;}
+.nav-links a{font-size:14px;font-weight:600;color:var(--muted);transition:color .2s;}
+.nav-links a:hover{color:var(--pri);}
+.nav-cart{display:flex;align-items:center;gap:8px;position:relative;}
+.nav-cart-btn{background:var(--pri);color:#fff;border:none;border-radius:8px;
+  padding:9px 18px;font-size:14px;font-weight:700;cursor:pointer;
+  display:flex;align-items:center;gap:6px;transition:opacity .2s;}
+.nav-cart-btn:hover{opacity:.88;}
+#cart-badge{position:absolute;top:-6px;right:-6px;background:#ef4444;color:#fff;
+  font-size:11px;font-weight:800;width:20px;height:20px;border-radius:50%;
+  display:none;align-items:center;justify-content:center;border:2px solid #fff;}
+
+/* ── BANNER ── */
+.banner{background:linear-gradient(135deg,#880e4f 0%,#ad1457 50%,#e91e8c 100%);padding:72px 24px;}
+.banner-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;
+  gap:48px;align-items:center;}
+.banner-tag{display:inline-block;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);
+  color:rgba(255,255,255,0.9);font-size:12px;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:20px;}
+.banner h1{font-size:clamp(28px,4vw,50px);font-weight:900;color:#fff;line-height:1.1;
+  margin-bottom:16px;letter-spacing:-0.02em;}
+.banner h1 em{font-style:normal;color:#fce4ec;}
+.banner p{font-size:16px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:32px;max-width:420px;}
+.banner-btns{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-ban-pri{background:#fff;color:#1a1a1a;font-weight:800;font-size:15px;
+  padding:14px 32px;border-radius:10px;transition:transform .15s,box-shadow .15s;
+  box-shadow:0 4px 20px rgba(0,0,0,0.15);}
+.btn-ban-pri:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.2);}
+.btn-ban-sec{background:rgba(255,255,255,.12);color:#fff;font-weight:700;font-size:15px;
+  padding:14px 32px;border-radius:10px;border:2px solid rgba(255,255,255,.3);
+  transition:background .2s;}
+.btn-ban-sec:hover{background:rgba(255,255,255,.2);}
+.banner-visual{display:flex;justify-content:center;align-items:center;gap:16px;}
+.banner-visual svg{filter:drop-shadow(0 12px 32px rgba(0,0,0,0.35));}
+
+/* ── TRUST STRIP ── */
+.trust-strip{background:#fff5f9;border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  padding:14px 24px;}
+.trust-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:center;
+  flex-wrap:wrap;gap:28px;}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#1a1a1a;}
+.trust-icon{font-size:16px;}
+
+/* ── PRODUCTS ── */
+.products-sec{padding:72px 24px;}
+.products-inner{max-width:1200px;margin:0 auto;}
+.sec-header{text-align:center;margin-bottom:48px;}
+.sec-label{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:#e91e8c;margin-bottom:10px;}
+.sec-title{font-size:clamp(24px,3.5vw,38px);font-weight:900;color:#1a1a1a;line-height:1.2;}
+.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:24px;}
+.p-card{background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden;
+  position:relative;transition:transform .25s,box-shadow .25s;}
+.p-card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(0,0,0,0.1);}
+.p-badge{position:absolute;top:14px;left:14px;z-index:2;background:#e91e8c;color:#fff;
+  font-size:11px;font-weight:800;padding:4px 10px;border-radius:100px;letter-spacing:.04em;}
+.p-img{background:#fff5f9;display:flex;align-items:center;justify-content:center;
+  height:200px;overflow:hidden;}
+.p-img svg{max-height:180px;width:auto;transition:transform .35s;}
+.p-card:hover .p-img svg{transform:scale(1.06);}
+.p-info{padding:20px;}
+.p-name{font-size:16px;font-weight:700;color:#1a1a1a;margin-bottom:6px;}
+.p-desc{font-size:13px;color:var(--muted);line-height:1.55;margin-bottom:14px;}
+.p-price-row{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.p-old{font-size:13px;color:#94a3b8;text-decoration:line-through;}
+.p-price{font-size:22px;font-weight:900;}
+.btn-cart{width:100%;background:#e91e8c;color:#fff;border:none;border-radius:10px;
+  padding:12px;font-size:14px;font-weight:700;cursor:pointer;transition:opacity .2s,transform .15s;}
+.btn-cart:hover{opacity:.88;transform:translateY(-1px);}
+
+/* ── FOOTER ── */
+.footer{background:#1a1a1a;color:rgba(255,255,255,.65);padding:56px 24px 0;}
+.footer-inner{max-width:1200px;margin:0 auto;}
+.footer-brand{display:flex;align-items:center;gap:16px;padding-bottom:40px;
+  border-bottom:1px solid rgba(255,255,255,.07);margin-bottom:40px;}
+.footer-brand p{font-size:13px;color:rgba(255,255,255,.4);max-width:320px;margin-top:8px;line-height:1.6;}
+.footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-bottom:40px;}
+.footer-col h4{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:rgba(255,255,255,.9);margin-bottom:16px;}
+.footer-col a,.footer-col p{font-size:13px;color:rgba(255,255,255,.5);line-height:1.8;display:block;
+  margin-bottom:4px;transition:color .2s;}
+.footer-col a:hover{color:#e91e8c;}
+.footer-col ul{list-style:none;}
+.footer-col ul li{font-size:13px;color:rgba(255,255,255,.5);line-height:2;padding-left:14px;position:relative;}
+.footer-col ul li::before{content:"\2713";position:absolute;left:0;color:#4ade80;font-size:11px;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding:20px 0;text-align:center;
+  font-size:12px;color:rgba(255,255,255,.25);}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .banner-inner{grid-template-columns:1fr;}
+  .banner-visual{display:none;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:600px){
+  .nav-links{display:none;}
+  .footer-grid{grid-template-columns:1fr;gap:24px;}
+  .banner{padding:48px 20px;}
+}
+</style>
 </head>
 <body>
+
 <div id="demo-backnav">
   <div class="backnav-inner">
-    <a href="/" class="backnav-back">&#8592; Voltar para Home</a>
-    <span class="backnav-label">Exemplo de loja criada em 24h</span>
-    <a href="https://wa.me/5541998355581" target="_blank" rel="noopener" class="backnav-wa">&#128172; <span class="wa-text">Falar no WhatsApp</span></a>
+    <div class="backnav-left">
+      <a href="/" class="backnav-back">&#8592; Voltar para Home</a>
+      <span class="backnav-label">Exemplo de loja criada em 24h</span>
+    </div>
+    <a href="https://wa.me/5541998355581" target="_blank" class="backnav-wa">
+      &#128172; <span>Quero a minha</span>
+    </a>
   </div>
 </div>
 
+<!-- NAVBAR -->
 <nav class="navbar">
-  <div class="container navbar-inner">
-    <a href="#" class="navbar-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 56" width="220" height="56"><defs></defs><path d="M26 22 Q26 14 34 14 Q40 14 42 20 L42 22 L56 34 L10 34 Z" fill="#e91e8c" opacity="0.9"/><circle cx="34" cy="11" r="5" fill="none" stroke="#e91e8c" stroke-width="2.5"/><line x1="34" y1="6" x2="34" y2="4" stroke="#e91e8c" stroke-width="2" stroke-linecap="round"/><line x1="70" y1="10" x2="70" y2="46" stroke="rgba(233,30,140,0.2)" stroke-width="1.5"/><text x="80" y="28" font-family="'Playfair Display',Georgia,serif" font-size="17" font-weight="700" fill="#1a1a1a" letter-spacing="1">Bella Moda</text><text x="80" y="44" font-family="'Playfair Display',Georgia,serif" font-size="12" fill="#e91e8c" letter-spacing="2">STORE</text></svg></a>
-    <div class="navbar-links">
-      <a href="#products">Produtos</a>
-      <a href="#sobre">Sobre N&#243;s</a>
-      <a href="#contato">Contato</a>
+  <div class="nav-inner">
+    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 56" width="220" height="56">
+  <!-- Hanger icon -->
+  <path d="M28 20 Q28 14 34 14 Q40 14 40 20 L56 34 L12 34 Z"
+        fill="none" stroke="#e91e8c" stroke-width="2.5" stroke-linejoin="round"/>
+  <line x1="34" y1="14" x2="34" y2="10" stroke="#e91e8c" stroke-width="2"/>
+  <circle cx="34" cy="8" r="3" fill="none" stroke="#e91e8c" stroke-width="2"/>
+  <!-- Divider -->
+  <line x1="68" y1="10" x2="68" y2="46" stroke="rgba(233,30,140,0.2)" stroke-width="1.5"/>
+  <!-- Text -->
+  <text x="78" y="31" font-family="Georgia,serif" font-size="18" font-weight="700"
+        fill="#f8fafc" letter-spacing="1">BELLA MODA</text>
+  <text x="78" y="46" font-family="Georgia,serif" font-size="11" fill="#e91e8c"
+        letter-spacing="4">STORE</text>
+</svg></a>
+    <ul class="nav-links">
+      <li><a href="#">Produtos</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <div class="nav-cart">
+      <button class="nav-cart-btn">&#128722; Carrinho</button>
+      <div id="cart-badge">0</div>
     </div>
   </div>
 </nav>
 
-<section class="hero">
-  <div class="container hero-inner">
-    <div class="hero-text">
-      <div class="hero-tag"><span class="hero-dot"></span>Nova Coleção 2026</div>
-      <h1>Nova Coleção<br>Feminina <span>2026</span></h1>
-      <p class="hero-sub"><b>Frete Grátis</b> acima de R$149 &nbsp;•&nbsp; Parcelamento <b>6x sem juros</b> &nbsp;•&nbsp; Troca grátis</p>
-      <div class="hero-actions">
-        <a href="#products" class="btn-hero">Ver Coleção &#8594;</a>
-        <span class="hero-shipping">&#9989; Entrega em 3–7 dias úteis</span>
+<!-- BANNER -->
+<section class="banner">
+  <div class="banner-inner">
+    <div>
+      <div class="banner-tag">Nova Cole&#231;&#227;o Outono/Inverno 2025</div>
+      <h1>Moda que <em>valoriza</em> cada mulher</h1>
+      <p>Pe&#231;as exclusivas com tecidos premium. Estilo, conforto e elegância do jeito que você merece.</p>
+      <div class="banner-btns">
+        <a href="#produtos" class="btn-ban-pri">Ver Cole&#231;&#227;o &rarr;</a>
+        <a href="https://wa.me/5541998355581" target="_blank" class="btn-ban-sec">&#128172; WhatsApp</a>
       </div>
     </div>
-    <div class="hero-visual"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 300" width="280" height="300"><defs></defs><defs><linearGradient id="hvbg" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox"><stop offset="0%" stop-color="rgba(233,30,140,0.12)"/><stop offset="100%" stop-color="rgba(233,30,140,0)"/></linearGradient></defs><rect width="280" height="300" fill="url(#hvbg)" rx="20"/><text x="140" y="150" text-anchor="middle" font-size="120" opacity="0.15">&#128084;</text><text x="60" y="80" font-size="48" opacity="0.3">&#127826;</text><text x="200" y="240" font-size="36" opacity="0.25">&#127825;</text><text x="220" y="90" font-size="24" opacity="0.2">&#10024;</text><text x="30" y="220" font-size="20" opacity="0.2">&#10024;</text></svg></div>
+    <div class="banner-visual"><div style="transform:rotate(-8deg) translateY(10px)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="200" height="240">
+  <defs>
+    <linearGradient id="dg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e91e8c"/>
+      <stop offset="100%" stop-color="#f8bbd0"/>
+    </linearGradient>
+    <filter id="ds"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.2"/></filter>
+  </defs>
+  <!-- Body -->
+  <path d="M70 55 Q65 50 52 42 L30 56 L42 80 L52 72 L52 210 Q52 222 64 222 L136 222 Q148 222 148 210 L148 72 L158 80 L170 56 L148 42 Q135 50 130 55 Q116 46 100 44 Q84 46 70 55 Z"
+        fill="url(#dg)" filter="url(#ds)"/>
+  <!-- Collar -->
+  <ellipse cx="100" cy="50" rx="22" ry="8" fill="#f8bbd0" opacity="0.7"/>
+  <!-- Waist band -->
+  <rect x="52" y="115" width="96" height="10" fill="#fff" opacity="0.3" rx="2"/>
+  <!-- Floral dots -->
+  <circle cx="80" cy="145" r="5" fill="#fff" opacity="0.4"/>
+  <circle cx="100" cy="160" r="5" fill="#fff" opacity="0.4"/>
+  <circle cx="120" cy="145" r="5" fill="#fff" opacity="0.4"/>
+  <circle cx="90" cy="175" r="4" fill="#fff" opacity="0.3"/>
+  <circle cx="112" cy="178" r="4" fill="#fff" opacity="0.3"/>
+</svg></div><div style="transform:scale(0.88)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1565c0"/>
+      <stop offset="100%" stop-color="#42a5f5"/>
+    </linearGradient>
+    <filter id="bs"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.25"/></filter>
+  </defs>
+  <!-- Body -->
+  <path d="M70 55 L55 42 L20 60 L38 100 L55 88 L55 175 Q55 185 65 185 L135 185 Q145 185 145 175 L145 88 L162 100 L180 60 L145 42 L130 55 Q116 46 100 44 Q84 46 70 55 Z"
+        fill="url(#bg)" filter="url(#bs)"/>
+  <!-- Puff sleeve left accent -->
+  <ellipse cx="38" cy="80" rx="18" ry="14" fill="#42a5f5" opacity="0.5"/>
+  <!-- Puff sleeve right accent -->
+  <ellipse cx="162" cy="80" rx="18" ry="14" fill="#42a5f5" opacity="0.5"/>
+  <!-- V-neck -->
+  <path d="M85 52 Q100 75 115 52" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="2"/>
+</svg></div></div>
   </div>
 </section>
 
-<section class="trust">
-  <div class="container">
-    <div class="trust-inner">
-      <div class="trust-item">&#128737; Compra 100% Segura</div>
-      <div class="trust-item">&#128666; Frete Gr&#225;tis acima de R$ 149</div>
-      <div class="trust-item">&#128260; Troca em 30 dias</div>
-      <div class="trust-item">&#11088; 4.9/5 (1.200+ avalia&#231;&#245;es)</div>
-    </div>
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="trust-inner">
+    <div class="trust-item"><span class="trust-icon">&#9989;</span>Frete gr&#225;tis acima de R$299</div><div class="trust-item"><span class="trust-icon">&#128260;</span>Troca gr&#225;tis em 30 dias</div><div class="trust-item"><span class="trust-icon">&#128274;</span>Compra 100% segura</div><div class="trust-item"><span class="trust-icon">&#9889;</span>Entrega em 2&#8211;5 dias</div>
   </div>
-</section>
+</div>
 
-<section class="products" id="products">
-  <div class="container">
-    <div class="section-head">
-      <p class="section-label">Cat&#225;logo</p>
-      <h2 class="section-title">Nossa Coleção</h2>
+<!-- PRODUCTS -->
+<section class="products-sec" id="produtos">
+  <div class="products-inner">
+    <div class="sec-header">
+      <p class="sec-label">Cole&#231;&#227;o</p>
+      <h2 class="sec-title">Pe&#231;as em Destaque</h2>
     </div>
     <div class="products-grid">
-      <div class="product-card">
-        <div class="card-image">
-          <img src="assets/products/vestido.svg" alt="Vestido Floral" loading="lazy">
+      
+    <div class="p-card">
+      <span class="p-badge">OFERTA</span>
+      <div class="p-img"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="200" height="240">
+  <defs>
+    <linearGradient id="dg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e91e8c"/>
+      <stop offset="100%" stop-color="#f8bbd0"/>
+    </linearGradient>
+    <filter id="ds"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.2"/></filter>
+  </defs>
+  <!-- Body -->
+  <path d="M70 55 Q65 50 52 42 L30 56 L42 80 L52 72 L52 210 Q52 222 64 222 L136 222 Q148 222 148 210 L148 72 L158 80 L170 56 L148 42 Q135 50 130 55 Q116 46 100 44 Q84 46 70 55 Z"
+        fill="url(#dg)" filter="url(#ds)"/>
+  <!-- Collar -->
+  <ellipse cx="100" cy="50" rx="22" ry="8" fill="#f8bbd0" opacity="0.7"/>
+  <!-- Waist band -->
+  <rect x="52" y="115" width="96" height="10" fill="#fff" opacity="0.3" rx="2"/>
+  <!-- Floral dots -->
+  <circle cx="80" cy="145" r="5" fill="#fff" opacity="0.4"/>
+  <circle cx="100" cy="160" r="5" fill="#fff" opacity="0.4"/>
+  <circle cx="120" cy="145" r="5" fill="#fff" opacity="0.4"/>
+  <circle cx="90" cy="175" r="4" fill="#fff" opacity="0.3"/>
+  <circle cx="112" cy="178" r="4" fill="#fff" opacity="0.3"/>
+</svg></div>
+      <div class="p-info">
+        <h3 class="p-name">Vestido Floral Premium</h3>
+        <p class="p-desc">Tecido leve com estampa floral exclusiva. Perfeito para o dia a dia ou passeios.</p>
+        <div class="p-price-row">
+          <span class="p-old">R$259,90</span>
+          <span class="p-price" style="color:#e91e8c;">R$189,90</span>
         </div>
-        <div class="card-body">
-          <span class="card-badge">-20%</span>
-          <h3 class="card-name">Vestido Floral</h3>
-          <div class="card-rating">&#11088;&#11088;&#11088;&#11088;&#10025; <span>4.8 (312 aval.)</span></div>
-          <div class="card-price-from">De: <s>R$ 239,90</s></div>
-          <div class="card-price">R$ 189,90</div>
-          <div class="card-installment">6x R$ 31,65 sem juros</div>
-          <button class="card-btn">&#128722; Adicionar ao Carrinho</button>
-        </div>
+        <button class="btn-cart" style="background:#e91e8c;">&#128722; Adicionar ao Carrinho</button>
       </div>
-      <div class="product-card">
-        <div class="card-image">
-          <img src="assets/products/conjunto.svg" alt="Conjunto Feminino" loading="lazy">
+    </div>
+
+    <div class="p-card">
+      
+      <div class="p-img"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="200" height="240">
+  <defs>
+    <linearGradient id="cg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c0907a"/>
+      <stop offset="100%" stop-color="#8d6e63"/>
+    </linearGradient>
+  </defs>
+  <!-- Blusa -->
+  <path d="M62 55 L40 68 L50 92 L58 85 L58 138 L142 138 L142 85 L150 92 L160 68 L138 55
+           Q128 48 100 46 Q72 48 62 55 Z" fill="url(#cg)" opacity="0.9"/>
+  <!-- Calca -->
+  <path d="M58 145 L64 220 Q100 230 100 220 L100 145 Z" fill="#8d6e63"/>
+  <path d="M142 145 L136 220 Q100 230 100 220 L100 145 Z" fill="#c0907a"/>
+  <rect x="56" y="138" width="88" height="10" fill="#8d6e63" rx="3"/>
+  <!-- Buttons on blusa -->
+  <circle cx="100" cy="80" r="3" fill="rgba(255,255,255,0.5)"/>
+  <circle cx="100" cy="96" r="3" fill="rgba(255,255,255,0.5)"/>
+  <circle cx="100" cy="112" r="3" fill="rgba(255,255,255,0.5)"/>
+</svg></div>
+      <div class="p-info">
+        <h3 class="p-name">Conjunto Linho Bege</h3>
+        <p class="p-desc">Conjunto calça + blusa em linho fresquinho. Elegante e confort&#225;vel.</p>
+        <div class="p-price-row">
+          <span class="p-old">R$329,00</span>
+          <span class="p-price" style="color:#e91e8c;">R$247,00</span>
         </div>
-        <div class="card-body">
-          <span class="card-badge">-20%</span>
-          <h3 class="card-name">Conjunto Feminino</h3>
-          <div class="card-rating">&#11088;&#11088;&#11088;&#11088;&#10025; <span>4.9 (187 aval.)</span></div>
-          <div class="card-price-from">De: <s>R$ 219,90</s></div>
-          <div class="card-price">R$ 174,90</div>
-          <div class="card-installment">6x R$ 29,15 sem juros</div>
-          <button class="card-btn">&#128722; Adicionar ao Carrinho</button>
-        </div>
+        <button class="btn-cart" style="background:#e91e8c;">&#128722; Adicionar ao Carrinho</button>
       </div>
-      <div class="product-card">
-        <div class="card-image">
-          <img src="assets/products/blusa.svg" alt="Blusa Feminina" loading="lazy">
+    </div>
+
+    <div class="p-card">
+      <span class="p-badge">NOVO</span>
+      <div class="p-img"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6a1b9a"/>
+      <stop offset="100%" stop-color="#ab47bc"/>
+    </linearGradient>
+    <filter id="bs"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.25"/></filter>
+  </defs>
+  <!-- Body -->
+  <path d="M70 55 L55 42 L20 60 L38 100 L55 88 L55 175 Q55 185 65 185 L135 185 Q145 185 145 175 L145 88 L162 100 L180 60 L145 42 L130 55 Q116 46 100 44 Q84 46 70 55 Z"
+        fill="url(#bg)" filter="url(#bs)"/>
+  <!-- Puff sleeve left accent -->
+  <ellipse cx="38" cy="80" rx="18" ry="14" fill="#ab47bc" opacity="0.5"/>
+  <!-- Puff sleeve right accent -->
+  <ellipse cx="162" cy="80" rx="18" ry="14" fill="#ab47bc" opacity="0.5"/>
+  <!-- V-neck -->
+  <path d="M85 52 Q100 75 115 52" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="2"/>
+</svg></div>
+      <div class="p-info">
+        <h3 class="p-name">Blusa P&#250;rp&#250;ra Manga Puff</h3>
+        <p class="p-desc">Blusa modern&#237;ssima com mangas puff. Tecido de alta qualidade.</p>
+        <div class="p-price-row">
+          
+          <span class="p-price" style="color:#e91e8c;">R$129,90</span>
         </div>
-        <div class="card-body">
-          <span class="card-badge">-25%</span>
-          <h3 class="card-name">Blusa Feminina</h3>
-          <div class="card-rating">&#11088;&#11088;&#11088;&#11088;&#10025; <span>4.7 (254 aval.)</span></div>
-          <div class="card-price-from">De: <s>R$ 129,90</s></div>
-          <div class="card-price">R$ 97,90</div>
-          <div class="card-installment">3x R$ 32,63 sem juros</div>
-          <button class="card-btn">&#128722; Adicionar ao Carrinho</button>
-        </div>
+        <button class="btn-cart" style="background:#e91e8c;">&#128722; Adicionar ao Carrinho</button>
       </div>
-      <div class="product-card">
-        <div class="card-image">
-          <img src="assets/products/saia.svg" alt="Saia Midi" loading="lazy">
+    </div>
+
+    <div class="p-card">
+      
+      <div class="p-img"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="200" height="240">
+  <defs>
+    <linearGradient id="sg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a237e"/>
+      <stop offset="100%" stop-color="#3949ab"/>
+    </linearGradient>
+  </defs>
+  <!-- Waistband -->
+  <rect x="60" y="40" width="80" height="18" fill="#1a237e" rx="4"/>
+  <!-- Skirt body (A-line) -->
+  <path d="M60 58 Q40 100 28 220 L172 220 Q160 100 140 58 Z" fill="url(#sg)"/>
+  <!-- Pleats -->
+  <line x1="100" y1="60" x2="100" y2="218" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
+  <line x1="78" y1="62" x2="64" y2="218" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+  <line x1="122" y1="62" x2="136" y2="218" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+  <!-- Zipper detail -->
+  <rect x="96" y="42" width="8" height="14" fill="rgba(255,255,255,0.2)" rx="2"/>
+</svg></div>
+      <div class="p-info">
+        <h3 class="p-name">Saia Midi Azul Marinho</h3>
+        <p class="p-desc">Saia midi plissada para looks sofisticados. Caimento perfeito.</p>
+        <div class="p-price-row">
+          <span class="p-old">R$199,00</span>
+          <span class="p-price" style="color:#e91e8c;">R$159,00</span>
         </div>
-        <div class="card-body">
-          <span class="card-badge">-20%</span>
-          <h3 class="card-name">Saia Midi</h3>
-          <div class="card-rating">&#11088;&#11088;&#11088;&#11088;&#10025; <span>4.8 (143 aval.)</span></div>
-          <div class="card-price-from">De: <s>R$ 149,90</s></div>
-          <div class="card-price">R$ 119,90</div>
-          <div class="card-installment">4x R$ 29,97 sem juros</div>
-          <button class="card-btn">&#128722; Adicionar ao Carrinho</button>
-        </div>
+        <button class="btn-cart" style="background:#e91e8c;">&#128722; Adicionar ao Carrinho</button>
       </div>
-      <div class="product-card">
-        <div class="card-image">
-          <img src="assets/products/macacao.svg" alt="Macacão Feminino" loading="lazy">
+    </div>
+
+    <div class="p-card">
+      <span class="p-badge">TOP</span>
+      <div class="p-img"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 260" width="200" height="260">
+  <defs>
+    <linearGradient id="mg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ad1457"/>
+      <stop offset="100%" stop-color="#ec407a"/>
+    </linearGradient>
+  </defs>
+  <!-- Upper body -->
+  <path d="M68 52 L52 42 L30 58 L44 88 L56 80 L56 140 L144 140 L144 80 L156 88 L170 58 L148 42 L132 52 Q118 44 100 42 Q82 44 68 52 Z"
+        fill="url(#mg)"/>
+  <!-- Pants left -->
+  <path d="M56 140 L50 250 Q80 258 100 250 L100 140 Z" fill="#ad1457"/>
+  <!-- Pants right -->
+  <path d="M144 140 L150 250 Q120 258 100 250 L100 140 Z" fill="#ec407a"/>
+  <!-- Belt / transition -->
+  <rect x="54" y="134" width="92" height="12" fill="#ad1457" rx="3"/>
+  <!-- Center seam -->
+  <line x1="100" y1="58" x2="100" y2="248" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+  <!-- V-neck -->
+  <path d="M84 50 Q100 72 116 50" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+</svg></div>
+      <div class="p-info">
+        <h3 class="p-name">Macac&#227;o Moderno Rosê</h3>
+        <p class="p-desc">Macac&#227;o com cinto incluso. Verstil e estiloso para qualquer ocasi&#227;o.</p>
+        <div class="p-price-row">
+          <span class="p-old">R$289,00</span>
+          <span class="p-price" style="color:#e91e8c;">R$219,00</span>
         </div>
-        <div class="card-body">
-          <span class="card-badge">-23%</span>
-          <h3 class="card-name">Macacão Feminino</h3>
-          <div class="card-rating">&#11088;&#11088;&#11088;&#11088;&#10025; <span>4.9 (98 aval.)</span></div>
-          <div class="card-price-from">De: <s>R$ 259,90</s></div>
-          <div class="card-price">R$ 199,90</div>
-          <div class="card-installment">6x R$ 33,32 sem juros</div>
-          <button class="card-btn">&#128722; Adicionar ao Carrinho</button>
-        </div>
+        <button class="btn-cart" style="background:#e91e8c;">&#128722; Adicionar ao Carrinho</button>
       </div>
+    </div>
     </div>
   </div>
 </section>
 
-<footer id="contato">
-  <div class="container">
-    <div class="footer-grid" id="sobre">
-      <div class="footer-col"><h4>Sobre Nós</h4><p>Moda feminina contemporânea desde 2019.</p><p>Peças exclusivas com qualidade premium e design autoral.</p><p>Comprometidas com moda sustentável e inclusiva.</p></div><div class="footer-col"><h4>Política de Troca</h4><a href="#">✓ Troca em até 30 dias</a><a href="#">✓ Peça sem uso e com etiqueta</a><a href="#">✓ Defeito de fábrica: troca imediata</a><a href="#">✓ Frete de retorno por nossa conta</a><a href="#">→ Ver política completa</a></div><div class="footer-col"><h4>Contato</h4><p>📱 (41) 99835-5581 (WhatsApp)</p><p>📧 contato@bellamoda.com.br</p><p>📍 Curitiba, PR — Brasil</p><p>🕐 Seg a Sex, 9h–18h</p></div>
+<!-- FOOTER -->
+<footer class="footer" id="contato">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 56" width="220" height="56">
+  <!-- Hanger icon -->
+  <path d="M28 20 Q28 14 34 14 Q40 14 40 20 L56 34 L12 34 Z"
+        fill="none" stroke="#e91e8c" stroke-width="2.5" stroke-linejoin="round"/>
+  <line x1="34" y1="14" x2="34" y2="10" stroke="#e91e8c" stroke-width="2"/>
+  <circle cx="34" cy="8" r="3" fill="none" stroke="#e91e8c" stroke-width="2"/>
+  <!-- Divider -->
+  <line x1="68" y1="10" x2="68" y2="46" stroke="rgba(233,30,140,0.2)" stroke-width="1.5"/>
+  <!-- Text -->
+  <text x="78" y="31" font-family="Georgia,serif" font-size="18" font-weight="700"
+        fill="#f8fafc" letter-spacing="1">BELLA MODA</text>
+  <text x="78" y="46" font-family="Georgia,serif" font-size="11" fill="#e91e8c"
+        letter-spacing="4">STORE</text>
+</svg>
+      <div>
+        <div style="font-size:13px;color:rgba(255,255,255,.9);font-weight:700;margin-bottom:4px;">Bella Moda Store</div>
+        <p>Moda feminina premium com entrega r&#225;pida para todo o Brasil.</p>
+      </div>
+    </div>
+    <div class="footer-grid">
+      <div class="footer-col" id="sobre">
+        <h4>Sobre n&#243;s</h4>
+        <p>Somos especialistas em moda feminina desde 2020. Pe&#231;as selecionadas com curadoria, tecidos de qualidade e entrega r&#225;pida.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pol&#237;tica de troca</h4>
+        <ul>
+          <li>Troca gratuita em at&#233; 30 dias</li>
+          <li>Produto sem uso e com etiqueta</li>
+          <li>Defeito de f&#225;brica: troca imediata</li>
+          <li>Frete de retorno por nossa conta</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <a href="https://wa.me/5541998355581" target="_blank">&#128172; (41) 99835-5581 &mdash; WhatsApp</a>
+        <p>&#128140; contato@bellamoda.com.br</p>
+        <p>&#128205; Curitiba, PR &mdash; Brasil</p>
+        <p>&#128336; Seg a Sex, 9h&ndash;18h</p>
+      </div>
     </div>
     <div class="footer-bottom">
-      <p>Bella Moda Store | Moda Feminina Online &#169; 2025 &#8212; Loja criada em 24h com Loja Pronta 24h &middot; Curitiba, PR</p>
+      <p>Bella Moda Store &copy; 2025 &mdash; Curitiba, PR</p>
     </div>
   </div>
 </footer>
+
+
+<div id="cart-toast" style="position:fixed;bottom:24px;left:50%;transform:translateX(-50%);
+  background:#16a34a;color:#fff;padding:12px 24px;border-radius:10px;font-size:14px;
+  font-weight:700;opacity:0;transition:opacity .3s;pointer-events:none;z-index:9999;
+  box-shadow:0 4px 20px rgba(0,0,0,0.3);"></div>
+<style>#cart-toast.show{opacity:1;}</style>
+
+<script>
+(function(){
+  var count = 0;
+  var toast = document.getElementById('cart-toast');
+  var badge = document.getElementById('cart-badge');
+  document.querySelectorAll('.btn-cart').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      count++;
+      badge.textContent = count;
+      badge.style.display = 'flex';
+      toast.textContent = '\u2713 Adicionado ao carrinho!';
+      toast.classList.add('show');
+      setTimeout(function(){ toast.classList.remove('show'); }, 2000);
+      var orig = btn.textContent;
+      btn.textContent = '\u2713 Adicionado!';
+      btn.style.background = '#16a34a';
+      setTimeout(function(){ btn.textContent = orig; btn.style.background = ''; }, 1500);
+    });
+  });
+})();
+</script>
 </body>
 </html>

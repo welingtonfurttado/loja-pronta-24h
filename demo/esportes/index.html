@@ -1,250 +1,464 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arena Camisas Brasil | Camisetas Oficiais de Futebol</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    :root{
-      --primary:#e63946;
-      --primary-dark:#c1121f;
-      --accent:#f4d35e;
-      --dark:#1a1a2e;
-      --text:#222;
-      --muted:#777;
-      --bg:#f8f9fa;
-      --card-bg:#fff;
-      --hero-font:'Bebas Neue',Impact,sans-serif;
-      --body-font:'Inter',sans-serif;
-    }
-    html{scroll-behavior:smooth;}
-    body{font-family:var(--body-font);background:var(--bg);color:var(--text);line-height:1.6;padding-top:52px;}
-    .container{max-width:1100px;margin:0 auto;padding:0 20px;}
-    
-#demo-backnav{position:fixed;top:0;left:0;right:0;z-index:300;height:52px;background:#0f172a;border-bottom:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;}
-.backnav-inner{max-width:1200px;margin:0 auto;padding:0 20px;width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;}
-.backnav-back{display:inline-flex;align-items:center;gap:6px;color:#f8fafc;text-decoration:none;font-size:13px;font-weight:600;padding:7px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.12);white-space:nowrap;transition:background .2s,border-color .2s,color .2s;}
-.backnav-back:hover{background:rgba(34,211,238,0.1);border-color:rgba(34,211,238,0.45);color:#22d3ee;}
-.backnav-label{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(248,250,252,0.3);white-space:nowrap;}
-.backnav-wa{display:inline-flex;align-items:center;gap:6px;color:#fff;text-decoration:none;font-size:13px;font-weight:600;padding:7px 14px;border-radius:8px;background:#25d366;white-space:nowrap;transition:background .2s;}
-.backnav-wa:hover{background:#1ebe5c;}
-@media(max-width:580px){.backnav-label{display:none;}.backnav-wa .wa-text{display:none;}}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Arena Camisas Brasil | Camisetas Oficiais</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
 
-    /* NAVBAR */
-    .navbar{background:var(--dark);position:sticky;top:52px;z-index:200;box-shadow:0 2px 12px rgba(0,0,0,0.3);}
-    .navbar-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;}
-    .navbar-logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none;}
-    .navbar-links{display:flex;gap:24px;}
-    .navbar-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s;}
-    .navbar-links a:hover{color:var(--primary);}
-    @media(max-width:600px){.navbar-links{display:none;}}
-    /* HERO */
-    .hero{background:linear-gradient(135deg,#08101e 0%,#1a1a2e 100%);color:white;padding:72px 0 60px;position:relative;overflow:hidden;}
-    .hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,0.025) 1px,transparent 1px);background-size:24px 24px;pointer-events:none;}
-    .hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;position:relative;z-index:1;}
-    @media(max-width:768px){.hero-inner{grid-template-columns:1fr;text-align:center;}}
-    .hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:white;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:6px 14px;border-radius:100px;margin-bottom:18px;}
-    .hero-dot{width:6px;height:6px;border-radius:50%;background:var(--primary);animation:blink 1.5s infinite;flex-shrink:0;}
-    @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
-    .hero h1{font-family:var(--hero-font);font-size:clamp(2.2rem,4.5vw,3.8rem);line-height:1.05;margin-bottom:16px;}
-    .hero h1 span{color:var(--accent);}
-    .hero-sub{font-size:15px;color:rgba(255,255,255,0.65);margin-bottom:28px;}
-    .hero-sub b{color:rgba(255,255,255,0.9);}
-    .hero-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
-    @media(max-width:768px){.hero-actions{justify-content:center;}}
-    .btn-hero{display:inline-flex;align-items:center;gap:8px;background:var(--primary);color:#fff;font-weight:700;font-size:16px;padding:14px 32px;border-radius:10px;text-decoration:none;transition:background .2s,transform .15s,box-shadow .2s;box-shadow:0 4px 20px rgba(0,0,0,0.25);letter-spacing:.02em;}
-    .btn-hero:hover{background:var(--primary-dark);transform:translateY(-2px);}
-    .hero-shipping{font-size:13px;color:rgba(255,255,255,0.55);}
-    .hero-visual{display:flex;justify-content:center;align-items:center;}
-    @media(max-width:768px){.hero-visual{display:none;}}
-    /* TRUST */
-    .trust{background:white;border-bottom:1px solid #f0f0f0;padding:14px 0;}
-    .trust-inner{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;}
-    .trust-item{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#444;}
-    /* PRODUCTS */
-    .products{padding:60px 0;}
-    .section-head{text-align:center;margin-bottom:40px;}
-    .section-label{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--primary);margin-bottom:8px;}
-    .section-title{font-family:var(--hero-font);font-size:clamp(1.8rem,3vw,2.8rem);color:var(--dark);line-height:1.1;}
-    .products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px;}
-    .product-card{background:var(--card-bg);border-radius:16px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,0.06);transition:transform .2s,box-shadow .2s;}
-    .product-card:hover{transform:translateY(-5px);box-shadow:0 10px 28px rgba(0,0,0,0.12);}
-    .card-image{aspect-ratio:1;overflow:hidden;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0d1b36,#1a2744);padding:20px;}
-    .card-image img{width:100%;height:100%;object-fit:contain;transition:transform .3s;}
-    .product-card:hover .card-image img{transform:scale(1.07);}
-    .card-body{padding:16px;}
-    .card-badge{display:inline-block;background:var(--primary);color:white;font-size:11px;font-weight:700;padding:3px 8px;border-radius:4px;margin-bottom:8px;}
-    .card-name{font-weight:700;font-size:15px;color:var(--dark);margin-bottom:6px;line-height:1.3;}
-    .card-rating{font-size:12px;color:var(--muted);margin-bottom:8px;}
-    .card-price-from{font-size:12px;color:var(--muted);margin-bottom:2px;}
-    .card-price{font-family:var(--hero-font);font-size:1.6rem;color:var(--primary);line-height:1;margin-bottom:4px;}
-    .card-installment{font-size:12px;color:var(--muted);margin-bottom:12px;}
-    .card-btn{display:block;width:100%;background:var(--dark);color:white;border:none;padding:11px;border-radius:8px;font-weight:700;font-size:13px;cursor:pointer;transition:background .2s,transform .1s;letter-spacing:.02em;}
-    .card-btn:hover{background:var(--primary);transform:scale(1.01);}
-    /* FOOTER */
-    footer{background:var(--dark);color:rgba(255,255,255,0.6);padding:48px 0 0;}
-    .footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-bottom:32px;}
-    @media(max-width:640px){.footer-grid{grid-template-columns:1fr;}}
-    .footer-col h4{font-family:var(--hero-font);font-size:.95rem;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:14px;}
-    .footer-col p{font-size:13px;line-height:1.7;margin-bottom:6px;}
-    .footer-col a{display:block;color:rgba(255,255,255,0.55);text-decoration:none;font-size:13px;margin-bottom:6px;transition:color .2s;}
-    .footer-col a:hover{color:var(--primary);}
-    .footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding:20px 0;text-align:center;font-size:12px;color:rgba(255,255,255,0.3);}
-  </style>
+  #demo-backnav{position:fixed;top:0;left:0;right:0;z-index:400;height:48px;
+    background:#0f172a;border-bottom:1px solid rgba(255,255,255,0.07);
+    display:flex;align-items:center;}
+  .backnav-inner{width:100%;max-width:1200px;margin:0 auto;padding:0 20px;
+    display:flex;align-items:center;justify-content:space-between;gap:12px;}
+  .backnav-left{display:flex;align-items:center;gap:10px;}
+  .backnav-back{display:inline-flex;align-items:center;gap:6px;color:#94a3b8;
+    font-size:13px;font-weight:600;text-decoration:none;padding:6px 12px;
+    border-radius:6px;border:1px solid rgba(255,255,255,0.1);transition:all .2s;}
+  .backnav-back:hover{color:#22d3ee;border-color:rgba(34,211,238,0.4);}
+  .backnav-label{font-size:12px;color:rgba(255,255,255,0.3);display:none;}
+  @media(min-width:560px){.backnav-label{display:block;}}
+  .backnav-wa{display:inline-flex;align-items:center;gap:6px;background:#25d366;
+    color:#fff;font-size:13px;font-weight:700;padding:6px 14px;border-radius:6px;
+    text-decoration:none;transition:background .2s;}
+  .backnav-wa:hover{background:#1ebe5c;}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--pri:#e63946;--dark:#1a1a2e;--light:#f0f4ff;--text:#1e293b;--muted:#64748b;--border:#e2e8f0;}
+body{font-family:'Inter',Inter,sans-serif;background:#fff;color:var(--text);padding-top:48px;}
+a{text-decoration:none;color:inherit;}
+
+/* ── NAVBAR ── */
+.navbar{position:sticky;top:48px;z-index:200;background:rgba(255,255,255,0.97);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--border);
+  padding:0 24px;height:68px;display:flex;align-items:center;}
+.nav-inner{max-width:1200px;margin:0 auto;width:100%;display:flex;align-items:center;
+  justify-content:space-between;gap:16px;}
+.nav-links{display:flex;gap:24px;list-style:none;}
+.nav-links a{font-size:14px;font-weight:600;color:var(--muted);transition:color .2s;}
+.nav-links a:hover{color:var(--pri);}
+.nav-cart{display:flex;align-items:center;gap:8px;position:relative;}
+.nav-cart-btn{background:var(--pri);color:#fff;border:none;border-radius:8px;
+  padding:9px 18px;font-size:14px;font-weight:700;cursor:pointer;
+  display:flex;align-items:center;gap:6px;transition:opacity .2s;}
+.nav-cart-btn:hover{opacity:.88;}
+#cart-badge{position:absolute;top:-6px;right:-6px;background:#ef4444;color:#fff;
+  font-size:11px;font-weight:800;width:20px;height:20px;border-radius:50%;
+  display:none;align-items:center;justify-content:center;border:2px solid #fff;}
+
+/* ── BANNER ── */
+.banner{background:linear-gradient(135deg,#0d0d1a 0%,#1a1a2e 50%,#16213e 100%);padding:72px 24px;}
+.banner-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;
+  gap:48px;align-items:center;}
+.banner-tag{display:inline-block;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);
+  color:rgba(255,255,255,0.9);font-size:12px;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:20px;}
+.banner h1{font-size:clamp(28px,4vw,50px);font-weight:900;color:#fff;line-height:1.1;
+  margin-bottom:16px;letter-spacing:-0.02em;}
+.banner h1 em{font-style:normal;color:#f4d35e;}
+.banner p{font-size:16px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:32px;max-width:420px;}
+.banner-btns{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-ban-pri{background:#fff;color:#1a1a2e;font-weight:800;font-size:15px;
+  padding:14px 32px;border-radius:10px;transition:transform .15s,box-shadow .15s;
+  box-shadow:0 4px 20px rgba(0,0,0,0.15);}
+.btn-ban-pri:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.2);}
+.btn-ban-sec{background:rgba(255,255,255,.12);color:#fff;font-weight:700;font-size:15px;
+  padding:14px 32px;border-radius:10px;border:2px solid rgba(255,255,255,.3);
+  transition:background .2s;}
+.btn-ban-sec:hover{background:rgba(255,255,255,.2);}
+.banner-visual{display:flex;justify-content:center;align-items:center;gap:16px;}
+.banner-visual svg{filter:drop-shadow(0 12px 32px rgba(0,0,0,0.35));}
+
+/* ── TRUST STRIP ── */
+.trust-strip{background:#f0f4ff;border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  padding:14px 24px;}
+.trust-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:center;
+  flex-wrap:wrap;gap:28px;}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#1a1a2e;}
+.trust-icon{font-size:16px;}
+
+/* ── PRODUCTS ── */
+.products-sec{padding:72px 24px;}
+.products-inner{max-width:1200px;margin:0 auto;}
+.sec-header{text-align:center;margin-bottom:48px;}
+.sec-label{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:#e63946;margin-bottom:10px;}
+.sec-title{font-size:clamp(24px,3.5vw,38px);font-weight:900;color:#1a1a2e;line-height:1.2;}
+.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:24px;}
+.p-card{background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden;
+  position:relative;transition:transform .25s,box-shadow .25s;}
+.p-card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(0,0,0,0.1);}
+.p-badge{position:absolute;top:14px;left:14px;z-index:2;background:#e63946;color:#fff;
+  font-size:11px;font-weight:800;padding:4px 10px;border-radius:100px;letter-spacing:.04em;}
+.p-img{background:#f0f4ff;display:flex;align-items:center;justify-content:center;
+  height:200px;overflow:hidden;}
+.p-img svg{max-height:180px;width:auto;transition:transform .35s;}
+.p-card:hover .p-img svg{transform:scale(1.06);}
+.p-info{padding:20px;}
+.p-name{font-size:16px;font-weight:700;color:#1a1a2e;margin-bottom:6px;}
+.p-desc{font-size:13px;color:var(--muted);line-height:1.55;margin-bottom:14px;}
+.p-price-row{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.p-old{font-size:13px;color:#94a3b8;text-decoration:line-through;}
+.p-price{font-size:22px;font-weight:900;}
+.btn-cart{width:100%;background:#e63946;color:#fff;border:none;border-radius:10px;
+  padding:12px;font-size:14px;font-weight:700;cursor:pointer;transition:opacity .2s,transform .15s;}
+.btn-cart:hover{opacity:.88;transform:translateY(-1px);}
+
+/* ── FOOTER ── */
+.footer{background:#1a1a2e;color:rgba(255,255,255,.65);padding:56px 24px 0;}
+.footer-inner{max-width:1200px;margin:0 auto;}
+.footer-brand{display:flex;align-items:center;gap:16px;padding-bottom:40px;
+  border-bottom:1px solid rgba(255,255,255,.07);margin-bottom:40px;}
+.footer-brand p{font-size:13px;color:rgba(255,255,255,.4);max-width:320px;margin-top:8px;line-height:1.6;}
+.footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-bottom:40px;}
+.footer-col h4{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:rgba(255,255,255,.9);margin-bottom:16px;}
+.footer-col a,.footer-col p{font-size:13px;color:rgba(255,255,255,.5);line-height:1.8;display:block;
+  margin-bottom:4px;transition:color .2s;}
+.footer-col a:hover{color:#e63946;}
+.footer-col ul{list-style:none;}
+.footer-col ul li{font-size:13px;color:rgba(255,255,255,.5);line-height:2;padding-left:14px;position:relative;}
+.footer-col ul li::before{content:"\2713";position:absolute;left:0;color:#4ade80;font-size:11px;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding:20px 0;text-align:center;
+  font-size:12px;color:rgba(255,255,255,.25);}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .banner-inner{grid-template-columns:1fr;}
+  .banner-visual{display:none;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:600px){
+  .nav-links{display:none;}
+  .footer-grid{grid-template-columns:1fr;gap:24px;}
+  .banner{padding:48px 20px;}
+}
+</style>
 </head>
 <body>
+
 <div id="demo-backnav">
   <div class="backnav-inner">
-    <a href="/" class="backnav-back">&#8592; Voltar para Home</a>
-    <span class="backnav-label">Exemplo de loja criada em 24h</span>
-    <a href="https://wa.me/5541998355581" target="_blank" rel="noopener" class="backnav-wa">&#128172; <span class="wa-text">Falar no WhatsApp</span></a>
+    <div class="backnav-left">
+      <a href="/" class="backnav-back">&#8592; Voltar para Home</a>
+      <span class="backnav-label">Exemplo de loja criada em 24h</span>
+    </div>
+    <a href="https://wa.me/5541998355581" target="_blank" class="backnav-wa">
+      &#128172; <span>Quero a minha</span>
+    </a>
   </div>
 </div>
 
+<!-- NAVBAR -->
 <nav class="navbar">
-  <div class="container navbar-inner">
-    <a href="#" class="navbar-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 56" width="220" height="56"><defs></defs><path d="M22 4 L38 10 L38 26 Q38 40 22 46 Q6 40 6 26 L6 10 Z" fill="#1a1a2e" stroke="#e63946" stroke-width="2.5"/><path d="M14 22 L11 18 L16 16 Q18 14 22 14 Q26 14 28 16 L33 18 L30 22 L28 20 L28 34 L16 34 L16 20 Z" fill="#f4d35e"/><text x="22" y="13" text-anchor="middle" font-size="5" fill="#f4d35e" letter-spacing="1">&#9733;&#9733;&#9733;</text><line x1="50" y1="8" x2="50" y2="48" stroke="rgba(244,211,94,0.2)" stroke-width="1.5"/><text x="60" y="26" font-family="'Bebas Neue',Impact,sans-serif" font-size="16" fill="#f8fafc" letter-spacing="3">ARENA CAMISAS</text><text x="60" y="44" font-family="'Bebas Neue',Impact,sans-serif" font-size="16" fill="#e63946" letter-spacing="3">BRASIL</text></svg></a>
-    <div class="navbar-links">
-      <a href="#products">Produtos</a>
-      <a href="#sobre">Sobre N&#243;s</a>
-      <a href="#contato">Contato</a>
+  <div class="nav-inner">
+    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 56" width="240" height="56">
+  <path d="M21 4 L39 11 L39 30 Q39 46 21 52 Q3 46 3 30 L3 11 Z"
+        fill="#1a1a2e" stroke="#e63946" stroke-width="2.5"/>
+  <path d="M14 23 L10 18 L16.5 15.5 Q18 13 21 13 Q24 13 25.5 15.5 L32 18 L28 23 L25.5 21 L25.5 36 L16.5 36 L16.5 21 Z"
+        fill="#f4d35e"/>
+  <line x1="52" y1="8" x2="52" y2="48" stroke="rgba(244,211,94,0.25)" stroke-width="1.5"/>
+  <text x="62" y="30" font-family="Impact,sans-serif" font-size="18" letter-spacing="3"
+        fill="#f8fafc">ARENA CAMISAS</text>
+  <text x="62" y="48" font-family="Impact,sans-serif" font-size="18" letter-spacing="3"
+        fill="#e63946">BRASIL</text>
+</svg></a>
+    <ul class="nav-links">
+      <li><a href="#">Produtos</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <div class="nav-cart">
+      <button class="nav-cart-btn">&#128722; Carrinho</button>
+      <div id="cart-badge">0</div>
     </div>
   </div>
 </nav>
 
-<section class="hero">
-  <div class="container hero-inner">
-    <div class="hero-text">
-      <div class="hero-tag"><span class="hero-dot"></span>Temporada 2024/25</div>
-      <h1>Camisetas Oficiais<br>dos <span>Maiores Times</span></h1>
-      <p class="hero-sub"><b>Entrega rápida</b> para todo o Brasil &nbsp;•&nbsp; Parcelamento <b>6x sem juros</b> &nbsp;•&nbsp; Autênticas</p>
-      <div class="hero-actions">
-        <a href="#products" class="btn-hero">Ver Ofertas &#8594;</a>
-        <span class="hero-shipping">&#9989; Entrega em 3–7 dias para todo o Brasil</span>
+<!-- BANNER -->
+<section class="banner">
+  <div class="banner-inner">
+    <div>
+      <div class="banner-tag">Camisetas Oficiais dos Maiores Times</div>
+      <h1>Vista as cores do <em>seu time</em></h1>
+      <p>Camisetas oficiais com qualidade premium, tecido Dri-Fit e autentica&#231;&#227;o garantida. Torcedor raiz.</p>
+      <div class="banner-btns">
+        <a href="#produtos" class="btn-ban-pri">Ver Camisetas &rarr;</a>
+        <a href="https://wa.me/5541998355581" target="_blank" class="btn-ban-sec">&#128172; WhatsApp</a>
       </div>
     </div>
-    <div class="hero-visual"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 300" width="280" height="300"><defs></defs><defs><linearGradient id="hve" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox"><stop offset="0%" stop-color="rgba(230,57,70,0.12)"/><stop offset="100%" stop-color="rgba(230,57,70,0)"/></linearGradient></defs><rect width="280" height="300" fill="url(#hve)" rx="20"/><text x="140" y="175" text-anchor="middle" font-size="140" opacity="0.1">&#9917;</text><text x="50" y="90" font-size="40" opacity="0.25">&#129354;</text><text x="210" y="250" font-size="32" opacity="0.2">&#127942;</text></svg></div>
+    <div class="banner-visual"><div style="transform:rotate(-6deg)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 300" width="280" height="300">
+  <defs>
+    <clipPath id="jcdc2626"><path d="M20 70 L8 34 L90 20 Q118 6 140 4 Q162 6 190 20 L272 34 L260 70 L208 58 L208 280 Q208 290 198 290 L82 290 Q72 290 72 280 L72 58 Z"/></clipPath>
+    <filter id="jfdc2626"><feDropShadow dx="0" dy="6" stdDeviation="10" flood-opacity="0.3"/></filter>
+  </defs>
+  <path d="M20 70 L8 34 L90 20 Q118 6 140 4 Q162 6 190 20 L272 34 L260 70 L208 58 L208 280 Q208 290 198 290 L82 290 Q72 290 72 280 L72 58 Z" fill="#dc2626" filter="url(#jfdc2626)"/>
+  <path d="M20 70 L8 34 L90 20 L72 58 Z" fill="#111827"/>
+  <path d="M208 58 L190 20 L272 34 L260 70 Z" fill="#111827"/>
+  <g clip-path="url(#jcdc2626)"><rect x="0" y="86" width="280" height="38" fill="#111827"/><rect x="0" y="162" width="280" height="38" fill="#111827"/><rect x="0" y="238" width="280" height="38" fill="#111827"/></g>
+  <!-- collar -->
+  <ellipse cx="140" cy="14" rx="28" ry="12" fill="#111827" opacity="0.85"/>
+</svg></div><div style="transform:scale(0.85);margin-top:20px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 300" width="280" height="300">
+  <defs>
+    <clipPath id="jcf9fafb"><path d="M20 70 L8 34 L90 20 Q118 6 140 4 Q162 6 190 20 L272 34 L260 70 L208 58 L208 280 Q208 290 198 290 L82 290 Q72 290 72 280 L72 58 Z"/></clipPath>
+    <filter id="jff9fafb"><feDropShadow dx="0" dy="6" stdDeviation="10" flood-opacity="0.3"/></filter>
+  </defs>
+  <path d="M20 70 L8 34 L90 20 Q118 6 140 4 Q162 6 190 20 L272 34 L260 70 L208 58 L208 280 Q208 290 198 290 L82 290 Q72 290 72 280 L72 58 Z" fill="#f9fafb" filter="url(#jff9fafb)"/>
+  <path d="M20 70 L8 34 L90 20 L72 58 Z" fill="#111827"/>
+  <path d="M208 58 L190 20 L272 34 L260 70 Z" fill="#111827"/>
+  <g clip-path="url(#jcf9fafb)"><rect x="0" y="0" width="280" height="300" fill="#111827"/><rect x="72" y="0" width="136" height="300" fill="#f9fafb"/></g>
+  <!-- collar -->
+  <ellipse cx="140" cy="14" rx="28" ry="12" fill="#111827" opacity="0.85"/>
+</svg></div></div>
   </div>
 </section>
 
-<section class="trust">
-  <div class="container">
-    <div class="trust-inner">
-      <div class="trust-item">&#128737; Compra 100% Segura</div>
-      <div class="trust-item">&#128666; Frete Gr&#225;tis acima de R$ 199</div>
-      <div class="trust-item">&#128260; Troca em 30 dias</div>
-      <div class="trust-item">&#11088; 4.9/5 (1.200+ avalia&#231;&#245;es)</div>
-    </div>
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="trust-inner">
+    <div class="trust-item"><span class="trust-icon">&#9989;</span>Produto 100% oficial</div><div class="trust-item"><span class="trust-icon">&#128260;</span>Troca gr&#225;tis em 30 dias</div><div class="trust-item"><span class="trust-icon">&#128274;</span>Compra segura</div><div class="trust-item"><span class="trust-icon">&#9889;</span>Entrega em 2&#8211;4 dias</div>
   </div>
-</section>
+</div>
 
-<section class="products" id="products">
-  <div class="container">
-    <div class="section-head">
-      <p class="section-label">Cat&#225;logo</p>
-      <h2 class="section-title">Camisetas Oficiais</h2>
+<!-- PRODUCTS -->
+<section class="products-sec" id="produtos">
+  <div class="products-inner">
+    <div class="sec-header">
+      <p class="sec-label">Cat&#225;logo</p>
+      <h2 class="sec-title">Camisetas dos Times</h2>
     </div>
     <div class="products-grid">
-      <div class="product-card">
-        <div class="card-image">
-          <img src="assets/products/flamengo.svg" alt="Camiseta Flamengo" loading="lazy">
+      
+    <div class="p-card">
+      <span class="p-badge">OFICIAL</span>
+      <div class="p-img"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 300" width="280" height="300">
+  <defs>
+    <clipPath id="jcdc2626"><path d="M20 70 L8 34 L90 20 Q118 6 140 4 Q162 6 190 20 L272 34 L260 70 L208 58 L208 280 Q208 290 198 290 L82 290 Q72 290 72 280 L72 58 Z"/></clipPath>
+    <filter id="jfdc2626"><feDropShadow dx="0" dy="6" stdDeviation="10" flood-opacity="0.3"/></filter>
+  </defs>
+  <path d="M20 70 L8 34 L90 20 Q118 6 140 4 Q162 6 190 20 L272 34 L260 70 L208 58 L208 280 Q208 290 198 290 L82 290 Q72 290 72 280 L72 58 Z" fill="#dc2626" filter="url(#jfdc2626)"/>
+  <path d="M20 70 L8 34 L90 20 L72 58 Z" fill="#111827"/>
+  <path d="M208 58 L190 20 L272 34 L260 70 Z" fill="#111827"/>
+  <g clip-path="url(#jcdc2626)"><rect x="0" y="86" width="280" height="38" fill="#111827"/><rect x="0" y="162" width="280" height="38" fill="#111827"/><rect x="0" y="238" width="280" height="38" fill="#111827"/></g>
+  <!-- collar -->
+  <ellipse cx="140" cy="14" rx="28" ry="12" fill="#111827" opacity="0.85"/>
+</svg></div>
+      <div class="p-info">
+        <h3 class="p-name">Camiseta Flamengo 2025</h3>
+        <p class="p-desc">Modelo oficial do Mengão. Tecido Dri-Fit com proteção UV50+.</p>
+        <div class="p-price-row">
+          <span class="p-old">R$249,90</span>
+          <span class="p-price" style="color:#e63946;">R$189,90</span>
         </div>
-        <div class="card-body">
-          <span class="card-badge">-17%</span>
-          <h3 class="card-name">Camiseta Flamengo</h3>
-          <div class="card-rating">&#11088;&#11088;&#11088;&#11088;&#10025; <span>4.9 (342 aval.)</span></div>
-          <div class="card-price-from">De: <s>R$ 229,90</s></div>
-          <div class="card-price">R$ 189,90</div>
-          <div class="card-installment">6x R$ 31,65 sem juros</div>
-          <button class="card-btn">&#128722; Adicionar ao Carrinho</button>
-        </div>
+        <button class="btn-cart" style="background:#e63946;">&#128722; Adicionar ao Carrinho</button>
       </div>
-      <div class="product-card">
-        <div class="card-image">
-          <img src="assets/products/corinthians.svg" alt="Camiseta Corinthians" loading="lazy">
+    </div>
+
+    <div class="p-card">
+      
+      <div class="p-img"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 300" width="280" height="300">
+  <defs>
+    <clipPath id="jcf9fafb"><path d="M20 70 L8 34 L90 20 Q118 6 140 4 Q162 6 190 20 L272 34 L260 70 L208 58 L208 280 Q208 290 198 290 L82 290 Q72 290 72 280 L72 58 Z"/></clipPath>
+    <filter id="jff9fafb"><feDropShadow dx="0" dy="6" stdDeviation="10" flood-opacity="0.3"/></filter>
+  </defs>
+  <path d="M20 70 L8 34 L90 20 Q118 6 140 4 Q162 6 190 20 L272 34 L260 70 L208 58 L208 280 Q208 290 198 290 L82 290 Q72 290 72 280 L72 58 Z" fill="#f9fafb" filter="url(#jff9fafb)"/>
+  <path d="M20 70 L8 34 L90 20 L72 58 Z" fill="#111827"/>
+  <path d="M208 58 L190 20 L272 34 L260 70 Z" fill="#111827"/>
+  <g clip-path="url(#jcf9fafb)"><rect x="0" y="0" width="280" height="300" fill="#111827"/><rect x="72" y="0" width="136" height="300" fill="#f9fafb"/></g>
+  <!-- collar -->
+  <ellipse cx="140" cy="14" rx="28" ry="12" fill="#111827" opacity="0.85"/>
+</svg></div>
+      <div class="p-info">
+        <h3 class="p-name">Camiseta Corinthians</h3>
+        <p class="p-desc">A camisa do Timão em material respirável premium. Torcedor raiz!</p>
+        <div class="p-price-row">
+          
+          <span class="p-price" style="color:#e63946;">R$189,90</span>
         </div>
-        <div class="card-body">
-          <span class="card-badge">-17%</span>
-          <h3 class="card-name">Camiseta Corinthians</h3>
-          <div class="card-rating">&#11088;&#11088;&#11088;&#11088;&#10025; <span>4.9 (298 aval.)</span></div>
-          <div class="card-price-from">De: <s>R$ 229,90</s></div>
-          <div class="card-price">R$ 189,90</div>
-          <div class="card-installment">6x R$ 31,65 sem juros</div>
-          <button class="card-btn">&#128722; Adicionar ao Carrinho</button>
-        </div>
+        <button class="btn-cart" style="background:#e63946;">&#128722; Adicionar ao Carrinho</button>
       </div>
-      <div class="product-card">
-        <div class="card-image">
-          <img src="assets/products/palmeiras.svg" alt="Camiseta Palmeiras" loading="lazy">
+    </div>
+
+    <div class="p-card">
+      <span class="p-badge">OFERTA</span>
+      <div class="p-img"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 300" width="280" height="300">
+  <defs>
+    <clipPath id="jc166534"><path d="M20 70 L8 34 L90 20 Q118 6 140 4 Q162 6 190 20 L272 34 L260 70 L208 58 L208 280 Q208 290 198 290 L82 290 Q72 290 72 280 L72 58 Z"/></clipPath>
+    <filter id="jf166534"><feDropShadow dx="0" dy="6" stdDeviation="10" flood-opacity="0.3"/></filter>
+  </defs>
+  <path d="M20 70 L8 34 L90 20 Q118 6 140 4 Q162 6 190 20 L272 34 L260 70 L208 58 L208 280 Q208 290 198 290 L82 290 Q72 290 72 280 L72 58 Z" fill="#166534" filter="url(#jf166534)"/>
+  <path d="M20 70 L8 34 L90 20 L72 58 Z" fill="#166534"/>
+  <path d="M208 58 L190 20 L272 34 L260 70 Z" fill="#166534"/>
+  <g clip-path="url(#jc166534)"><rect x="126" y="0" width="18" height="300" fill="rgba(255,255,255,0.25)"/></g>
+  <!-- collar -->
+  <ellipse cx="140" cy="14" rx="28" ry="12" fill="#14532d" opacity="0.85"/>
+</svg></div>
+      <div class="p-info">
+        <h3 class="p-name">Camiseta Palmeiras</h3>
+        <p class="p-desc">A verde do Verdão com tecido de alta performance para jogar ou torcer.</p>
+        <div class="p-price-row">
+          <span class="p-old">R$229,90</span>
+          <span class="p-price" style="color:#e63946;">R$189,90</span>
         </div>
-        <div class="card-body">
-          <span class="card-badge">-15%</span>
-          <h3 class="card-name">Camiseta Palmeiras</h3>
-          <div class="card-rating">&#11088;&#11088;&#11088;&#11088;&#10025; <span>4.8 (215 aval.)</span></div>
-          <div class="card-price-from">De: <s>R$ 219,90</s></div>
-          <div class="card-price">R$ 186,90</div>
-          <div class="card-installment">6x R$ 31,15 sem juros</div>
-          <button class="card-btn">&#128722; Adicionar ao Carrinho</button>
-        </div>
+        <button class="btn-cart" style="background:#e63946;">&#128722; Adicionar ao Carrinho</button>
       </div>
-      <div class="product-card">
-        <div class="card-image">
-          <img src="assets/products/saopaulo.svg" alt="Camiseta São Paulo" loading="lazy">
+    </div>
+
+    <div class="p-card">
+      
+      <div class="p-img"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 300" width="280" height="300">
+  <defs>
+    <clipPath id="jcf9fafb"><path d="M20 70 L8 34 L90 20 Q118 6 140 4 Q162 6 190 20 L272 34 L260 70 L208 58 L208 280 Q208 290 198 290 L82 290 Q72 290 72 280 L72 58 Z"/></clipPath>
+    <filter id="jff9fafb"><feDropShadow dx="0" dy="6" stdDeviation="10" flood-opacity="0.3"/></filter>
+  </defs>
+  <path d="M20 70 L8 34 L90 20 Q118 6 140 4 Q162 6 190 20 L272 34 L260 70 L208 58 L208 280 Q208 290 198 290 L82 290 Q72 290 72 280 L72 58 Z" fill="#f9fafb" filter="url(#jff9fafb)"/>
+  <path d="M20 70 L8 34 L90 20 L72 58 Z" fill="#111827"/>
+  <path d="M208 58 L190 20 L272 34 L260 70 Z" fill="#111827"/>
+  <g clip-path="url(#jcf9fafb)"><rect x="0" y="104" width="280" height="8" fill="#111827"/><rect x="0" y="112" width="280" height="48" fill="#dc2626"/><rect x="0" y="160" width="280" height="8" fill="#111827"/></g>
+  <!-- collar -->
+  <ellipse cx="140" cy="14" rx="28" ry="12" fill="#111827" opacity="0.85"/>
+</svg></div>
+      <div class="p-info">
+        <h3 class="p-name">Camiseta S&#227;o Paulo FC</h3>
+        <p class="p-desc">Tricolor paulista com listras tradicionais. Qualidade premium.</p>
+        <div class="p-price-row">
+          
+          <span class="p-price" style="color:#e63946;">R$189,90</span>
         </div>
-        <div class="card-body">
-          <span class="card-badge">-16%</span>
-          <h3 class="card-name">Camiseta São Paulo</h3>
-          <div class="card-rating">&#11088;&#11088;&#11088;&#11088;&#10025; <span>4.7 (189 aval.)</span></div>
-          <div class="card-price-from">De: <s>R$ 219,90</s></div>
-          <div class="card-price">R$ 184,90</div>
-          <div class="card-installment">6x R$ 30,82 sem juros</div>
-          <button class="card-btn">&#128722; Adicionar ao Carrinho</button>
-        </div>
+        <button class="btn-cart" style="background:#e63946;">&#128722; Adicionar ao Carrinho</button>
       </div>
-      <div class="product-card">
-        <div class="card-image">
-          <img src="assets/products/atletico.svg" alt="Camiseta Athletico-PR" loading="lazy">
+    </div>
+
+    <div class="p-card">
+      
+      <div class="p-img"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 300" width="280" height="300">
+  <defs>
+    <clipPath id="jcdc2626"><path d="M20 70 L8 34 L90 20 Q118 6 140 4 Q162 6 190 20 L272 34 L260 70 L208 58 L208 280 Q208 290 198 290 L82 290 Q72 290 72 280 L72 58 Z"/></clipPath>
+    <filter id="jfdc2626"><feDropShadow dx="0" dy="6" stdDeviation="10" flood-opacity="0.3"/></filter>
+  </defs>
+  <path d="M20 70 L8 34 L90 20 Q118 6 140 4 Q162 6 190 20 L272 34 L260 70 L208 58 L208 280 Q208 290 198 290 L82 290 Q72 290 72 280 L72 58 Z" fill="#dc2626" filter="url(#jfdc2626)"/>
+  <path d="M20 70 L8 34 L90 20 L72 58 Z" fill="#111827"/>
+  <path d="M208 58 L190 20 L272 34 L260 70 Z" fill="#111827"/>
+  <g clip-path="url(#jcdc2626)"><rect x="140" y="0" width="140" height="300" fill="#111827"/><line x1="140" y1="0" x2="140" y2="300" stroke="#fff" stroke-width="3" opacity="0.5"/></g>
+  <!-- collar -->
+  <ellipse cx="140" cy="14" rx="28" ry="12" fill="#111827" opacity="0.85"/>
+</svg></div>
+      <div class="p-info">
+        <h3 class="p-name">Camiseta Ath. Paranaense</h3>
+        <p class="p-desc">A camisa do Furacao rubro-negra em edição especial.</p>
+        <div class="p-price-row">
+          <span class="p-old">R$219,90</span>
+          <span class="p-price" style="color:#e63946;">R$179,90</span>
         </div>
-        <div class="card-body">
-          <span class="card-badge">-19%</span>
-          <h3 class="card-name">Camiseta Athletico-PR</h3>
-          <div class="card-rating">&#11088;&#11088;&#11088;&#11088;&#10025; <span>4.8 (127 aval.)</span></div>
-          <div class="card-price-from">De: <s>R$ 199,90</s></div>
-          <div class="card-price">R$ 161,90</div>
-          <div class="card-installment">6x R$ 26,98 sem juros</div>
-          <button class="card-btn">&#128722; Adicionar ao Carrinho</button>
-        </div>
+        <button class="btn-cart" style="background:#e63946;">&#128722; Adicionar ao Carrinho</button>
       </div>
-      <div class="product-card">
-        <div class="card-image">
-          <img src="assets/products/coritiba.svg" alt="Camiseta Coritiba" loading="lazy">
+    </div>
+
+    <div class="p-card">
+      <span class="p-badge">NOVO</span>
+      <div class="p-img"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 300" width="280" height="300">
+  <defs>
+    <clipPath id="jcf9fafb"><path d="M20 70 L8 34 L90 20 Q118 6 140 4 Q162 6 190 20 L272 34 L260 70 L208 58 L208 280 Q208 290 198 290 L82 290 Q72 290 72 280 L72 58 Z"/></clipPath>
+    <filter id="jff9fafb"><feDropShadow dx="0" dy="6" stdDeviation="10" flood-opacity="0.3"/></filter>
+  </defs>
+  <path d="M20 70 L8 34 L90 20 Q118 6 140 4 Q162 6 190 20 L272 34 L260 70 L208 58 L208 280 Q208 290 198 290 L82 290 Q72 290 72 280 L72 58 Z" fill="#f9fafb" filter="url(#jff9fafb)"/>
+  <path d="M20 70 L8 34 L90 20 L72 58 Z" fill="#166534"/>
+  <path d="M208 58 L190 20 L272 34 L260 70 Z" fill="#166534"/>
+  <g clip-path="url(#jcf9fafb)"><rect x="0" y="0" width="14" height="300" fill="#166534"/><rect x="28" y="0" width="14" height="300" fill="#166534"/><rect x="56" y="0" width="14" height="300" fill="#166534"/><rect x="84" y="0" width="14" height="300" fill="#166534"/><rect x="112" y="0" width="14" height="300" fill="#166534"/><rect x="140" y="0" width="14" height="300" fill="#166534"/><rect x="168" y="0" width="14" height="300" fill="#166534"/><rect x="196" y="0" width="14" height="300" fill="#166534"/><rect x="224" y="0" width="14" height="300" fill="#166534"/><rect x="252" y="0" width="14" height="300" fill="#166534"/></g>
+  <!-- collar -->
+  <ellipse cx="140" cy="14" rx="28" ry="12" fill="#14532d" opacity="0.85"/>
+</svg></div>
+      <div class="p-info">
+        <h3 class="p-name">Camiseta Coritiba FC</h3>
+        <p class="p-desc">A tradicional listrada do Coxa-Branca. Orgulho paranaense!</p>
+        <div class="p-price-row">
+          
+          <span class="p-price" style="color:#e63946;">R$179,90</span>
         </div>
-        <div class="card-body">
-          <span class="card-badge">-20%</span>
-          <h3 class="card-name">Camiseta Coritiba</h3>
-          <div class="card-rating">&#11088;&#11088;&#11088;&#11088;&#10025; <span>4.7 (98 aval.)</span></div>
-          <div class="card-price-from">De: <s>R$ 179,90</s></div>
-          <div class="card-price">R$ 143,90</div>
-          <div class="card-installment">6x R$ 23,98 sem juros</div>
-          <button class="card-btn">&#128722; Adicionar ao Carrinho</button>
-        </div>
+        <button class="btn-cart" style="background:#e63946;">&#128722; Adicionar ao Carrinho</button>
       </div>
+    </div>
     </div>
   </div>
 </section>
 
-<footer id="contato">
-  <div class="container">
-    <div class="footer-grid" id="sobre">
-      <div class="footer-col"><h4>Arena Camisas Brasil</h4><p>Camisetas oficiais dos maiores times desde 2018.</p><p>Autenticidade garantida com etiqueta e nota fiscal.</p><p>Curitiba, PR — Entregas para todo o Brasil.</p></div><div class="footer-col"><h4>Política de Troca</h4><a href="#">✓ Troca gratuita em até 30 dias</a><a href="#">✓ Produto sem uso e com etiqueta</a><a href="#">✓ Tamanho errado: basta solicitar</a><a href="#">✓ Defeito: troca ou reembolso imediato</a><a href="#">→ Ver política completa</a></div><div class="footer-col"><h4>Contato</h4><p>📱 (41) 99835-5581 (WhatsApp)</p><p>📧 contato@arenacamisas.com.br</p><p>📍 Curitiba, PR — Brasil</p><p>🕐 Seg a Sex, 9h–18h</p></div>
+<!-- FOOTER -->
+<footer class="footer" id="contato">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 56" width="240" height="56">
+  <path d="M21 4 L39 11 L39 30 Q39 46 21 52 Q3 46 3 30 L3 11 Z"
+        fill="#1a1a2e" stroke="#e63946" stroke-width="2.5"/>
+  <path d="M14 23 L10 18 L16.5 15.5 Q18 13 21 13 Q24 13 25.5 15.5 L32 18 L28 23 L25.5 21 L25.5 36 L16.5 36 L16.5 21 Z"
+        fill="#f4d35e"/>
+  <line x1="52" y1="8" x2="52" y2="48" stroke="rgba(244,211,94,0.25)" stroke-width="1.5"/>
+  <text x="62" y="30" font-family="Impact,sans-serif" font-size="18" letter-spacing="3"
+        fill="#f8fafc">ARENA CAMISAS</text>
+  <text x="62" y="48" font-family="Impact,sans-serif" font-size="18" letter-spacing="3"
+        fill="#e63946">BRASIL</text>
+</svg>
+      <div>
+        <div style="font-size:13px;color:rgba(255,255,255,.9);font-weight:700;margin-bottom:4px;">Arena Camisas Brasil</div>
+        <p>Camisetas oficiais de futebol desde 2018. Curitiba, PR.</p>
+      </div>
+    </div>
+    <div class="footer-grid">
+      <div class="footer-col" id="sobre">
+        <h4>Sobre n&#243;s</h4>
+        <p>Especialistas em camisetas oficiais de futebol. Trabalhamos com os maiores times do Brasil com autentica&#231;&#227;o e nota fiscal.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pol&#237;tica de troca</h4>
+        <ul>
+          <li>Troca gratuita em at&#233; 30 dias</li>
+          <li>Produto sem uso e com etiqueta</li>
+          <li>Defeito de f&#225;brica: troca imediata</li>
+          <li>Frete de retorno por nossa conta</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <a href="https://wa.me/5541998355581" target="_blank">&#128172; (41) 99835-5581 &mdash; WhatsApp</a>
+        <p>&#128140; contato@arenacamisas.com.br</p>
+        <p>&#128205; Curitiba, PR &mdash; Brasil</p>
+        <p>&#128336; Seg a Sex, 9h&ndash;18h</p>
+      </div>
     </div>
     <div class="footer-bottom">
-      <p>Arena Camisas Brasil | Camisetas Oficiais de Futebol &#169; 2025 &#8212; Loja criada em 24h com Loja Pronta 24h &middot; Curitiba, PR</p>
+      <p>Arena Camisas Brasil &copy; 2025 &mdash; Curitiba, PR</p>
     </div>
   </div>
 </footer>
+
+
+<div id="cart-toast" style="position:fixed;bottom:24px;left:50%;transform:translateX(-50%);
+  background:#16a34a;color:#fff;padding:12px 24px;border-radius:10px;font-size:14px;
+  font-weight:700;opacity:0;transition:opacity .3s;pointer-events:none;z-index:9999;
+  box-shadow:0 4px 20px rgba(0,0,0,0.3);"></div>
+<style>#cart-toast.show{opacity:1;}</style>
+
+<script>
+(function(){
+  var count = 0;
+  var toast = document.getElementById('cart-toast');
+  var badge = document.getElementById('cart-badge');
+  document.querySelectorAll('.btn-cart').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      count++;
+      badge.textContent = count;
+      badge.style.display = 'flex';
+      toast.textContent = '\u2713 Adicionado ao carrinho!';
+      toast.classList.add('show');
+      setTimeout(function(){ toast.classList.remove('show'); }, 2000);
+      var orig = btn.textContent;
+      btn.textContent = '\u2713 Adicionado!';
+      btn.style.background = '#16a34a';
+      setTimeout(function(){ btn.textContent = orig; btn.style.background = ''; }, 1500);
+    });
+  });
+})();
+</script>
 </body>
 </html>
